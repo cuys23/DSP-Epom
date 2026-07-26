@@ -1,0 +1,145 @@
+{
+ "body": {
+  "backgroundColor": "rgb(240, 242, 248)",
+  "fontFamily": "\"Open Sans\", sans-serif",
+  "fontSize": "14px",
+  "lineHeight": "20px"
+ },
+ "sidebar": {
+  "r": [
+   0,
+   0,
+   240,
+   651
+  ],
+  "s": {
+   "backgroundColor": "rgb(6, 0, 40)",
+   "position": "fixed",
+   "zIndex": "1000"
+  }
+ },
+ "topbar": {
+  "r": [
+   240,
+   0,
+   1200,
+   57
+  ],
+  "s": {
+   "backgroundColor": "rgb(255, 255, 255)",
+   "borderBottomWidth": "0.5px",
+   "borderBottomColor": "rgb(196, 198, 208)",
+   "paddingLeft": "26px",
+   "paddingRight": "32px"
+  }
+ },
+ "h1": {
+  "r": [
+   272,
+   95,
+   137,
+   24
+  ],
+  "s": {
+   "fontSize": "20px",
+   "fontWeight": "700",
+   "lineHeight": "24px",
+   "color": "rgb(26, 28, 30)"
+  }
+ },
+ "card": {
+  "r": [
+   272,
+   141,
+   1136,
+   500
+  ],
+  "s": {
+   "backgroundColor": "rgb(255, 255, 255)",
+   "padding": "24px",
+   "borderRadius": "3px",
+   "minHeight": "438px",
+   "boxShadow": "none"
+  }
+ },
+ "ndTitle": {
+  "r": [
+   296,
+   287,
+   1088,
+   24
+  ],
+  "s": {
+   "fontSize": "16px",
+   "fontWeight": "700",
+   "lineHeight": "24px",
+   "color": "rgb(26, 28, 30)"
+  }
+ },
+ "ndSub": {
+  "r": [
+   296,
+   319,
+   1088,
+   21
+  ],
+  "s": {
+   "fontSize": "12px",
+   "lineHeight": "21px",
+   "color": "rgb(116, 119, 127)"
+  }
+ },
+ "cta": {
+  "r": [
+   751,
+   356,
+   178,
+   36
+  ],
+  "s": {
+   "backgroundColor": "rgb(126, 35, 159)",
+   "color": "rgb(255, 255, 255)",
+   "fontSize": "14px",
+   "fontWeight": "600",
+   "padding": "7.5px 16px",
+   "borderRadius": "4px"
+  }
+ },
+ "input": {
+  "r": [
+   1188,
+   89,
+   220,
+   36
+  ],
+  "s": {
+   "borderWidth": "1px",
+   "borderColor": "rgb(126, 35, 159)",
+   "borderRadius": "4px",
+   "padding": "8px 48px 8px 12px",
+   "fontSize": "14px",
+   "color": "rgb(26, 28, 30)"
+  }
+ },
+ "activeNav": {
+  "r": [
+   0,
+   117,
+   226,
+   41
+  ],
+  "s": {
+   "backgroundColor": "rgb(68, 127, 249)",
+   "color": "rgb(255, 255, 255)",
+   "padding": "10px 45px 10px 35px",
+   "fontSize": "14px",
+   "lineHeight": "21px"
+  }
+ },
+ "idleNav": {
+  "r": null,
+  "s": null
+ },
+ "scrollW": 1440,
+ "innerW": 1440
+}

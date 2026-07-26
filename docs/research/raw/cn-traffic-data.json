@@ -1,0 +1,1290 @@
+{
+ "count": 122,
+ "labelColors": {
+  "Web": "rgb(255, 136, 0)",
+  "In-app": "rgb(225, 255, 0)",
+  "Banner": "rgb(255, 0, 149)",
+  "CPM": "rgb(192, 127, 15)",
+  "Video": "rgb(0, 255, 51)",
+  "test": "rgb(189, 9, 16)",
+  "topon-all": "rgb(113, 120, 102)"
+ },
+ "scroller": {
+  "tag": "div",
+  "cls": "column column-left pr-20",
+  "r": [
+   272,
+   268,
+   417,
+   276
+  ],
+  "s": {
+   "maxHeight": "none",
+   "overflowY": "auto",
+   "height": "275.5px"
+  }
+ },
+ "data": [
+  {
+   "name": "Aceex Native Web",
+   "labels": [
+    {
+     "t": "Web",
+     "bg": "rgb(255, 136, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Aceex video",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Aceex1 Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Aceex1 Display Web",
+   "labels": [
+    {
+     "t": "Web",
+     "bg": "rgb(255, 136, 0)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "Banner",
+     "bg": "rgb(255, 0, 149)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "CPM",
+     "bg": "rgb(192, 127, 15)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "AdEclipse Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "AdInTouch Video",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "AdView Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "Banner",
+     "bg": "rgb(255, 0, 149)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "CPM",
+     "bg": "rgb(192, 127, 15)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "AdView Native",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Adelion Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Adintouch Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Adintouch Native Web",
+   "labels": [
+    {
+     "t": "Web",
+     "bg": "rgb(255, 136, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Adisontv Video",
+   "labels": []
+  },
+  {
+   "name": "Admatic Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Admile Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Adview video",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Adyoulike Native Web",
+   "labels": [
+    {
+     "t": "Web",
+     "bg": "rgb(255, 136, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Afront Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "Banner",
+     "bg": "rgb(255, 0, 149)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "CPM",
+     "bg": "rgb(192, 127, 15)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Afront Display Web",
+   "labels": [
+    {
+     "t": "Web",
+     "bg": "rgb(255, 136, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Afront Video",
+   "labels": []
+  },
+  {
+   "name": "Algorix Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "Banner",
+     "bg": "rgb(255, 0, 149)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "CPM",
+     "bg": "rgb(192, 127, 15)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Algorix Native",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Algorix Video",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Algorix Video Web",
+   "labels": [
+    {
+     "t": "Web",
+     "bg": "rgb(255, 136, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "BidFuse Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "Banner",
+     "bg": "rgb(255, 0, 149)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "CPM",
+     "bg": "rgb(192, 127, 15)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "BidTox Video",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Bidfuse Video",
+   "labels": []
+  },
+  {
+   "name": "Bidtox Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Bidtox Native web",
+   "labels": [
+    {
+     "t": "Web",
+     "bg": "rgb(255, 136, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Bidtox Video web",
+   "labels": [
+    {
+     "t": "Web",
+     "bg": "rgb(255, 136, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "BizzClick Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "Banner",
+     "bg": "rgb(255, 0, 149)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "CPM",
+     "bg": "rgb(192, 127, 15)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Bizzclick Display WL",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Bizzclick Native",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Bizzclick Native Web",
+   "labels": [
+    {
+     "t": "Web",
+     "bg": "rgb(255, 136, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Bizzclick Video",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Bizzclick Video Web",
+   "labels": [
+    {
+     "t": "Web",
+     "bg": "rgb(255, 136, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Brainx Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "CTV TEST BIDSTREAM DEU",
+   "labels": []
+  },
+  {
+   "name": "Casai Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "Banner",
+     "bg": "rgb(255, 0, 149)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "CPM",
+     "bg": "rgb(192, 127, 15)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Casai Video",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "DoByAI Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "DoByAI Native",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "DoByAI Native Web",
+   "labels": [
+    {
+     "t": "Web",
+     "bg": "rgb(255, 136, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "DoByAI Video",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "DoByAI Video Web",
+   "labels": [
+    {
+     "t": "Web",
+     "bg": "rgb(255, 136, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "ECS-15263",
+   "labels": []
+  },
+  {
+   "name": "Epom Whitelist",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Escalax Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "FmdMedia Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "FusionAd Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Gadsme Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "Banner",
+     "bg": "rgb(255, 0, 149)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "CPM",
+     "bg": "rgb(192, 127, 15)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Gadsme Video",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Gothamads Native",
+   "labels": [
+    {
+     "t": "Web",
+     "bg": "rgb(255, 136, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Gothamads Video",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Gothamads Video Web",
+   "labels": [
+    {
+     "t": "Web",
+     "bg": "rgb(255, 136, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Gothamads1 Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "Banner",
+     "bg": "rgb(255, 0, 149)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "CPM",
+     "bg": "rgb(192, 127, 15)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "IQzone Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "Banner",
+     "bg": "rgb(255, 0, 149)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "CPM",
+     "bg": "rgb(192, 127, 15)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "IQzone Video",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "InMobi Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "InMobi Video",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Integralstream Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Integralstream Video",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Intenziq Display Web",
+   "labels": [
+    {
+     "t": "Web",
+     "bg": "rgb(255, 136, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Iran",
+   "labels": []
+  },
+  {
+   "name": "Lacuna Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Lacuna Native",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Lacuna Video",
+   "labels": []
+  },
+  {
+   "name": "Loyalapp Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "Banner",
+     "bg": "rgb(255, 0, 149)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "CPM",
+     "bg": "rgb(192, 127, 15)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Loyalapp Video",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Mirai Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Mirai Video",
+   "labels": []
+  },
+  {
+   "name": "Mobupps Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Mobupps Display WL",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Mobupps Video",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Mobupps Video Web",
+   "labels": [
+    {
+     "t": "Web",
+     "bg": "rgb(255, 136, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "NetMarvel Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Nhance Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "Banner",
+     "bg": "rgb(255, 0, 149)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "CPM",
+     "bg": "rgb(192, 127, 15)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Nhance Native",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Opera Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Opera Native",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Opera Video",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Pulsepoint Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Pulsepoint Video",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Redmob Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Redmob Native",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Redmob Video",
+   "labels": []
+  },
+  {
+   "name": "Revcontent Native Web",
+   "labels": [
+    {
+     "t": "Web",
+     "bg": "rgb(255, 136, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "RockMobile Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "Banner",
+     "bg": "rgb(255, 0, 149)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "CPM",
+     "bg": "rgb(192, 127, 15)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "RockMobile Native",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "RockMobile Native Web",
+   "labels": [
+    {
+     "t": "Web",
+     "bg": "rgb(255, 136, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "RockMobile Video",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "RockMobile Video Web",
+   "labels": [
+    {
+     "t": "Web",
+     "bg": "rgb(255, 136, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Saturn Dynamic Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "Banner",
+     "bg": "rgb(255, 0, 149)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "CPM",
+     "bg": "rgb(192, 127, 15)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Saturn Dynamic Video",
+   "labels": []
+  },
+  {
+   "name": "SelfServeEndpoint",
+   "labels": []
+  },
+  {
+   "name": "Smaato Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "Banner",
+     "bg": "rgb(255, 0, 149)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "CPM",
+     "bg": "rgb(192, 127, 15)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Smaato Display Android",
+   "labels": []
+  },
+  {
+   "name": "Smaato Display Web",
+   "labels": [
+    {
+     "t": "Web",
+     "bg": "rgb(255, 136, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Smaato video",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "Video",
+     "bg": "rgb(0, 255, 51)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "CPM",
+     "bg": "rgb(192, 127, 15)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Smartyads Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Smartyads Display WL",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Smartyads Display Web",
+   "labels": [
+    {
+     "t": "Web",
+     "bg": "rgb(255, 136, 0)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "Banner",
+     "bg": "rgb(255, 0, 149)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "CPM",
+     "bg": "rgb(192, 127, 15)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Smartyads Native",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Smartyads Native Web",
+   "labels": [
+    {
+     "t": "Web",
+     "bg": "rgb(255, 136, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Smartyads Video",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Smartyads Video Web",
+   "labels": [
+    {
+     "t": "Web",
+     "bg": "rgb(255, 136, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Sovrn Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "Banner",
+     "bg": "rgb(255, 0, 149)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "CPM",
+     "bg": "rgb(192, 127, 15)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Sovrn Video",
+   "labels": []
+  },
+  {
+   "name": "Sovrn Video Web",
+   "labels": []
+  },
+  {
+   "name": "Support Test",
+   "labels": []
+  },
+  {
+   "name": "Tenx Video",
+   "labels": []
+  },
+  {
+   "name": "Test EP Support",
+   "labels": []
+  },
+  {
+   "name": "TopOn Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "TopOn Video",
+   "labels": [
+    {
+     "t": "test",
+     "bg": "rgb(189, 9, 16)",
+     "cls": "label label-enpoint"
+    },
+    {
+     "t": "topon-all",
+     "bg": "rgb(113, 120, 102)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "VIADS Display Web",
+   "labels": [
+    {
+     "t": "Web",
+     "bg": "rgb(255, 136, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "Yeahmobi Display",
+   "labels": [
+    {
+     "t": "In-app",
+     "bg": "rgb(225, 255, 0)",
+     "cls": "label label-enpoint"
+    }
+   ]
+  },
+  {
+   "name": "aceex-banner-web",
+   "labels": []
+  },
+  {
+   "name": "aemdays - all",
+   "labels": []
+  },
+  {
+   "name": "mangox - banner - inapp",
+   "labels": []
+  },
+  {
+   "name": "pubmatic_general",
+   "labels": []
+  },
+  {
+   "name": "test",
+   "labels": []
+  },
+  {
+   "name": "test QA imp",
+   "labels": []
+  },
+  {
+   "name": "test imp",
+   "labels": []
+  }
+ ]
+}

@@ -1,0 +1,660 @@
+{
+ "tag": "div",
+ "cls": "page-block traffic-source-select ng-star-inserted",
+ "rect": [
+  272,
+  191,
+  866,
+  377
+ ],
+ "txt": null,
+ "attrs": {},
+ "st": {
+  "fontSize": "14px",
+  "fontWeight": "400",
+  "lineHeight": "20px",
+  "color": "rgb(51, 51, 51)",
+  "textAlign": "start",
+  "backgroundColor": "rgb(255, 255, 255)",
+  "padding": "24px 24px 24px 0px",
+  "width": "866px",
+  "height": "376.5px",
+  "display": "flex",
+  "flexDirection": "column",
+  "borderRadius": "4px",
+  "border": "0px none rgb(51, 51, 51)",
+  "position": "static",
+  "transition": "all",
+  "flex": "1 1 0%"
+ },
+ "kids": [
+  {
+   "tag": "div",
+   "cls": "description-text description-text-md pl-24",
+   "rect": [
+    272,
+    215,
+    842,
+    21
+   ],
+   "txt": "Select SSP Endpoints that will be sending traffic to this Campaign.",
+   "attrs": {},
+   "st": {
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "21px",
+    "color": "rgb(116, 119, 127)",
+    "textAlign": "start",
+    "padding": "0px 0px 0px 24px",
+    "width": "842px",
+    "height": "21px",
+    "display": "block",
+    "flexDirection": "row",
+    "border": "0px none rgb(116, 119, 127)",
+    "position": "static",
+    "transition": "all",
+    "flex": "0 1 auto"
+   },
+   "kids": []
+  },
+  {
+   "tag": "div",
+   "cls": "select-popup-content mt-32",
+   "rect": [
+    272,
+    268,
+    842,
+    276
+   ],
+   "txt": null,
+   "attrs": {},
+   "st": {
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "20px",
+    "color": "rgb(51, 51, 51)",
+    "textAlign": "start",
+    "margin": "32px 0px 0px",
+    "width": "842px",
+    "height": "275.5px",
+    "display": "flex",
+    "flexDirection": "row",
+    "gap": "16px",
+    "border": "0px none rgb(51, 51, 51)",
+    "position": "static",
+    "transition": "all",
+    "flex": "0 1 auto"
+   },
+   "kids": [
+    {
+     "tag": "div",
+     "cls": "column column-left pr-20",
+     "rect": [
+      272,
+      268,
+      417,
+      276
+     ],
+     "txt": null,
+     "attrs": {},
+     "st": {
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "color": "rgb(51, 51, 51)",
+      "textAlign": "start",
+      "padding": "0px 20px 0px 24px",
+      "width": "416.5px",
+      "height": "275.5px",
+      "display": "block",
+      "flexDirection": "row",
+      "border": "0px none rgb(51, 51, 51)",
+      "position": "static",
+      "transition": "all",
+      "flex": "1 1 0%"
+     },
+     "kids": [
+      {
+       "tag": "h4",
+       "cls": "headline-4",
+       "rect": [
+        296,
+        268,
+        373,
+        21
+       ],
+       "txt": "Available",
+       "attrs": {},
+       "st": {
+        "fontSize": "14px",
+        "fontWeight": "700",
+        "lineHeight": "21px",
+        "color": "rgb(26, 28, 30)",
+        "textAlign": "start",
+        "width": "372.5px",
+        "height": "21px",
+        "display": "block",
+        "flexDirection": "row",
+        "border": "0px none rgb(26, 28, 30)",
+        "position": "static",
+        "transition": "all",
+        "flex": "0 1 auto"
+       },
+       "kids": []
+      },
+      {
+       "tag": "epom-search-input",
+       "cls": "mt-16",
+       "rect": [
+        296,
+        305,
+        373,
+        36
+       ],
+       "txt": null,
+       "attrs": {},
+       "st": {
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "color": "rgb(51, 51, 51)",
+        "textAlign": "start",
+        "margin": "16px 0px 0px",
+        "width": "372.5px",
+        "height": "36px",
+        "display": "block",
+        "flexDirection": "row",
+        "border": "0px none rgb(51, 51, 51)",
+        "position": "static",
+        "transition": "all",
+        "flex": "1 1 0%"
+       },
+       "kids": [
+        {
+         "tag": "div",
+         "cls": "custom-search-container form-control-wrapper ng-star-inserted",
+         "rect": [
+          296,
+          305,
+          373,
+          36
+         ],
+         "txt": null,
+         "attrs": {},
+         "st": {
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "20px",
+          "color": "rgb(51, 51, 51)",
+          "textAlign": "start",
+          "width": "372.5px",
+          "height": "36px",
+          "display": "flex",
+          "flexDirection": "row",
+          "alignItems": "center",
+          "border": "0px none rgb(51, 51, 51)",
+          "position": "relative",
+          "transition": "all",
+          "flex": "0 1 auto"
+         },
+         "kids": [
+          {
+           "tag": "input",
+           "cls": "custom-search-input form-control ng-untouched ng-pristine",
+           "rect": [
+            296,
+            305,
+            373,
+            36
+           ],
+           "txt": null,
+           "attrs": {
+            "type": "text",
+            "placeholder": "Search"
+           },
+           "st": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "color": "rgb(26, 28, 30)",
+            "textAlign": "start",
+            "padding": "8px 12px",
+            "width": "372.5px",
+            "height": "36px",
+            "display": "block",
+            "flexDirection": "row",
+            "borderRadius": "4px",
+            "border": "1px solid rgb(196, 198, 208)",
+            "position": "static",
+            "cursor": "text",
+            "transition": "border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out",
+            "flex": "0 1 auto",
+            "overflowY": "clip"
+           },
+           "kids": []
+          },
+          {
+           "tag": "span",
+           "cls": "custom-search-icon material-icons material-icons-outlined ng-star-inserted",
+           "rect": [
+            637,
+            313,
+            20,
+            20
+           ],
+           "txt": "search",
+           "attrs": {},
+           "st": {
+            "fontSize": "20px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "color": "rgb(116, 119, 127)",
+            "textAlign": "start",
+            "width": "20px",
+            "height": "20px",
+            "display": "block",
+            "flexDirection": "row",
+            "border": "0px none rgb(116, 119, 127)",
+            "position": "absolute",
+            "transition": "all",
+            "flex": "0 1 auto"
+           },
+           "kids": []
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "tag": "tags-dropdown",
+       "cls": "mt-16 ng-untouched ng-pristine ng-valid",
+       "rect": [
+        296,
+        357,
+        373,
+        36
+       ],
+       "txt": null,
+       "attrs": {},
+       "st": {
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "color": "rgb(51, 51, 51)",
+        "textAlign": "start",
+        "margin": "16px 0px 0px",
+        "width": "372.5px",
+        "height": "36px",
+        "display": "block",
+        "flexDirection": "row",
+        "border": "0px none rgb(51, 51, 51)",
+        "position": "static",
+        "transition": "all",
+        "flex": "0 1 auto"
+       },
+       "kids": [
+        {
+         "tag": "div",
+         "cls": "dropdown dropdown-wrapper ng-star-inserted",
+         "rect": [
+          296,
+          357,
+          373,
+          36
+         ],
+         "txt": null,
+         "attrs": {},
+         "st": {
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "20px",
+          "color": "rgb(51, 51, 51)",
+          "textAlign": "start",
+          "width": "372.5px",
+          "height": "36px",
+          "display": "block",
+          "flexDirection": "row",
+          "border": "0px none rgb(51, 51, 51)",
+          "position": "relative",
+          "transition": "all",
+          "flex": "0 1 auto"
+         },
+         "kids": [
+          {
+           "tag": "div",
+           "cls": "tags-input-wrapper",
+           "rect": [
+            296,
+            357,
+            373,
+            36
+           ],
+           "txt": null,
+           "attrs": {},
+           "st": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "color": "rgb(51, 51, 51)",
+            "textAlign": "start",
+            "padding": "6px 40px 6px 11px",
+            "width": "372.5px",
+            "height": "36px",
+            "display": "flex",
+            "flexDirection": "row",
+            "alignItems": "center",
+            "gap": "4px",
+            "borderRadius": "4px",
+            "border": "1px solid rgb(196, 198, 208)",
+            "position": "relative",
+            "transition": "all",
+            "flex": "0 1 auto"
+           },
+           "kids": [
+            {
+             "tag": "input",
+             "cls": "tags-input-input-field",
+             "rect": [
+              308,
+              364,
+              320,
+              22
+             ],
+             "txt": null,
+             "attrs": {
+              "type": "text",
+              "placeholder": "Select labels"
+             },
+             "st": {
+              "fontSize": "14px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "color": "rgb(51, 51, 51)",
+              "textAlign": "start",
+              "backgroundColor": "rgb(255, 255, 255)",
+              "padding": "1px 2px",
+              "width": "319.5px",
+              "height": "22px",
+              "display": "block",
+              "flexDirection": "row",
+              "border": "0px none rgb(51, 51, 51)",
+              "position": "static",
+              "cursor": "text",
+              "transition": "all",
+              "flex": "1 1 auto",
+              "overflowY": "clip"
+             },
+             "kids": []
+            },
+            {
+             "tag": "span",
+             "cls": "dropdown-icon material-icons material-icons-outlined ng-star-inserted",
+             "rect": [
+              638,
+              364,
+              20,
+              20
+             ],
+             "txt": "arrow_drop_down",
+             "attrs": {},
+             "st": {
+              "fontSize": "20px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "color": "rgb(116, 119, 127)",
+              "textAlign": "start",
+              "width": "20px",
+              "height": "20px",
+              "display": "block",
+              "flexDirection": "row",
+              "border": "0px none rgb(116, 119, 127)",
+              "position": "absolute",
+              "transition": "all",
+              "flex": "0 1 auto"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "epom-dropdown",
+           "cls": "tags-input-dropdown ng-star-inserted",
+           "rect": [
+            296,
+            393,
+            0,
+            0
+           ],
+           "txt": null,
+           "attrs": {},
+           "st": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "color": "rgb(51, 51, 51)",
+            "textAlign": "start",
+            "display": "inline",
+            "flexDirection": "row",
+            "border": "0px none rgb(51, 51, 51)",
+            "position": "static",
+            "transition": "all",
+            "flex": "0 1 auto"
+           },
+           "kids": []
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "tag": "div",
+       "cls": "mt-32 mb-12",
+       "rect": [
+        296,
+        425,
+        373,
+        0
+       ],
+       "txt": null,
+       "attrs": {},
+       "st": {
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "color": "rgb(51, 51, 51)",
+        "textAlign": "start",
+        "margin": "32px 0px 12px",
+        "width": "372.5px",
+        "display": "block",
+        "flexDirection": "row",
+        "border": "0px none rgb(51, 51, 51)",
+        "position": "static",
+        "transition": "all",
+        "flex": "0 1 auto"
+       },
+       "kids": []
+      }
+     ]
+    },
+    {
+     "tag": "hr",
+     "cls": "vertical-line",
+     "rect": [
+      705,
+      268,
+      1,
+      276
+     ],
+     "txt": null,
+     "attrs": {},
+     "st": {
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "color": "rgb(128, 128, 128)",
+      "textAlign": "start",
+      "backgroundColor": "rgb(196, 198, 208)",
+      "width": "1px",
+      "height": "275.5px",
+      "display": "block",
+      "flexDirection": "row",
+      "border": "0px none rgb(128, 128, 128)",
+      "position": "static",
+      "transition": "all",
+      "flex": "0 1 auto",
+      "overflowY": "hidden"
+     },
+     "kids": []
+    },
+    {
+     "tag": "div",
+     "cls": "column column-right pr-20",
+     "rect": [
+      722,
+      268,
+      393,
+      276
+     ],
+     "txt": null,
+     "attrs": {},
+     "st": {
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "color": "rgb(51, 51, 51)",
+      "textAlign": "start",
+      "padding": "0px 20px 0px 0px",
+      "width": "392.5px",
+      "height": "275.5px",
+      "display": "block",
+      "flexDirection": "row",
+      "border": "0px none rgb(51, 51, 51)",
+      "position": "static",
+      "transition": "all",
+      "flex": "1 1 0%"
+     },
+     "kids": [
+      {
+       "tag": "div",
+       "cls": "content-between d-flex",
+       "rect": [
+        722,
+        268,
+        373,
+        21
+       ],
+       "txt": null,
+       "attrs": {},
+       "st": {
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "color": "rgb(51, 51, 51)",
+        "textAlign": "start",
+        "width": "372.5px",
+        "height": "21px",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "border": "0px none rgb(51, 51, 51)",
+        "position": "static",
+        "transition": "all",
+        "flex": "0 1 auto"
+       },
+       "kids": [
+        {
+         "tag": "h4",
+         "cls": "headline-4",
+         "rect": [
+          722,
+          268,
+          68,
+          21
+         ],
+         "txt": "Linked (0)",
+         "attrs": {},
+         "st": {
+          "fontSize": "14px",
+          "fontWeight": "700",
+          "lineHeight": "21px",
+          "color": "rgb(26, 28, 30)",
+          "textAlign": "start",
+          "width": "68.3125px",
+          "height": "21px",
+          "display": "block",
+          "flexDirection": "row",
+          "border": "0px none rgb(26, 28, 30)",
+          "position": "static",
+          "transition": "all",
+          "flex": "0 1 auto"
+         },
+         "kids": []
+        },
+        {
+         "tag": "span",
+         "cls": "button-link",
+         "rect": [
+          1047,
+          268,
+          47,
+          21
+         ],
+         "txt": "Clear all",
+         "attrs": {},
+         "st": {
+          "fontSize": "12px",
+          "fontWeight": "600",
+          "lineHeight": "18px",
+          "color": "rgb(126, 35, 159)",
+          "textAlign": "start",
+          "width": "46.7734px",
+          "height": "21px",
+          "display": "flex",
+          "flexDirection": "row",
+          "alignItems": "center",
+          "gap": "4px",
+          "border": "0px none rgb(126, 35, 159)",
+          "position": "static",
+          "cursor": "pointer",
+          "transition": "all",
+          "flex": "0 1 auto"
+         },
+         "kids": []
+        }
+       ]
+      },
+      {
+       "tag": "div",
+       "cls": "description-text text-center mt-16 ng-star-inserted",
+       "rect": [
+        722,
+        305,
+        373,
+        18
+       ],
+       "txt": "No selected SSP Endpoints.",
+       "attrs": {},
+       "st": {
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "lineHeight": "18px",
+        "color": "rgb(116, 119, 127)",
+        "textAlign": "center",
+        "margin": "16px 0px 0px",
+        "width": "372.5px",
+        "height": "18px",
+        "display": "block",
+        "flexDirection": "row",
+        "border": "0px none rgb(116, 119, 127)",
+        "position": "static",
+        "transition": "all",
+        "flex": "0 1 auto"
+       },
+       "kids": []
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

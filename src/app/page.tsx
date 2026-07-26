@@ -1,9 +1,15 @@
-export default function Home() {
+import type { Metadata } from "next";
+import { AppShell } from "@/components/AppShell";
+import { PageHeader } from "@/components/PageHeader";
+import { ChartCard } from "@/components/ChartCard";
+
+export const metadata: Metadata = { title: "Dashboard | Epom Market" };
+
+export default function DashboardPage() {
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <p className="text-muted-foreground">
-        Clone target not yet built. Run <code className="font-mono text-foreground">/clone-website</code> to start.
-      </p>
-    </main>
+    <AppShell activeHref="/dashboard" breadcrumbs={[{ label: "Dashboard" }]}>
+      <PageHeader />
+      <ChartCard />
+    </AppShell>
   );
 }

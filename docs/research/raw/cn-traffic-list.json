@@ -1,0 +1,322 @@
+{
+ "cardCount": 122,
+ "list": {
+  "tag": "div",
+  "cls": "selected-item ng-star-inserted",
+  "r": [
+   296,
+   425,
+   373,
+   80
+  ],
+  "s": {
+   "maxHeight": "none",
+   "overflowY": "visible",
+   "display": "flex",
+   "flexDirection": "row",
+   "gap": "25px",
+   "margin": "0px",
+   "padding": "0px",
+   "height": "80px"
+  }
+ },
+ "card": {
+  "cls": "table-list-item-card table-list-item-card-include",
+  "r": [
+   296,
+   425,
+   373,
+   80
+  ],
+  "s": {
+   "padding": "7px 8px 11px 16px",
+   "height": "80px",
+   "minHeight": "auto",
+   "borderRadius": "4px",
+   "border": "1px solid rgb(196, 198, 208)",
+   "display": "flex",
+   "flexDirection": "column",
+   "gap": "4px",
+   "margin": "0px",
+   "backgroundColor": "rgba(0, 0, 0, 0)",
+   "justifyContent": "space-between"
+  }
+ },
+ "parts": [
+  {
+   "t": "div",
+   "c": "select-rows",
+   "txt": "Aceex Native Web add_cir",
+   "r": [
+    313,
+    433,
+    347,
+    32
+   ],
+   "s": {
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "20px",
+    "color": "rgb(51, 51, 51)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "padding": "0px",
+    "borderRadius": "0px",
+    "display": "flex",
+    "alignItems": "center",
+    "gap": "8px",
+    "textTransform": "none",
+    "margin": "0px"
+   }
+  },
+  {
+   "t": "span",
+   "c": "filter-name-span",
+   "txt": "Aceex Native Web",
+   "r": [
+    313,
+    438,
+    171,
+    21
+   ],
+   "s": {
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "21px",
+    "color": "rgb(26, 28, 30)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "padding": "0px",
+    "borderRadius": "0px",
+    "display": "flex",
+    "alignItems": "center",
+    "gap": "8px",
+    "textTransform": "none",
+    "margin": "0px"
+   }
+  },
+  {
+   "t": "div",
+   "c": "ng-star-inserted",
+   "txt": "Aceex Native Web",
+   "r": [
+    313,
+    438,
+    117,
+    21
+   ],
+   "s": {
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "21px",
+    "color": "rgb(26, 28, 30)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "padding": "0px",
+    "borderRadius": "0px",
+    "display": "block",
+    "alignItems": "normal",
+    "gap": "normal",
+    "textTransform": "none",
+    "margin": "0px"
+   }
+  },
+  {
+   "t": "button",
+   "c": "button.button-include.ng-star-inserted",
+   "txt": "add_circle_outlineInclud",
+   "r": [
+    492,
+    433,
+    79,
+    32
+   ],
+   "s": {
+    "fontSize": "12px",
+    "fontWeight": "600",
+    "lineHeight": "18px",
+    "color": "rgb(0, 109, 62)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "padding": "7px 8px",
+    "borderRadius": "4px",
+    "display": "flex",
+    "alignItems": "center",
+    "gap": "4px",
+    "textTransform": "none",
+    "margin": "0px"
+   }
+  },
+  {
+   "t": "span",
+   "c": "material-icons.material-icons-outlined",
+   "txt": "add_circle_outline",
+   "r": [
+    500,
+    441,
+    16,
+    16
+   ],
+   "s": {
+    "fontSize": "16px",
+    "fontWeight": "600",
+    "lineHeight": "16px",
+    "color": "rgb(0, 109, 62)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "padding": "0px",
+    "borderRadius": "0px",
+    "display": "block",
+    "alignItems": "normal",
+    "gap": "normal",
+    "textTransform": "none",
+    "margin": "0px"
+   }
+  },
+  {
+   "t": "button",
+   "c": "button.button-exclude.ng-star-inserted",
+   "txt": "blockExclude",
+   "r": [
+    579,
+    433,
+    81,
+    32
+   ],
+   "s": {
+    "fontSize": "12px",
+    "fontWeight": "600",
+    "lineHeight": "18px",
+    "color": "rgb(186, 26, 26)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "padding": "7px 8px",
+    "borderRadius": "4px",
+    "display": "flex",
+    "alignItems": "center",
+    "gap": "4px",
+    "textTransform": "none",
+    "margin": "0px"
+   }
+  },
+  {
+   "t": "span",
+   "c": "material-icons.material-icons-outlined",
+   "txt": "block",
+   "r": [
+    587,
+    441,
+    16,
+    16
+   ],
+   "s": {
+    "fontSize": "16px",
+    "fontWeight": "600",
+    "lineHeight": "16px",
+    "color": "rgb(186, 26, 26)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "padding": "0px",
+    "borderRadius": "0px",
+    "display": "block",
+    "alignItems": "normal",
+    "gap": "normal",
+    "textTransform": "none",
+    "margin": "0px"
+   }
+  },
+  {
+   "t": "ul",
+   "c": "list-labels.mt-4.ng-star-inserted",
+   "txt": "Web",
+   "r": [
+    313,
+    473,
+    347,
+    20
+   ],
+   "s": {
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "20px",
+    "color": "rgb(51, 51, 51)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "padding": "0px",
+    "borderRadius": "0px",
+    "display": "flex",
+    "alignItems": "normal",
+    "gap": "4px",
+    "textTransform": "none",
+    "margin": "4px 0px 0px"
+   }
+  },
+  {
+   "t": "li",
+   "c": "ng-star-inserted",
+   "txt": "Web",
+   "r": [
+    313,
+    473,
+    30,
+    20
+   ],
+   "s": {
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "20px",
+    "color": "rgb(51, 51, 51)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "padding": "0px",
+    "borderRadius": "0px",
+    "display": "list-item",
+    "alignItems": "normal",
+    "gap": "normal",
+    "textTransform": "none",
+    "margin": "0px"
+   }
+  },
+  {
+   "t": "span",
+   "c": "label.label-enpoint.ng-star-inserted",
+   "txt": "Web",
+   "r": [
+    313,
+    473,
+    30,
+    20
+   ],
+   "s": {
+    "fontSize": "10px",
+    "fontWeight": "700",
+    "lineHeight": "16px",
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(255, 136, 0)",
+    "padding": "2px 4px",
+    "borderRadius": "8px",
+    "display": "block",
+    "alignItems": "normal",
+    "gap": "normal",
+    "textTransform": "none",
+    "margin": "0px"
+   }
+  },
+  {
+   "t": "div",
+   "c": "collapse.description-text.select-description",
+   "txt": "",
+   "r": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "s": {
+    "fontSize": "12px",
+    "fontWeight": "400",
+    "lineHeight": "18px",
+    "color": "rgb(116, 119, 127)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "padding": "0px 0px 7px",
+    "borderRadius": "0px",
+    "display": "none",
+    "alignItems": "normal",
+    "gap": "normal",
+    "textTransform": "none",
+    "margin": "0px"
+   }
+  }
+ ]
+}

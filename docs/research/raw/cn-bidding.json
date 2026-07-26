@@ -1,0 +1,2027 @@
+{
+ "boxes": [
+  {
+   "tag": "section",
+   "cls": "optimization-accordion-item form-box p-24 ng-star-inserted",
+   "rect": [
+    272,
+    191,
+    866,
+    187
+   ],
+   "txt": null,
+   "attrs": {},
+   "st": {
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "20px",
+    "color": "rgb(51, 51, 51)",
+    "textAlign": "start",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "padding": "24px",
+    "width": "866px",
+    "height": "187px",
+    "display": "flex",
+    "flexDirection": "column",
+    "borderRadius": "4px",
+    "border": "0px none rgb(51, 51, 51)",
+    "borderBottom": "0px none rgb(51, 51, 51)",
+    "borderTop": "0px none rgb(51, 51, 51)",
+    "position": "static",
+    "transition": "all",
+    "flex": "0 1 auto"
+   },
+   "kids": [
+    {
+     "tag": "h3",
+     "cls": "headline-3 mb-0",
+     "rect": [
+      296,
+      215,
+      818,
+      24
+     ],
+     "txt": "Bidding Settings",
+     "attrs": {},
+     "st": {
+      "fontSize": "16px",
+      "fontWeight": "700",
+      "lineHeight": "24px",
+      "color": "rgb(26, 28, 30)",
+      "textAlign": "start",
+      "width": "818px",
+      "height": "24px",
+      "display": "block",
+      "flexDirection": "row",
+      "border": "0px none rgb(26, 28, 30)",
+      "borderBottom": "0px none rgb(26, 28, 30)",
+      "borderTop": "0px none rgb(26, 28, 30)",
+      "position": "static",
+      "transition": "all",
+      "flex": "0 1 auto"
+     },
+     "kids": []
+    },
+    {
+     "tag": "div",
+     "cls": "ng-star-inserted",
+     "rect": [
+      296,
+      239,
+      818,
+      115
+     ],
+     "txt": null,
+     "attrs": {},
+     "st": {
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "color": "rgb(51, 51, 51)",
+      "textAlign": "start",
+      "width": "818px",
+      "height": "115px",
+      "display": "block",
+      "flexDirection": "row",
+      "border": "0px none rgb(51, 51, 51)",
+      "borderBottom": "0px none rgb(51, 51, 51)",
+      "borderTop": "0px none rgb(51, 51, 51)",
+      "position": "static",
+      "transition": "all",
+      "flex": "0 1 auto"
+     },
+     "kids": [
+      {
+       "tag": "div",
+       "cls": "optimization-info-block mt-24",
+       "rect": [
+        296,
+        263,
+        818,
+        21
+       ],
+       "txt": null,
+       "attrs": {},
+       "st": {
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "color": "rgb(51, 51, 51)",
+        "textAlign": "start",
+        "margin": "24px 0px 12px",
+        "width": "818px",
+        "height": "21px",
+        "display": "block",
+        "flexDirection": "row",
+        "border": "0px none rgb(51, 51, 51)",
+        "borderBottom": "0px none rgb(51, 51, 51)",
+        "borderTop": "0px none rgb(51, 51, 51)",
+        "position": "static",
+        "transition": "all",
+        "flex": "0 1 auto"
+       },
+       "kids": [
+        {
+         "tag": "div",
+         "cls": "optimization-info-block-top",
+         "rect": [
+          296,
+          263,
+          818,
+          21
+         ],
+         "txt": null,
+         "attrs": {},
+         "st": {
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "20px",
+          "color": "rgb(51, 51, 51)",
+          "textAlign": "start",
+          "width": "818px",
+          "height": "21px",
+          "display": "flex",
+          "flexDirection": "row",
+          "alignItems": "center",
+          "gap": "4px",
+          "border": "0px none rgb(51, 51, 51)",
+          "borderBottom": "0px none rgb(51, 51, 51)",
+          "borderTop": "0px none rgb(51, 51, 51)",
+          "position": "static",
+          "transition": "all",
+          "flex": "0 1 auto"
+         },
+         "kids": [
+          {
+           "tag": "span",
+           "cls": "optimization-main-block-text",
+           "rect": [
+            296,
+            263,
+            169,
+            21
+           ],
+           "txt": "Exposure Time Multiplier",
+           "attrs": {},
+           "st": {
+            "fontSize": "14px",
+            "fontWeight": "600",
+            "lineHeight": "21px",
+            "color": "rgb(26, 28, 30)",
+            "textAlign": "start",
+            "width": "168.906px",
+            "height": "21px",
+            "display": "block",
+            "flexDirection": "row",
+            "border": "0px none rgb(26, 28, 30)",
+            "borderBottom": "0px none rgb(26, 28, 30)",
+            "borderTop": "0px none rgb(26, 28, 30)",
+            "position": "static",
+            "transition": "all",
+            "flex": "0 1 auto"
+           },
+           "kids": []
+          },
+          {
+           "tag": "span",
+           "cls": "mat-tooltip-trigger material-icons material-icons-outlined button-icon-small",
+           "rect": [
+            469,
+            263,
+            20,
+            20
+           ],
+           "txt": "info",
+           "attrs": {},
+           "st": {
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "16px",
+            "color": "rgb(116, 119, 127)",
+            "textAlign": "start",
+            "padding": "2px",
+            "width": "20px",
+            "height": "20px",
+            "display": "block",
+            "flexDirection": "row",
+            "borderRadius": "50%",
+            "border": "0px none rgb(116, 119, 127)",
+            "borderBottom": "0px none rgb(116, 119, 127)",
+            "borderTop": "0px none rgb(116, 119, 127)",
+            "position": "static",
+            "cursor": "pointer",
+            "transition": "all",
+            "flex": "0 1 auto"
+           },
+           "kids": []
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "tag": "div",
+       "cls": "form-control-wrapper ng-untouched ng-pristine ng-valid",
+       "rect": [
+        296,
+        296,
+        720,
+        58
+       ],
+       "txt": null,
+       "attrs": {},
+       "st": {
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "color": "rgb(51, 51, 51)",
+        "textAlign": "start",
+        "width": "720px",
+        "height": "58px",
+        "display": "flex",
+        "flexDirection": "column-reverse",
+        "border": "0px none rgb(51, 51, 51)",
+        "borderBottom": "0px none rgb(51, 51, 51)",
+        "borderTop": "0px none rgb(51, 51, 51)",
+        "position": "static",
+        "transition": "all",
+        "flex": "0 1 auto"
+       },
+       "kids": [
+        {
+         "tag": "input",
+         "cls": "form-control ng-untouched ng-pristine ng-valid",
+         "rect": [
+          296,
+          318,
+          720,
+          36
+         ],
+         "txt": null,
+         "attrs": {
+          "type": "text",
+          "placeholder": "0"
+         },
+         "st": {
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "20px",
+          "color": "rgb(26, 28, 30)",
+          "textAlign": "start",
+          "padding": "8px 12px",
+          "width": "720px",
+          "height": "36px",
+          "display": "block",
+          "flexDirection": "row",
+          "borderRadius": "4px",
+          "border": "1px solid rgb(196, 198, 208)",
+          "borderBottom": "1px solid rgb(196, 198, 208)",
+          "borderTop": "1px solid rgb(196, 198, 208)",
+          "position": "static",
+          "cursor": "text",
+          "transition": "border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out",
+          "flex": "0 1 auto"
+         },
+         "kids": []
+        },
+        {
+         "tag": "label",
+         "cls": "control-label",
+         "rect": [
+          296,
+          296,
+          720,
+          18
+         ],
+         "txt": "Decay Rate (1 Fastest / 100 Slowest)",
+         "attrs": {},
+         "st": {
+          "fontSize": "12px",
+          "fontWeight": "600",
+          "lineHeight": "18px",
+          "color": "rgb(116, 119, 127)",
+          "textAlign": "start",
+          "margin": "0px 0px 4px",
+          "width": "720px",
+          "height": "18px",
+          "display": "block",
+          "flexDirection": "row",
+          "alignItems": "baseline",
+          "border": "0px none rgb(116, 119, 127)",
+          "borderBottom": "0px none rgb(116, 119, 127)",
+          "borderTop": "0px none rgb(116, 119, 127)",
+          "position": "static",
+          "transition": "all",
+          "flex": "0 1 auto"
+         },
+         "kids": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "tag": "section",
+   "cls": "optimization-accordion-item form-box p-24 ng-star-inserted",
+   "rect": [
+    272,
+    394,
+    866,
+    72
+   ],
+   "txt": null,
+   "attrs": {},
+   "st": {
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "20px",
+    "color": "rgb(51, 51, 51)",
+    "textAlign": "start",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "padding": "24px",
+    "width": "866px",
+    "height": "72px",
+    "display": "flex",
+    "flexDirection": "column",
+    "borderRadius": "4px",
+    "border": "0px none rgb(51, 51, 51)",
+    "borderBottom": "0px none rgb(51, 51, 51)",
+    "borderTop": "0px none rgb(51, 51, 51)",
+    "position": "static",
+    "transition": "all",
+    "flex": "0 1 auto"
+   },
+   "kids": [
+    {
+     "tag": "epom-single-accordion",
+     "cls": "",
+     "rect": [
+      296,
+      418,
+      818,
+      24
+     ],
+     "txt": null,
+     "attrs": {},
+     "st": {
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "color": "rgb(51, 51, 51)",
+      "textAlign": "start",
+      "width": "818px",
+      "height": "24px",
+      "display": "block",
+      "flexDirection": "row",
+      "border": "0px none rgb(51, 51, 51)",
+      "borderBottom": "0px none rgb(51, 51, 51)",
+      "borderTop": "0px none rgb(51, 51, 51)",
+      "position": "static",
+      "transition": "all",
+      "flex": "0 1 auto"
+     },
+     "kids": [
+      {
+       "tag": "div",
+       "cls": "block-toggle block-toggle-big",
+       "rect": [
+        296,
+        418,
+        818,
+        24
+       ],
+       "txt": null,
+       "attrs": {},
+       "st": {
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "lineHeight": "24px",
+        "color": "rgb(26, 28, 30)",
+        "textAlign": "start",
+        "width": "818px",
+        "height": "24px",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "alignItems": "center",
+        "border": "0px none rgb(26, 28, 30)",
+        "borderBottom": "0px none rgb(26, 28, 30)",
+        "borderTop": "0px none rgb(26, 28, 30)",
+        "position": "static",
+        "cursor": "pointer",
+        "transition": "all",
+        "flex": "0 1 auto"
+       },
+       "kids": [
+        {
+         "tag": "div",
+         "cls": "accordion-header-main",
+         "rect": [
+          296,
+          418,
+          93,
+          24
+         ],
+         "txt": null,
+         "attrs": {},
+         "st": {
+          "fontSize": "16px",
+          "fontWeight": "700",
+          "lineHeight": "24px",
+          "color": "rgb(26, 28, 30)",
+          "textAlign": "start",
+          "width": "92.5469px",
+          "height": "24px",
+          "display": "flex",
+          "flexDirection": "row",
+          "alignItems": "center",
+          "border": "0px none rgb(26, 28, 30)",
+          "borderBottom": "0px none rgb(26, 28, 30)",
+          "borderTop": "0px none rgb(26, 28, 30)",
+          "position": "static",
+          "cursor": "pointer",
+          "transition": "all",
+          "flex": "0 1 auto"
+         },
+         "kids": [
+          {
+           "tag": "span",
+           "cls": "toggle-icon material-icons material-icons-outlined",
+           "rect": [
+            296,
+            418,
+            20,
+            24
+           ],
+           "txt": "arrow_right",
+           "attrs": {},
+           "st": {
+            "fontSize": "20px",
+            "fontWeight": "400",
+            "lineHeight": "24px",
+            "color": "rgb(26, 28, 30)",
+            "textAlign": "start",
+            "margin": "0px 8px 0px 0px",
+            "width": "20px",
+            "height": "24px",
+            "display": "block",
+            "flexDirection": "row",
+            "border": "0px none rgb(26, 28, 30)",
+            "borderBottom": "0px none rgb(26, 28, 30)",
+            "borderTop": "0px none rgb(26, 28, 30)",
+            "position": "static",
+            "cursor": "pointer",
+            "transition": "all",
+            "flex": "0 1 auto"
+           },
+           "kids": []
+          },
+          {
+           "tag": "div",
+           "cls": "accordion-title headline-3",
+           "rect": [
+            324,
+            418,
+            65,
+            24
+           ],
+           "txt": "Capping",
+           "attrs": {},
+           "st": {
+            "fontSize": "16px",
+            "fontWeight": "700",
+            "lineHeight": "24px",
+            "color": "rgb(26, 28, 30)",
+            "textAlign": "start",
+            "width": "64.5469px",
+            "height": "24px",
+            "display": "block",
+            "flexDirection": "row",
+            "border": "0px none rgb(26, 28, 30)",
+            "borderBottom": "0px none rgb(26, 28, 30)",
+            "borderTop": "0px none rgb(26, 28, 30)",
+            "position": "static",
+            "cursor": "pointer",
+            "transition": "all",
+            "flex": "0 1 auto"
+           },
+           "kids": []
+          }
+         ]
+        },
+        {
+         "tag": "div",
+         "cls": "accordion-header-actions",
+         "rect": [
+          1114,
+          430,
+          0,
+          0
+         ],
+         "txt": null,
+         "attrs": {},
+         "st": {
+          "fontSize": "16px",
+          "fontWeight": "700",
+          "lineHeight": "24px",
+          "color": "rgb(26, 28, 30)",
+          "textAlign": "start",
+          "margin": "0px 0px 0px 12px",
+          "display": "flex",
+          "flexDirection": "row",
+          "alignItems": "center",
+          "border": "0px none rgb(26, 28, 30)",
+          "borderBottom": "0px none rgb(26, 28, 30)",
+          "borderTop": "0px none rgb(26, 28, 30)",
+          "position": "static",
+          "cursor": "pointer",
+          "transition": "all",
+          "flex": "0 1 auto"
+         },
+         "kids": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "tag": "section",
+   "cls": "optimization-accordion-item form-box p-24 ng-star-inserted",
+   "rect": [
+    272,
+    482,
+    866,
+    490
+   ],
+   "txt": null,
+   "attrs": {},
+   "st": {
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "20px",
+    "color": "rgb(51, 51, 51)",
+    "textAlign": "start",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "padding": "24px",
+    "width": "866px",
+    "height": "490px",
+    "display": "flex",
+    "flexDirection": "column",
+    "borderRadius": "4px",
+    "border": "0px none rgb(51, 51, 51)",
+    "borderBottom": "0px none rgb(51, 51, 51)",
+    "borderTop": "0px none rgb(51, 51, 51)",
+    "position": "static",
+    "transition": "all",
+    "flex": "0 1 auto"
+   },
+   "kids": [
+    {
+     "tag": "div",
+     "cls": "",
+     "rect": [
+      296,
+      506,
+      818,
+      442
+     ],
+     "txt": null,
+     "attrs": {},
+     "st": {
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "color": "rgb(51, 51, 51)",
+      "textAlign": "start",
+      "width": "818px",
+      "height": "442px",
+      "display": "block",
+      "flexDirection": "row",
+      "border": "0px none rgb(51, 51, 51)",
+      "borderBottom": "0px none rgb(51, 51, 51)",
+      "borderTop": "0px none rgb(51, 51, 51)",
+      "position": "static",
+      "transition": "all",
+      "flex": "0 1 auto"
+     },
+     "kids": [
+      {
+       "tag": "h4",
+       "cls": "headline-3 mb-0",
+       "rect": [
+        296,
+        506,
+        818,
+        24
+       ],
+       "txt": "Auto optimization",
+       "attrs": {},
+       "st": {
+        "fontSize": "16px",
+        "fontWeight": "700",
+        "lineHeight": "24px",
+        "color": "rgb(26, 28, 30)",
+        "textAlign": "start",
+        "width": "818px",
+        "height": "24px",
+        "display": "block",
+        "flexDirection": "row",
+        "border": "0px none rgb(26, 28, 30)",
+        "borderBottom": "0px none rgb(26, 28, 30)",
+        "borderTop": "0px none rgb(26, 28, 30)",
+        "position": "static",
+        "transition": "all",
+        "flex": "0 1 auto"
+       },
+       "kids": []
+      },
+      {
+       "tag": "div",
+       "cls": "ng-star-inserted",
+       "rect": [
+        296,
+        550,
+        818,
+        135
+       ],
+       "txt": null,
+       "attrs": {},
+       "st": {
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "color": "rgb(51, 51, 51)",
+        "textAlign": "start",
+        "width": "818px",
+        "height": "135px",
+        "display": "block",
+        "flexDirection": "row",
+        "border": "0px none rgb(51, 51, 51)",
+        "borderBottom": "0px none rgb(51, 51, 51)",
+        "borderTop": "0px none rgb(51, 51, 51)",
+        "position": "static",
+        "transition": "all",
+        "flex": "0 1 auto"
+       },
+       "kids": [
+        {
+         "tag": "div",
+         "cls": "optimization-link-block mt-20",
+         "rect": [
+          296,
+          550,
+          818,
+          21
+         ],
+         "txt": null,
+         "attrs": {},
+         "st": {
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "20px",
+          "color": "rgb(51, 51, 51)",
+          "textAlign": "start",
+          "margin": "20px 0px 12px",
+          "width": "818px",
+          "height": "21px",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "alignItems": "center",
+          "gap": "4px",
+          "border": "0px none rgb(51, 51, 51)",
+          "borderBottom": "0px none rgb(51, 51, 51)",
+          "borderTop": "0px none rgb(51, 51, 51)",
+          "position": "static",
+          "transition": "all",
+          "flex": "0 1 auto"
+         },
+         "kids": [
+          {
+           "tag": "div",
+           "cls": "optimization-main-block-text",
+           "rect": [
+            296,
+            550,
+            91,
+            21
+           ],
+           "txt": "Bidding Rules",
+           "attrs": {},
+           "st": {
+            "fontSize": "14px",
+            "fontWeight": "600",
+            "lineHeight": "21px",
+            "color": "rgb(26, 28, 30)",
+            "textAlign": "start",
+            "width": "91.4297px",
+            "height": "21px",
+            "display": "block",
+            "flexDirection": "row",
+            "border": "0px none rgb(26, 28, 30)",
+            "borderBottom": "0px none rgb(26, 28, 30)",
+            "borderTop": "0px none rgb(26, 28, 30)",
+            "position": "static",
+            "transition": "all",
+            "flex": "0 1 auto"
+           },
+           "kids": []
+          },
+          {
+           "tag": "a",
+           "cls": "button-link button-link-big button-link-primary",
+           "rect": [
+            986,
+            551,
+            128,
+            18
+           ],
+           "txt": "Manage Bidding Rules",
+           "attrs": {
+            "href": "/campaigns/edit/bulk-mode/bidding-rules"
+           },
+           "st": {
+            "fontSize": "12px",
+            "fontWeight": "600",
+            "lineHeight": "18px",
+            "color": "rgb(126, 35, 159)",
+            "textAlign": "start",
+            "width": "127.688px",
+            "height": "18px",
+            "display": "flex",
+            "flexDirection": "row",
+            "alignItems": "center",
+            "gap": "4px",
+            "border": "0px none rgb(126, 35, 159)",
+            "borderBottom": "0px none rgb(126, 35, 159)",
+            "borderTop": "0px none rgb(126, 35, 159)",
+            "position": "static",
+            "cursor": "pointer",
+            "transition": "0.12s linear",
+            "flex": "0 1 auto"
+           },
+           "kids": []
+          }
+         ]
+        },
+        {
+         "tag": "app-bidding-rules-list",
+         "cls": "",
+         "rect": [
+          296,
+          583,
+          818,
+          102
+         ],
+         "txt": null,
+         "attrs": {},
+         "st": {
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "20px",
+          "color": "rgb(51, 51, 51)",
+          "textAlign": "start",
+          "display": "inline",
+          "flexDirection": "row",
+          "border": "0px none rgb(51, 51, 51)",
+          "borderBottom": "0px none rgb(51, 51, 51)",
+          "borderTop": "0px none rgb(51, 51, 51)",
+          "position": "static",
+          "transition": "all",
+          "flex": "0 1 auto"
+         },
+         "kids": [
+          {
+           "tag": "div",
+           "cls": "bidding-rules-table ng-star-inserted",
+           "rect": [
+            296,
+            583,
+            818,
+            102
+           ],
+           "txt": null,
+           "attrs": {},
+           "st": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "color": "rgb(51, 51, 51)",
+            "textAlign": "start",
+            "width": "818px",
+            "height": "102px",
+            "display": "block",
+            "flexDirection": "row",
+            "border": "0px none rgb(51, 51, 51)",
+            "borderBottom": "0px none rgb(51, 51, 51)",
+            "borderTop": "0px none rgb(51, 51, 51)",
+            "position": "static",
+            "transition": "all",
+            "flex": "0 1 auto"
+           },
+           "kids": [
+            {
+             "tag": "ng2-table",
+             "cls": "",
+             "rect": [
+              296,
+              583,
+              818,
+              102
+             ],
+             "txt": null,
+             "attrs": {},
+             "st": {
+              "fontSize": "14px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "color": "rgb(51, 51, 51)",
+              "textAlign": "start",
+              "width": "818px",
+              "height": "102px",
+              "display": "flex",
+              "flexDirection": "column",
+              "border": "0px none rgb(51, 51, 51)",
+              "borderBottom": "0px none rgb(51, 51, 51)",
+              "borderTop": "0px none rgb(51, 51, 51)",
+              "position": "static",
+              "transition": "all",
+              "flex": "0 1 auto"
+             },
+             "kids": [
+              {
+               "tag": "div",
+               "cls": "component-table-container ng-star-inserted",
+               "rect": [
+                296,
+                583,
+                818,
+                102
+               ],
+               "txt": null,
+               "attrs": {},
+               "st": {
+                "fontSize": "14px",
+                "fontWeight": "400",
+                "lineHeight": "20px",
+                "color": "rgb(51, 51, 51)",
+                "textAlign": "start",
+                "width": "818px",
+                "height": "102px",
+                "display": "flex",
+                "flexDirection": "column",
+                "border": "0px none rgb(51, 51, 51)",
+                "borderBottom": "0px none rgb(51, 51, 51)",
+                "borderTop": "0px none rgb(51, 51, 51)",
+                "position": "static",
+                "transition": "all",
+                "flex": "0 1 auto"
+               },
+               "kids": [
+                {
+                 "tag": "div",
+                 "cls": "component-data component-table-data",
+                 "rect": [
+                  296,
+                  583,
+                  818,
+                  102
+                 ],
+                 "txt": null,
+                 "attrs": {},
+                 "st": {
+                  "fontSize": "14px",
+                  "fontWeight": "400",
+                  "lineHeight": "20px",
+                  "color": "rgb(51, 51, 51)",
+                  "textAlign": "start",
+                  "width": "818px",
+                  "height": "102px",
+                  "display": "block",
+                  "flexDirection": "row",
+                  "border": "0px none rgb(51, 51, 51)",
+                  "borderBottom": "0px none rgb(51, 51, 51)",
+                  "borderTop": "0px none rgb(51, 51, 51)",
+                  "position": "relative",
+                  "transition": "all",
+                  "flex": "0 1 auto"
+                 },
+                 "kids": [
+                  {
+                   "tag": "div",
+                   "cls": "table-flex no-data",
+                   "rect": [
+                    296,
+                    583,
+                    818,
+                    102
+                   ],
+                   "txt": null,
+                   "attrs": {},
+                   "st": {
+                    "fontSize": "14px",
+                    "fontWeight": "400",
+                    "lineHeight": "20px",
+                    "color": "rgb(51, 51, 51)",
+                    "textAlign": "start",
+                    "backgroundColor": "rgb(255, 255, 255)",
+                    "width": "818px",
+                    "height": "102px",
+                    "minWidth": "100%",
+                    "display": "block",
+                    "flexDirection": "row",
+                    "borderRadius": "3px",
+                    "border": "1px solid rgb(196, 198, 208)",
+                    "borderBottom": "1px solid rgb(196, 198, 208)",
+                    "borderTop": "1px solid rgb(196, 198, 208)",
+                    "position": "static",
+                    "transition": "all",
+                    "flex": "0 1 auto"
+                   },
+                   "kids": [
+                    {
+                     "tag": "table",
+                     "cls": "table table-component top",
+                     "rect": [
+                      297,
+                      584,
+                      816,
+                      100
+                     ],
+                     "txt": null,
+                     "attrs": {},
+                     "st": {
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "20px",
+                      "color": "rgb(51, 51, 51)",
+                      "textAlign": "start",
+                      "backgroundColor": "rgb(255, 255, 255)",
+                      "width": "816px",
+                      "height": "100px",
+                      "display": "table",
+                      "flexDirection": "row",
+                      "borderRadius": "3px",
+                      "border": "0px none rgb(51, 51, 51)",
+                      "borderBottom": "0px none rgb(51, 51, 51)",
+                      "borderTop": "0px none rgb(51, 51, 51)",
+                      "position": "static",
+                      "transition": "all",
+                      "flex": "0 1 auto"
+                     },
+                     "kids": [
+                      {
+                       "tag": "thead",
+                       "cls": "",
+                       "rect": [
+                        297,
+                        584,
+                        816,
+                        34
+                       ],
+                       "txt": null,
+                       "attrs": {},
+                       "st": {
+                        "fontSize": "14px",
+                        "fontWeight": "400",
+                        "lineHeight": "20px",
+                        "color": "rgb(51, 51, 51)",
+                        "textAlign": "start",
+                        "width": "816px",
+                        "height": "34px",
+                        "display": "table-header-group",
+                        "flexDirection": "row",
+                        "border": "0px none rgb(51, 51, 51)",
+                        "borderBottom": "0px none rgb(51, 51, 51)",
+                        "borderTop": "0px none rgb(51, 51, 51)",
+                        "position": "static",
+                        "transition": "all",
+                        "flex": "0 1 auto"
+                       },
+                       "kids": [
+                        {
+                         "tag": "tr",
+                         "cls": "",
+                         "rect": [
+                          297,
+                          584,
+                          816,
+                          34
+                         ],
+                         "txt": null,
+                         "attrs": {},
+                         "st": {
+                          "fontSize": "14px",
+                          "fontWeight": "400",
+                          "lineHeight": "20px",
+                          "color": "rgb(51, 51, 51)",
+                          "textAlign": "start",
+                          "width": "816px",
+                          "height": "34px",
+                          "display": "table-row",
+                          "flexDirection": "row",
+                          "border": "0px none rgb(51, 51, 51)",
+                          "borderBottom": "0px none rgb(51, 51, 51)",
+                          "borderTop": "0px none rgb(51, 51, 51)",
+                          "position": "static",
+                          "transition": "all",
+                          "flex": "0 1 auto"
+                         },
+                         "kids": []
+                        }
+                       ]
+                      },
+                      {
+                       "tag": "tbody",
+                       "cls": "",
+                       "rect": [
+                        297,
+                        618,
+                        816,
+                        66
+                       ],
+                       "txt": null,
+                       "attrs": {},
+                       "st": {
+                        "fontSize": "14px",
+                        "fontWeight": "400",
+                        "lineHeight": "20px",
+                        "color": "rgb(51, 51, 51)",
+                        "textAlign": "start",
+                        "width": "816px",
+                        "height": "66px",
+                        "display": "table-row-group",
+                        "flexDirection": "row",
+                        "border": "0px none rgb(51, 51, 51)",
+                        "borderBottom": "0px none rgb(51, 51, 51)",
+                        "borderTop": "0px none rgb(51, 51, 51)",
+                        "position": "static",
+                        "transition": "all",
+                        "flex": "0 1 auto"
+                       },
+                       "kids": [
+                        {
+                         "tag": "tr",
+                         "cls": "no-hover ng-star-inserted",
+                         "rect": [
+                          297,
+                          618,
+                          816,
+                          66
+                         ],
+                         "txt": null,
+                         "attrs": {},
+                         "st": {
+                          "fontSize": "14px",
+                          "fontWeight": "400",
+                          "lineHeight": "20px",
+                          "color": "rgb(26, 28, 30)",
+                          "textAlign": "start",
+                          "width": "816px",
+                          "height": "66px",
+                          "display": "table-row",
+                          "flexDirection": "row",
+                          "border": "0px none rgb(26, 28, 30)",
+                          "borderBottom": "0px none rgb(26, 28, 30)",
+                          "borderTop": "0px none rgb(26, 28, 30)",
+                          "position": "static",
+                          "transition": "all",
+                          "flex": "0 1 auto"
+                         },
+                         "kids": []
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "tag": "div",
+                 "cls": "d-flex content-between items-end",
+                 "rect": [
+                  296,
+                  685,
+                  818,
+                  0
+                 ],
+                 "txt": null,
+                 "attrs": {},
+                 "st": {
+                  "fontSize": "14px",
+                  "fontWeight": "400",
+                  "lineHeight": "20px",
+                  "color": "rgb(51, 51, 51)",
+                  "textAlign": "start",
+                  "width": "818px",
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "alignItems": "flex-end",
+                  "border": "0px none rgb(51, 51, 51)",
+                  "borderBottom": "0px none rgb(51, 51, 51)",
+                  "borderTop": "0px none rgb(51, 51, 51)",
+                  "position": "static",
+                  "transition": "all",
+                  "flex": "0 1 auto"
+                 },
+                 "kids": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "tag": "epom-modal",
+           "cls": "ng-star-inserted",
+           "rect": [
+            296,
+            685,
+            0,
+            0
+           ],
+           "txt": null,
+           "attrs": {},
+           "st": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "color": "rgb(51, 51, 51)",
+            "textAlign": "start",
+            "display": "inline",
+            "flexDirection": "row",
+            "border": "0px none rgb(51, 51, 51)",
+            "borderBottom": "0px none rgb(51, 51, 51)",
+            "borderTop": "0px none rgb(51, 51, 51)",
+            "position": "static",
+            "transition": "all",
+            "flex": "0 1 auto"
+           },
+           "kids": []
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "tag": "div",
+       "cls": "ng-star-inserted",
+       "rect": [
+        296,
+        709,
+        818,
+        135
+       ],
+       "txt": null,
+       "attrs": {},
+       "st": {
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "color": "rgb(51, 51, 51)",
+        "textAlign": "start",
+        "width": "818px",
+        "height": "135px",
+        "display": "block",
+        "flexDirection": "row",
+        "border": "0px none rgb(51, 51, 51)",
+        "borderBottom": "0px none rgb(51, 51, 51)",
+        "borderTop": "0px none rgb(51, 51, 51)",
+        "position": "static",
+        "transition": "all",
+        "flex": "0 1 auto"
+       },
+       "kids": [
+        {
+         "tag": "div",
+         "cls": "optimization-link-block mt-24",
+         "rect": [
+          296,
+          709,
+          818,
+          21
+         ],
+         "txt": null,
+         "attrs": {},
+         "st": {
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "20px",
+          "color": "rgb(51, 51, 51)",
+          "textAlign": "start",
+          "margin": "24px 0px 12px",
+          "width": "818px",
+          "height": "21px",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "alignItems": "center",
+          "gap": "4px",
+          "border": "0px none rgb(51, 51, 51)",
+          "borderBottom": "0px none rgb(51, 51, 51)",
+          "borderTop": "0px none rgb(51, 51, 51)",
+          "position": "static",
+          "transition": "all",
+          "flex": "0 1 auto"
+         },
+         "kids": [
+          {
+           "tag": "div",
+           "cls": "optimization-main-block-text",
+           "rect": [
+            296,
+            709,
+            90,
+            21
+           ],
+           "txt": "Bid Modifiers",
+           "attrs": {},
+           "st": {
+            "fontSize": "14px",
+            "fontWeight": "600",
+            "lineHeight": "21px",
+            "color": "rgb(26, 28, 30)",
+            "textAlign": "start",
+            "width": "89.5156px",
+            "height": "21px",
+            "display": "block",
+            "flexDirection": "row",
+            "border": "0px none rgb(26, 28, 30)",
+            "borderBottom": "0px none rgb(26, 28, 30)",
+            "borderTop": "0px none rgb(26, 28, 30)",
+            "position": "static",
+            "transition": "all",
+            "flex": "0 1 auto"
+           },
+           "kids": []
+          },
+          {
+           "tag": "a",
+           "cls": "button-link button-link-big button-link-primary",
+           "rect": [
+            988,
+            710,
+            126,
+            18
+           ],
+           "txt": "Manage Bid Modifiers",
+           "attrs": {
+            "href": "/campaigns/new/bid-modifiers"
+           },
+           "st": {
+            "fontSize": "12px",
+            "fontWeight": "600",
+            "lineHeight": "18px",
+            "color": "rgb(126, 35, 159)",
+            "textAlign": "start",
+            "width": "126.047px",
+            "height": "18px",
+            "display": "flex",
+            "flexDirection": "row",
+            "alignItems": "center",
+            "gap": "4px",
+            "border": "0px none rgb(126, 35, 159)",
+            "borderBottom": "0px none rgb(126, 35, 159)",
+            "borderTop": "0px none rgb(126, 35, 159)",
+            "position": "static",
+            "cursor": "pointer",
+            "transition": "0.12s linear",
+            "flex": "0 1 auto"
+           },
+           "kids": []
+          }
+         ]
+        },
+        {
+         "tag": "app-bid-multipliers-list",
+         "cls": "",
+         "rect": [
+          296,
+          742,
+          818,
+          102
+         ],
+         "txt": null,
+         "attrs": {},
+         "st": {
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "20px",
+          "color": "rgb(51, 51, 51)",
+          "textAlign": "start",
+          "display": "inline",
+          "flexDirection": "row",
+          "border": "0px none rgb(51, 51, 51)",
+          "borderBottom": "0px none rgb(51, 51, 51)",
+          "borderTop": "0px none rgb(51, 51, 51)",
+          "position": "static",
+          "transition": "all",
+          "flex": "0 1 auto"
+         },
+         "kids": [
+          {
+           "tag": "div",
+           "cls": "bid-multipliers-table",
+           "rect": [
+            296,
+            742,
+            818,
+            102
+           ],
+           "txt": null,
+           "attrs": {},
+           "st": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "color": "rgb(51, 51, 51)",
+            "textAlign": "start",
+            "width": "818px",
+            "height": "102px",
+            "display": "block",
+            "flexDirection": "row",
+            "border": "0px none rgb(51, 51, 51)",
+            "borderBottom": "0px none rgb(51, 51, 51)",
+            "borderTop": "0px none rgb(51, 51, 51)",
+            "position": "static",
+            "transition": "all",
+            "flex": "0 1 auto"
+           },
+           "kids": [
+            {
+             "tag": "ng2-table",
+             "cls": "",
+             "rect": [
+              296,
+              742,
+              818,
+              102
+             ],
+             "txt": null,
+             "attrs": {},
+             "st": {
+              "fontSize": "14px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "color": "rgb(51, 51, 51)",
+              "textAlign": "start",
+              "width": "818px",
+              "height": "102px",
+              "display": "flex",
+              "flexDirection": "column",
+              "border": "0px none rgb(51, 51, 51)",
+              "borderBottom": "0px none rgb(51, 51, 51)",
+              "borderTop": "0px none rgb(51, 51, 51)",
+              "position": "static",
+              "transition": "all",
+              "flex": "0 1 auto"
+             },
+             "kids": [
+              {
+               "tag": "div",
+               "cls": "component-table-container ng-star-inserted",
+               "rect": [
+                296,
+                742,
+                818,
+                102
+               ],
+               "txt": null,
+               "attrs": {},
+               "st": {
+                "fontSize": "14px",
+                "fontWeight": "400",
+                "lineHeight": "20px",
+                "color": "rgb(51, 51, 51)",
+                "textAlign": "start",
+                "width": "818px",
+                "height": "102px",
+                "display": "flex",
+                "flexDirection": "column",
+                "border": "0px none rgb(51, 51, 51)",
+                "borderBottom": "0px none rgb(51, 51, 51)",
+                "borderTop": "0px none rgb(51, 51, 51)",
+                "position": "static",
+                "transition": "all",
+                "flex": "0 1 auto"
+               },
+               "kids": [
+                {
+                 "tag": "div",
+                 "cls": "component-data component-table-data",
+                 "rect": [
+                  296,
+                  742,
+                  818,
+                  102
+                 ],
+                 "txt": null,
+                 "attrs": {},
+                 "st": {
+                  "fontSize": "14px",
+                  "fontWeight": "400",
+                  "lineHeight": "20px",
+                  "color": "rgb(51, 51, 51)",
+                  "textAlign": "start",
+                  "width": "818px",
+                  "height": "102px",
+                  "display": "block",
+                  "flexDirection": "row",
+                  "border": "0px none rgb(51, 51, 51)",
+                  "borderBottom": "0px none rgb(51, 51, 51)",
+                  "borderTop": "0px none rgb(51, 51, 51)",
+                  "position": "relative",
+                  "transition": "all",
+                  "flex": "0 1 auto"
+                 },
+                 "kids": [
+                  {
+                   "tag": "div",
+                   "cls": "table-flex no-data",
+                   "rect": [
+                    296,
+                    742,
+                    818,
+                    102
+                   ],
+                   "txt": null,
+                   "attrs": {},
+                   "st": {
+                    "fontSize": "14px",
+                    "fontWeight": "400",
+                    "lineHeight": "20px",
+                    "color": "rgb(51, 51, 51)",
+                    "textAlign": "start",
+                    "backgroundColor": "rgb(255, 255, 255)",
+                    "width": "818px",
+                    "height": "102px",
+                    "minWidth": "100%",
+                    "display": "block",
+                    "flexDirection": "row",
+                    "borderRadius": "3px",
+                    "border": "1px solid rgb(196, 198, 208)",
+                    "borderBottom": "1px solid rgb(196, 198, 208)",
+                    "borderTop": "1px solid rgb(196, 198, 208)",
+                    "position": "static",
+                    "transition": "all",
+                    "flex": "0 1 auto"
+                   },
+                   "kids": [
+                    {
+                     "tag": "table",
+                     "cls": "table table-component top",
+                     "rect": [
+                      297,
+                      743,
+                      816,
+                      100
+                     ],
+                     "txt": null,
+                     "attrs": {},
+                     "st": {
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "20px",
+                      "color": "rgb(51, 51, 51)",
+                      "textAlign": "start",
+                      "backgroundColor": "rgb(255, 255, 255)",
+                      "width": "816px",
+                      "height": "100px",
+                      "display": "table",
+                      "flexDirection": "row",
+                      "borderRadius": "3px",
+                      "border": "0px none rgb(51, 51, 51)",
+                      "borderBottom": "0px none rgb(51, 51, 51)",
+                      "borderTop": "0px none rgb(51, 51, 51)",
+                      "position": "static",
+                      "transition": "all",
+                      "flex": "0 1 auto"
+                     },
+                     "kids": [
+                      {
+                       "tag": "thead",
+                       "cls": "",
+                       "rect": [
+                        297,
+                        743,
+                        816,
+                        34
+                       ],
+                       "txt": null,
+                       "attrs": {},
+                       "st": {
+                        "fontSize": "14px",
+                        "fontWeight": "400",
+                        "lineHeight": "20px",
+                        "color": "rgb(51, 51, 51)",
+                        "textAlign": "start",
+                        "width": "816px",
+                        "height": "34px",
+                        "display": "table-header-group",
+                        "flexDirection": "row",
+                        "border": "0px none rgb(51, 51, 51)",
+                        "borderBottom": "0px none rgb(51, 51, 51)",
+                        "borderTop": "0px none rgb(51, 51, 51)",
+                        "position": "static",
+                        "transition": "all",
+                        "flex": "0 1 auto"
+                       },
+                       "kids": [
+                        {
+                         "tag": "tr",
+                         "cls": "",
+                         "rect": [
+                          297,
+                          743,
+                          816,
+                          34
+                         ],
+                         "txt": null,
+                         "attrs": {},
+                         "st": {
+                          "fontSize": "14px",
+                          "fontWeight": "400",
+                          "lineHeight": "20px",
+                          "color": "rgb(51, 51, 51)",
+                          "textAlign": "start",
+                          "width": "816px",
+                          "height": "34px",
+                          "display": "table-row",
+                          "flexDirection": "row",
+                          "border": "0px none rgb(51, 51, 51)",
+                          "borderBottom": "0px none rgb(51, 51, 51)",
+                          "borderTop": "0px none rgb(51, 51, 51)",
+                          "position": "static",
+                          "transition": "all",
+                          "flex": "0 1 auto"
+                         },
+                         "kids": []
+                        }
+                       ]
+                      },
+                      {
+                       "tag": "tbody",
+                       "cls": "",
+                       "rect": [
+                        297,
+                        777,
+                        816,
+                        66
+                       ],
+                       "txt": null,
+                       "attrs": {},
+                       "st": {
+                        "fontSize": "14px",
+                        "fontWeight": "400",
+                        "lineHeight": "20px",
+                        "color": "rgb(51, 51, 51)",
+                        "textAlign": "start",
+                        "width": "816px",
+                        "height": "66px",
+                        "display": "table-row-group",
+                        "flexDirection": "row",
+                        "border": "0px none rgb(51, 51, 51)",
+                        "borderBottom": "0px none rgb(51, 51, 51)",
+                        "borderTop": "0px none rgb(51, 51, 51)",
+                        "position": "static",
+                        "transition": "all",
+                        "flex": "0 1 auto"
+                       },
+                       "kids": [
+                        {
+                         "tag": "tr",
+                         "cls": "no-hover ng-star-inserted",
+                         "rect": [
+                          297,
+                          777,
+                          816,
+                          66
+                         ],
+                         "txt": null,
+                         "attrs": {},
+                         "st": {
+                          "fontSize": "14px",
+                          "fontWeight": "400",
+                          "lineHeight": "20px",
+                          "color": "rgb(26, 28, 30)",
+                          "textAlign": "start",
+                          "width": "816px",
+                          "height": "66px",
+                          "display": "table-row",
+                          "flexDirection": "row",
+                          "border": "0px none rgb(26, 28, 30)",
+                          "borderBottom": "0px none rgb(26, 28, 30)",
+                          "borderTop": "0px none rgb(26, 28, 30)",
+                          "position": "static",
+                          "transition": "all",
+                          "flex": "0 1 auto"
+                         },
+                         "kids": []
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "tag": "div",
+                 "cls": "d-flex content-between items-end",
+                 "rect": [
+                  296,
+                  844,
+                  818,
+                  0
+                 ],
+                 "txt": null,
+                 "attrs": {},
+                 "st": {
+                  "fontSize": "14px",
+                  "fontWeight": "400",
+                  "lineHeight": "20px",
+                  "color": "rgb(51, 51, 51)",
+                  "textAlign": "start",
+                  "width": "818px",
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-between",
+                  "alignItems": "flex-end",
+                  "border": "0px none rgb(51, 51, 51)",
+                  "borderBottom": "0px none rgb(51, 51, 51)",
+                  "borderTop": "0px none rgb(51, 51, 51)",
+                  "position": "static",
+                  "transition": "all",
+                  "flex": "0 1 auto"
+                 },
+                 "kids": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "tag": "div",
+       "cls": "mt-24",
+       "rect": [
+        296,
+        868,
+        818,
+        80
+       ],
+       "txt": null,
+       "attrs": {},
+       "st": {
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "color": "rgb(51, 51, 51)",
+        "textAlign": "start",
+        "margin": "24px 0px 0px",
+        "width": "818px",
+        "height": "80px",
+        "display": "block",
+        "flexDirection": "row",
+        "border": "0px none rgb(51, 51, 51)",
+        "borderBottom": "0px none rgb(51, 51, 51)",
+        "borderTop": "0px none rgb(51, 51, 51)",
+        "position": "static",
+        "transition": "all",
+        "flex": "0 1 auto"
+       },
+       "kids": [
+        {
+         "tag": "div",
+         "cls": "form-control-wrapper",
+         "rect": [
+          296,
+          868,
+          720,
+          58
+         ],
+         "txt": null,
+         "attrs": {},
+         "st": {
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "20px",
+          "color": "rgb(51, 51, 51)",
+          "textAlign": "start",
+          "width": "720px",
+          "height": "58px",
+          "display": "flex",
+          "flexDirection": "column-reverse",
+          "border": "0px none rgb(51, 51, 51)",
+          "borderBottom": "0px none rgb(51, 51, 51)",
+          "borderTop": "0px none rgb(51, 51, 51)",
+          "position": "static",
+          "transition": "all",
+          "flex": "0 1 auto"
+         },
+         "kids": [
+          {
+           "tag": "input",
+           "cls": "form-control ng-untouched ng-pristine ng-valid",
+           "rect": [
+            296,
+            890,
+            720,
+            36
+           ],
+           "txt": null,
+           "attrs": {
+            "type": "text",
+            "placeholder": "Enter Max Bid"
+           },
+           "st": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "color": "rgb(26, 28, 30)",
+            "textAlign": "start",
+            "padding": "8px 12px",
+            "width": "720px",
+            "height": "36px",
+            "display": "block",
+            "flexDirection": "row",
+            "borderRadius": "4px",
+            "border": "1px solid rgb(196, 198, 208)",
+            "borderBottom": "1px solid rgb(196, 198, 208)",
+            "borderTop": "1px solid rgb(196, 198, 208)",
+            "position": "static",
+            "cursor": "text",
+            "transition": "border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out",
+            "flex": "0 1 auto"
+           },
+           "kids": []
+          },
+          {
+           "tag": "label",
+           "cls": "control-label",
+           "rect": [
+            296,
+            868,
+            720,
+            18
+           ],
+           "txt": "Max Bid Price",
+           "attrs": {},
+           "st": {
+            "fontSize": "12px",
+            "fontWeight": "600",
+            "lineHeight": "18px",
+            "color": "rgb(116, 119, 127)",
+            "textAlign": "start",
+            "margin": "0px 0px 4px",
+            "width": "720px",
+            "height": "18px",
+            "display": "block",
+            "flexDirection": "row",
+            "alignItems": "baseline",
+            "border": "0px none rgb(116, 119, 127)",
+            "borderBottom": "0px none rgb(116, 119, 127)",
+            "borderTop": "0px none rgb(116, 119, 127)",
+            "position": "static",
+            "transition": "all",
+            "flex": "0 1 auto"
+           },
+           "kids": []
+          }
+         ]
+        },
+        {
+         "tag": "span",
+         "cls": "optimization-max-bid-price-info",
+         "rect": [
+          296,
+          930,
+          221,
+          18
+         ],
+         "txt": "Applied For Bid Rules And Bid Modifiers",
+         "attrs": {},
+         "st": {
+          "fontSize": "12px",
+          "fontWeight": "400",
+          "lineHeight": "18px",
+          "color": "rgb(116, 119, 127)",
+          "textAlign": "start",
+          "margin": "4px 0px 0px",
+          "width": "221.344px",
+          "height": "18px",
+          "display": "inline-block",
+          "flexDirection": "row",
+          "border": "0px none rgb(116, 119, 127)",
+          "borderBottom": "0px none rgb(116, 119, 127)",
+          "borderTop": "0px none rgb(116, 119, 127)",
+          "position": "static",
+          "transition": "all",
+          "flex": "0 1 auto"
+         },
+         "kids": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "footer": {
+  "tag": "div",
+  "cls": "page-footer ng-star-inserted",
+  "rect": [
+   272,
+   988,
+   866,
+   36
+  ],
+  "txt": null,
+  "attrs": {},
+  "st": {
+   "fontSize": "14px",
+   "fontWeight": "400",
+   "lineHeight": "20px",
+   "color": "rgb(51, 51, 51)",
+   "textAlign": "start",
+   "margin": "16px 0px 0px",
+   "width": "866px",
+   "height": "36px",
+   "display": "flex",
+   "flexDirection": "row",
+   "justifyContent": "flex-end",
+   "gap": "16px",
+   "border": "0px none rgb(51, 51, 51)",
+   "borderBottom": "0px none rgb(51, 51, 51)",
+   "borderTop": "0px none rgb(51, 51, 51)",
+   "position": "static",
+   "transition": "all",
+   "flex": "0 1 auto"
+  },
+  "kids": [
+   {
+    "tag": "button",
+    "cls": "button button-outlined-grey ng-star-inserted",
+    "rect": [
+     706,
+     988,
+     96,
+     36
+    ],
+    "txt": "Cancel",
+    "attrs": {
+     "type": "button"
+    },
+    "st": {
+     "fontSize": "14px",
+     "fontWeight": "600",
+     "lineHeight": "21px",
+     "color": "rgb(26, 28, 30)",
+     "textAlign": "center",
+     "padding": "6.5px 16px",
+     "width": "96px",
+     "height": "36px",
+     "minWidth": "96px",
+     "display": "block",
+     "flexDirection": "row",
+     "borderRadius": "4px",
+     "border": "1px solid rgb(116, 119, 127)",
+     "borderBottom": "1px solid rgb(116, 119, 127)",
+     "borderTop": "1px solid rgb(116, 119, 127)",
+     "position": "static",
+     "cursor": "pointer",
+     "transition": "all",
+     "flex": "0 1 auto"
+    },
+    "kids": []
+   },
+   {
+    "tag": "button",
+    "cls": "button button-outlined ng-star-inserted",
+    "rect": [
+     818,
+     988,
+     96,
+     36
+    ],
+    "txt": "Previous",
+    "attrs": {
+     "type": "button"
+    },
+    "st": {
+     "fontSize": "14px",
+     "fontWeight": "600",
+     "lineHeight": "21px",
+     "color": "rgb(126, 35, 159)",
+     "textAlign": "center",
+     "padding": "6.5px 15px",
+     "width": "96px",
+     "height": "36px",
+     "minWidth": "96px",
+     "display": "block",
+     "flexDirection": "row",
+     "borderRadius": "4px",
+     "border": "1px solid rgb(126, 35, 159)",
+     "borderBottom": "1px solid rgb(126, 35, 159)",
+     "borderTop": "1px solid rgb(126, 35, 159)",
+     "position": "static",
+     "cursor": "pointer",
+     "transition": "all",
+     "flex": "0 1 auto"
+    },
+    "kids": []
+   },
+   {
+    "tag": "button",
+    "cls": "button button-primary ng-star-inserted",
+    "rect": [
+     930,
+     988,
+     96,
+     36
+    ],
+    "txt": "Next",
+    "attrs": {
+     "type": "button"
+    },
+    "st": {
+     "fontSize": "14px",
+     "fontWeight": "600",
+     "lineHeight": "21px",
+     "color": "rgb(255, 255, 255)",
+     "textAlign": "center",
+     "backgroundColor": "rgb(126, 35, 159)",
+     "padding": "7.5px 16px",
+     "width": "96px",
+     "height": "36px",
+     "minWidth": "96px",
+     "display": "block",
+     "flexDirection": "row",
+     "borderRadius": "4px",
+     "border": "0px none rgb(255, 255, 255)",
+     "borderBottom": "0px none rgb(255, 255, 255)",
+     "borderTop": "0px none rgb(255, 255, 255)",
+     "boxShadow": "rgba(24, 28, 34, 0.15) 0px 1px 2px 0px, rgba(0, 0, 0, 0.05) 0px 0px 5px 0px",
+     "position": "static",
+     "cursor": "pointer",
+     "transition": "all",
+     "flex": "0 1 auto"
+    },
+    "kids": []
+   },
+   {
+    "tag": "button",
+    "cls": "button button-primary ng-star-inserted",
+    "rect": [
+     1042,
+     988,
+     96,
+     36
+    ],
+    "txt": "Save",
+    "attrs": {
+     "type": "button"
+    },
+    "st": {
+     "fontSize": "14px",
+     "fontWeight": "600",
+     "lineHeight": "21px",
+     "color": "rgb(255, 255, 255)",
+     "textAlign": "center",
+     "backgroundColor": "rgb(126, 35, 159)",
+     "padding": "7.5px 16px",
+     "width": "96px",
+     "height": "36px",
+     "minWidth": "96px",
+     "display": "block",
+     "flexDirection": "row",
+     "borderRadius": "4px",
+     "border": "0px none rgb(255, 255, 255)",
+     "borderBottom": "0px none rgb(255, 255, 255)",
+     "borderTop": "0px none rgb(255, 255, 255)",
+     "boxShadow": "rgba(24, 28, 34, 0.15) 0px 1px 2px 0px, rgba(0, 0, 0, 0.05) 0px 0px 5px 0px",
+     "position": "static",
+     "cursor": "pointer",
+     "transition": "all",
+     "flex": "0 1 auto"
+    },
+    "kids": []
+   }
+  ]
+ }
+}

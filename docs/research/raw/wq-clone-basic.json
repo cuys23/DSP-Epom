@@ -1,0 +1,161 @@
+{
+ "innerW": 1440,
+ "h1": {
+  "r": [
+   272,
+   95,
+   244,
+   24
+  ],
+  "s": {
+   "fontSize": "20px",
+   "fontWeight": "700",
+   "lineHeight": "24px",
+   "color": "rgb(26, 28, 30)"
+  }
+ },
+ "tabs": [
+  {
+   "t": "Basic Info",
+   "r": [
+    272,
+    141,
+    75,
+    34
+   ],
+   "c": "rgb(126, 35, 159)",
+   "bb": "rgb(126, 35, 159)"
+  },
+  {
+   "t": "Audience",
+   "r": [
+    379,
+    141,
+    72,
+    34
+   ],
+   "c": "rgb(116, 119, 127)",
+   "bb": "rgba(0, 0, 0, 0)"
+  },
+  {
+   "t": "Bidding Strategy",
+   "r": [
+    482,
+    141,
+    127,
+    34
+   ],
+   "c": "rgb(116, 119, 127)",
+   "bb": "rgba(0, 0, 0, 0)"
+  },
+  {
+   "t": "Budgets",
+   "r": [
+    641,
+    141,
+    63,
+    34
+   ],
+   "c": "rgb(116, 119, 127)",
+   "bb": "rgba(0, 0, 0, 0)"
+  },
+  {
+   "t": "Traffic Source",
+   "r": [
+    736,
+    141,
+    106,
+    34
+   ],
+   "c": "rgb(116, 119, 127)",
+   "bb": "rgba(0, 0, 0, 0)"
+  },
+  {
+   "t": "Optimization",
+   "r": [
+    874,
+    141,
+    101,
+    34
+   ],
+   "c": "rgb(116, 119, 127)",
+   "bb": "rgba(0, 0, 0, 0)"
+  }
+ ],
+ "boxes": [
+  [
+   272,
+   191,
+   866,
+   324
+  ],
+  [
+   272,
+   531,
+   866,
+   290
+  ]
+ ],
+ "btns": [
+  {
+   "t": "Cancel",
+   "r": [
+    818,
+    905,
+    96,
+    36
+   ],
+   "bg": "rgba(0, 0, 0, 0)",
+   "bc": "rgb(116, 119, 127)",
+   "c": "rgb(26, 28, 30)"
+  },
+  {
+   "t": "Next",
+   "r": [
+    930,
+    905,
+    96,
+    36
+   ],
+   "bg": "rgb(126, 35, 159)",
+   "bc": "rgb(255, 255, 255)",
+   "c": "rgb(255, 255, 255)"
+  },
+  {
+   "t": "Save",
+   "r": [
+    1042,
+    905,
+    96,
+    36
+   ],
+   "bg": "rgb(126, 35, 159)",
+   "bc": "rgb(255, 255, 255)",
+   "c": "rgb(255, 255, 255)"
+  }
+ ],
+ "rail": {
+  "r": [
+   1170,
+   57,
+   270,
+   650
+  ]
+ },
+ "railTexts": [
+  "Summary",
+  "Creative type:",
+  "smart_display",
+  "Video",
+  "Basic info",
+  "Bid Price",
+  "Pricing Model:",
+  "CPM",
+  "Audience",
+  "Audience are not configured.",
+  "Budgets",
+  "Budgets are not configured.",
+  "Bidding strategy",
+  "Bidding settings"
+ ]
+}
