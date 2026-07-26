@@ -1,0 +1,1128 @@
+[
+  {
+    "name": "Aceex Native Web",
+    "labels": [
+      {
+        "text": "Web",
+        "color": "#ff8800"
+      }
+    ]
+  },
+  {
+    "name": "Aceex video",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Aceex1 Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Aceex1 Display Web",
+    "labels": [
+      {
+        "text": "Web",
+        "color": "#ff8800"
+      },
+      {
+        "text": "Banner",
+        "color": "#ff0095"
+      },
+      {
+        "text": "CPM",
+        "color": "#c07f0f"
+      }
+    ]
+  },
+  {
+    "name": "AdEclipse Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "AdInTouch Video",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "AdView Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      },
+      {
+        "text": "Banner",
+        "color": "#ff0095"
+      },
+      {
+        "text": "CPM",
+        "color": "#c07f0f"
+      }
+    ]
+  },
+  {
+    "name": "AdView Native",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Adelion Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Adintouch Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Adintouch Native Web",
+    "labels": [
+      {
+        "text": "Web",
+        "color": "#ff8800"
+      }
+    ]
+  },
+  {
+    "name": "Adisontv Video",
+    "labels": []
+  },
+  {
+    "name": "Admatic Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Admile Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Adview video",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Adyoulike Native Web",
+    "labels": [
+      {
+        "text": "Web",
+        "color": "#ff8800"
+      }
+    ]
+  },
+  {
+    "name": "Afront Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      },
+      {
+        "text": "Banner",
+        "color": "#ff0095"
+      },
+      {
+        "text": "CPM",
+        "color": "#c07f0f"
+      }
+    ]
+  },
+  {
+    "name": "Afront Display Web",
+    "labels": [
+      {
+        "text": "Web",
+        "color": "#ff8800"
+      }
+    ]
+  },
+  {
+    "name": "Afront Video",
+    "labels": []
+  },
+  {
+    "name": "Algorix Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      },
+      {
+        "text": "Banner",
+        "color": "#ff0095"
+      },
+      {
+        "text": "CPM",
+        "color": "#c07f0f"
+      }
+    ]
+  },
+  {
+    "name": "Algorix Native",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Algorix Video",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Algorix Video Web",
+    "labels": [
+      {
+        "text": "Web",
+        "color": "#ff8800"
+      }
+    ]
+  },
+  {
+    "name": "BidFuse Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      },
+      {
+        "text": "Banner",
+        "color": "#ff0095"
+      },
+      {
+        "text": "CPM",
+        "color": "#c07f0f"
+      }
+    ]
+  },
+  {
+    "name": "BidTox Video",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Bidfuse Video",
+    "labels": []
+  },
+  {
+    "name": "Bidtox Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Bidtox Native web",
+    "labels": [
+      {
+        "text": "Web",
+        "color": "#ff8800"
+      }
+    ]
+  },
+  {
+    "name": "Bidtox Video web",
+    "labels": [
+      {
+        "text": "Web",
+        "color": "#ff8800"
+      }
+    ]
+  },
+  {
+    "name": "BizzClick Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      },
+      {
+        "text": "Banner",
+        "color": "#ff0095"
+      },
+      {
+        "text": "CPM",
+        "color": "#c07f0f"
+      }
+    ]
+  },
+  {
+    "name": "Bizzclick Display WL",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Bizzclick Native",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Bizzclick Native Web",
+    "labels": [
+      {
+        "text": "Web",
+        "color": "#ff8800"
+      }
+    ]
+  },
+  {
+    "name": "Bizzclick Video",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Bizzclick Video Web",
+    "labels": [
+      {
+        "text": "Web",
+        "color": "#ff8800"
+      }
+    ]
+  },
+  {
+    "name": "Brainx Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "CTV TEST BIDSTREAM DEU",
+    "labels": []
+  },
+  {
+    "name": "Casai Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      },
+      {
+        "text": "Banner",
+        "color": "#ff0095"
+      },
+      {
+        "text": "CPM",
+        "color": "#c07f0f"
+      }
+    ]
+  },
+  {
+    "name": "Casai Video",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "DoByAI Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "DoByAI Native",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "DoByAI Native Web",
+    "labels": [
+      {
+        "text": "Web",
+        "color": "#ff8800"
+      }
+    ]
+  },
+  {
+    "name": "DoByAI Video",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "DoByAI Video Web",
+    "labels": [
+      {
+        "text": "Web",
+        "color": "#ff8800"
+      }
+    ]
+  },
+  {
+    "name": "ECS-15263",
+    "labels": []
+  },
+  {
+    "name": "Epom Whitelist",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Escalax Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "FmdMedia Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "FusionAd Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Gadsme Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      },
+      {
+        "text": "Banner",
+        "color": "#ff0095"
+      },
+      {
+        "text": "CPM",
+        "color": "#c07f0f"
+      }
+    ]
+  },
+  {
+    "name": "Gadsme Video",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Gothamads Native",
+    "labels": [
+      {
+        "text": "Web",
+        "color": "#ff8800"
+      }
+    ]
+  },
+  {
+    "name": "Gothamads Video",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Gothamads Video Web",
+    "labels": [
+      {
+        "text": "Web",
+        "color": "#ff8800"
+      }
+    ]
+  },
+  {
+    "name": "Gothamads1 Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      },
+      {
+        "text": "Banner",
+        "color": "#ff0095"
+      },
+      {
+        "text": "CPM",
+        "color": "#c07f0f"
+      }
+    ]
+  },
+  {
+    "name": "IQzone Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      },
+      {
+        "text": "Banner",
+        "color": "#ff0095"
+      },
+      {
+        "text": "CPM",
+        "color": "#c07f0f"
+      }
+    ]
+  },
+  {
+    "name": "IQzone Video",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "InMobi Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "InMobi Video",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Integralstream Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Integralstream Video",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Intenziq Display Web",
+    "labels": [
+      {
+        "text": "Web",
+        "color": "#ff8800"
+      }
+    ]
+  },
+  {
+    "name": "Iran",
+    "labels": []
+  },
+  {
+    "name": "Lacuna Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Lacuna Native",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Lacuna Video",
+    "labels": []
+  },
+  {
+    "name": "Loyalapp Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      },
+      {
+        "text": "Banner",
+        "color": "#ff0095"
+      },
+      {
+        "text": "CPM",
+        "color": "#c07f0f"
+      }
+    ]
+  },
+  {
+    "name": "Loyalapp Video",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Mirai Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Mirai Video",
+    "labels": []
+  },
+  {
+    "name": "Mobupps Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Mobupps Display WL",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Mobupps Video",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Mobupps Video Web",
+    "labels": [
+      {
+        "text": "Web",
+        "color": "#ff8800"
+      }
+    ]
+  },
+  {
+    "name": "NetMarvel Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Nhance Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      },
+      {
+        "text": "Banner",
+        "color": "#ff0095"
+      },
+      {
+        "text": "CPM",
+        "color": "#c07f0f"
+      }
+    ]
+  },
+  {
+    "name": "Nhance Native",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Opera Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Opera Native",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Opera Video",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Pulsepoint Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Pulsepoint Video",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Redmob Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Redmob Native",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Redmob Video",
+    "labels": []
+  },
+  {
+    "name": "Revcontent Native Web",
+    "labels": [
+      {
+        "text": "Web",
+        "color": "#ff8800"
+      }
+    ]
+  },
+  {
+    "name": "RockMobile Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      },
+      {
+        "text": "Banner",
+        "color": "#ff0095"
+      },
+      {
+        "text": "CPM",
+        "color": "#c07f0f"
+      }
+    ]
+  },
+  {
+    "name": "RockMobile Native",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "RockMobile Native Web",
+    "labels": [
+      {
+        "text": "Web",
+        "color": "#ff8800"
+      }
+    ]
+  },
+  {
+    "name": "RockMobile Video",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "RockMobile Video Web",
+    "labels": [
+      {
+        "text": "Web",
+        "color": "#ff8800"
+      }
+    ]
+  },
+  {
+    "name": "Saturn Dynamic Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      },
+      {
+        "text": "Banner",
+        "color": "#ff0095"
+      },
+      {
+        "text": "CPM",
+        "color": "#c07f0f"
+      }
+    ]
+  },
+  {
+    "name": "Saturn Dynamic Video",
+    "labels": []
+  },
+  {
+    "name": "SelfServeEndpoint",
+    "labels": []
+  },
+  {
+    "name": "Smaato Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      },
+      {
+        "text": "Banner",
+        "color": "#ff0095"
+      },
+      {
+        "text": "CPM",
+        "color": "#c07f0f"
+      }
+    ]
+  },
+  {
+    "name": "Smaato Display Android",
+    "labels": []
+  },
+  {
+    "name": "Smaato Display Web",
+    "labels": [
+      {
+        "text": "Web",
+        "color": "#ff8800"
+      }
+    ]
+  },
+  {
+    "name": "Smaato video",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      },
+      {
+        "text": "Video",
+        "color": "#00ff33"
+      },
+      {
+        "text": "CPM",
+        "color": "#c07f0f"
+      }
+    ]
+  },
+  {
+    "name": "Smartyads Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Smartyads Display WL",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Smartyads Display Web",
+    "labels": [
+      {
+        "text": "Web",
+        "color": "#ff8800"
+      },
+      {
+        "text": "Banner",
+        "color": "#ff0095"
+      },
+      {
+        "text": "CPM",
+        "color": "#c07f0f"
+      }
+    ]
+  },
+  {
+    "name": "Smartyads Native",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Smartyads Native Web",
+    "labels": [
+      {
+        "text": "Web",
+        "color": "#ff8800"
+      }
+    ]
+  },
+  {
+    "name": "Smartyads Video",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "Smartyads Video Web",
+    "labels": [
+      {
+        "text": "Web",
+        "color": "#ff8800"
+      }
+    ]
+  },
+  {
+    "name": "Sovrn Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      },
+      {
+        "text": "Banner",
+        "color": "#ff0095"
+      },
+      {
+        "text": "CPM",
+        "color": "#c07f0f"
+      }
+    ]
+  },
+  {
+    "name": "Sovrn Video",
+    "labels": []
+  },
+  {
+    "name": "Sovrn Video Web",
+    "labels": []
+  },
+  {
+    "name": "Support Test",
+    "labels": []
+  },
+  {
+    "name": "Tenx Video",
+    "labels": []
+  },
+  {
+    "name": "Test EP Support",
+    "labels": []
+  },
+  {
+    "name": "TopOn Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "TopOn Video",
+    "labels": [
+      {
+        "text": "test",
+        "color": "#bd0910"
+      },
+      {
+        "text": "topon-all",
+        "color": "#717866"
+      }
+    ]
+  },
+  {
+    "name": "VIADS Display Web",
+    "labels": [
+      {
+        "text": "Web",
+        "color": "#ff8800"
+      }
+    ]
+  },
+  {
+    "name": "Yeahmobi Display",
+    "labels": [
+      {
+        "text": "In-app",
+        "color": "#e1ff00"
+      }
+    ]
+  },
+  {
+    "name": "aceex-banner-web",
+    "labels": []
+  },
+  {
+    "name": "aemdays - all",
+    "labels": []
+  },
+  {
+    "name": "mangox - banner - inapp",
+    "labels": []
+  },
+  {
+    "name": "pubmatic_general",
+    "labels": []
+  },
+  {
+    "name": "test",
+    "labels": []
+  },
+  {
+    "name": "test QA imp",
+    "labels": []
+  },
+  {
+    "name": "test imp",
+    "labels": []
+  }
+]

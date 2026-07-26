@@ -1,0 +1,14 @@
+.aside-hide .progress.fixed { left: 50px; }
+body.aside-hide .content { margin-left: 74px; }
+body.aside-hide #aside { left: -162px; }
+.aside-hide .content-layout .double-bounce { padding-left: 30px; }
+.aside-hide ul.main-nav li a > span { padding-left: 10px; width: 110px; left: 127px !important; }
+.aside-hide ul.main-nav li.active a > span { padding-left: 10px; width: 110px; left: 160px !important; }
+.aside-hide .aside-collapse .logo { height: 60px; padding: 8px 20px; position: relative; }
+.aside-hide .aside-collapse .logo-img { height: 43px; max-width: 90%; }
+.aside-hide ul.main-nav > li.active { transform: translate(-76px); border-right: 2px solid var(--themeNavActiveBg-color); }
+.aside-hide ul.main-nav > li.active ui > li.active > a > span { left: 285px !important; background-color: var(--themeNavActiveBg-color); }
+.aside-hide ul li.active a > span { transform: translate(45px); }
+.aside-hide li.active .arrow-icon { transform: translate(76px); transition: none; }
+.aside-hide .arrow-icon { margin-right: 10px; }
+.aside-hide .aside-collapse { display: block; width: 40px; height: 40px; position: absolute; right: 31px !important; }

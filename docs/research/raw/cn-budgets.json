@@ -1,0 +1,293 @@
+{
+ "tag": "div",
+ "cls": "explore-tile page-block page-block-32 d-flex",
+ "rect": [
+  272,
+  191,
+  866,
+  245
+ ],
+ "txt": null,
+ "attrs": {},
+ "st": {
+  "fontSize": "14px",
+  "fontWeight": "400",
+  "lineHeight": "20px",
+  "color": "rgb(51, 51, 51)",
+  "textAlign": "start",
+  "backgroundColor": "rgb(255, 255, 255)",
+  "padding": "32px",
+  "width": "866px",
+  "height": "245px",
+  "display": "flex",
+  "flexDirection": "row",
+  "justifyContent": "space-between",
+  "gap": "32px",
+  "borderRadius": "4px",
+  "border": "0px none rgb(51, 51, 51)",
+  "position": "static",
+  "transition": "all",
+  "flex": "0 1 auto",
+  "objectFit": "fill"
+ },
+ "kids": [
+  {
+   "tag": "div",
+   "cls": "",
+   "rect": [
+    304,
+    223,
+    502,
+    181
+   ],
+   "txt": null,
+   "attrs": {},
+   "st": {
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "20px",
+    "color": "rgb(51, 51, 51)",
+    "textAlign": "start",
+    "width": "502px",
+    "height": "181px",
+    "display": "block",
+    "flexDirection": "row",
+    "border": "0px none rgb(51, 51, 51)",
+    "position": "static",
+    "transition": "all",
+    "flex": "0 1 auto",
+    "objectFit": "fill"
+   },
+   "kids": [
+    {
+     "tag": "h4",
+     "cls": "headline-3 mb-0",
+     "rect": [
+      304,
+      223,
+      502,
+      24
+     ],
+     "txt": "Create first Budget",
+     "attrs": {},
+     "st": {
+      "fontSize": "16px",
+      "fontWeight": "700",
+      "lineHeight": "24px",
+      "color": "rgb(26, 28, 30)",
+      "textAlign": "start",
+      "width": "502px",
+      "height": "24px",
+      "display": "block",
+      "flexDirection": "row",
+      "border": "0px none rgb(26, 28, 30)",
+      "position": "static",
+      "transition": "all",
+      "flex": "0 1 auto",
+      "objectFit": "fill"
+     },
+     "kids": []
+    },
+    {
+     "tag": "div",
+     "cls": "mt-8 text",
+     "rect": [
+      304,
+      255,
+      502,
+      40
+     ],
+     "txt": "Manage campaign Budgets through a dedicated Budget object with clear types, limits, and control options.",
+     "attrs": {},
+     "st": {
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "color": "rgb(26, 28, 30)",
+      "textAlign": "start",
+      "margin": "8px 0px 0px",
+      "width": "502px",
+      "height": "40px",
+      "maxWidth": "516px",
+      "display": "block",
+      "flexDirection": "row",
+      "border": "0px none rgb(26, 28, 30)",
+      "position": "static",
+      "transition": "all",
+      "flex": "0 1 auto",
+      "objectFit": "fill"
+     },
+     "kids": []
+    },
+    {
+     "tag": "div",
+     "cls": "mt-16 d-flex items-center g-16",
+     "rect": [
+      304,
+      311,
+      502,
+      36
+     ],
+     "txt": null,
+     "attrs": {},
+     "st": {
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "color": "rgb(51, 51, 51)",
+      "textAlign": "start",
+      "margin": "16px 0px 0px",
+      "width": "502px",
+      "height": "36px",
+      "display": "flex",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "gap": "16px",
+      "border": "0px none rgb(51, 51, 51)",
+      "position": "static",
+      "transition": "all",
+      "flex": "0 1 auto",
+      "objectFit": "fill"
+     },
+     "kids": [
+      {
+       "tag": "button",
+       "cls": "button button-primary button-with-icon ng-star-inserted",
+       "rect": [
+        304,
+        311,
+        185,
+        36
+       ],
+       "txt": "Create new Budget",
+       "attrs": {},
+       "st": {
+        "fontSize": "14px",
+        "fontWeight": "600",
+        "lineHeight": "21px",
+        "color": "rgb(255, 255, 255)",
+        "textAlign": "center",
+        "backgroundColor": "rgb(126, 35, 159)",
+        "padding": "7.5px 16px",
+        "width": "184.539px",
+        "height": "36px",
+        "minWidth": "96px",
+        "maxWidth": "720px",
+        "display": "flex",
+        "flexDirection": "row",
+        "alignItems": "center",
+        "gap": "8px",
+        "borderRadius": "4px",
+        "border": "0px none rgb(255, 255, 255)",
+        "boxShadow": "rgba(24, 28, 34, 0.15) 0px 1px 2px 0px, rgba(0, 0, 0, 0.05) 0px 0px 5px 0px",
+        "position": "static",
+        "cursor": "pointer",
+        "transition": "all",
+        "flex": "0 1 auto",
+        "objectFit": "fill"
+       },
+       "kids": [
+        {
+         "tag": "span",
+         "cls": "material-icons material-icons-outlined",
+         "rect": [
+          320,
+          321,
+          16,
+          16
+         ],
+         "txt": "add_circle_outline",
+         "attrs": {},
+         "st": {
+          "fontSize": "16px",
+          "fontWeight": "600",
+          "lineHeight": "16px",
+          "color": "rgb(255, 255, 255)",
+          "textAlign": "center",
+          "width": "16px",
+          "height": "16px",
+          "display": "block",
+          "flexDirection": "row",
+          "border": "0px none rgb(255, 255, 255)",
+          "position": "static",
+          "cursor": "pointer",
+          "transition": "all",
+          "flex": "0 1 auto",
+          "objectFit": "fill"
+         },
+         "kids": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "tag": "div",
+   "cls": "image-container tile-image",
+   "rect": [
+    838,
+    223,
+    268,
+    181
+   ],
+   "txt": null,
+   "attrs": {},
+   "st": {
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "20px",
+    "color": "rgb(51, 51, 51)",
+    "textAlign": "start",
+    "backgroundColor": "rgb(241, 242, 250)",
+    "width": "268px",
+    "height": "181px",
+    "maxWidth": "268px",
+    "display": "flex",
+    "flexDirection": "row",
+    "justifyContent": "center",
+    "alignItems": "center",
+    "borderRadius": "4px",
+    "border": "0px none rgb(51, 51, 51)",
+    "position": "static",
+    "transition": "all",
+    "flex": "0 1 auto",
+    "objectFit": "fill"
+   },
+   "kids": [
+    {
+     "tag": "img",
+     "cls": "",
+     "rect": [
+      933,
+      269,
+      78,
+      88
+     ],
+     "txt": null,
+     "attrs": {
+      "src": "assets/images/explore/budgets.svg"
+     },
+     "st": {
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "color": "rgb(51, 51, 51)",
+      "textAlign": "start",
+      "width": "78px",
+      "height": "88px",
+      "display": "block",
+      "flexDirection": "row",
+      "border": "0px none rgb(51, 51, 51)",
+      "position": "static",
+      "transition": "all",
+      "flex": "0 1 auto",
+      "objectFit": "fill"
+     },
+     "kids": []
+    }
+   ]
+  }
+ ]
+}

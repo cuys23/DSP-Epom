@@ -1,0 +1,1814 @@
+[
+ {
+  "tag": "div",
+  "cls": "form-box",
+  "rect": [
+   272,
+   191,
+   866,
+   204
+  ],
+  "txt": null,
+  "attrs": {},
+  "st": {
+   "fontSize": "14px",
+   "fontWeight": "400",
+   "lineHeight": "20px",
+   "color": "rgb(51, 51, 51)",
+   "textAlign": "start",
+   "backgroundColor": "rgb(255, 255, 255)",
+   "padding": "24px",
+   "width": "866px",
+   "height": "204px",
+   "display": "flex",
+   "flexDirection": "column",
+   "borderRadius": "4px",
+   "border": "0px none rgb(51, 51, 51)",
+   "position": "static",
+   "transition": "all",
+   "flex": "0 1 auto",
+   "listStyleType": "disc"
+  },
+  "kids": [
+   {
+    "tag": "h3",
+    "cls": "headline-3 mb-8",
+    "rect": [
+     296,
+     215,
+     818,
+     24
+    ],
+    "txt": "Risk tolerance level",
+    "attrs": {},
+    "st": {
+     "fontSize": "16px",
+     "fontWeight": "700",
+     "lineHeight": "24px",
+     "color": "rgb(26, 28, 30)",
+     "textAlign": "start",
+     "margin": "0px 0px 8px",
+     "width": "818px",
+     "height": "24px",
+     "display": "block",
+     "flexDirection": "row",
+     "border": "0px none rgb(26, 28, 30)",
+     "position": "static",
+     "transition": "all",
+     "flex": "0 1 auto",
+     "listStyleType": "disc"
+    },
+    "kids": []
+   },
+   {
+    "tag": "div",
+    "cls": "no-auto-optimization-text mb-16",
+    "rect": [
+     296,
+     247,
+     818,
+     72
+    ],
+    "txt": null,
+    "attrs": {},
+    "st": {
+     "fontSize": "12px",
+     "fontWeight": "400",
+     "lineHeight": "18px",
+     "color": "rgb(116, 119, 127)",
+     "textAlign": "start",
+     "margin": "0px 0px 16px",
+     "width": "818px",
+     "height": "72px",
+     "display": "block",
+     "flexDirection": "row",
+     "border": "0px none rgb(116, 119, 127)",
+     "position": "static",
+     "transition": "all",
+     "flex": "0 1 auto",
+     "listStyleType": "disc"
+    },
+    "kids": [
+     {
+      "tag": "div",
+      "cls": "",
+      "rect": [
+       296,
+       247,
+       818,
+       18
+      ],
+      "txt": "Set the level of fraud risk you're willing to accept.",
+      "attrs": {},
+      "st": {
+       "fontSize": "12px",
+       "fontWeight": "400",
+       "lineHeight": "18px",
+       "color": "rgb(116, 119, 127)",
+       "textAlign": "start",
+       "width": "818px",
+       "height": "18px",
+       "display": "flex",
+       "flexDirection": "row",
+       "alignItems": "center",
+       "border": "0px none rgb(116, 119, 127)",
+       "position": "static",
+       "transition": "all",
+       "flex": "0 1 auto",
+       "listStyleType": "disc"
+      },
+      "kids": []
+     },
+     {
+      "tag": "div",
+      "cls": "",
+      "rect": [
+       296,
+       265,
+       818,
+       18
+      ],
+      "txt": "Low: Blocks more traffic, stricter filtering.",
+      "attrs": {},
+      "st": {
+       "fontSize": "12px",
+       "fontWeight": "400",
+       "lineHeight": "18px",
+       "color": "rgb(116, 119, 127)",
+       "textAlign": "start",
+       "width": "818px",
+       "height": "18px",
+       "display": "flex",
+       "flexDirection": "row",
+       "alignItems": "center",
+       "border": "0px none rgb(116, 119, 127)",
+       "position": "static",
+       "transition": "all",
+       "flex": "0 1 auto",
+       "listStyleType": "disc"
+      },
+      "kids": [
+       {
+        "tag": "span",
+        "cls": "material-icons mr-8",
+        "rect": [
+         296,
+         272,
+         3,
+         3
+        ],
+        "txt": "circle",
+        "attrs": {},
+        "st": {
+         "fontSize": "3px",
+         "fontWeight": "400",
+         "lineHeight": "3px",
+         "color": "rgb(116, 119, 127)",
+         "textAlign": "start",
+         "margin": "0px 8px 0px 0px",
+         "width": "3px",
+         "height": "3px",
+         "display": "block",
+         "flexDirection": "row",
+         "border": "0px none rgb(116, 119, 127)",
+         "position": "static",
+         "cursor": "pointer",
+         "transition": "all",
+         "flex": "0 1 auto",
+         "listStyleType": "disc"
+        },
+        "kids": []
+       }
+      ]
+     },
+     {
+      "tag": "div",
+      "cls": "",
+      "rect": [
+       296,
+       283,
+       818,
+       18
+      ],
+      "txt": "Medium: Balanced approach between reach and protection.",
+      "attrs": {},
+      "st": {
+       "fontSize": "12px",
+       "fontWeight": "400",
+       "lineHeight": "18px",
+       "color": "rgb(116, 119, 127)",
+       "textAlign": "start",
+       "width": "818px",
+       "height": "18px",
+       "display": "flex",
+       "flexDirection": "row",
+       "alignItems": "center",
+       "border": "0px none rgb(116, 119, 127)",
+       "position": "static",
+       "transition": "all",
+       "flex": "0 1 auto",
+       "listStyleType": "disc"
+      },
+      "kids": [
+       {
+        "tag": "span",
+        "cls": "material-icons mr-8",
+        "rect": [
+         296,
+         290,
+         3,
+         3
+        ],
+        "txt": "circle",
+        "attrs": {},
+        "st": {
+         "fontSize": "3px",
+         "fontWeight": "400",
+         "lineHeight": "3px",
+         "color": "rgb(116, 119, 127)",
+         "textAlign": "start",
+         "margin": "0px 8px 0px 0px",
+         "width": "3px",
+         "height": "3px",
+         "display": "block",
+         "flexDirection": "row",
+         "border": "0px none rgb(116, 119, 127)",
+         "position": "static",
+         "cursor": "pointer",
+         "transition": "all",
+         "flex": "0 1 auto",
+         "listStyleType": "disc"
+        },
+        "kids": []
+       }
+      ]
+     },
+     {
+      "tag": "div",
+      "cls": "",
+      "rect": [
+       296,
+       301,
+       818,
+       18
+      ],
+      "txt": "High: Only blocks the riskiest traffic, maximum reach.",
+      "attrs": {},
+      "st": {
+       "fontSize": "12px",
+       "fontWeight": "400",
+       "lineHeight": "18px",
+       "color": "rgb(116, 119, 127)",
+       "textAlign": "start",
+       "width": "818px",
+       "height": "18px",
+       "display": "flex",
+       "flexDirection": "row",
+       "alignItems": "center",
+       "border": "0px none rgb(116, 119, 127)",
+       "position": "static",
+       "transition": "all",
+       "flex": "0 1 auto",
+       "listStyleType": "disc"
+      },
+      "kids": [
+       {
+        "tag": "span",
+        "cls": "material-icons mr-8",
+        "rect": [
+         296,
+         308,
+         3,
+         3
+        ],
+        "txt": "circle",
+        "attrs": {},
+        "st": {
+         "fontSize": "3px",
+         "fontWeight": "400",
+         "lineHeight": "3px",
+         "color": "rgb(116, 119, 127)",
+         "textAlign": "start",
+         "margin": "0px 8px 0px 0px",
+         "width": "3px",
+         "height": "3px",
+         "display": "block",
+         "flexDirection": "row",
+         "border": "0px none rgb(116, 119, 127)",
+         "position": "static",
+         "cursor": "pointer",
+         "transition": "all",
+         "flex": "0 1 auto",
+         "listStyleType": "disc"
+        },
+        "kids": []
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "tag": "custom-select",
+    "cls": "ng-tns-c91-0 ng-star-inserted",
+    "rect": [
+     296,
+     335,
+     818,
+     36
+    ],
+    "txt": null,
+    "attrs": {},
+    "st": {
+     "fontSize": "14px",
+     "fontWeight": "400",
+     "lineHeight": "20px",
+     "color": "rgb(51, 51, 51)",
+     "textAlign": "start",
+     "width": "818px",
+     "height": "36px",
+     "display": "block",
+     "flexDirection": "row",
+     "border": "0px none rgb(51, 51, 51)",
+     "position": "static",
+     "transition": "all",
+     "flex": "0 1 auto",
+     "listStyleType": "disc"
+    },
+    "kids": [
+     {
+      "tag": "div",
+      "cls": "form-control-wrapper ng-tns-c91-0 ng-star-inserted",
+      "rect": [
+       296,
+       335,
+       720,
+       36
+      ],
+      "txt": null,
+      "attrs": {},
+      "st": {
+       "fontSize": "14px",
+       "fontWeight": "400",
+       "lineHeight": "20px",
+       "color": "rgb(51, 51, 51)",
+       "textAlign": "start",
+       "width": "720px",
+       "height": "36px",
+       "display": "flex",
+       "flexDirection": "column-reverse",
+       "border": "0px none rgb(51, 51, 51)",
+       "position": "static",
+       "transition": "all",
+       "flex": "0 1 auto",
+       "listStyleType": "disc"
+      },
+      "kids": [
+       {
+        "tag": "div",
+        "cls": "select-wrapper ng-tns-c91-0",
+        "rect": [
+         296,
+         335,
+         720,
+         36
+        ],
+        "txt": null,
+        "attrs": {},
+        "st": {
+         "fontSize": "14px",
+         "fontWeight": "400",
+         "lineHeight": "20px",
+         "color": "rgb(51, 51, 51)",
+         "textAlign": "start",
+         "width": "720px",
+         "height": "36px",
+         "display": "block",
+         "flexDirection": "row",
+         "border": "0px none rgb(51, 51, 51)",
+         "position": "relative",
+         "transition": "all",
+         "flex": "0 1 auto",
+         "listStyleType": "disc"
+        },
+        "kids": [
+         {
+          "tag": "div",
+          "cls": "select-title ng-tns-c91-0 options-down ng-untouched",
+          "rect": [
+           296,
+           335,
+           720,
+           36
+          ],
+          "txt": null,
+          "attrs": {},
+          "st": {
+           "fontSize": "14px",
+           "fontWeight": "400",
+           "lineHeight": "21px",
+           "color": "rgb(116, 119, 127)",
+           "textAlign": "start",
+           "padding": "6px 36px 7px 11px",
+           "width": "720px",
+           "height": "36px",
+           "display": "flex",
+           "flexDirection": "row",
+           "borderRadius": "4px",
+           "border": "1px solid rgb(196, 198, 208)",
+           "position": "static",
+           "cursor": "pointer",
+           "transition": "all",
+           "flex": "0 1 auto",
+           "listStyleType": "disc"
+          },
+          "kids": [
+           {
+            "tag": "div",
+            "cls": "selected-list ng-tns-c91-0 ng-star-inserted",
+            "rect": [
+             308,
+             342,
+             671,
+             21
+            ],
+            "txt": null,
+            "attrs": {},
+            "st": {
+             "fontSize": "14px",
+             "fontWeight": "400",
+             "lineHeight": "21px",
+             "color": "rgb(26, 28, 30)",
+             "textAlign": "start",
+             "width": "671px",
+             "height": "21px",
+             "display": "flex",
+             "flexDirection": "row",
+             "border": "0px none rgb(26, 28, 30)",
+             "position": "static",
+             "cursor": "pointer",
+             "transition": "all",
+             "flex": "1 1 auto",
+             "listStyleType": "disc"
+            },
+            "kids": [
+             {
+              "tag": "div",
+              "cls": "items-wrapper ng-tns-c91-0",
+              "rect": [
+               308,
+               342,
+               671,
+               21
+              ],
+              "txt": null,
+              "attrs": {},
+              "st": {
+               "fontSize": "14px",
+               "fontWeight": "400",
+               "lineHeight": "21px",
+               "color": "rgb(26, 28, 30)",
+               "textAlign": "start",
+               "width": "671px",
+               "height": "21px",
+               "display": "flex",
+               "flexDirection": "row",
+               "gap": "8px",
+               "border": "0px none rgb(26, 28, 30)",
+               "position": "static",
+               "cursor": "pointer",
+               "transition": "all",
+               "flex": "1 1 0%",
+               "listStyleType": "disc"
+              },
+              "kids": [
+               {
+                "tag": "div",
+                "cls": "selected-item d-flex items-center ng-tns-c91-0",
+                "rect": [
+                 308,
+                 342,
+                 30,
+                 21
+                ],
+                "txt": null,
+                "attrs": {},
+                "st": {
+                 "fontSize": "14px",
+                 "fontWeight": "400",
+                 "lineHeight": "21px",
+                 "color": "rgb(26, 28, 30)",
+                 "textAlign": "start",
+                 "width": "30.1328px",
+                 "height": "21px",
+                 "display": "flex",
+                 "flexDirection": "row",
+                 "alignItems": "center",
+                 "border": "0px none rgb(26, 28, 30)",
+                 "position": "static",
+                 "cursor": "pointer",
+                 "transition": "all",
+                 "flex": "0 1 auto",
+                 "listStyleType": "disc"
+                },
+                "kids": [
+                 {
+                  "tag": "label",
+                  "cls": "mb-0 ng-tns-c91-0",
+                  "rect": [
+                   308,
+                   342,
+                   30,
+                   21
+                  ],
+                  "txt": "High",
+                  "attrs": {},
+                  "st": {
+                   "fontSize": "14px",
+                   "fontWeight": "400",
+                   "lineHeight": "21px",
+                   "color": "rgb(26, 28, 30)",
+                   "textAlign": "start",
+                   "width": "30.1328px",
+                   "height": "21px",
+                   "display": "flex",
+                   "flexDirection": "row",
+                   "border": "0px none rgb(26, 28, 30)",
+                   "position": "static",
+                   "cursor": "default",
+                   "transition": "all",
+                   "flex": "0 1 auto",
+                   "listStyleType": "disc"
+                  },
+                  "kids": []
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           },
+           {
+            "tag": "span",
+            "cls": "dropdown-arrow material-icons material-icons-outlined ng-tns-c91-0",
+            "rect": [
+             983,
+             343,
+             20,
+             20
+            ],
+            "txt": "arrow_drop_down",
+            "attrs": {},
+            "st": {
+             "fontSize": "20px",
+             "fontWeight": "400",
+             "lineHeight": "20px",
+             "color": "rgb(116, 119, 127)",
+             "textAlign": "start",
+             "width": "20px",
+             "height": "20px",
+             "display": "block",
+             "flexDirection": "row",
+             "border": "0px none rgb(116, 119, 127)",
+             "position": "absolute",
+             "cursor": "pointer",
+             "transition": "all",
+             "flex": "0 1 auto",
+             "listStyleType": "disc"
+            },
+            "kids": []
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "tag": "section",
+  "cls": "form-box ng-star-inserted",
+  "rect": [
+   272,
+   411,
+   866,
+   160
+  ],
+  "txt": null,
+  "attrs": {},
+  "st": {
+   "fontSize": "14px",
+   "fontWeight": "400",
+   "lineHeight": "20px",
+   "color": "rgb(51, 51, 51)",
+   "textAlign": "start",
+   "backgroundColor": "rgb(255, 255, 255)",
+   "padding": "24px",
+   "width": "866px",
+   "height": "160px",
+   "display": "flex",
+   "flexDirection": "column",
+   "borderRadius": "4px",
+   "border": "0px none rgb(51, 51, 51)",
+   "position": "static",
+   "transition": "all",
+   "flex": "0 1 auto",
+   "listStyleType": "disc"
+  },
+  "kids": [
+   {
+    "tag": "div",
+    "cls": "pixalate-block-content",
+    "rect": [
+     296,
+     435,
+     720,
+     112
+    ],
+    "txt": null,
+    "attrs": {},
+    "st": {
+     "fontSize": "14px",
+     "fontWeight": "400",
+     "lineHeight": "20px",
+     "color": "rgb(51, 51, 51)",
+     "textAlign": "start",
+     "width": "720px",
+     "height": "112px",
+     "display": "block",
+     "flexDirection": "row",
+     "border": "0px none rgb(51, 51, 51)",
+     "position": "static",
+     "transition": "all",
+     "flex": "0 1 auto",
+     "listStyleType": "disc"
+    },
+    "kids": [
+     {
+      "tag": "h3",
+      "cls": "headline-3 mb-8",
+      "rect": [
+       296,
+       435,
+       720,
+       24
+      ],
+      "txt": "Pixalate",
+      "attrs": {},
+      "st": {
+       "fontSize": "16px",
+       "fontWeight": "700",
+       "lineHeight": "24px",
+       "color": "rgb(26, 28, 30)",
+       "textAlign": "start",
+       "margin": "0px 0px 8px",
+       "width": "720px",
+       "height": "24px",
+       "display": "block",
+       "flexDirection": "row",
+       "border": "0px none rgb(26, 28, 30)",
+       "position": "static",
+       "transition": "all",
+       "flex": "0 1 auto",
+       "listStyleType": "disc"
+      },
+      "kids": []
+     },
+     {
+      "tag": "div",
+      "cls": "no-auto-optimization-text mb-24",
+      "rect": [
+       296,
+       467,
+       720,
+       36
+      ],
+      "txt": "A technology fee of $0.10 CPM will be applied to all impressions in this campaign to enable Pixalate's MRC-accredited analytics. This includes fraud detection, viewability measurement, and supply chain optimization to help improve your ROI.",
+      "attrs": {},
+      "st": {
+       "fontSize": "12px",
+       "fontWeight": "400",
+       "lineHeight": "18px",
+       "color": "rgb(116, 119, 127)",
+       "textAlign": "start",
+       "margin": "0px 0px 24px",
+       "width": "720px",
+       "height": "36px",
+       "display": "block",
+       "flexDirection": "row",
+       "border": "0px none rgb(116, 119, 127)",
+       "position": "static",
+       "transition": "all",
+       "flex": "0 1 auto",
+       "listStyleType": "disc"
+      },
+      "kids": []
+     },
+     {
+      "tag": "div",
+      "cls": "ng-untouched ng-pristine ng-valid",
+      "rect": [
+       296,
+       527,
+       720,
+       20
+      ],
+      "txt": null,
+      "attrs": {},
+      "st": {
+       "fontSize": "14px",
+       "fontWeight": "400",
+       "lineHeight": "20px",
+       "color": "rgb(51, 51, 51)",
+       "textAlign": "start",
+       "width": "720px",
+       "height": "20px",
+       "display": "block",
+       "flexDirection": "row",
+       "border": "0px none rgb(51, 51, 51)",
+       "position": "static",
+       "transition": "all",
+       "flex": "0 1 auto",
+       "listStyleType": "disc"
+      },
+      "kids": [
+       {
+        "tag": "div",
+        "cls": "d-flex",
+        "rect": [
+         296,
+         527,
+         720,
+         20
+        ],
+        "txt": null,
+        "attrs": {},
+        "st": {
+         "fontSize": "14px",
+         "fontWeight": "400",
+         "lineHeight": "20px",
+         "color": "rgb(51, 51, 51)",
+         "textAlign": "start",
+         "width": "720px",
+         "height": "20px",
+         "display": "flex",
+         "flexDirection": "row",
+         "border": "0px none rgb(51, 51, 51)",
+         "position": "static",
+         "transition": "all",
+         "flex": "0 1 auto",
+         "listStyleType": "disc"
+        },
+        "kids": [
+         {
+          "tag": "mat-slide-toggle",
+          "cls": "mat-slide-toggle mat-accent ng-untouched ng-pristine",
+          "rect": [
+           296,
+           527,
+           176,
+           20
+          ],
+          "txt": null,
+          "attrs": {},
+          "st": {
+           "fontSize": "14px",
+           "fontWeight": "400",
+           "lineHeight": "24px",
+           "color": "rgb(51, 51, 51)",
+           "textAlign": "start",
+           "width": "176.484px",
+           "height": "20px",
+           "display": "block",
+           "flexDirection": "row",
+           "border": "0px none rgb(51, 51, 51)",
+           "position": "static",
+           "transition": "all",
+           "flex": "0 1 auto",
+           "listStyleType": "disc"
+          },
+          "kids": [
+           {
+            "tag": "label",
+            "cls": "mat-slide-toggle-label",
+            "rect": [
+             296,
+             527,
+             176,
+             20
+            ],
+            "txt": null,
+            "attrs": {},
+            "st": {
+             "fontSize": "14px",
+             "fontWeight": "400",
+             "lineHeight": "24px",
+             "color": "rgb(51, 51, 51)",
+             "textAlign": "start",
+             "width": "176.484px",
+             "height": "20px",
+             "display": "flex",
+             "flexDirection": "row",
+             "alignItems": "center",
+             "border": "0px none rgb(51, 51, 51)",
+             "position": "static",
+             "cursor": "pointer",
+             "transition": "all",
+             "flex": "1 1 0%",
+             "listStyleType": "disc"
+            },
+            "kids": [
+             {
+              "tag": "span",
+              "cls": "mat-slide-toggle-bar",
+              "rect": [
+               296,
+               527,
+               36,
+               20
+              ],
+              "txt": null,
+              "attrs": {},
+              "st": {
+               "fontSize": "14px",
+               "fontWeight": "400",
+               "lineHeight": "24px",
+               "color": "rgb(51, 51, 51)",
+               "textAlign": "start",
+               "backgroundColor": "rgb(250, 249, 253)",
+               "margin": "0px 8px 0px 0px",
+               "width": "36px",
+               "height": "20px",
+               "display": "block",
+               "flexDirection": "row",
+               "borderRadius": "30px",
+               "border": "1px solid rgb(116, 119, 127)",
+               "position": "relative",
+               "cursor": "pointer",
+               "transition": "background-color 0.08s linear 0.05s",
+               "flex": "0 0 auto",
+               "listStyleType": "disc"
+              },
+              "kids": [
+               {
+                "tag": "input",
+                "cls": "mat-slide-toggle-input cdk-visually-hidden",
+                "rect": [
+                 307,
+                 545,
+                 1,
+                 1
+                ],
+                "txt": null,
+                "attrs": {
+                 "type": "checkbox"
+                },
+                "st": {
+                 "fontSize": "14px",
+                 "fontWeight": "400",
+                 "color": "rgb(51, 51, 51)",
+                 "textAlign": "start",
+                 "margin": "4px 0px 0px",
+                 "width": "1px",
+                 "height": "1px",
+                 "display": "block",
+                 "flexDirection": "row",
+                 "border": "0px none rgb(51, 51, 51)",
+                 "position": "absolute",
+                 "cursor": "default",
+                 "transition": "all",
+                 "flex": "0 1 auto",
+                 "listStyleType": "disc"
+                },
+                "kids": []
+               },
+               {
+                "tag": "span",
+                "cls": "mat-slide-toggle-thumb-container",
+                "rect": [
+                 301,
+                 532,
+                 20,
+                 20
+                ],
+                "txt": null,
+                "attrs": {},
+                "st": {
+                 "fontSize": "14px",
+                 "fontWeight": "400",
+                 "lineHeight": "24px",
+                 "color": "rgb(51, 51, 51)",
+                 "textAlign": "start",
+                 "width": "20px",
+                 "height": "20px",
+                 "display": "block",
+                 "flexDirection": "row",
+                 "border": "0px none rgb(51, 51, 51)",
+                 "position": "absolute",
+                 "cursor": "pointer",
+                 "transition": "transform 0.08s linear",
+                 "flex": "0 1 auto",
+                 "listStyleType": "disc"
+                },
+                "kids": [
+                 {
+                  "tag": "span",
+                  "cls": "mat-slide-toggle-thumb",
+                  "rect": [
+                   301,
+                   532,
+                   10,
+                   10
+                  ],
+                  "txt": null,
+                  "attrs": {},
+                  "st": {
+                   "fontSize": "14px",
+                   "fontWeight": "400",
+                   "lineHeight": "24px",
+                   "color": "rgb(51, 51, 51)",
+                   "textAlign": "start",
+                   "backgroundColor": "rgb(116, 119, 127)",
+                   "width": "10px",
+                   "height": "10px",
+                   "display": "block",
+                   "flexDirection": "row",
+                   "borderRadius": "50%",
+                   "border": "0px none rgb(51, 51, 51)",
+                   "position": "static",
+                   "cursor": "pointer",
+                   "transition": "background-color 0.08s linear 0.05s",
+                   "flex": "0 1 auto",
+                   "listStyleType": "disc"
+                  },
+                  "kids": []
+                 },
+                 {
+                  "tag": "span",
+                  "cls": "mat-ripple mat-slide-toggle-ripple mat-focus-indicator",
+                  "rect": [
+                   293,
+                   525,
+                   24,
+                   24
+                  ],
+                  "txt": null,
+                  "attrs": {},
+                  "st": {
+                   "fontSize": "14px",
+                   "fontWeight": "400",
+                   "lineHeight": "24px",
+                   "color": "rgb(51, 51, 51)",
+                   "textAlign": "start",
+                   "width": "24px",
+                   "height": "24px",
+                   "display": "block",
+                   "flexDirection": "row",
+                   "borderRadius": "100px",
+                   "border": "0px none rgb(51, 51, 51)",
+                   "position": "absolute",
+                   "cursor": "pointer",
+                   "transition": "all",
+                   "flex": "0 1 auto",
+                   "listStyleType": "disc"
+                  },
+                  "kids": [
+                   {
+                    "tag": "span",
+                    "cls": "mat-ripple-element mat-slide-toggle-persistent-ripple",
+                    "rect": [
+                     293,
+                     525,
+                     24,
+                     24
+                    ],
+                    "txt": null,
+                    "attrs": {},
+                    "st": {
+                     "fontSize": "14px",
+                     "fontWeight": "400",
+                     "lineHeight": "24px",
+                     "color": "rgb(51, 51, 51)",
+                     "textAlign": "start",
+                     "backgroundColor": "rgb(26, 28, 30)",
+                     "width": "24px",
+                     "height": "24px",
+                     "display": "block",
+                     "flexDirection": "row",
+                     "borderRadius": "50%",
+                     "border": "0px none rgb(51, 51, 51)",
+                     "position": "absolute",
+                     "cursor": "pointer",
+                     "transition": "opacity, transform cubic-bezier(0, 0, 0.2, 1)",
+                     "flex": "0 1 auto",
+                     "listStyleType": "disc"
+                    },
+                    "kids": []
+                   }
+                  ]
+                 }
+                ]
+               }
+              ]
+             },
+             {
+              "tag": "span",
+              "cls": "mat-slide-toggle-content",
+              "rect": [
+               340,
+               525,
+               132,
+               24
+              ],
+              "txt": "Pixalate Optimization",
+              "attrs": {},
+              "st": {
+               "fontSize": "14px",
+               "fontWeight": "400",
+               "lineHeight": "24px",
+               "color": "rgb(51, 51, 51)",
+               "textAlign": "start",
+               "width": "132.484px",
+               "height": "24px",
+               "display": "block",
+               "flexDirection": "row",
+               "border": "0px none rgb(51, 51, 51)",
+               "position": "static",
+               "cursor": "pointer",
+               "transition": "all",
+               "flex": "0 1 auto",
+               "listStyleType": "disc"
+              },
+              "kids": []
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "tag": "section",
+  "cls": "form-box ng-star-inserted",
+  "rect": [
+   272,
+   587,
+   866,
+   132
+  ],
+  "txt": null,
+  "attrs": {},
+  "st": {
+   "fontSize": "14px",
+   "fontWeight": "400",
+   "lineHeight": "20px",
+   "color": "rgb(51, 51, 51)",
+   "textAlign": "start",
+   "backgroundColor": "rgb(255, 255, 255)",
+   "padding": "24px",
+   "width": "866px",
+   "height": "132px",
+   "display": "flex",
+   "flexDirection": "column",
+   "borderRadius": "4px",
+   "border": "0px none rgb(51, 51, 51)",
+   "position": "static",
+   "transition": "all",
+   "flex": "0 1 auto",
+   "listStyleType": "disc"
+  },
+  "kids": [
+   {
+    "tag": "div",
+    "cls": "",
+    "rect": [
+     296,
+     611,
+     818,
+     84
+    ],
+    "txt": null,
+    "attrs": {},
+    "st": {
+     "fontSize": "14px",
+     "fontWeight": "400",
+     "lineHeight": "20px",
+     "color": "rgb(51, 51, 51)",
+     "textAlign": "start",
+     "width": "818px",
+     "height": "84px",
+     "display": "block",
+     "flexDirection": "row",
+     "border": "0px none rgb(51, 51, 51)",
+     "position": "static",
+     "transition": "all",
+     "flex": "0 1 auto",
+     "listStyleType": "disc"
+    },
+    "kids": [
+     {
+      "tag": "h3",
+      "cls": "headline-3 mb-24",
+      "rect": [
+       296,
+       611,
+       818,
+       24
+      ],
+      "txt": "Filters",
+      "attrs": {},
+      "st": {
+       "fontSize": "16px",
+       "fontWeight": "700",
+       "lineHeight": "24px",
+       "color": "rgb(26, 28, 30)",
+       "textAlign": "start",
+       "margin": "0px 0px 24px",
+       "width": "818px",
+       "height": "24px",
+       "display": "block",
+       "flexDirection": "row",
+       "border": "0px none rgb(26, 28, 30)",
+       "position": "static",
+       "transition": "all",
+       "flex": "0 1 auto",
+       "listStyleType": "disc"
+      },
+      "kids": []
+     },
+     {
+      "tag": "button",
+      "cls": "button button-outlined button-fw",
+      "rect": [
+       296,
+       659,
+       720,
+       36
+      ],
+      "txt": "Select Filters (0)",
+      "attrs": {
+       "type": "button"
+      },
+      "st": {
+       "fontSize": "14px",
+       "fontWeight": "600",
+       "lineHeight": "21px",
+       "color": "rgb(126, 35, 159)",
+       "textAlign": "center",
+       "padding": "6.5px 15px",
+       "width": "720px",
+       "height": "36px",
+       "minWidth": "96px",
+       "display": "inline-block",
+       "flexDirection": "row",
+       "borderRadius": "4px",
+       "border": "1px solid rgb(126, 35, 159)",
+       "position": "static",
+       "cursor": "pointer",
+       "transition": "all",
+       "flex": "0 1 auto",
+       "listStyleType": "disc"
+      },
+      "kids": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "tag": "section",
+  "cls": "optimization-accordion-item ng-star-inserted",
+  "rect": [
+   272,
+   735,
+   866,
+   158
+  ],
+  "txt": null,
+  "attrs": {},
+  "st": {
+   "fontSize": "14px",
+   "fontWeight": "400",
+   "lineHeight": "20px",
+   "color": "rgb(51, 51, 51)",
+   "textAlign": "start",
+   "backgroundColor": "rgb(255, 255, 255)",
+   "padding": "0px 24px",
+   "width": "866px",
+   "height": "158px",
+   "display": "flex",
+   "flexDirection": "column",
+   "borderRadius": "4px",
+   "border": "0px none rgb(51, 51, 51)",
+   "position": "static",
+   "transition": "all",
+   "flex": "0 1 auto",
+   "listStyleType": "disc"
+  },
+  "kids": [
+   {
+    "tag": "div",
+    "cls": "block-toggle block-toggle-big",
+    "rect": [
+     296,
+     759,
+     818,
+     24
+    ],
+    "txt": null,
+    "attrs": {},
+    "st": {
+     "fontSize": "16px",
+     "fontWeight": "700",
+     "lineHeight": "24px",
+     "color": "rgb(26, 28, 30)",
+     "textAlign": "start",
+     "margin": "24px 0px",
+     "width": "818px",
+     "height": "24px",
+     "display": "flex",
+     "flexDirection": "row",
+     "alignItems": "center",
+     "border": "0px none rgb(26, 28, 30)",
+     "position": "static",
+     "cursor": "pointer",
+     "transition": "all",
+     "flex": "0 1 auto",
+     "listStyleType": "disc"
+    },
+    "kids": [
+     {
+      "tag": "span",
+      "cls": "material-icons material-icons-outlined rotate",
+      "rect": [
+       296,
+       759,
+       24,
+       24
+      ],
+      "txt": "arrow_right",
+      "attrs": {},
+      "st": {
+       "fontSize": "24px",
+       "fontWeight": "400",
+       "lineHeight": "24px",
+       "color": "rgb(26, 28, 30)",
+       "textAlign": "start",
+       "width": "24px",
+       "height": "24px",
+       "display": "block",
+       "flexDirection": "row",
+       "border": "0px none rgb(26, 28, 30)",
+       "position": "static",
+       "cursor": "pointer",
+       "transition": "all",
+       "flex": "0 1 auto",
+       "listStyleType": "disc"
+      },
+      "kids": []
+     },
+     {
+      "tag": "span",
+      "cls": "",
+      "rect": [
+       320,
+       759,
+       124,
+       24
+      ],
+      "txt": "Events tracking",
+      "attrs": {},
+      "st": {
+       "fontSize": "16px",
+       "fontWeight": "700",
+       "lineHeight": "24px",
+       "color": "rgb(26, 28, 30)",
+       "textAlign": "start",
+       "width": "123.547px",
+       "height": "24px",
+       "display": "block",
+       "flexDirection": "row",
+       "border": "0px none rgb(26, 28, 30)",
+       "position": "static",
+       "cursor": "pointer",
+       "transition": "all",
+       "flex": "0 1 auto",
+       "listStyleType": "disc"
+      },
+      "kids": []
+     }
+    ]
+   },
+   {
+    "tag": "div",
+    "cls": "optimization-block-content ng-star-inserted",
+    "rect": [
+     296,
+     807,
+     720,
+     62
+    ],
+    "txt": null,
+    "attrs": {},
+    "st": {
+     "fontSize": "14px",
+     "fontWeight": "400",
+     "lineHeight": "20px",
+     "color": "rgb(51, 51, 51)",
+     "textAlign": "start",
+     "margin": "0px 0px 24px",
+     "width": "720px",
+     "height": "62px",
+     "display": "flex",
+     "flexDirection": "column",
+     "gap": "24px",
+     "border": "0px none rgb(51, 51, 51)",
+     "position": "static",
+     "transition": "all",
+     "flex": "0 1 auto",
+     "listStyleType": "disc"
+    },
+    "kids": [
+     {
+      "tag": "div",
+      "cls": "optimization-group",
+      "rect": [
+       296,
+       807,
+       720,
+       62
+      ],
+      "txt": null,
+      "attrs": {},
+      "st": {
+       "fontSize": "14px",
+       "fontWeight": "400",
+       "lineHeight": "20px",
+       "color": "rgb(51, 51, 51)",
+       "textAlign": "start",
+       "width": "720px",
+       "height": "62px",
+       "display": "flex",
+       "flexDirection": "row",
+       "alignItems": "center",
+       "gap": "16px",
+       "border": "0px none rgb(51, 51, 51)",
+       "position": "static",
+       "transition": "all",
+       "flex": "0 1 auto",
+       "listStyleType": "disc"
+      },
+      "kids": [
+       {
+        "tag": "div",
+        "cls": "optimization-group-item ng-star-inserted",
+        "rect": [
+         296,
+         807,
+         352,
+         62
+        ],
+        "txt": null,
+        "attrs": {},
+        "st": {
+         "fontSize": "14px",
+         "fontWeight": "400",
+         "lineHeight": "20px",
+         "color": "rgb(51, 51, 51)",
+         "textAlign": "start",
+         "width": "352px",
+         "height": "62px",
+         "display": "block",
+         "flexDirection": "row",
+         "border": "0px none rgb(51, 51, 51)",
+         "position": "static",
+         "transition": "all",
+         "flex": "0 1 auto",
+         "listStyleType": "disc"
+        },
+        "kids": [
+         {
+          "tag": "div",
+          "cls": "optimization-option-title mb-8",
+          "rect": [
+           296,
+           807,
+           352,
+           18
+          ],
+          "txt": "Tracking Pixels/URLs",
+          "attrs": {},
+          "st": {
+           "fontSize": "12px",
+           "fontWeight": "600",
+           "lineHeight": "18px",
+           "color": "rgb(116, 119, 127)",
+           "textAlign": "start",
+           "margin": "0px 0px 8px",
+           "width": "352px",
+           "height": "18px",
+           "display": "block",
+           "flexDirection": "row",
+           "border": "0px none rgb(116, 119, 127)",
+           "position": "static",
+           "transition": "all",
+           "flex": "0 1 auto",
+           "listStyleType": "disc"
+          },
+          "kids": []
+         },
+         {
+          "tag": "button",
+          "cls": "button button-outlined optimization-button",
+          "rect": [
+           296,
+           833,
+           352,
+           36
+          ],
+          "txt": "Tracking Pixels/URLs (0)",
+          "attrs": {},
+          "st": {
+           "fontSize": "14px",
+           "fontWeight": "600",
+           "lineHeight": "21px",
+           "color": "rgba(26, 28, 30, 0.3)",
+           "textAlign": "center",
+           "padding": "6.5px 15px",
+           "width": "352px",
+           "height": "36px",
+           "minWidth": "96px",
+           "display": "inline-block",
+           "flexDirection": "row",
+           "borderRadius": "4px",
+           "border": "1px solid rgba(26, 28, 30, 0.3)",
+           "position": "static",
+           "cursor": "not-allowed",
+           "transition": "all",
+           "flex": "0 1 auto",
+           "listStyleType": "disc"
+          },
+          "kids": []
+         }
+        ]
+       },
+       {
+        "tag": "div",
+        "cls": "optimization-group-item ng-star-inserted",
+        "rect": [
+         664,
+         807,
+         352,
+         62
+        ],
+        "txt": null,
+        "attrs": {},
+        "st": {
+         "fontSize": "14px",
+         "fontWeight": "400",
+         "lineHeight": "20px",
+         "color": "rgb(51, 51, 51)",
+         "textAlign": "start",
+         "width": "352px",
+         "height": "62px",
+         "display": "block",
+         "flexDirection": "row",
+         "border": "0px none rgb(51, 51, 51)",
+         "position": "static",
+         "transition": "all",
+         "flex": "0 1 auto",
+         "listStyleType": "disc"
+        },
+        "kids": [
+         {
+          "tag": "div",
+          "cls": "optimization-option-title mb-8",
+          "rect": [
+           664,
+           807,
+           352,
+           18
+          ],
+          "txt": "Attribution Links",
+          "attrs": {},
+          "st": {
+           "fontSize": "12px",
+           "fontWeight": "600",
+           "lineHeight": "18px",
+           "color": "rgb(116, 119, 127)",
+           "textAlign": "start",
+           "margin": "0px 0px 8px",
+           "width": "352px",
+           "height": "18px",
+           "display": "block",
+           "flexDirection": "row",
+           "border": "0px none rgb(116, 119, 127)",
+           "position": "static",
+           "transition": "all",
+           "flex": "0 1 auto",
+           "listStyleType": "disc"
+          },
+          "kids": []
+         },
+         {
+          "tag": "button",
+          "cls": "button button-outlined optimization-button",
+          "rect": [
+           664,
+           833,
+           352,
+           36
+          ],
+          "txt": "Attribution Links",
+          "attrs": {},
+          "st": {
+           "fontSize": "14px",
+           "fontWeight": "600",
+           "lineHeight": "21px",
+           "color": "rgba(26, 28, 30, 0.3)",
+           "textAlign": "center",
+           "padding": "6.5px 15px",
+           "width": "352px",
+           "height": "36px",
+           "minWidth": "96px",
+           "display": "inline-block",
+           "flexDirection": "row",
+           "borderRadius": "4px",
+           "border": "1px solid rgba(26, 28, 30, 0.3)",
+           "position": "static",
+           "cursor": "not-allowed",
+           "transition": "all",
+           "flex": "0 1 auto",
+           "listStyleType": "disc"
+          },
+          "kids": []
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "tag": "section",
+  "cls": "optimization-accordion-item ng-star-inserted",
+  "rect": [
+   272,
+   909,
+   866,
+   72
+  ],
+  "txt": null,
+  "attrs": {},
+  "st": {
+   "fontSize": "14px",
+   "fontWeight": "400",
+   "lineHeight": "20px",
+   "color": "rgb(51, 51, 51)",
+   "textAlign": "start",
+   "backgroundColor": "rgb(255, 255, 255)",
+   "padding": "0px 24px",
+   "width": "866px",
+   "height": "72px",
+   "display": "flex",
+   "flexDirection": "column",
+   "borderRadius": "4px",
+   "border": "0px none rgb(51, 51, 51)",
+   "position": "static",
+   "transition": "all",
+   "flex": "0 1 auto",
+   "listStyleType": "disc"
+  },
+  "kids": [
+   {
+    "tag": "div",
+    "cls": "block-toggle block-toggle-big",
+    "rect": [
+     296,
+     933,
+     818,
+     24
+    ],
+    "txt": null,
+    "attrs": {},
+    "st": {
+     "fontSize": "16px",
+     "fontWeight": "700",
+     "lineHeight": "24px",
+     "color": "rgb(26, 28, 30)",
+     "textAlign": "start",
+     "margin": "24px 0px",
+     "width": "818px",
+     "height": "24px",
+     "display": "flex",
+     "flexDirection": "row",
+     "alignItems": "center",
+     "border": "0px none rgb(26, 28, 30)",
+     "position": "static",
+     "cursor": "pointer",
+     "transition": "all",
+     "flex": "0 1 auto",
+     "listStyleType": "disc"
+    },
+    "kids": [
+     {
+      "tag": "span",
+      "cls": "material-icons material-icons-outlined",
+      "rect": [
+       296,
+       933,
+       24,
+       24
+      ],
+      "txt": "arrow_right",
+      "attrs": {},
+      "st": {
+       "fontSize": "24px",
+       "fontWeight": "400",
+       "lineHeight": "24px",
+       "color": "rgb(26, 28, 30)",
+       "textAlign": "start",
+       "width": "24px",
+       "height": "24px",
+       "display": "block",
+       "flexDirection": "row",
+       "border": "0px none rgb(26, 28, 30)",
+       "position": "static",
+       "cursor": "pointer",
+       "transition": "all",
+       "flex": "0 1 auto",
+       "listStyleType": "disc"
+      },
+      "kids": []
+     },
+     {
+      "tag": "span",
+      "cls": "",
+      "rect": [
+       320,
+       933,
+       182,
+       24
+      ],
+      "txt": "Auto filling retargeting",
+      "attrs": {},
+      "st": {
+       "fontSize": "16px",
+       "fontWeight": "700",
+       "lineHeight": "24px",
+       "color": "rgb(26, 28, 30)",
+       "textAlign": "start",
+       "width": "182.461px",
+       "height": "24px",
+       "display": "block",
+       "flexDirection": "row",
+       "border": "0px none rgb(26, 28, 30)",
+       "position": "static",
+       "cursor": "pointer",
+       "transition": "all",
+       "flex": "0 1 auto",
+       "listStyleType": "disc"
+      },
+      "kids": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "tag": "section",
+  "cls": "optimization-accordion-item ng-star-inserted",
+  "rect": [
+   272,
+   997,
+   866,
+   72
+  ],
+  "txt": null,
+  "attrs": {},
+  "st": {
+   "fontSize": "14px",
+   "fontWeight": "400",
+   "lineHeight": "20px",
+   "color": "rgb(51, 51, 51)",
+   "textAlign": "start",
+   "backgroundColor": "rgb(255, 255, 255)",
+   "padding": "0px 24px",
+   "width": "866px",
+   "height": "72px",
+   "display": "flex",
+   "flexDirection": "column",
+   "borderRadius": "4px",
+   "border": "0px none rgb(51, 51, 51)",
+   "position": "static",
+   "transition": "all",
+   "flex": "0 1 auto",
+   "listStyleType": "disc"
+  },
+  "kids": [
+   {
+    "tag": "div",
+    "cls": "block-toggle block-toggle-big",
+    "rect": [
+     296,
+     1021,
+     818,
+     24
+    ],
+    "txt": null,
+    "attrs": {},
+    "st": {
+     "fontSize": "16px",
+     "fontWeight": "700",
+     "lineHeight": "24px",
+     "color": "rgb(26, 28, 30)",
+     "textAlign": "start",
+     "margin": "24px 0px",
+     "width": "818px",
+     "height": "24px",
+     "display": "flex",
+     "flexDirection": "row",
+     "alignItems": "center",
+     "border": "0px none rgb(26, 28, 30)",
+     "position": "static",
+     "cursor": "pointer",
+     "transition": "all",
+     "flex": "0 1 auto",
+     "listStyleType": "disc"
+    },
+    "kids": [
+     {
+      "tag": "span",
+      "cls": "material-icons material-icons-outlined",
+      "rect": [
+       296,
+       1021,
+       24,
+       24
+      ],
+      "txt": "arrow_right",
+      "attrs": {},
+      "st": {
+       "fontSize": "24px",
+       "fontWeight": "400",
+       "lineHeight": "24px",
+       "color": "rgb(26, 28, 30)",
+       "textAlign": "start",
+       "width": "24px",
+       "height": "24px",
+       "display": "block",
+       "flexDirection": "row",
+       "border": "0px none rgb(26, 28, 30)",
+       "position": "static",
+       "cursor": "pointer",
+       "transition": "all",
+       "flex": "0 1 auto",
+       "listStyleType": "disc"
+      },
+      "kids": []
+     },
+     {
+      "tag": "span",
+      "cls": "",
+      "rect": [
+       320,
+       1021,
+       111,
+       24
+      ],
+      "txt": "SKAdNetwork",
+      "attrs": {},
+      "st": {
+       "fontSize": "16px",
+       "fontWeight": "700",
+       "lineHeight": "24px",
+       "color": "rgb(26, 28, 30)",
+       "textAlign": "start",
+       "width": "110.797px",
+       "height": "24px",
+       "display": "block",
+       "flexDirection": "row",
+       "border": "0px none rgb(26, 28, 30)",
+       "position": "static",
+       "cursor": "pointer",
+       "transition": "all",
+       "flex": "0 1 auto",
+       "listStyleType": "disc"
+      },
+      "kids": []
+     }
+    ]
+   }
+  ]
+ }
+]

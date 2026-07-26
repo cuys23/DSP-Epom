@@ -1,0 +1,129 @@
+{
+ "bulletRow": {
+  "fontSize": "12px",
+  "fontWeight": "400",
+  "lineHeight": "18px",
+  "color": "rgb(116, 119, 127)",
+  "display": "flex",
+  "alignItems": "center",
+  "paddingLeft": "0px"
+ },
+ "bulletDot": {
+  "fontSize": "3px",
+  "color": "rgb(116, 119, 127)",
+  "width": "3px",
+  "height": "3px",
+  "margin": "0px 8px 0px 0px"
+ },
+ "leadLine": {
+  "fontSize": "12px",
+  "lineHeight": "18px",
+  "color": "rgb(116, 119, 127)"
+ },
+ "pixalateText": {
+  "fontSize": "12px",
+  "lineHeight": "18px",
+  "color": "rgb(116, 119, 127)",
+  "margin": "0px 0px 24px"
+ },
+ "toggleBar": {
+  "width": "36px",
+  "height": "20px",
+  "borderRadius": "30px",
+  "backgroundColor": "rgb(250, 249, 253)"
+ },
+ "toggleThumb": {
+  "width": "10px",
+  "height": "10px",
+  "borderRadius": "50%",
+  "backgroundColor": "rgb(116, 119, 127)",
+  "boxShadow": "none"
+ },
+ "toggleThumbContainer": {
+  "width": "20px",
+  "height": "20px",
+  "transform": "matrix(1, 0, 0, 1, 0, 0)",
+  "transition": "transform 0.08s linear"
+ },
+ "toggleContent": {
+  "fontSize": "14px",
+  "fontWeight": "400",
+  "lineHeight": "24px",
+  "color": "rgb(51, 51, 51)",
+  "marginLeft": "0px",
+  "paddingLeft": "0px"
+ },
+ "btnOutlinedFw": {
+  "width": "720px",
+  "height": "36px",
+  "padding": "6.5px 15px",
+  "borderRadius": "4px",
+  "border": "1px solid rgb(126, 35, 159)",
+  "color": "rgb(126, 35, 159)",
+  "fontSize": "14px",
+  "fontWeight": "600",
+  "lineHeight": "21px",
+  "backgroundColor": "rgba(0, 0, 0, 0)",
+  "textAlign": "center"
+ },
+ "optimButton": {
+  "width": "352px",
+  "height": "36px",
+  "padding": "6.5px 15px",
+  "borderRadius": "4px",
+  "border": "1px solid rgba(26, 28, 30, 0.3)",
+  "color": "rgba(26, 28, 30, 0.3)",
+  "fontSize": "14px",
+  "fontWeight": "600",
+  "lineHeight": "21px",
+  "textAlign": "center"
+ },
+ "optimGroup": {
+  "display": "flex",
+  "gap": "16px",
+  "justifyContent": "normal"
+ },
+ "optimGroupItem": {
+  "width": "352px",
+  "flex": "0 1 auto",
+  "display": "block",
+  "flexDirection": "row"
+ },
+ "optionTitle": {
+  "fontSize": "12px",
+  "fontWeight": "600",
+  "lineHeight": "18px",
+  "color": "rgb(116, 119, 127)",
+  "margin": "0px 0px 8px"
+ },
+ "accordionSection": {
+  "padding": "24px",
+  "backgroundColor": "rgb(255, 255, 255)",
+  "borderRadius": "4px",
+  "margin": "0px",
+  "display": "flex",
+  "flexDirection": "column"
+ },
+ "accordionIconRotate": {
+  "transform": "matrix(0, 1, -1, 0, 0, 0)",
+  "transition": "all",
+  "fontSize": "24px",
+  "color": "rgb(26, 28, 30)",
+  "width": "24px",
+  "height": "24px"
+ },
+ "accordionLabel": {
+  "fontSize": "16px",
+  "fontWeight": "700",
+  "lineHeight": "24px",
+  "color": "rgb(26, 28, 30)"
+ },
+ "formBox": {
+  "padding": "24px",
+  "backgroundColor": "rgb(255, 255, 255)",
+  "borderRadius": "4px",
+  "margin": "0px",
+  "display": "flex",
+  "flexDirection": "column"
+ }
+}

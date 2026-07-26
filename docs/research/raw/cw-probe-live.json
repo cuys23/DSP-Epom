@@ -1,0 +1,171 @@
+{
+ "innerW": 1440,
+ "h1": {
+  "r": [
+   272,
+   95,
+   461,
+   24
+  ],
+  "s": {
+   "fontSize": "20px",
+   "fontWeight": "700",
+   "lineHeight": "24px",
+   "color": "rgb(26, 28, 30)"
+  }
+ },
+ "wrapper": {
+  "r": [
+   240,
+   57,
+   1200,
+   594
+  ],
+  "s": {
+   "padding": "32px",
+   "overflowY": "auto",
+   "height": "594px"
+  }
+ },
+ "wiz": {
+  "r": [
+   272,
+   89,
+   866,
+   624
+  ],
+  "s": {
+   "maxWidth": "calc(100% - 270px)"
+  }
+ },
+ "cards": [
+  [
+   272,
+   141,
+   278,
+   270
+  ],
+  [
+   566,
+   141,
+   278,
+   270
+  ],
+  [
+   860,
+   141,
+   278,
+   270
+  ],
+  [
+   272,
+   427,
+   278,
+   270
+  ]
+ ],
+ "img0": {
+  "r": [
+   287,
+   204,
+   248,
+   139
+  ],
+  "s": {
+   "marginBottom": "32px",
+   "maxWidth": "100%",
+   "display": "block"
+  }
+ },
+ "label0": {
+  "r": [
+   272,
+   355,
+   278,
+   56
+  ],
+  "s": {
+   "fontSize": "16px",
+   "fontWeight": "700",
+   "lineHeight": "22.8571px",
+   "color": "rgb(26, 28, 30)",
+   "position": "absolute",
+   "textAlign": "center"
+  }
+ },
+ "rail": {
+  "r": [
+   1170,
+   57,
+   270,
+   594
+  ],
+  "s": {
+   "position": "fixed",
+   "top": "57px",
+   "width": "270px",
+   "backgroundColor": "rgb(255, 255, 255)",
+   "borderLeftWidth": "1px",
+   "borderLeftColor": "rgb(225, 226, 236)",
+   "overflowY": "auto",
+   "height": "594px"
+  }
+ },
+ "sumHead": {
+  "r": [
+   1171,
+   57,
+   269,
+   45
+  ],
+  "s": {
+   "fontSize": "14px",
+   "fontWeight": "600",
+   "lineHeight": "21px",
+   "color": "rgb(26, 28, 30)",
+   "padding": "24px 24px 0px"
+  }
+ },
+ "sumDesc": {
+  "r": [
+   1171,
+   102,
+   269,
+   66
+  ],
+  "s": {
+   "fontSize": "12px",
+   "lineHeight": "18px",
+   "color": "rgb(116, 119, 127)",
+   "padding": "24px"
+  }
+ },
+ "blockHead": {
+  "r": [
+   1195,
+   193,
+   221,
+   21
+  ],
+  "s": {
+   "fontSize": "14px",
+   "fontWeight": "600",
+   "lineHeight": "21px",
+   "color": "rgb(26, 28, 30)"
+  }
+ },
+ "blockDesc": {
+  "r": [
+   1195,
+   226,
+   221,
+   18
+  ],
+  "s": {
+   "fontSize": "12px",
+   "lineHeight": "18px",
+   "color": "rgb(116, 119, 127)",
+   "marginTop": "12px"
+  }
+ }
+}
