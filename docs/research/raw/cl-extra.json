@@ -1,0 +1,197 @@
+{
+ "grid": {
+  "gridTemplateColumns": "233px 871px",
+  "gap": "32px",
+  "transition": "grid-template-columns 0.12s cubic-bezier(0.4, 0, 0.2, 1)"
+ },
+ "foldersTopText": {
+  "fontSize": "14px",
+  "fontWeight": "400",
+  "lineHeight": "21px",
+  "color": "rgb(26, 28, 30)"
+ },
+ "foldersTopCount": {
+  "fontSize": "14px",
+  "fontWeight": "400",
+  "lineHeight": "21px",
+  "color": "rgb(116, 119, 127)",
+  "margin": "0px"
+ },
+ "foldersTopIcon": {
+  "fontSize": "20px",
+  "color": "rgb(116, 119, 127)",
+  "width": "20px",
+  "height": "20px",
+  "transform": "matrix(-1, 0, 0, -1, 0, 0)"
+ },
+ "foldersH3": {
+  "fontSize": "16px",
+  "fontWeight": "600",
+  "lineHeight": "24px",
+  "color": "rgb(26, 28, 30)",
+  "margin": "0px"
+ },
+ "foldersAddIcon": {
+  "fontSize": "16px",
+  "color": "rgb(126, 35, 159)",
+  "width": "20px",
+  "height": "20px"
+ },
+ "foldersSearchInput": {
+  "height": "36px",
+  "width": "200px",
+  "padding": "8px 12px",
+  "borderRadius": "4px",
+  "border": "1px solid rgb(196, 198, 208)",
+  "fontSize": "14px",
+  "color": "rgb(26, 28, 30)"
+ },
+ "moreIcon": {
+  "fontSize": "16px",
+  "color": "rgb(126, 35, 159)",
+  "width": "20px",
+  "height": "20px"
+ },
+ "moreBtn": {
+  "width": "32px",
+  "height": "22px",
+  "padding": "1px 6px",
+  "borderRadius": "0px",
+  "border": "0px none rgb(126, 35, 159)",
+  "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box"
+ },
+ "filtersWrap": {
+  "backgroundColor": "rgb(255, 255, 255)",
+  "padding": "16px",
+  "borderRadius": "4px",
+  "margin": "0px 0px 16px",
+  "display": "block",
+  "height": "68px"
+ },
+ "filtersRow": {
+  "display": "flex",
+  "justifyContent": "normal",
+  "alignItems": "flex-start",
+  "gap": "12px",
+  "height": "36px"
+ },
+ "filtersGrid": {
+  "display": "flex",
+  "gridTemplateColumns": "none",
+  "gap": "12px",
+  "width": "714px"
+ },
+ "selTitle": {
+  "height": "36px",
+  "padding": "6px 36px 7px 11px",
+  "borderRadius": "4px",
+  "border": "1px solid rgb(196, 198, 208)",
+  "display": "flex",
+  "alignItems": "normal",
+  "gap": "normal",
+  "backgroundColor": "rgba(0, 0, 0, 0)"
+ },
+ "selSubtitle": {
+  "fontSize": "14px",
+  "fontWeight": "400",
+  "lineHeight": "21px",
+  "color": "rgb(116, 119, 127)",
+  "margin": "0px 8px 0px 0px"
+ },
+ "selValue": {
+  "fontSize": "14px",
+  "fontWeight": "400",
+  "lineHeight": "21px",
+  "color": "rgb(26, 28, 30)",
+  "margin": "0px 0px 5px"
+ },
+ "filterBtn": {
+  "width": "32px",
+  "height": "32px",
+  "padding": "0px",
+  "borderRadius": "0px",
+  "border": "0px none rgb(51, 51, 51)",
+  "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box"
+ },
+ "filterIcon": {
+  "fontSize": "20px",
+  "color": "rgb(126, 35, 159)",
+  "width": "32px",
+  "height": "32px"
+ },
+ "tile": {
+  "backgroundColor": "rgb(255, 255, 255)",
+  "padding": "32px",
+  "borderRadius": "4px",
+  "display": "flex",
+  "gap": "32px",
+  "justifyContent": "space-between",
+  "height": "245px"
+ },
+ "tileImg": {
+  "backgroundColor": "rgb(241, 242, 250)",
+  "width": "268px",
+  "maxWidth": "268px",
+  "height": "181px",
+  "borderRadius": "4px",
+  "display": "flex",
+  "justifyContent": "center",
+  "alignItems": "center"
+ },
+ "outlinedBtn": {
+  "height": "36px",
+  "padding": "6.5px 15px",
+  "borderRadius": "4px",
+  "border": "1px solid rgb(126, 35, 159)",
+  "color": "rgb(126, 35, 159)",
+  "fontSize": "14px",
+  "fontWeight": "600",
+  "lineHeight": "21px",
+  "display": "block",
+  "alignItems": "normal",
+  "textAlign": "center"
+ },
+ "h1": {
+  "fontSize": "20px",
+  "fontWeight": "700",
+  "lineHeight": "24px",
+  "color": "rgb(26, 28, 30)"
+ },
+ "pageHeader": {
+  "padding": "0px",
+  "margin": "0px",
+  "height": "136px"
+ },
+ "rects": {
+  "grid": [
+   272,
+   89,
+   1136,
+   530
+  ],
+  "folders": [
+   244,
+   57,
+   261,
+   594
+  ],
+  "main": [
+   505,
+   57,
+   935,
+   594
+  ],
+  "filters": [
+   537,
+   141,
+   871,
+   68
+  ],
+  "tile": [
+   537,
+   225,
+   871,
+   245
+  ]
+ }
+}
