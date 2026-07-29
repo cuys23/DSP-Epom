@@ -32,7 +32,10 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "check": "npm run lint && npm run typecheck && npm run build"
+    "check": "npm run lint && npm run typecheck && npm run check:demo && npm run build",
+    "check:demo": "node scripts/check-demo-data.mjs",
+    "fetch:creatives": "node scripts/fetch-creatives.mjs",
+    "build:campaigns": "node scripts/build-campaigns.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",

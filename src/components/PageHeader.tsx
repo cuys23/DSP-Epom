@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { MaterialIcon } from "@/components/MaterialIcon";
+import { REPORT_FROM, REPORT_TO } from "@/lib/campaign-stats";
 
 const RANGES = [
   "Today",
@@ -14,6 +15,11 @@ const RANGES = [
   "Custom range",
 ];
 const ACTIVE_RANGE = "Last 7 days";
+
+/** dd.mm.yyyy - dd.mm.yyyy over the account's current reporting week. */
+const REPORT_RANGE = [REPORT_FROM, REPORT_TO]
+  .map((iso) => iso.split("-").reverse().join("."))
+  .join(" - ");
 
 export function PageHeader() {
   const [open, setOpen] = useState(false);
@@ -54,7 +60,7 @@ export function PageHeader() {
         <input
           type="text"
           readOnly
-          value="20.07.2026 - 26.07.2026"
+          value={REPORT_RANGE}
           placeholder="Select date"
           onClick={() => setOpen((v) => !v)}
           className={cn(

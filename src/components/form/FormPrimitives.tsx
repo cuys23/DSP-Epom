@@ -42,7 +42,6 @@ export function TextField({
   return (
     <input
       type="text"
-      readOnly
       placeholder={placeholder}
       className={cn(
         "h-9 w-full rounded border border-epom-border bg-epom-surface px-3 text-[14px] leading-5 text-epom-text",
@@ -85,7 +84,6 @@ export function SearchField({ className }: { className?: string }) {
     <div className={cn("relative", className)}>
       <input
         type="text"
-        readOnly
         placeholder="Search"
         className="h-9 w-full rounded border border-epom-border bg-epom-surface px-3 py-2 text-[14px] leading-5 text-epom-text transition-[border-color,box-shadow] duration-150 ease-in-out focus:border-epom-primary focus:outline-none"
       />

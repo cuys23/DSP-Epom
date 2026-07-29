@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { CampaignWizardShell } from "@/components/CampaignWizardShell";
 import {
   EmptyTable,
@@ -43,12 +44,12 @@ export default function BiddingStrategyPage() {
           <span className="text-[14px] font-semibold leading-[21px] text-epom-text">
             Bidding Rules
           </span>
-          <a
+          <Link
             href="/campaigns/edit/bulk-mode/bidding-rules"
             className="text-[12px] font-semibold leading-[18px] text-epom-primary"
           >
             Manage Bidding Rules
-          </a>
+          </Link>
         </div>
         <EmptyTable columns={[{ label: "Name", width: 680 }, { label: "Preview", width: 112 }]} />
 

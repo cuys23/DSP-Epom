@@ -7,10 +7,29 @@ import { MaterialIcon } from "@/components/MaterialIcon";
 const STATUS_OPTIONS = ["Active, Inactive", "Active", "Inactive", "Archived"];
 const BUDGET_OPTIONS = ["All", "Delivering", "Scheduled", "Paused", "No current budget"];
 
-export function CampaignFilters() {
+export interface CampaignFilterValue {
+  search: string;
+  status: string;
+  budget: string;
+}
+
+export const CAMPAIGN_FILTER_DEFAULTS: CampaignFilterValue = {
+  search: "",
+  status: STATUS_OPTIONS[0],
+  budget: BUDGET_OPTIONS[0],
+};
+
+export function CampaignFilters({
+  value,
+  onChange,
+}: {
+  value: CampaignFilterValue;
+  onChange: (v: CampaignFilterValue) => void;
+}) {
   const [open, setOpen] = useState<"status" | "budget" | null>(null);
   const barRef = useRef<HTMLDivElement>(null);
 
+  // One listener for both menus — close on outside click or Escape.
   useEffect(() => {
     if (!open) return;
     const onPointerDown = (e: MouseEvent) => {
@@ -30,13 +49,14 @@ export function CampaignFilters() {
   return (
     <div ref={barRef} className="mb-4 rounded bg-epom-surface p-4">
       <div className="flex h-9 items-start gap-3">
-        <div className="flex w-[714px] gap-3">
+        <div className="flex max-w-[714px] flex-wrap gap-3">
           <div className="relative w-[230px]">
             <input
               type="text"
-              readOnly
+              value={value.search}
+              onChange={(e) => onChange({ ...value, search: e.target.value })}
               placeholder="Search"
-              className="h-9 w-full rounded border border-epom-border bg-epom-surface px-3 py-2 text-[14px] leading-5 text-epom-text focus:outline-none"
+              className="h-9 w-full rounded border border-epom-border bg-epom-surface px-3 py-2 text-[14px] leading-5 text-epom-text focus:border-epom-primary focus:outline-none"
             />
             <MaterialIcon
               name="search"
@@ -46,25 +66,32 @@ export function CampaignFilters() {
 
           <FilterSelect
             label="Status:"
-            value="Active, Inactive"
+            value={value.status}
             options={STATUS_OPTIONS}
             open={open === "status"}
             onToggle={() => setOpen(open === "status" ? null : "status")}
-            onPick={() => setOpen(null)}
+            onPick={(o) => {
+              onChange({ ...value, status: o });
+              setOpen(null);
+            }}
           />
           <FilterSelect
             label="Budget:"
-            value="All"
+            value={value.budget}
             options={BUDGET_OPTIONS}
             open={open === "budget"}
             onToggle={() => setOpen(open === "budget" ? null : "budget")}
-            onPick={() => setOpen(null)}
+            onPick={(o) => {
+              onChange({ ...value, budget: o });
+              setOpen(null);
+            }}
           />
         </div>
 
         <button
           type="button"
-          aria-label="More filters"
+          title="Show advanced filters"
+          aria-label="Show advanced filters"
           className="flex h-8 w-8 items-center justify-center text-epom-primary"
         >
           <MaterialIcon name="filter_list" className="block text-[20px] leading-8" />
@@ -74,23 +101,25 @@ export function CampaignFilters() {
   );
 }
 
-function FilterSelect({
+export function FilterSelect({
   label,
   value,
   options,
   open,
   onToggle,
   onPick,
+  className = "w-[230px]",
 }: {
   label: string;
   value: string;
   options: string[];
   open: boolean;
   onToggle: () => void;
-  onPick: () => void;
+  onPick: (option: string) => void;
+  className?: string;
 }) {
   return (
-    <div className="relative w-[230px]">
+    <div className={cn("relative", className)}>
       <button
         type="button"
         onClick={onToggle}
@@ -101,8 +130,8 @@ function FilterSelect({
           open ? "rounded-t-[3px] border-epom-primary" : "rounded border-epom-border",
         )}
       >
-        <span className="mr-2 text-epom-muted">{label}</span>
-        <span className="text-epom-text">{value}</span>
+        <span className="mr-2 shrink-0 whitespace-nowrap text-epom-muted">{label}</span>
+        <span className="truncate text-epom-text">{value}</span>
       </button>
       <MaterialIcon
         name="arrow_drop_down"
@@ -110,12 +139,12 @@ function FilterSelect({
       />
 
       {open && (
-        <div className="absolute left-0 top-9 z-[999] max-h-[190px] w-[230px] overflow-y-auto rounded-b border-x border-b border-epom-primary bg-epom-surface">
+        <div className="absolute left-0 top-9 z-[999] max-h-[190px] w-full overflow-y-auto rounded-b border-x border-b border-epom-primary bg-epom-surface">
           {options.map((o) => (
             <button
               key={o}
               type="button"
-              onClick={onPick}
+              onClick={() => onPick(o)}
               className={cn(
                 "block h-[34px] w-full px-3 pb-[7px] pt-[6px] text-left text-[14px] leading-[21px] text-epom-text transition-colors hover:bg-epom-primary-8",
                 o === value && "bg-epom-primary-16 font-semibold",
