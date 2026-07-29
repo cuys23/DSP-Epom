@@ -49,11 +49,43 @@ Sidebar đã có mục `Analytics → /analytics` nên không phải sửa nav.
 | `tr.total > td` | 12px, `font-weight: 600`, lh 18.5 |
 | `.pagination-info` | flex gap 8, chữ 12px muted cao 36; nút page size `padding 7.5px 8px; gap 4; h 36` |
 
+## Chart `LineChart` — đo trực tiếp trên Highcharts của live
+
+> Trục ngày (autoRotation, ngưỡng nghiêng, `step`) ghi ở `CAMPAIGN_SETTINGS_PAGE_CLONE.md`.
+> Mục này là **series + tooltip**, đo ngày 29.07.2026 trên `/analytics` (range 46 ngày, metric Impressions).
+
+### Series — clone đang SAI, chưa sửa
+
+| | Live | Clone hiện tại |
+| --- | --- | --- |
+| Đường | `stroke #694CAD`, **3px**, `linejoin: round` | `#6f79dd`, 2px |
+| Marker | `r=4`, `fill #694CAD`, **stroke-width 0** | `r=4`, fill `#6f79dd`, viền trắng 1px |
+
+`#694CAD` chính là biến theme `--diagrams-primary-color` trong `<body style>`; `#6f79dd` là `--themeLinksTxt`-ish (màu link), dùng nhầm.
+
+### Tooltip (chưa implement)
+
+Live render tooltip bằng **1 path SVG (khung) + 1 div HTML tuyệt đối (chữ)** — `.highcharts-tooltip`.
+
+| Thành phần | Giá trị đo được |
+| --- | --- |
+| Khung | `fill #1A1C1E`, không viền, `border-radius 4`, **padding 8px**, tự co theo nội dung (đo được 91×69) |
+| Mũi nhọn | tam giác **12×6** ở cạnh dưới, canh giữa khung (`L 51 69 L 45 75 L 39 69`) |
+| Vị trí | canh giữa theo chiều ngang với điểm; **đỉnh mũi nhọn cách tâm điểm 9px** phía trên |
+| Dòng 1 (header) | nhãn trục = ngày, `12px / 18px`, màu `#A9ABB4` |
+| Dòng 2 (giá trị) | `13px / 20px`, màu `#E3E2E6`, **không in đậm** |
+| Bullet `●` | span riêng, `14px`, màu = màu series (`#694CAD`) |
+| Nội dung dòng 2 | `● {tên series}: {giá trị}` — trên Analytics tên series là **dimension của Group by** (`Date`), không phải metric |
+| Điểm đang hover | marker phóng lên `r=6`, fill `#694CAD`, viền trắng 1px |
+| Halo | vòng `r=10`, fill `#694CAD`, `fill-opacity 0.25` |
+
+Chưa xác minh được: tên series ở chart `/dashboard` và chart trang campaign (tài khoản live không có campaign chạy nên `/dashboard` chỉ hiện empty state). Nếu theo đúng quy tắc Analytics thì là tên dimension, nhưng 2 chart đó không có dropdown Group by.
+
 ## Điểm phải suy đoán (HTML không chứa)
 
 1. **Options của Group by / Time offset / Metric / Add Dimension Filter** — tất cả dropdown đều đóng lúc save trang. Metric lấy đúng 26 cột của bảng; Group by và Add Dimension Filter dùng danh sách dimension hợp lý; Time offset dùng 7 múi giờ mẫu (bản gốc là danh sách UTC đầy đủ).
 2. **Dữ liệu khi group by ≠ Date** — tài khoản không có traffic nên bảng trả rỗng; clone cũng cho rỗng (chỉ Date sinh 1 dòng/ngày trong khoảng đã chọn).
-3. **`--diagrams-primary-color`** không có trong CSS đã lưu → dùng `#6f79dd` (màu link/diagram của theme violet).
+3. ~~**`--diagrams-primary-color`** không có trong CSS đã lưu → dùng `#6f79dd`.~~ **Đã giải quyết:** biến này nằm trong `<body style>` của bản lưu Transactions và bằng `#694CAD`; đo trên live cũng ra đúng màu đó. Xem mục *Series* ở trên.
 4. **Biểu đồ**: bản gốc là Highcharts spline; clone vẽ SVG thuần theo đúng hình học của bản gốc (plot 1047×332, điểm cách đều `plotW/n`, marker r=4, nhãn trục 12px/10px). Chuỗi toàn 0 → đường nằm giữa và trục y chỉ có nhãn `0`, giống hệt bản gốc. Nếu có dữ liệu khác 0 thì clone vẽ đường gấp khúc chứ không nội suy spline.
 5. **Không gọi API** — mọi state nằm trong React, không lưu qua reload.
 
