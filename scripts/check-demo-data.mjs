@@ -255,7 +255,7 @@ assert.ok(
 console.log(`campaign data OK — ${CAMPAIGNS.length} campaigns, ${checkedDays} days`);
 console.log(
   `ledger OK — ${TRANSACTIONS.length} rows, spend $${(debited / 100).toFixed(2)}, ` +
-    `balance $${(ACCOUNT_BALANCE_CENTS / 100).toFixed(2)}, via ${USED_PAYMENT_METHODS.join(" / ")}`,
+  `balance $${(ACCOUNT_BALANCE_CENTS / 100).toFixed(2)}, via ${USED_PAYMENT_METHODS.join(" / ")}`,
 );
 console.log(`audiences OK — ${AUDIENCES.length} audiences\n`);
 console.table(

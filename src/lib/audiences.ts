@@ -62,15 +62,6 @@ export const AUDIENCES: Audience[] = [
       status: "Active" as const,
     };
   }),
-  {
-    // Real account data — created while setting the DSP up, never attached.
-    id: "30e2719a-cf9d-43b3-9a97-d4da63b6f492",
-    name: "Test",
-    campaignIds: [],
-    created: "17.07.2026",
-    edited: "17.07.2026",
-    status: "Active",
-  },
 ];
 
 const BY_ID = new Map(CAMPAIGNS.map((c) => [c.id, c]));
