@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { AppShell } from "@/components/AppShell";
 import { MaterialIcon } from "@/components/MaterialIcon";
 import { BTN_OUTLINED, BTN_PRIMARY, Dialog } from "@/components/form/Dialog";
+import type { AudienceTargeting } from "@/lib/audiences";
 
 type Mode = "Include" | "Exclude";
 
@@ -172,19 +173,34 @@ interface RailEntry {
   inline?: boolean;
 }
 
-export function AudienceEditView({ name: initialName }: { name: string }) {
+interface LinkedCampaign {
+  id: string;
+  name: string;
+}
+
+export function AudienceEditView({
+  name: initialName,
+  targeting,
+  linked = [],
+}: {
+  name: string;
+  /** What this audience was set up to target. */
+  targeting: AudienceTargeting;
+  /** Campaigns pointing at this audience — all stopped, so all "inactive". */
+  linked?: LinkedCampaign[];
+}) {
   const router = useRouter();
   const [name, setName] = useState(initialName);
   const [renaming, setRenaming] = useState(false);
-  const [sel, setSel] = useState(INITIAL);
+  const [sel, setSel] = useState({ ...INITIAL, storeCategories: targeting.storeCategories });
   const [modes, setModes] = useState<Record<ModeField, Mode>>({
     os: "Include",
     browser: "Include",
     storeCategories: "Include",
   });
   const [trafficType, setTrafficType] = useState("Any");
-  const [deviceTypes, setDeviceTypes] = useState<string[]>([]);
-  const [connectionTypes, setConnectionTypes] = useState<string[]>([]);
+  const [deviceTypes, setDeviceTypes] = useState<string[]>(targeting.deviceTypes);
+  const [connectionTypes, setConnectionTypes] = useState<string[]>(targeting.connectionTypes);
   const [openBlock, setOpenBlock] = useState<Record<string, boolean>>({});
   const [picker, setPicker] = useState<FieldKey | null>(null);
   const [rules, setRules] = useState<Record<string, VersionRule>>({});
@@ -233,7 +249,7 @@ export function AudienceEditView({ name: initialName }: { name: string }) {
     <AppShell
       activeHref="/audience"
       breadcrumbs={[{ label: "Audience", href: "/audience" }, { label: name }]}
-      rightRail={<SummaryRail sections={sections} />}
+      rightRail={<SummaryRail sections={sections} linked={linked} />}
     >
       <div className="max-w-[calc(100%-270px)]">
         <section className="mb-6 flex h-9 items-center gap-2 text-[20px] font-bold leading-6 text-epom-text">
@@ -822,12 +838,36 @@ function SelectModal({
 
 function SummaryRail({
   sections,
+  linked,
 }: {
   sections: { heading: string; blocks: { title: string; entries: RailEntry[] }[] }[];
+  linked: LinkedCampaign[];
 }) {
   return (
     <aside className="fixed right-0 top-[57px] h-[calc(100vh-57px)] w-[270px] overflow-y-auto border-l border-[#e1e2ec] bg-epom-surface">
       <div className="px-6 pt-6 text-[16px] font-bold leading-6 text-epom-text">Summary</div>
+
+      {linked.length > 0 && (
+        <section className="p-6">
+          <div className="text-[14px] font-semibold leading-[21px] text-epom-text">
+            Linked campaigns
+          </div>
+          <div className="mt-5 text-[12px] leading-[18px] text-epom-muted">
+            Linked inactive campaigns:
+          </div>
+          <div className="mt-2 flex flex-col">
+            {linked.map((c) => (
+              <a
+                key={c.id}
+                href={`/campaigns/edit/${c.id}?viewMode=true`}
+                className="text-[12px] leading-[18px] text-epom-primary underline transition-colors duration-[120ms] ease-linear hover:text-epom-primary-hover"
+              >
+                {c.name}
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
 
       {sections.map((section) => (
         <section

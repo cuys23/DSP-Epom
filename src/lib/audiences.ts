@@ -5,14 +5,21 @@
  * is therefore derived from the campaign roster rather than invented separately —
  * one audience per product line — so "Linked Campaigns" on `/audience` and the
  * Audience filter on `/traffic-funnel` can never drift from `campaigns.ts`.
- *
- * `Test` is the one audience that exists on the real account. It targets nothing
- * and no campaign uses it, which is why its Linked Campaigns cell reads "-".
  */
 
 import { CAMPAIGNS } from "./campaigns";
 
-export interface Audience {
+/** The targeting an audience was set up with, as the edit page renders it. */
+export interface AudienceTargeting {
+  /** Ticked under Targeting → Device. */
+  deviceTypes: string[];
+  /** Ticked under Targeting → Connection. */
+  connectionTypes: string[];
+  /** Picked under Advanced settings → Stores. */
+  storeCategories: string[];
+}
+
+export interface Audience extends AudienceTargeting {
   id: string;
   name: string;
   /** Campaign ids that target this audience — empty for an unused audience. */
@@ -48,21 +55,41 @@ function id(seed: string): string {
 
 const PRODUCTS = [...new Set(CAMPAIGNS.map((c) => c.product))];
 
-export const AUDIENCES: Audience[] = [
-  ...PRODUCTS.map((product) => {
-    const used = CAMPAIGNS.filter((c) => c.product === product);
-    const first = used.reduce((a, b) => (a.from < b.from ? a : b));
-    const last = used.reduce((a, b) => (a.from > b.from ? a : b));
-    return {
-      id: id(`audience:${product}`),
-      name: first.productLabel,
-      campaignIds: used.map((c) => c.id),
-      created: before(first.from, 2),
-      edited: before(last.from, 1),
-      status: "Active" as const,
-    };
-  }),
-];
+/** What a product line targets unless it says otherwise. */
+const DEFAULT_TARGETING: AudienceTargeting = {
+  // The weight-loss offers are in-app iOS buys and never leave the handset.
+  deviceTypes: ["Mobile", "Tablet"],
+  connectionTypes: [],
+  storeCategories: ["Health & Fitness"],
+};
+
+/** Product lines whose targeting differs from the default. */
+const TARGETING: Record<string, Partial<AudienceTargeting>> = {
+  britbox: {
+    // A TV streaming service also buys the living-room screen, takes traffic on
+    // any connection, and sits in the store's Entertainment shelf.
+    deviceTypes: [...DEFAULT_TARGETING.deviceTypes, "Connected TV"],
+    connectionTypes: ["Any"],
+    storeCategories: ["Entertainment"],
+  },
+};
+
+export const AUDIENCES: Audience[] = PRODUCTS.map((product) => {
+  const used = CAMPAIGNS.filter((c) => c.product === product);
+  const first = used.reduce((a, b) => (a.from < b.from ? a : b));
+  const last = used.reduce((a, b) => (a.from > b.from ? a : b));
+  return {
+    id: id(`audience:${product}`),
+    name: first.productLabel,
+    campaignIds: used.map((c) => c.id),
+    ...DEFAULT_TARGETING,
+    ...TARGETING[product],
+    created: before(first.from, 2),
+    edited: before(last.from, 1),
+    // The account is dormant — every campaign has ended, so nothing is live.
+    status: "Archived" as const,
+  };
+});
 
 const BY_ID = new Map(CAMPAIGNS.map((c) => [c.id, c]));
 
@@ -70,6 +97,16 @@ const BY_ID = new Map(CAMPAIGNS.map((c) => [c.id, c]));
 export function linkedCampaignNames(a: Audience): string {
   const names = a.campaignIds.map((cid) => BY_ID.get(cid)?.name).filter(Boolean);
   return names.length ? names.join(", ") : "-";
+}
+
+/** Summary-rail links on `/audience/edit`, in the order the roster lists them. */
+export function linkedCampaigns(id: string): { id: string; name: string }[] {
+  const audience = AUDIENCES.find((a) => a.id === id);
+  if (!audience) return [];
+  return audience.campaignIds
+    .map((cid) => BY_ID.get(cid))
+    .filter((c) => c !== undefined)
+    .map((c) => ({ id: c.id, name: c.name }));
 }
 
 /** The audience a campaign targets. Every campaign has one. */

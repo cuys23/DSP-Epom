@@ -2,14 +2,18 @@
 
 import { MaterialIcon } from "@/components/MaterialIcon";
 import { DateRangePicker } from "@/components/DateRangePicker";
-import { REPORT_FROM, REPORT_TO } from "@/lib/campaign-stats";
+import { rangeLabel } from "@/lib/campaign-stats";
 
-/** dd.mm.yyyy - dd.mm.yyyy over the account's current reporting week. */
-const REPORT_RANGE = [REPORT_FROM, REPORT_TO]
-  .map((iso) => iso.split("-").reverse().join("."))
-  .join(" - ");
-
-export function PageHeader() {
+export function PageHeader({
+  days,
+  activeRange,
+  onRangeChange,
+}: {
+  /** The ISO days currently on screen — the picker prints their span. */
+  days: string[];
+  activeRange: string;
+  onRangeChange: (range: string) => void;
+}) {
   return (
     <div className="mb-4 flex items-center justify-between">
       <h1 className="flex items-center whitespace-nowrap text-[20px] font-bold leading-6 text-epom-text">
@@ -25,7 +29,11 @@ export function PageHeader() {
         </a>
       </h1>
 
-      <DateRangePicker value={REPORT_RANGE} activeRange="Last 7 days" />
+      <DateRangePicker
+        value={rangeLabel(days)}
+        activeRange={activeRange}
+        onChange={onRangeChange}
+      />
     </div>
   );
 }

@@ -12,20 +12,14 @@ export const DEFAULT_FOLDERS: Folder[] = [
   {
     "id": "home-fitness",
     "name": "Home Fitness"
+  },
+  {
+    "id": "britbox",
+    "name": "BritBox"
   }
 ];
 
 export const INITIAL_ASSETS: CreativeAsset[] = [
-  {
-    "id": "asset-1",
-    "name": "Home_ANM.jpg",
-    "folderId": "slimkit",
-    "previewUrl": "/images/Home_ANM.jpg",
-    "dimensions": "841x412",
-    "fileSizeKb": 56,
-    "type": "JPG",
-    "createdAt": "2026-07-29"
-  },
   {
     "id": "asset-2",
     "name": "slimkit walking 1.mp4",
@@ -205,5 +199,105 @@ export const INITIAL_ASSETS: CreativeAsset[] = [
     "fileSizeKb": 6221,
     "type": "MP4",
     "createdAt": "2026-07-28"
+  },
+  {
+    "id": "asset-20",
+    "name": "britbox 1.mp4",
+    "folderId": "britbox",
+    "previewUrl": "/creatives/britbox/1_1-1ClSyx.mp4",
+    "dimensions": "1920x1080",
+    "fileSizeKb": 4720,
+    "type": "MP4",
+    "createdAt": "2026-07-05"
+  },
+  {
+    "id": "asset-21",
+    "name": "britbox 2.mp4",
+    "folderId": "britbox",
+    "previewUrl": "/creatives/britbox/1_1-1FVl0Z.mp4",
+    "dimensions": "1920x1080",
+    "fileSizeKb": 3594,
+    "type": "MP4",
+    "createdAt": "2026-07-05"
+  },
+  {
+    "id": "asset-22",
+    "name": "britbox 3.png",
+    "folderId": "britbox",
+    "previewUrl": "/creatives/britbox/1_1-1Y6ATb.png",
+    "dimensions": "1200x896",
+    "fileSizeKb": 1101,
+    "type": "PNG",
+    "createdAt": "2026-07-05"
+  },
+  {
+    "id": "asset-23",
+    "name": "britbox 4.png",
+    "folderId": "britbox",
+    "previewUrl": "/creatives/britbox/1_1-1YS4QL.png",
+    "dimensions": "1200x896",
+    "fileSizeKb": 1791,
+    "type": "PNG",
+    "createdAt": "2026-07-05"
+  },
+  {
+    "id": "asset-24",
+    "name": "britbox 5.png",
+    "folderId": "britbox",
+    "previewUrl": "/creatives/britbox/1_1-1foe7T.png",
+    "dimensions": "1200x896",
+    "fileSizeKb": 1337,
+    "type": "PNG",
+    "createdAt": "2026-07-05"
+  },
+  {
+    "id": "asset-25",
+    "name": "britbox 6.png",
+    "folderId": "britbox",
+    "previewUrl": "/creatives/britbox/1_1-1hTtI8.png",
+    "dimensions": "1200x896",
+    "fileSizeKb": 1800,
+    "type": "PNG",
+    "createdAt": "2026-07-05"
+  },
+  {
+    "id": "asset-26",
+    "name": "britbox 7.png",
+    "folderId": "britbox",
+    "previewUrl": "/creatives/britbox/1_1-1jP5KX.png",
+    "dimensions": "1200x896",
+    "fileSizeKb": 1022,
+    "type": "PNG",
+    "createdAt": "2026-07-05"
+  },
+  {
+    "id": "asset-27",
+    "name": "britbox 8.png",
+    "folderId": "britbox",
+    "previewUrl": "/creatives/britbox/1_1-1pUPZd.png",
+    "dimensions": "1200x896",
+    "fileSizeKb": 1513,
+    "type": "PNG",
+    "createdAt": "2026-07-05"
+  },
+  {
+    "id": "asset-28",
+    "name": "britbox 9.png",
+    "folderId": "britbox",
+    "previewUrl": "/creatives/britbox/1_1-1r6V2J.png",
+    "dimensions": "1200x896",
+    "fileSizeKb": 975,
+    "type": "PNG",
+    "createdAt": "2026-07-05"
+  },
+  {
+    "id": "asset-29",
+    "name": "britbox 10.mp4",
+    "folderId": "britbox",
+    "previewUrl": "/creatives/britbox/1_1-1uY0IL.mp4",
+    "dimensions": "1920x1080",
+    "fileSizeKb": 5489,
+    "type": "MP4",
+    "createdAt": "2026-07-05"
   }
 ];

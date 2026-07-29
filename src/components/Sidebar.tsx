@@ -16,7 +16,10 @@ interface SidebarProps {
 }
 
 export function Sidebar({ collapsed, onToggle, activeHref }: SidebarProps) {
-  const [expanded, setExpanded] = useState<string[]>([]);
+  // The live site opens the submenu that owns the current route on first paint.
+  const [expanded, setExpanded] = useState<string[]>(() =>
+    NAV_ITEMS.filter((i) => i.children?.some((c) => c.href === activeHref)).map((i) => i.label),
+  );
 
   const toggleSubmenu = (label: string) =>
     setExpanded((prev) =>
@@ -92,9 +95,7 @@ export function Sidebar({ collapsed, onToggle, activeHref }: SidebarProps) {
         )}
       >
         <div className="p-1 text-center text-[10px] leading-[14.2857px] text-epom-version">
-          Version 8.2
-          <br />
-          Epom Ltd. © 2026
+          Version 8.2 Epom Ltd. © 2026
         </div>
         <div className="flex whitespace-nowrap text-[14px] font-semibold leading-5">
           <a
@@ -124,18 +125,26 @@ interface SidebarItemProps {
 }
 
 function SidebarItem({ item, collapsed, activeHref, expanded, onToggleSubmenu }: SidebarItemProps) {
-  const isActive = item.href === activeHref;
+  // A parent never takes the solid highlight — it gets a 16% tint while one of
+  // its children owns the route, and the child carries the solid bar.
+  const hasActiveChild = !!item.children?.some((c) => c.href === activeHref);
+  const isActive = !item.children && item.href === activeHref;
 
   return (
-    <li className={cn("relative", collapsed && isActive && "border-r-2 border-epom-nav-active")}>
+    <li
+      className={cn(
+        "relative",
+        collapsed && (isActive || hasActiveChild) && "border-r-2 border-epom-nav-active",
+      )}
+    >
       <a
         href={item.href}
         className={cn(
           "relative block h-[41px] cursor-pointer text-[14px] leading-[21px] transition-colors duration-[120ms] ease-linear",
           collapsed ? "px-0" : "py-2.5 pl-[35px] pr-[45px]",
-          isActive
-            ? "bg-epom-nav-active text-white"
-            : "text-epom-nav-idle hover:bg-epom-nav-hover",
+          isActive && "bg-epom-nav-active text-white",
+          hasActiveChild && "bg-epom-nav-active/16 text-white",
+          !isActive && !hasActiveChild && "text-epom-nav-idle hover:bg-epom-nav-hover",
         )}
       >
         <MaterialIcon
@@ -160,7 +169,7 @@ function SidebarItem({ item, collapsed, activeHref, expanded, onToggleSubmenu }:
           aria-expanded={expanded}
           className={cn(
             "absolute left-[187.5px] top-[10px] h-[25px] w-5 transition-colors duration-[120ms] ease-linear",
-            isActive ? "text-white" : "text-epom-nav-idle",
+            isActive || hasActiveChild ? "text-white" : "text-epom-nav-idle",
           )}
         >
           <MaterialIcon
@@ -176,7 +185,12 @@ function SidebarItem({ item, collapsed, activeHref, expanded, onToggleSubmenu }:
             <li key={child.label}>
               <a
                 href={child.href}
-                className="relative block h-[41px] cursor-pointer py-2.5 pl-[58px] pr-[45px] text-[14px] leading-[21px] text-epom-nav-idle transition-colors duration-[120ms] ease-linear hover:bg-epom-nav-hover"
+                className={cn(
+                  "relative block h-[41px] cursor-pointer py-2.5 pl-[58px] pr-[45px] text-[14px] leading-[21px] transition-colors duration-[120ms] ease-linear",
+                  child.href === activeHref
+                    ? "bg-epom-nav-active text-white"
+                    : "text-epom-nav-idle hover:bg-epom-nav-hover",
+                )}
               >
                 <MaterialIcon
                   name={child.icon}

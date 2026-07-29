@@ -10,7 +10,7 @@ import { BTN_OUTLINED, BTN_PRIMARY, Dialog } from "@/components/form/Dialog";
 import { SortLabel, type Sort } from "@/components/SortLabel";
 import { LineChart } from "@/components/LineChart";
 import { CELL, SERIES, dayMetrics, sumMetrics } from "@/lib/demo-data";
-import { REPORT_FROM, REPORT_TO } from "@/lib/campaign-stats";
+import { DEFAULT_RANGE, rangeDays } from "@/lib/campaign-stats";
 
 /**
  * Every metric column of the report, with the value the live account returns.
@@ -93,10 +93,11 @@ interface Report {
   filters: { dimension: string; value: string }[];
 }
 
-/** Opens on the account's current reporting week — the last seven days with traffic. */
+/** Opens on the account's "today", like every other date field in the app. */
+const INITIAL_DAYS = rangeDays(DEFAULT_RANGE);
 const INITIAL_REPORT: Report = {
-  from: REPORT_FROM,
-  to: REPORT_TO,
+  from: INITIAL_DAYS[0],
+  to: INITIAL_DAYS[INITIAL_DAYS.length - 1],
   groupBy: "Date",
   filters: [],
 };
@@ -208,7 +209,9 @@ export function AnalyticsView() {
               label="Group by:"
               value={draft.groupBy}
               options={DIMENSIONS}
-              className="w-[220px]"
+              // Live sizes this one to its content (min 96, max 720) — only
+              // Time offset below is pinned to a fixed width.
+              className="w-auto min-w-24 max-w-[720px]"
               open={open === "groupBy"}
               onToggle={() => setOpen(open === "groupBy" ? null : "groupBy")}
               onPick={(o) => {
@@ -347,6 +350,8 @@ export function AnalyticsView() {
             <LineChart
               labels={rows}
               values={rows.map((d) => SERIES[metric](metrics[d]))}
+              formatted={rows.map((d) => CELL[metric](metrics[d]))}
+              seriesName={metric}
             />
           </div>
         </div>
@@ -549,7 +554,7 @@ function DateRange({
   }, [open]);
 
   return (
-    <div ref={ref} className="relative w-[240px]">
+    <div ref={ref} className="relative w-[220px]">
       <input
         type="text"
         readOnly

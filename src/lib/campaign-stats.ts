@@ -7,18 +7,73 @@
  * `demo-data.ts`, so a cell in the list always agrees with the report behind it.
  */
 
-import { CAMPAIGNS, LATEST_DAY, type Campaign } from "./campaigns";
+import { CAMPAIGNS, type Campaign } from "./campaigns";
 import { dayMetrics, sumMetrics, CELL, type DayMetrics } from "./demo-data";
 
-/** The account's reporting window: the last seven days that have any traffic. */
-export const REPORT_DAYS = Array.from({ length: 7 }, (_, i) => {
-  const d = new Date(`${LATEST_DAY}T00:00:00Z`);
-  d.setUTCDate(d.getUTCDate() - (6 - i));
+/** ISO day `n` days after `iso` (negative walks back). */
+const shiftDay = (iso: string, n: number) => {
+  const d = new Date(`${iso}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + n);
   return d.toISOString().slice(0, 10);
-});
+};
+
+/**
+ * The calendar date every date-range preset is measured from. The account's own
+ * traffic stops earlier than this, so "Today" and "Last 7 days" legitimately come
+ * back empty — the campaigns are paused, not reporting.
+ *
+ * ponytail: read once when the module loads, so a statically prerendered page
+ * bakes its build date. Move it behind a mount effect, or mark the page
+ * `force-dynamic`, if the clone ever has to stay correct past midnight.
+ */
+export const TODAY = new Date().toISOString().slice(0, 10);
+
+/** The account's reporting window: the seven days ending today. */
+export const REPORT_DAYS = Array.from({ length: 7 }, (_, i) => shiftDay(TODAY, i - 6));
 
 export const REPORT_FROM = REPORT_DAYS[0];
 export const REPORT_TO = REPORT_DAYS[REPORT_DAYS.length - 1];
+
+/** Every ISO day from `from` to `to`, inclusive. */
+const span = (from: string, to: string) => {
+  const out: string[] = [];
+  for (let d = from; d <= to; d = shiftDay(d, 1)) out.push(d);
+  return out;
+};
+
+/** The preset every date-range field in the app opens on. */
+export const DEFAULT_RANGE = "Today";
+
+/**
+ * The days a date-range preset covers, measured back from `TODAY`. `Custom range`
+ * needs a calendar to say anything, so it falls through to the default week rather
+ * than guessing a span.
+ */
+export function rangeDays(preset: string): string[] {
+  const [year, month] = TODAY.split("-").map(Number);
+  const firstOf = (y: number, m: number) => `${y}-${String(m).padStart(2, "0")}-01`;
+
+  switch (preset) {
+    case "Today":
+      return [TODAY];
+    case "Yesterday":
+      return [shiftDay(TODAY, -1)];
+    case "Last 30 days":
+      return span(shiftDay(TODAY, -29), TODAY);
+    case "This month":
+      return span(firstOf(year, month), TODAY);
+    case "Last month": {
+      const start = month === 1 ? firstOf(year - 1, 12) : firstOf(year, month - 1);
+      return span(start, shiftDay(firstOf(year, month), -1));
+    }
+    default:
+      return REPORT_DAYS;
+  }
+}
+
+/** dd.mm.yyyy - dd.mm.yyyy, the format every date-range field in the app prints. */
+export const rangeLabel = (days: string[]) =>
+  `${longDate(days[0])} - ${longDate(days[days.length - 1])}`;
 
 /** dd/mm/yy — the format the campaigns table prints creation dates in. */
 const shortDate = (iso: string) => {
@@ -48,7 +103,8 @@ export interface CampaignStats {
   winRate: string;
   spendLimit: number;
   impressionLimit: number;
-  state: "delivering" | "stopped";
+  /** Nothing is delivering — a campaign has either been paused or run out its flight. */
+  state: "paused" | "stopped";
   status: string;
   created: string;
   flight: string;
@@ -65,8 +121,6 @@ export function campaignStats(campaign: Campaign): CampaignStats {
   const peakSpend = Math.max(...daily.map((m) => m.spend));
   const peakImpressions = Math.max(...daily.map((m) => m.impressions));
 
-  const delivering = campaign.to >= LATEST_DAY;
-
   return {
     campaign,
     total,
@@ -77,8 +131,10 @@ export function campaignStats(campaign: Campaign): CampaignStats {
     winRate: hasRecentTraffic ? CELL["Win Rate"](lastWeek) : "-",
     spendLimit: ceilTo(peakSpend, 50),
     impressionLimit: ceilTo(peakImpressions, 5_000),
-    state: delivering ? "delivering" : "stopped",
-    status: delivering ? "Delivering" : `Stopped (ended ${shortDate(campaign.to)})`,
+    state: campaign.paused ? "paused" : "stopped",
+    status: campaign.paused
+      ? `Paused (${shortDate(campaign.to)})`
+      : `Stopped (ended ${shortDate(campaign.to)})`,
     created: shortDate(campaign.from),
     flight: `${longDate(campaign.from)} 00:00 – ${longDate(campaign.to)} 23:59`,
   };

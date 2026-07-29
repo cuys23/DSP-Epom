@@ -18,12 +18,15 @@ export const DATE_RANGES = [
 export function DateRangePicker({
   value,
   activeRange,
+  onChange,
   className = "w-[220px]",
 }: {
   /** dd.mm.yyyy - dd.mm.yyyy, printed into the read-only input. */
   value: string;
   /** Preset the popup highlights. */
   activeRange: string;
+  /** Fires with the chosen preset. Without it the picker is display-only. */
+  onChange?: (range: string) => void;
   className?: string;
 }) {
   const [open, setOpen] = useState(false);
@@ -70,7 +73,10 @@ export function DateRangePicker({
             <button
               key={range}
               type="button"
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                onChange?.(range);
+                setOpen(false);
+              }}
               className={cn(
                 "mb-1 flex h-9 w-full items-center rounded px-3 text-left text-[14px] leading-[21px] text-epom-text transition-colors hover:bg-epom-primary-8",
                 range === activeRange && "bg-epom-primary-16 font-semibold",

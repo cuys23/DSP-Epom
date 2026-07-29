@@ -1,12 +1,12 @@
 /**
  * Per-day analytics for the account's campaigns.
  *
- * Two counters are real, straight from the performance spreadsheet in
- * `campaigns.ts`: `clicks` (the sheet's `Total Lead`) and `actions` (its `Event`
- * column). Everything else is derived here — the funnel above the click, the
- * money, and the video quartiles — deterministically per campaign and date, so
- * the same day always yields the same numbers and totals stay consistent with
- * the rows that produced them.
+ * The counters in `campaigns.ts` are real: `clicks` (the affiliate sheet's `Total
+ * Lead`), `actions` (its `Event` column), and — on campaigns that came from the
+ * DSP's own export — `impressions`. Everything else is derived here: the rest of
+ * the funnel above the click, the money, and the video quartiles, deterministically
+ * per campaign and date, so the same day always yields the same numbers and totals
+ * stay consistent with the rows that produced them.
  *
  * Only counters are stored. Every rate, cost and ratio is recomputed from them,
  * which is what makes the Total row correct rather than a sum of percentages.
@@ -65,18 +65,29 @@ const ZERO: DayMetrics = {
 const round2 = (n: number) => Math.round((n + Number.EPSILON) * 100) / 100;
 
 /**
- * Rebuilds a day's funnel from its two real counters.
+ * Rebuilds a day's funnel from its real counters.
  *
  * The click is the anchor: impressions come from dividing it by a plausible CTR,
  * then the RTB funnel is walked back up through wins and bid responses. Doing it
  * in this direction keeps every stage strictly larger than the one below it, so
  * the funnel can never invert no matter what the sheet contains.
+ *
+ * A day that reported its own impressions uses that number instead. The derived
+ * one is still drawn so the rest of the day's draws land the same either way, and
+ * a campaign's numbers do not shift when a measured column arrives.
  */
-function derive(campaign: Campaign, date: string, clicks: number, actions: number): DayMetrics {
+function derive(
+  campaign: Campaign,
+  date: string,
+  clicks: number,
+  actions: number,
+  measured?: number,
+): DayMetrics {
   const r = rng(hash(`${campaign.id}:${date}`));
   const between = (lo: number, hi: number) => lo + r() * (hi - lo);
 
-  const impressions = Math.round(clicks / between(0.0022, 0.0045));
+  const derived = Math.round(clicks / between(0.0022, 0.0045));
+  const impressions = measured ?? derived;
   const wins = Math.round(impressions / between(0.9, 0.98));
   const bidResponses = Math.round(wins / between(0.07, 0.14));
   const bidRequests = Math.round(bidResponses / between(0.58, 0.76));
@@ -108,9 +119,12 @@ function derive(campaign: Campaign, date: string, clicks: number, actions: numbe
 
 const BY_ID = new Map(CAMPAIGNS.map((c) => [c.id, c]));
 
-/** date → clicks/conversions, per campaign. Built once; the sheet never changes at runtime. */
+/** date → the day's real counters, per campaign. Built once; the source is static. */
 const DAYS = new Map(
-  CAMPAIGNS.map((c) => [c.id, new Map(c.days.map(([d, clicks, actions]) => [d, [clicks, actions]]))]),
+  CAMPAIGNS.map((c) => [
+    c.id,
+    new Map(c.days.map(([d, clicks, actions, impressions]) => [d, [clicks, actions, impressions]])),
+  ]),
 );
 
 export function sumMetrics(days: DayMetrics[]): DayMetrics {
@@ -132,7 +146,7 @@ export function dayMetrics(date: string, campaignId?: string): DayMetrics {
   const campaign = BY_ID.get(campaignId);
   const day = DAYS.get(campaignId)?.get(date);
   if (!campaign || !day) return { ...ZERO };
-  return derive(campaign, date, day[0], day[1]);
+  return derive(campaign, date, day[0]!, day[1]!, day[2]);
 }
 
 const int = (n: number) => n.toLocaleString("en-US");

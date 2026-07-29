@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import type { CreativeType } from "@/types/campaign";
+import { rememberCreativeType } from "@/lib/creative-type";
 
 /**
  * Card is a link, not a selection control — on the live site clicking any
@@ -9,6 +12,7 @@ export function CreativeTypeCard({ label, image, width, height, href }: Creative
   return (
     <a
       href={href}
+      onClick={() => rememberCreativeType(label)}
       className="relative mb-4 flex h-[270px] min-h-[270px] cursor-pointer flex-col items-center justify-end rounded bg-epom-surface px-[15px] py-9 text-center shadow-epom-card transition-shadow duration-[120ms] ease-linear hover:shadow-epom-card-hover"
     >
       <Image

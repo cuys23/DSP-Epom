@@ -1,8 +1,7 @@
 import { cn } from "@/lib/utils";
 import { AppShell } from "@/components/AppShell";
-import { CampaignSummaryRail } from "@/components/CampaignSummaryRail";
 import { MaterialIcon } from "@/components/MaterialIcon";
-import { WIZARD_SUMMARY } from "@/lib/campaign-data";
+import { WizardSummaryRail } from "@/components/WizardSummaryRail";
 
 const TABS = [
   { label: "Basic Info", href: "/campaigns/new" },
@@ -27,7 +26,7 @@ export function CampaignWizardShell({ activeTab, footer, children }: CampaignWiz
     <AppShell
       activeHref="/campaigns"
       breadcrumbs={[{ label: "Campaigns", href: "/campaigns" }, { label: "Create new campaign" }]}
-      rightRail={<CampaignSummaryRail sections={WIZARD_SUMMARY} />}
+      rightRail={<WizardSummaryRail />}
     >
       {/* Reserve the width the fixed summary rail occupies. The column is a
           full-height flex stack so the content area can stretch and pin the

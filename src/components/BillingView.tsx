@@ -9,14 +9,13 @@ import { DateRangePicker } from "@/components/DateRangePicker";
 import { SortLabel, type Sort } from "@/components/SortLabel";
 import {
   ACCOUNT_BALANCE_CENTS,
-  REPORT_RANGE,
   TRANSACTIONS,
   USED_PAYMENT_METHODS,
-  asRangeDate,
   formatAt,
   money,
   type Transaction,
 } from "@/lib/transactions";
+import { DEFAULT_RANGE, rangeDays, rangeLabel } from "@/lib/campaign-stats";
 
 /** `app-deposit` payment switchers, in the order the live form renders them. */
 const PAYMENT_METHODS = [
@@ -55,9 +54,6 @@ const COLUMNS: { label: string; sortKey?: string }[] = [
   { label: "Invoice" },
 ];
 
-/** "Last 30 days" of the account's own billing — the window the page opens on. */
-const DEFAULT_RANGE = REPORT_RANGE.map(asRangeDate).join(" - ");
-
 interface Filters {
   search: string;
   types: string[];
@@ -66,16 +62,14 @@ interface Filters {
 
 const NO_FILTERS: Filters = { search: "", types: [], methods: [] };
 
-const inRange = (t: Transaction) => {
-  const day = t.at.slice(0, 10);
-  return day >= REPORT_RANGE[0] && day <= REPORT_RANGE[1];
-};
-
-function apply(f: Filters, sort: Sort | null): Transaction[] {
+function apply(f: Filters, sort: Sort | null, days: string[]): Transaction[] {
   const q = f.search.trim().toLowerCase();
+  const from = days[0];
+  const to = days[days.length - 1];
   const rows = TRANSACTIONS.filter(
     (t) =>
-      inRange(t) &&
+      t.at.slice(0, 10) >= from &&
+      t.at.slice(0, 10) <= to &&
       (!q ||
         t.description.toLowerCase().includes(q) ||
         String(t.id).includes(q) ||
@@ -100,11 +94,13 @@ export function BillingView() {
   // The live page only refetches when "Get transactions" is pressed, so the
   // filter controls stay pending until then.
   const [applied, setApplied] = useState<Filters>(NO_FILTERS);
+  const [range, setRange] = useState(DEFAULT_RANGE);
 
+  const days = useMemo(() => rangeDays(range), [range]);
   const tooLow = amount !== "" && Number(amount) < MIN_AMOUNT;
   const canPay = amount !== "" && !tooLow;
   const filtered = search !== "" || types.length > 0 || methods.length > 0;
-  const rows = useMemo(() => apply(applied, sort), [applied, sort]);
+  const rows = useMemo(() => apply(applied, sort, days), [applied, sort, days]);
 
   const resetFilters = () => {
     setSearch("");
@@ -265,7 +261,7 @@ export function BillingView() {
       {/* Transaction history */}
       <div className="mb-4 flex items-center justify-between">
         <div className="text-[16px] font-bold leading-6 text-epom-text">Transaction history</div>
-        <DateRangePicker value={DEFAULT_RANGE} activeRange="Last 30 days" />
+        <DateRangePicker value={rangeLabel(days)} activeRange={range} onChange={setRange} />
       </div>
 
       <div className="flex items-start justify-between gap-2.5 rounded bg-epom-surface p-4">

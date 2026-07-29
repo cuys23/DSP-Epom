@@ -1,3 +1,5 @@
+"use client";
+
 /**
  * The Highcharts spline the live pages draw, rebuilt as plain SVG — one series,
  * markers on every point. With an all-zero series the axis centres on 0, which
@@ -6,7 +8,13 @@
  * The two charts differ in how the x axis is laid out: the Analytics report
  * centres each point in its own column, the campaign page spreads the points
  * from edge to edge.
+ *
+ * Hovering snaps to the nearest point and draws Highcharts' crosshair-and-box.
+ * The box prints `formatted` verbatim, so the number under the cursor is the one
+ * the report table shows rather than a second rounding of the same value.
  */
+
+import { useState } from "react";
 
 /** Average advance of 12px "Open Sans", measured off the live axis labels. */
 const CHAR_W = 6.26;
@@ -22,16 +30,22 @@ const AXIS_BOTTOM = 58;
 export function LineChart({
   labels,
   values,
+  formatted,
+  seriesName = "Value",
   width = 1088,
   height = 400,
   spread = "columns",
 }: {
   labels: string[];
   values: number[];
+  /** Per-point display text, already formatted by the report's own `CELL`. */
+  formatted?: string[];
+  seriesName?: string;
   width?: number;
   height?: number;
   spread?: "columns" | "edges";
 }) {
+  const [hover, setHover] = useState<number | null>(null);
   const left = 31;
   const top = 10;
   const plotW = width - left - 10;
@@ -74,6 +88,21 @@ export function LineChart({
   // A tilted label hangs off its tick by this much; upright ones sit centred.
   const labelX = (i: number) => x(i) + (tilted ? 4 * Math.SQRT1_2 : 0);
 
+  /**
+   * Cursor → nearest point. `getScreenCTM` undoes whatever scaling and
+   * letterboxing `preserveAspectRatio` applied, so this stays exact at any width.
+   */
+  const pick = (e: React.MouseEvent<SVGSVGElement>) => {
+    const ctm = e.currentTarget.getScreenCTM();
+    if (!ctm) return;
+    const { x: cx } = new DOMPoint(e.clientX, e.clientY).matrixTransform(ctm.inverse());
+    let best = 0;
+    for (let i = 1; i < n; i++) {
+      if (Math.abs(x(i) - cx) < Math.abs(x(best) - cx)) best = i;
+    }
+    setHover(best);
+  };
+
   return (
     <svg
       viewBox={`0 0 ${width} ${height}`}
@@ -81,6 +110,8 @@ export function LineChart({
       style={{ height }}
       role="img"
       aria-label="Analytics chart"
+      onMouseMove={pick}
+      onMouseLeave={() => setHover(null)}
     >
       {Array.from({ length: n + 1 }, (_, i) => left + (i * plotW) / n).map((gx) => (
         <path
@@ -130,8 +161,58 @@ export function LineChart({
         strokeWidth="2"
       />
       {values.map((v, i) => (
-        <circle key={labels[i]} cx={x(i)} cy={y(v)} r="4" fill="#6f79dd" stroke="#ffffff" />
+        <circle
+          key={labels[i]}
+          cx={x(i)}
+          cy={y(v)}
+          r={i === hover ? 6 : 4}
+          fill="#6f79dd"
+          stroke="#ffffff"
+        />
       ))}
+
+      {hover !== null && <Tooltip />}
+
+      {/* Transparent hit area, so the whole plot reports a hover, not just the ink. */}
+      <rect x={left} y={top} width={plotW} height={plotH} fill="transparent" />
     </svg>
   );
+
+  function Tooltip() {
+    const i = hover as number;
+    const heading = labels[i];
+    const body = `${seriesName}: ${formatted?.[i] ?? values[i].toLocaleString("en-US")}`;
+
+    // No text metrics inside SVG, so the box is sized off the same average advance
+    // the axis labels are laid out with. The bullet costs two characters.
+    const boxW = Math.max(heading.length, body.length + 2) * CHAR_W + 20;
+    const boxH = 46;
+    const px = x(i);
+    const py = y(values[i]);
+    // Prefer the right of the point, flip left when that would overflow the plot.
+    const bx = px + 12 + boxW <= left + plotW ? px + 12 : px - 12 - boxW;
+    const by = Math.min(Math.max(py - boxH / 2, top), top + plotH - boxH);
+
+    return (
+      <g pointerEvents="none">
+        <path d={`M ${px + 0.5} ${top} L ${px + 0.5} ${baseline}`} stroke={axis} fill="none" />
+        <rect
+          x={bx}
+          y={by}
+          width={boxW}
+          height={boxH}
+          rx="3"
+          fill="#ffffff"
+          stroke="#6f79dd"
+          opacity="0.97"
+        />
+        <text x={bx + 10} y={by + 19} fontSize="12" fontWeight="700" fill="#1b1b1f">
+          {heading}
+        </text>
+        <text x={bx + 10} y={by + 36} fontSize="12" fill="#1b1b1f">
+          <tspan fill="#6f79dd">●</tspan> {body}
+        </text>
+      </g>
+    );
+  }
 }

@@ -53,55 +53,20 @@ interface Campaign {
   creatives: Creative[];
 }
 
-/**
- * The account's newest campaign, saved from the wizard and not delivering yet, so
- * it has nothing to report. Kept verbatim from the live account.
- */
-const DRAFT_CAMPAIGN: Campaign = {
-  id: "dadb539e-a65a-45bf-8764-ffc55d87506d",
-  name: "weigh loss",
-  folder: "Unsorted",
-  on: true,
-  mediaType: "Video",
-  mediaIcon: "smart_display",
-  pricing: "CPM",
-  budget: {
-    lines: ["$100 per day", "10,000 Impressions per day"],
-    status: "Scheduled (4 days left)",
-    state: "scheduled",
-  },
-  ecpm: "-",
-  winRate: "-",
-  created: "28/07/26",
-  creatives: [
-    {
-      name: "home fitness 2.mp4",
-      src: "/creatives/home-fitness/4_3-16NPI3.mp4",
-      video: true,
-      on: true,
-      size: "1920x1440",
-      price: "$0.03",
-      status: "pending_approval",
-    },
-  ],
-};
-
 const int = (n: number) => n.toLocaleString("en-US");
 
-/** The campaigns that have run, newest first, with the unstarted draft on top. */
+/** The campaigns that have run, newest first. */
 const CAMPAIGNS: Campaign[] = [
-  DRAFT_CAMPAIGN,
   ...[...SOURCE_CAMPAIGNS]
     .sort((a, b) => b.from.localeCompare(a.from))
     .map((c): Campaign => {
       const s = STATS.get(c.id)!;
-      const delivering = s.state === "delivering";
       return {
         id: c.id,
         name: c.name,
         folder: c.productLabel,
-        // A campaign past the end of its flight is switched off.
-        on: delivering,
+        // Every campaign is past the end of its flight, so all are switched off.
+        on: false,
         mediaType: "Video",
         mediaIcon: "smart_display",
         pricing: "CPM",
@@ -117,10 +82,10 @@ const CAMPAIGNS: Campaign[] = [
           name: k.name,
           src: k.src,
           video: k.video,
-          on: delivering,
+          on: false,
           size: k.size,
           price: k.price,
-          status: delivering ? "active" : "paused",
+          status: "paused",
         })),
       };
     }),
@@ -220,7 +185,7 @@ export function CampaignsListView() {
 
         {/* .main cancels the wrapper padding and re-applies its own. */}
         <div className="-m-8 overflow-auto p-8">
-          <div className="flex h-9 items-center pb-4">
+          <div className="mb-4 flex h-9 items-center">
             <h1 className="text-[20px] font-bold leading-6 text-epom-text">All campaigns</h1>
             <button
               type="button"

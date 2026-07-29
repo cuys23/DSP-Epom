@@ -104,7 +104,7 @@ export function TrafficFunnelView() {
         </div>
 
         <div ref={barRef} className="rounded bg-epom-surface p-4">
-          <div className="relative w-[172px]">
+          <div className="relative w-[111px]">
             <button
               type="button"
               data-qa="addFilterBtn"
@@ -215,7 +215,7 @@ export function TrafficFunnelView() {
         {reported ? (
           <Funnel campaignId={reported.id} audience={values.Audience} />
         ) : (
-          <div className="flex w-full flex-1 items-center justify-center">
+          <div className="mt-4 flex w-full flex-1 items-center justify-center rounded bg-epom-surface">
             <span className="text-[16px] font-bold text-epom-text">No Data</span>
           </div>
         )}

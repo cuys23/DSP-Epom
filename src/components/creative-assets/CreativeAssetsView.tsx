@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import { cn } from "@/lib/utils";
 import { AppShell } from "@/components/AppShell";
 import { MaterialIcon } from "@/components/MaterialIcon";
 import { FoldersSidebar } from "./FoldersSidebar";
@@ -12,6 +13,12 @@ import { DEFAULT_FOLDERS, INITIAL_ASSETS } from "@/lib/creative-assets-data";
 import type { CreativeAsset, Folder } from "@/types/creative-asset";
 
 type TabType = "image" | "video" | "html5";
+
+const TABS: { id: TabType; label: string }[] = [
+  { id: "image", label: "Images" },
+  { id: "video", label: "Videos" },
+  { id: "html5", label: "HTML5" },
+];
 
 export function CreativeAssetsView() {
   const [folders, setFolders] = useState<Folder[]>(DEFAULT_FOLDERS);
@@ -36,23 +43,29 @@ export function CreativeAssetsView() {
     });
   }, [folders, assets]);
 
+  // The folder in view. Both the tab counts and the table read from this, so a
+  // tab never advertises assets the selected folder does not hold.
+  const folderAssets = useMemo(
+    () =>
+      activeFolderId === "all"
+        ? assets
+        : assets.filter((a) => a.folderId === activeFolderId),
+    [assets, activeFolderId],
+  );
+
   // Assets counts per tab
   const tabCounts = useMemo(() => {
-    const images = assets.filter((a) =>
+    const images = folderAssets.filter((a) =>
       ["JPG", "PNG", "GIF"].includes(a.type)
     ).length;
-    const videos = assets.filter((a) => a.type === "MP4").length;
-    const html5 = assets.filter((a) => a.type === "HTML5").length;
+    const videos = folderAssets.filter((a) => a.type === "MP4").length;
+    const html5 = folderAssets.filter((a) => a.type === "HTML5").length;
     return { image: images, video: videos, html5 };
-  }, [assets]);
+  }, [folderAssets]);
 
-  // Filter assets by folder, tab, and search query
+  // Filter the folder's assets by tab and search query
   const filteredAssets = useMemo(() => {
-    return assets.filter((asset) => {
-      // Folder filter
-      if (activeFolderId !== "all" && asset.folderId !== activeFolderId) {
-        return false;
-      }
+    return folderAssets.filter((asset) => {
       // Tab filter
       if (activeTab === "image" && !["JPG", "PNG", "GIF"].includes(asset.type)) {
         return false;
@@ -72,7 +85,7 @@ export function CreativeAssetsView() {
       }
       return true;
     });
-  }, [assets, activeFolderId, activeTab, searchQuery]);
+  }, [folderAssets, activeTab, searchQuery]);
 
   // Action handlers
   const handleCreateFolder = (folderName: string) => {
@@ -117,119 +130,99 @@ export function CreativeAssetsView() {
 
   return (
     <AppShell
-      breadcrumbs={[{ label: "home", href: "/" }, { label: "Creative Assets" }]}
+      breadcrumbs={[{ label: "Creative Assets" }]}
       activeHref="/creative-assets"
     >
-      <div className="flex min-h-full">
-        {/* Left Folders Sidebar */}
+      {/* .page-content-grid — 260px folder rail, then the padded main column. */}
+      <div className="grid gap-8" style={{ gridTemplateColumns: "228px 1fr" }}>
         <FoldersSidebar
           folders={foldersWithCounts}
           activeFolderId={activeFolderId}
           onSelectFolder={setActiveFolderId}
           onOpenCreateFolder={() => setIsCreateFolderOpen(true)}
           onDeleteFolder={handleDeleteFolder}
-          totalAssetCount={assets.length}
         />
 
-        {/* Main Assets Content */}
-        <main className="flex-1 pl-8">
-          {/* Header Bar */}
-          <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
-            <div className="flex items-center gap-2">
-              <h1 className="text-[24px] font-semibold leading-8 text-epom-text">
-                Creative Assets
-              </h1>
-              <button
-                type="button"
-                className="text-epom-muted hover:text-epom-text"
-                title="More actions"
-              >
-                <MaterialIcon name="more_horiz" className="text-[20px]" />
-              </button>
-              <button
-                type="button"
-                className="text-epom-muted hover:text-epom-text"
-                title="Learn about Creative Assets"
-              >
-                <MaterialIcon name="help_outline" className="text-[20px]" />
-              </button>
-            </div>
+        {/* .main cancels the wrapper padding and re-applies its own. */}
+        <div className="-m-8 overflow-auto p-8">
+          <div className="flex h-9 items-center">
+            <h1 className="text-[20px] font-bold leading-6 text-epom-text">Creative Assets</h1>
+            <button
+              type="button"
+              title="More actions"
+              aria-label="More actions"
+              // Inert until a folder is selected on the live site, hence the 0.5 opacity.
+              className="ml-2 flex h-[22px] w-8 items-center justify-center px-1.5 py-px text-epom-primary opacity-50"
+            >
+              <MaterialIcon name="more_horiz" className="block text-[16px] leading-5" />
+            </button>
+            <a
+              href="https://help.dsp.epom.com/docs/creative-assets"
+              target="_blank"
+              rel="noreferrer"
+              title="Learn about Creative Assets"
+              aria-label="Learn about Creative Assets"
+              className="ml-2 flex h-5 w-5 text-epom-primary transition-colors duration-[120ms] ease-linear hover:text-epom-primary-hover"
+            >
+              <MaterialIcon name="help_outline" className="block text-[16px] leading-5" />
+            </a>
 
             <button
               type="button"
               onClick={() => setIsUploadOpen(true)}
-              className="inline-flex items-center gap-2 rounded-lg bg-epom-primary px-4 py-2 text-[14px] font-medium text-white shadow-xs transition-opacity hover:opacity-90"
+              className="ml-auto flex h-9 min-w-24 items-center gap-2 rounded bg-epom-primary px-4 py-[7.5px] text-[14px] font-semibold leading-[21px] text-white shadow-epom-button transition-colors hover:bg-epom-primary-hover"
             >
-              <MaterialIcon name="cloud_upload" className="text-[18px]" />
+              <MaterialIcon name="cloud_upload" className="block text-[16px] leading-4" />
               Upload Asset
             </button>
           </div>
 
-          {/* Navigation Tabs */}
-          <div className="mb-6 border-b border-epom-border">
-            <nav className="-mb-px flex gap-6" aria-label="Tabs">
-              <button
-                type="button"
-                onClick={() => setActiveTab("image")}
-                className={`flex items-center gap-2 border-b-2 py-3 text-[14px] font-medium transition-colors ${
-                  activeTab === "image"
-                    ? "border-epom-primary text-epom-primary"
-                    : "border-transparent text-epom-muted hover:border-gray-300 hover:text-epom-text"
-                }`}
-              >
-                Images ({tabCounts.image})
-              </button>
+          {/* .sub-menu-block — 16px above and below the tab strip. */}
+          <nav className="my-4">
+            <ul className="flex h-[34px] border-b border-epom-border">
+              {TABS.map((tab, i) => (
+                <li key={tab.id} className="relative -mb-px flex h-[34px]">
+                  <button
+                    type="button"
+                    onClick={() => setActiveTab(tab.id)}
+                    className={cn(
+                      "flex h-[34px] items-center border-b-2 pb-2 pt-1 text-[16px] font-semibold leading-[21px] transition-colors duration-[120ms] ease-linear",
+                      i > 0 && "ml-8",
+                      activeTab === tab.id
+                        ? "border-epom-primary text-epom-primary"
+                        : "border-transparent text-epom-muted hover:text-epom-primary-hover",
+                    )}
+                  >
+                    {tab.label} ({tabCounts[tab.id]})
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-              <button
-                type="button"
-                onClick={() => setActiveTab("video")}
-                className={`flex items-center gap-2 border-b-2 py-3 text-[14px] font-medium transition-colors ${
-                  activeTab === "video"
-                    ? "border-epom-primary text-epom-primary"
-                    : "border-transparent text-epom-muted hover:border-gray-300 hover:text-epom-text"
-                }`}
-              >
-                Videos ({tabCounts.video})
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setActiveTab("html5")}
-                className={`flex items-center gap-2 border-b-2 py-3 text-[14px] font-medium transition-colors ${
-                  activeTab === "html5"
-                    ? "border-epom-primary text-epom-primary"
-                    : "border-transparent text-epom-muted hover:border-gray-300 hover:text-epom-text"
-                }`}
-              >
-                HTML5 ({tabCounts.html5})
-              </button>
-            </nav>
-          </div>
-
-          {/* Filter / Search Bar */}
-          <div className="mb-4 flex items-center justify-between">
-            <div className="relative w-full max-w-sm">
+          {/* .filters-container */}
+          <div className="mb-4 flex justify-between rounded bg-epom-surface p-4">
+            <div className="relative w-[364px]">
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search"
-                className="h-10 w-full rounded-lg border border-epom-border bg-epom-surface pl-3 pr-10 text-[14px] text-epom-text shadow-2xs focus:border-epom-primary focus:outline-none"
+                className="h-9 w-full rounded border border-epom-border bg-epom-surface py-2 pl-3 pr-9 text-[14px] leading-5 text-epom-text transition-[border-color] duration-150 ease-in-out focus:border-epom-primary focus:outline-none"
               />
               <MaterialIcon
                 name="search"
-                className="pointer-events-none absolute right-3 top-2.5 block text-[20px] text-epom-muted"
+                className="pointer-events-none absolute right-3 top-2 block text-[20px] leading-5 text-epom-muted"
               />
             </div>
           </div>
 
-          {/* Assets Table */}
           <AssetsTable
             assets={filteredAssets}
             onPreviewAsset={(asset) => setPreviewAsset(asset)}
             onDeleteAsset={handleDeleteAsset}
           />
-        </main>
+        </div>
 
         {/* Modals */}
         <UploadAssetModal

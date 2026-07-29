@@ -44,6 +44,9 @@
   --color-epom-muted: #74777f;
   --color-epom-border: #c4c6d0;
   --color-epom-link: #6f79dd;
+  /* --neutral-image-background-color / --neutral-reversed-primary-blue-on-primary-color */
+  --color-epom-image: #f1f2fa;
+  --color-epom-tile-icon: #00326a;
   --color-epom-success: #006d3e;
   --color-epom-error: #ba1a1a;
 

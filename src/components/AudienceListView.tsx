@@ -17,7 +17,9 @@ const today = () =>
 export function AudienceListView() {
   const [rows, setRows] = useState(AUDIENCES);
   const [search, setSearch] = useState("");
-  const [status, setStatus] = useState("Active");
+  // The account is dormant, so every audience it has is archived — opening on
+  // "Active" would show an empty table on a page that has rows.
+  const [status, setStatus] = useState("Archived");
   // Unsorted until a header is clicked — the live table loads with no sort arrow.
   const [sort, setSort] = useState<Sort | null>(null);
   const [pageSize, setPageSize] = useState(50);
@@ -81,6 +83,10 @@ export function AudienceListView() {
         id: crypto.randomUUID(),
         name: `New Audience ${rs.length + 1}`,
         campaignIds: [],
+        // A fresh audience targets nothing until the buyer ticks something.
+        deviceTypes: [],
+        connectionTypes: [],
+        storeCategories: [],
         created: today(),
         edited: today(),
         status: "Active",

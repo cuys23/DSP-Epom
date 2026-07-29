@@ -9,14 +9,16 @@ import { LineChart } from "@/components/LineChart";
 import { MaterialIcon } from "@/components/MaterialIcon";
 import { BTN_OUTLINED } from "@/components/form/Dialog";
 import { CreativePreview } from "@/components/CreativePreview";
-import { SERIES, dayMetrics } from "@/lib/demo-data";
+import { DateRangePicker } from "@/components/DateRangePicker";
+import { CELL, SERIES, dayMetrics } from "@/lib/demo-data";
 import { CAMPAIGNS } from "@/lib/campaigns";
+import { audienceOfCampaign } from "@/lib/audiences";
 import {
   CREATIVE_DOT,
-  REPORT_DAYS,
-  REPORT_FROM,
-  REPORT_TO,
+  DEFAULT_RANGE,
   STATS,
+  rangeDays,
+  rangeLabel,
   type CreativeStatus,
 } from "@/lib/campaign-stats";
 
@@ -54,71 +56,15 @@ interface CampaignView {
     price: string;
     status: CreativeStatus;
   }[];
-  /** Days the Analytics chart plots. */
-  days: string[];
-  dateRange: string;
 }
 
-/**
- * The account's newest campaign, saved from the wizard and not delivering yet.
- * Kept verbatim from the live account — it is the page this clone was built from.
- */
-const DRAFT_CAMPAIGN: CampaignView = {
-  id: "dadb539e-a65a-45bf-8764-ffc55d87506d",
-  name: "weigh loss",
-  type: "Video",
-  typeIcon: "smart_display",
-  basic: [
-    { label: "Name:", value: "weigh loss" },
-    { label: "Folder:", value: "Unsorted" },
-  ],
-  bidPrice: [
-    { label: "Pricing Model:", value: "CPM" },
-    { label: "Default Price:", value: "0.025$" },
-  ],
-  audience: { name: "Test", id: "30e2719a-cf9d-43b3-9a97-d4da63b6f492" },
-  budget: {
-    status: "Delivering",
-    tone: "success",
-    flight: [
-      { label: "Flight dates:", value: "28.07.2026 \u00a007:03 \u2013 31.07.2026 \u00a023:59" },
-      { label: "Time Zones:", value: TIME_ZONES },
-    ],
-    limits: [
-      { label: "Type:", value: "Daily" },
-      { label: "Spend limit:", value: "$100", suffix: " per day" },
-      { label: "Imp limit:", value: "10,000", suffix: " per day" },
-    ],
-    evenPacing: "Off",
-    impToBidAuto: "On",
-  },
-  trafficSource: "AdView Display",
-  riskTolerance: "High",
-  creatives: [
-    {
-      id: "bb2b3f9e-5db0-4238-bbeb-56d6bf2b405f",
-      name: "home fitness 2.mp4",
-      src: "/creatives/home-fitness/4_3-16NPI3.mp4",
-      video: true,
-      size: "1920x1440",
-      price: "$0.025",
-      status: "pending_approval",
-    },
-  ],
-  // Saved but never delivered. Its id has no traffic, so plotting its own week
-  // gives the flat zero line the live account shows.
-  days: ["2026-07-22", "2026-07-23", "2026-07-24", "2026-07-25", "2026-07-26", "2026-07-27", "2026-07-28"],
-  dateRange: "22.07.2026 - 28.07.2026",
-};
-
 const int = (n: number) => n.toLocaleString("en-US");
-const dotted = (iso: string) => iso.split("-").reverse().join(".");
 
 /** Every campaign that has run, in the shape this page renders. */
 const VIEWS = new Map<string, CampaignView>(
   CAMPAIGNS.map((c) => {
     const s = STATS.get(c.id)!;
-    const delivering = s.state === "delivering";
+    const a = audienceOfCampaign(c.id)!;
     return [
       c.id,
       {
@@ -134,11 +80,11 @@ const VIEWS = new Map<string, CampaignView>(
           { label: "Pricing Model:", value: "CPM" },
           { label: "Default Price:", value: `${c.defaultPrice}$` },
         ],
-        // The offer's own tracking segment doubles as the campaign's audience.
-        audience: { name: `${c.offer.app} \u2014 ${c.offer.network}`, id: c.offer.networkId },
+        // The real audience from the roster, so the link lands on the page it names.
+        audience: { name: a.name, id: a.id },
         budget: {
           status: s.status,
-          tone: delivering ? "success" : "cancelled",
+          tone: "cancelled",
           flight: [
             { label: "Flight dates:", value: s.flight },
             { label: "Time Zones:", value: TIME_ZONES },
@@ -160,10 +106,8 @@ const VIEWS = new Map<string, CampaignView>(
           video: k.video,
           size: k.size,
           price: k.price,
-          status: delivering ? ("active" as const) : ("paused" as const),
+          status: "paused" as const,
         })),
-        days: REPORT_DAYS,
-        dateRange: `${dotted(REPORT_FROM)} - ${dotted(REPORT_TO)}`,
       },
     ];
   }),
@@ -173,21 +117,28 @@ const METRICS = ["Impressions", "Clicks", "Spend", "CTR", "eCPM", "eCPC", "Wins"
 
 export function CampaignSettingsView() {
   const id = String(useParams().id ?? "");
-  const CAMPAIGN = VIEWS.get(id) ?? DRAFT_CAMPAIGN;
+  // Unknown ids fall back to the newest campaign rather than 404ing.
+  const CAMPAIGN = VIEWS.get(id) ?? [...VIEWS.values()][0];
 
-  const [on, setOn] = useState(true);
+  // Nothing on this account is in flight any more.
+  const [on, setOn] = useState(false);
   /** Creative ids the user has switched off / archived on this page. */
   const [creativesOff, setCreativesOff] = useState<string[]>([]);
   const [archived, setArchived] = useState<string[]>([]);
   const [audience, setAudience] = useState<string | undefined>(undefined);
   const [metric, setMetric] = useState("Impressions");
+  const [range, setRange] = useState(DEFAULT_RANGE);
   const [open, setOpen] = useState<string | null>(null);
   const [preview, setPreview] = useState<string | null>(null);
   const pageRef = useRef<HTMLDivElement>(null);
 
   const visibleCreatives = CAMPAIGN.creatives.filter((k) => !archived.includes(k.id));
 
-  const series = CAMPAIGN.days.map((d) => SERIES[metric](dayMetrics(d, CAMPAIGN.id)));
+  const days = rangeDays(range);
+  // Kept as metrics rather than plain numbers, so the chart's hover box can print
+  // the same formatted value the report table would.
+  const daily = days.map((d) => dayMetrics(d, CAMPAIGN.id));
+  const series = daily.map((m) => SERIES[metric](m));
 
   useEffect(() => {
     if (!open) return;
@@ -498,20 +449,12 @@ export function CampaignSettingsView() {
                   </a>
                 </h1>
 
-                <div className="relative w-[240px]">
-                  <input
-                    type="text"
-                    readOnly
-                    value={CAMPAIGN.dateRange}
-                    placeholder="Select date"
-                    className="h-9 w-full cursor-pointer rounded border border-epom-border bg-epom-surface py-2 pl-3 pr-12 text-[14px] leading-5 text-epom-text focus:outline-none"
-                  />
-                  <MaterialIcon
-                    name="event"
-                    filled
-                    className="pointer-events-none absolute right-3 top-2 block text-[20px] leading-5 text-epom-primary"
-                  />
-                </div>
+                <DateRangePicker
+                  value={rangeLabel(days)}
+                  activeRange={range}
+                  onChange={setRange}
+                  className="w-[240px]"
+                />
               </div>
 
               <div className="mt-4 border-t border-epom-border p-4">
@@ -531,8 +474,10 @@ export function CampaignSettingsView() {
                 </div>
                 <div className="mt-4">
                   <LineChart
-                    labels={CAMPAIGN.days}
+                    labels={days}
                     values={series}
+                    formatted={daily.map((m) => CELL[metric](m))}
+                    seriesName={metric}
                     width={480}
                     spread="edges"
                   />

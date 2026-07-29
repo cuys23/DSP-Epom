@@ -77,13 +77,16 @@ for (const c of CAMPAIGNS) {
   );
 
   for (const [i, m] of rows.entries()) {
-    const [date, clicks, conversions] = c.days[i];
+    const [date, clicks, conversions, impressions] = c.days[i];
     const at = `${c.name} ${date}`;
     checkedDays++;
 
-    // The two counters that came from the spreadsheet must pass through untouched.
+    // Every counter that came from a report must pass through untouched.
     assert.equal(m.clicks, clicks, `${at}: clicks match the sheet`);
     assert.equal(m.actions, conversions, `${at}: conversions match the sheet's Event column`);
+    if (impressions !== undefined) {
+      assert.equal(m.impressions, impressions, `${at}: impressions match the DSP export`);
+    }
 
     assert.ok(m.bidResponses <= m.bidRequests, `${at}: responses <= requests`);
     assert.ok(m.wins <= m.bidResponses, `${at}: wins <= responses`);
@@ -101,8 +104,13 @@ for (const c of CAMPAIGNS) {
     );
     assert.ok(m.spend <= MAX_SPEND_PER_DAY, `${at}: spend stays believable ($${m.spend})`);
 
-    const ctr = (m.clicks / m.impressions) * 100;
-    assert.ok(ctr > 0.15 && ctr < 0.6, `${at}: CTR in a believable band (${ctr.toFixed(2)}%)`);
+    // The band guards the derivation, so it only applies where impressions were
+    // derived from the click. A day that reported its own impressions carries
+    // whatever CTR the DSP measured, and that is not ours to second-guess.
+    if (impressions === undefined) {
+      const ctr = (m.clicks / m.impressions) * 100;
+      assert.ok(ctr > 0.15 && ctr < 0.6, `${at}: CTR in a believable band (${ctr.toFixed(2)}%)`);
+    }
   }
 
   // Conversions are real, so a campaign the sheet never recorded an event for
@@ -165,10 +173,12 @@ for (const c of CAMPAIGNS) {
     1,
     `${c.name}: linked to exactly one audience`,
   );
+  assert.ok(a.deviceTypes.length > 0, `${c.name}: its audience targets some device`);
 }
+// Every audience earns its place by being targeted — there are no leftovers.
 assert.ok(
-  AUDIENCES.some((a) => a.campaignIds.length === 0),
-  "the untouched `Test` audience is still there",
+  AUDIENCES.every((a) => a.campaignIds.length > 0),
+  "every audience has at least one campaign",
 );
 
 // ------------------------------------------------------------ traffic funnel

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { AudienceEditView } from "@/components/AudienceEditView";
-import { AUDIENCES } from "@/lib/audiences";
+import { AUDIENCES, linkedCampaigns } from "@/lib/audiences";
 
-/** Rows created in the browser are not in the roster; they fall back to "Test". */
-const nameOf = (id: string) => AUDIENCES.find((a) => a.id === id)?.name ?? "Test";
+/** Rows created in the browser are not in the roster; they fall back to the first one. */
+const audienceOf = (id: string) => AUDIENCES.find((a) => a.id === id) ?? AUDIENCES[0];
 
 export async function generateMetadata({
   params,
@@ -11,7 +11,7 @@ export async function generateMetadata({
   params: Promise<{ id: string }>;
 }): Promise<Metadata> {
   const { id } = await params;
-  return { title: `Audience | ${nameOf(id)} | Epom Market` };
+  return { title: `Audience | ${audienceOf(id).name} | Epom Market` };
 }
 
 export default async function AudienceEditPage({
@@ -20,5 +20,8 @@ export default async function AudienceEditPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  return <AudienceEditView name={nameOf(id)} />;
+  const audience = audienceOf(id);
+  return (
+    <AudienceEditView name={audience.name} targeting={audience} linked={linkedCampaigns(id)} />
+  );
 }
