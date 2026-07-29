@@ -5,31 +5,48 @@ import { cn } from "@/lib/utils";
 import { AppShell } from "@/components/AppShell";
 import { MaterialIcon } from "@/components/MaterialIcon";
 import { BTN_OUTLINED, BTN_OUTLINED_GREY } from "@/components/form/Dialog";
+import { CAMPAIGNS } from "@/lib/campaigns";
+import { AUDIENCES, audienceOfCampaign } from "@/lib/audiences";
+import { campaignFunnel, campaignTotals, survivors, type FunnelStage } from "@/lib/funnel";
+import { BALANCE_TOO_LOW } from "@/lib/transactions";
+
+const int = (n: number) => n.toLocaleString("en-US");
+const pct = (n: number, d: number) => (d ? ((n / d) * 100).toFixed(2) : "0.00");
 
 /**
  * The funnel takes six filters; the live page shows Campaign and Audience and
  * keeps the other four hidden until they are added. Only those two are named in
  * the saved DOM — the remaining four are the count, with plausible labels.
+ *
+ * Options come from the account's own data, so picking a Campaign narrows the
+ * Creative list to that campaign's creatives and pins the Audience to the one
+ * the campaign actually targets.
  */
-const FILTERS: { label: string; required?: boolean; options: string[] }[] = [
-  { label: "Campaign", required: true, options: ["weigh loss"] },
-  { label: "Audience", required: true, options: ["Test"] },
-  { label: "Creative", options: [] },
-  { label: "Country", options: [] },
-  { label: "Device Type", options: [] },
-  { label: "Traffic Source", options: [] },
+const FILTERS: { label: string; required?: boolean }[] = [
+  { label: "Campaign", required: true },
+  { label: "Audience", required: true },
+  { label: "Creative" },
+  { label: "Country" },
+  { label: "Device Type" },
+  { label: "Traffic Source" },
 ];
 
 const REQUIRED = FILTERS.filter((f) => f.required).map((f) => f.label);
 
+/** US iOS inventory is all these offers buy — see the offer names in `campaigns.ts`. */
+const COUNTRIES = ["United States"];
+const DEVICE_TYPES = ["Mobile"];
+
 export function TrafficFunnelView() {
   // Campaign and Audience are on screen from the start; the rest are added.
   const [shown, setShown] = useState(REQUIRED);
-  const [values, setValues] = useState<Record<string, string>>({ Campaign: "weigh loss" });
+  const [values, setValues] = useState<Record<string, string>>({ Campaign: CAMPAIGNS[0].name });
   const [gathering, setGathering] = useState(false);
-  const [applied, setApplied] = useState(false);
+  /** Campaign the funnel on screen was gathered for, or null before Apply. */
+  const [report, setReport] = useState<string | null>(null);
   const [open, setOpen] = useState<string | null>(null);
-  const [notice, setNotice] = useState(true);
+  // The app-level warning only fires while the account cannot fund a bid.
+  const [notice, setNotice] = useState(BALANCE_TOO_LOW);
   const barRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -48,8 +65,34 @@ export function TrafficFunnelView() {
     };
   }, [open]);
 
+  const campaign = CAMPAIGNS.find((c) => c.name === values.Campaign);
+
+  // Picking a campaign fixes which audience it runs against and which creatives
+  // exist, so those two lists are never free-form.
+  const optionsFor = (label: string): string[] => {
+    switch (label) {
+      case "Campaign":
+        return CAMPAIGNS.map((c) => c.name);
+      case "Audience":
+        return campaign
+          ? [audienceOfCampaign(campaign.id)?.name].filter((n): n is string => !!n)
+          : AUDIENCES.map((a) => a.name);
+      case "Creative":
+        return campaign?.creatives.map((cr) => cr.name) ?? [];
+      case "Country":
+        return COUNTRIES;
+      case "Device Type":
+        return DEVICE_TYPES;
+      case "Traffic Source":
+        return campaign ? [campaign.offer.network] : [];
+      default:
+        return [];
+    }
+  };
+
   const ready = REQUIRED.every((r) => values[r]);
   const hidden = FILTERS.filter((f) => !shown.includes(f.label));
+  const reported = report ? CAMPAIGNS.find((c) => c.id === report) : undefined;
 
   return (
     <AppShell activeHref="/traffic-funnel" breadcrumbs={[{ label: "Traffic Funnel" }]}>
@@ -108,11 +151,16 @@ export function TrafficFunnelView() {
                 </label>
                 <Select
                   value={values[f.label]}
-                  options={f.options}
+                  options={optionsFor(f.label)}
                   open={open === f.label}
                   onToggle={() => setOpen(open === f.label ? null : f.label)}
                   onPick={(o) => {
-                    setValues((v) => ({ ...v, [f.label]: o }));
+                    setValues((v) =>
+                      // A different campaign invalidates everything scoped to it.
+                      f.label === "Campaign"
+                        ? { Campaign: o }
+                        : { ...v, [f.label]: o },
+                    );
                     setOpen(null);
                   }}
                 />
@@ -124,7 +172,7 @@ export function TrafficFunnelView() {
               data-qa="applyFilters"
               disabled={!ready}
               onClick={() => {
-                setApplied(true);
+                setReport(campaign?.id ?? null);
                 setGathering(true);
               }}
               className={BTN_OUTLINED_GREY}
@@ -143,7 +191,7 @@ export function TrafficFunnelView() {
             <button
               type="button"
               data-qa="startButton"
-              disabled={!applied || gathering}
+              disabled={!report || gathering}
               onClick={() => setGathering(true)}
               className={BTN_OUTLINED_GREY}
             >
@@ -154,7 +202,7 @@ export function TrafficFunnelView() {
               data-qa="restartData"
               onClick={() => {
                 setGathering(false);
-                setApplied(false);
+                setReport(null);
               }}
               className={cn(BTN_OUTLINED_GREY, "ml-4 flex items-center justify-center gap-1")}
             >
@@ -164,9 +212,13 @@ export function TrafficFunnelView() {
           </div>
         </div>
 
-        <div className="flex w-full flex-1 items-center justify-center">
-          <span className="text-[16px] font-bold text-epom-text">No Data</span>
-        </div>
+        {reported ? (
+          <Funnel campaignId={reported.id} audience={values.Audience} />
+        ) : (
+          <div className="flex w-full flex-1 items-center justify-center">
+            <span className="text-[16px] font-bold text-epom-text">No Data</span>
+          </div>
+        )}
       </div>
 
       {notice && (
@@ -188,6 +240,83 @@ export function TrafficFunnelView() {
         </div>
       )}
     </AppShell>
+  );
+}
+
+/**
+ * The report itself: one bar per stage, each as wide as the share of the original
+ * bid requests still standing when it runs. Colours are the live theme's
+ * `--trafficFunnel-*` variables.
+ */
+function Funnel({ campaignId, audience }: { campaignId: string; audience?: string }) {
+  const stages = campaignFunnel(campaignId);
+  const totals = campaignTotals(campaignId);
+  const top = totals.bidRequests;
+  const left = survivors(stages);
+
+  return (
+    <div className="mt-4 rounded bg-epom-surface p-6">
+      <div className="mb-6 flex flex-wrap gap-x-10 gap-y-3">
+        <Summary label="Bid requests" value={int(top)} />
+        <Summary label="Passed targeting" value={int(totals.bidResponses)} />
+        <Summary label="Auctions won" value={int(totals.wins)} />
+        <Summary label="Impressions" value={int(left)} />
+        <Summary label="Requests reaching an impression" value={`${pct(left, top)}%`} />
+      </div>
+
+      <ul>
+        {stages.map((s) => (
+          <Stage key={s.label} stage={s} top={top} audience={audience} />
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function Summary({ label, value }: { label: string; value: string }) {
+  return (
+    <div>
+      <div className="text-[12px] font-semibold leading-[18px] text-epom-muted">{label}</div>
+      <div className="text-[20px] font-bold leading-6 text-epom-text">{value}</div>
+    </div>
+  );
+}
+
+function Stage({
+  stage,
+  top,
+  audience,
+}: {
+  stage: FunnelStage;
+  top: number;
+  audience?: string;
+}) {
+  const passed = stage.entered - stage.rejected;
+  return (
+    <li className="mb-4 last:mb-0">
+      <div className="mb-1 flex items-baseline gap-2 text-[12px] leading-[18px]">
+        <span className="font-semibold text-epom-text">{stage.label}</span>
+        {/* The retargeting check is the audience's own — name it so the link is visible. */}
+        {stage.label.startsWith("Device IFA") && audience && (
+          <span className="text-epom-muted">audience: {audience}</span>
+        )}
+        <span className="ml-auto whitespace-nowrap text-epom-muted">
+          {int(stage.entered)} in
+        </span>
+        <span className="w-[132px] whitespace-nowrap text-right text-epom-funnel-drop">
+          −{int(stage.rejected)} ({pct(stage.rejected, stage.entered)}%)
+        </span>
+      </div>
+      <div className="h-5 w-full overflow-hidden rounded-[2px] bg-epom-funnel-track">
+        <div
+          className={cn(
+            "h-full rounded-[2px]",
+            stage.phase === "targeting" ? "bg-epom-funnel" : "bg-epom-funnel/70",
+          )}
+          style={{ width: `${Math.max((passed / top) * 100, 0.4)}%` }}
+        />
+      </div>
+    </li>
   );
 }
 

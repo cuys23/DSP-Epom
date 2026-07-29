@@ -61,11 +61,26 @@ Campaign `weigh loss` (`dadb539e-a65a-45bf-8764-ffc55d87506d`), Video, **On** ·
 3. Màu nền banner lỗi `--error-container-color` không có trong CSS lưu → dùng `#ffdad6` (Material 3 error container, khớp tông `#ba1a1a`).
 4. Link creative / `Add new Creative` trỏ `/campaigns/<id>/creatives/video…` — chưa clone nên ra 404 nội bộ.
 
-## Fake data (`?demo=1`)
+## Sai khác so với bản lưu (cố ý)
 
-Trang nhận `?demo=1` để đổ dữ liệu giả vào biểu đồ (xem `docs/research/DEMO_DATA_REVIEW.md`). Mặc định vẫn là dữ liệu thật (toàn 0).
+Bản lưu ở trên là tài khoản lúc chỉ có 1 campaign chưa chạy. Clone hiện đọc campaign **theo id trên URL** từ `src/lib/campaigns.ts` (7 campaign dựng từ performance sheet), render **nhiều creative** thay vì 1, và chart lấy tuần báo cáo của chính campaign đó. Vào đúng id `dadb539e-…` vẫn ra `weigh loss` y hệt bản lưu. Cờ `?demo=1` đã bỏ — xem `docs/research/DEMO_DATA_REVIEW.md`.
 
 ## Kiểm chứng
 
 `npm run check` pass. Diff text render với text trích từ HTML gốc: **trùng 1:1** (chỉ khác thứ tự DOM của cặp label/select `Audience`, vốn là `flex-direction: column-reverse` nên hiển thị giống hệt).
 Test browser: bật/tắt toggle campaign + creative, chọn audience → nút `Open Traffic Funnel` bật, archive creative → empty state.
+
+
+## Trục ngày của chart (`LineChart`)
+
+Đo trực tiếp trên Highcharts của live (`/analytics` và `/campaigns/edit/...?viewMode=true`):
+
+| Trạng thái | Live | Điều kiện |
+| --- | --- | --- |
+| Label ngang | `text-anchor: middle`, `x = điểm`, `y = baseline + 24`, chart chừa **58px** dưới trục | slot ≥ bề rộng label + 5 |
+| Label nghiêng | `text-anchor: end`, `x = điểm + 2.83`, `y = baseline + 24`, `rotate(-45 x y)`, chart chừa **101px** | slot < bề rộng label + 5 |
+
+- Highcharts **không bỏ bớt** label khi range dài — nó bật `autoRotation: [-45]` và giữ đủ mọi ngày. Kiểm chứng ở 7 / 16 / 30 / 46 ngày: số label luôn bằng số ngày.
+- Label 12px "Open Sans" đo được **6.26px/ký tự**, line box **16.5px** (`getBBox`). Ngưỡng nghiêng dùng `xAxis.labels.padding = 5`.
+- Live cap range ở ~46 ngày nên không quan sát được mốc nó bắt đầu skip. Clone cho chọn dài hơn, nên có thêm `step` chỉ kích hoạt khi **nhãn đã nghiêng mà vẫn đè** (slot < chiều cao glyph × √2 ≈ 17.8px) — 91 ngày sẽ hiện cách ngày, đúng mật độ mà live chứng minh là đọc được ở 46 ngày.
+- `bottom` và `tiltLabels` không còn là prop: `LineChart` tự quyết định, nên `/dashboard`, `/analytics` và trang campaign dùng chung một luật.

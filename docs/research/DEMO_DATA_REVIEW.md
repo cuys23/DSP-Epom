@@ -22,6 +22,9 @@ Các thư mục Drive khác (`LandingPage`, `LandingPage_Home_Weightloss_v2`, `I
 | `src/lib/campaigns.ts` | **File sinh tự động** — roster 7 campaign + `days: [date, clicks, conversions]` |
 | `src/lib/demo-data.ts` | Suy ra phần còn lại của phễu + 26 formatter (`CELL`) + 26 series (`SERIES`) |
 | `src/lib/campaign-stats.ts` | Roll-up dùng chung: flight status, budget cap, số liệu tuần báo cáo |
+| `src/lib/audiences.ts` | Roster audience, sinh từ `product` của campaign — nguồn của cột **Linked Campaigns** và filter Audience |
+| `src/lib/funnel.ts` | Chia phễu RTB thành các stage cho `/traffic-funnel` — không sinh số mới |
+| `src/lib/transactions.ts` | Sổ cái billing: debit = spend thật theo ngày, credit = deposit đủ để trả |
 | `scripts/check-demo-data.mjs` | Kiểm tra ràng buộc. `npm run check:demo` |
 
 Cả hai script đều đọc Drive/Sheet qua link public, không cần API key.
@@ -109,10 +112,15 @@ Kích thước creative (`1080x1920`, `1920x1440`…) **đo trực tiếp từ f
 | `/campaigns/edit/[id]` | Đọc campaign theo id thay vì hardcode; nhiều creative; chart theo campaign |
 | `/analytics` | Mặc định mở tuần báo cáo hiện tại; `?cid=` lọc theo campaign |
 | `/dashboard` | Bỏ empty state "You don't have campaigns yet", thay bằng chart + tổng hợp tuần |
+| `/billing` | 94 giao dịch dựng từ spend thật; balance `$664.49` hiển thị luôn ở top bar |
+| `/traffic-funnel` | Có báo cáo phễu thật thay cho `No Data`; filter Campaign/Audience/Creative lấy từ roster |
+| `/audience` | 3 audience (2 sinh từ product + `Test` gốc), cột Linked Campaigns có dữ liệu |
 
 ## Còn tồn đọng
 
 - **2/7 campaign có `conversions = 0`** (offer 129 và 28255) vì sheet không track event cho 2 offer đó. ROAS hiển thị `0.00`, CPA hiển thị `-`. Đây là phản ánh trung thực nguồn dữ liệu, không phải bug.
 - **`Pixalate Postbid Markup` luôn 0** — đúng bản gốc, tài khoản chưa bật Pixalate.
 - **Format `Imp-to-Bid` / `Click-to-Bid`** vẫn là suy đoán: bản gốc ở trạng thái 0 in ra `0` (không có `%`), nên clone in số 2 chữ số thập phân không kèm `%`. Nếu bản gốc thực ra là dạng `1:N` thì phải sửa formatter.
-- **Traffic Funnel** vẫn `No Data` — trang đó cần dữ liệu theo dimension mà sheet không có.
+- **Traffic Funnel**: tỉ lệ rơi giữa các stage targeting là **phần duy nhất được bịa** (`TARGETING_STAGES` trong `funnel.ts`). Tổng của chúng bị ép bằng đúng `bidRequests - bidResponses`, nên đầu và cuối phễu vẫn khớp Analytics tuyệt đối. Sheet không có breakdown theo lý do reject nên không thể lấy số thật.
+- **Billing**: lịch top-up (mốc nạp, mệnh giá, phương thức) là bịa; **debit thì không** — bằng đúng spend từng ngày. Vì thế `deposits − spend = balance` và balance chưa bao giờ âm (`check:demo` assert cả 3).
+- **Toast "Balance is too low to bid"** giờ gắn với `BALANCE_TOO_LOW` (balance < $100). Bản gốc chụp lúc balance = $0 nên trang nào cũng có toast; clone có $664.49 nên toast tắt.

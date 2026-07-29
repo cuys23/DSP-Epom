@@ -14,7 +14,7 @@ File mang tên Analytics nhưng nội dung là component `<traffic-funnel>` (m�
 ## Tính năng (đã test trực tiếp trên browser)
 
 - **Add Filter** (w 172) mở dropdown 4 filter còn ẩn, chọn xong filter hiện ra trong `filters-list`; hết filter thì nút disabled
-- **Campaign*** / **Audience*** là custom-select 312px; option lấy từ dữ liệu thật: Campaign = `weigh loss`, Audience = `Test`; chưa chọn thì hiện placeholder muted `Select option`
+- **Campaign*** / **Audience*** là custom-select 312px; option lấy từ dữ liệu thật (xem mục Dữ liệu bên dưới); chưa chọn thì hiện placeholder muted `Select option`
 - **Apply Filters and Start** disabled cho tới khi cả 2 filter bắt buộc có giá trị (đúng trạng thái bản gốc: Campaign đã chọn, Audience trống → nút xám)
 - Trạng thái `Data is not gathering` (đỏ) ↔ `Data is gathering` (xanh); **Start** chỉ bật khi đã Apply mà chưa chạy; **Reset data** (icon `restart_alt`) đưa về trạng thái dừng
 - Vùng `No Data` co giãn chiếm hết chiều cao còn lại, căn giữa
@@ -38,13 +38,45 @@ File mang tên Analytics nhưng nội dung là component `<traffic-funnel>` (m�
 ## Điểm phải suy đoán (HTML không chứa)
 
 1. **Tên 4 filter còn ẩn** — DOM chỉ có 4 `<div class="form-group filter-hide sf-hidden">` **rỗng** (Angular xoá nội dung khi ẩn) và dropdown Add Filter đóng. Số lượng 4 là chính xác, tên thì đang tạm dùng `Creative / Country / Device Type / Traffic Source` — sửa 1 chỗ duy nhất là mảng `FILTERS` trong `TrafficFunnelView.tsx`. Cần ảnh chụp dropdown **Add Filter** đang mở để sửa đúng.
-2. **Option của 4 filter đó** để rỗng (tài khoản chưa có traffic) → dropdown hiện `No available data to show.`
+2. **Option của 4 filter đó** ban đầu để rỗng; nay Creative / Country / Device Type / Traffic Source đều lấy từ campaign đang chọn.
 3. **Luồng Start / Reset** — bản gốc chụp ở trạng thái dừng nên chỉ thấy `data-stopped`. Trạng thái đang chạy được dựng lại: chữ `Data is gathering` màu success, Start bị khoá khi đang chạy.
 4. **Toast cảnh báo** là notifier cấp app (hiện ở mọi trang khi balance = 0) nhưng chỉ xuất hiện trong DOM của lần lưu này, nên tạm đặt riêng ở trang Traffic Funnel.
 
-## Ghi chú
+## Dữ liệu (thêm sau khi clone xong UI)
 
-Filter Campaign chứa campaign thật tên **`weigh loss`** → tài khoản hiện đã có campaign, trong khi trang `/campaigns` đang clone theo bản lưu lúc còn 0 campaign (empty state "Get started by creating your first Campaign"). Nếu cần đồng bộ thì phải lưu lại trang Campaigns.
+Trước đây trang luôn `No Data` và filter Campaign hardcode 1 option. Nay đọc thẳng từ roster.
+
+### Quan hệ Campaign ↔ Audience ↔ Funnel
+
+Đây là phần đã tra kỹ trước khi dựng số:
+
+- **Campaign → Audience là quan hệ n–1.** Audience là bộ targeting dùng lại được (geo, device, OS, browser, retargeting list, category… — xem cột trái `/audience/edit`), campaign trỏ vào 1 audience. Nên `src/lib/audiences.ts` **sinh audience từ `product` của campaign** chứ không khai riêng: 5 campaign Slimkit → audience `Slimkit Walking`, 2 campaign Home Fitness → `Home Fitness`. Cột **Linked Campaigns** chỉ là map đó đọc ngược lại. Audience `Test` của tài khoản thật vẫn giữ, `campaignIds` rỗng nên vẫn in `-`.
+- **Funnel chính là các bước targeting đó chạy trên bid request.** Theo `help.dsp.epom.com/docs/traffic-funnel`, báo cáo liệt kê % bị loại ở từng chốt lọc: `Geo location allowlist`, `Device IFA retargeting settings`, `SSP endpoint allowlist`… Stage `Device IFA retargeting settings` **chính là retargeting list của audience đang chọn** — nên UI in kèm `audience: <tên>` ở đó.
+- Vì vậy chọn Campaign sẽ **khoá luôn** Audience (chỉ còn audience campaign đó dùng), Creative (creative của campaign), Traffic Source (network của offer).
+
+### Số liệu
+
+`src/lib/funnel.ts` **không sinh số mới**:
+
+| Mốc | Nguồn |
+| --- | --- |
+| Đỉnh phễu | `bidRequests` của campaign (tổng cả flight) |
+| Sau 5 stage targeting | đúng bằng `bidResponses` |
+| `Auction lost` | `bidResponses − wins` |
+| `Impression not registered` | `wins − impressions` |
+| Đáy phễu | `impressions` |
+
+Chỉ **tỉ lệ chia** phần rơi giữa 5 stage targeting là bịa (`TARGETING_STAGES`, weight 46/22/14/11/7%), và stage cuối nhận phần dư nên tổng **luôn bằng đúng** `bidRequests − bidResponses`. Kết quả: mọi con số ở đây trùng khít với `/analytics` của cùng campaign.
+
+Ví dụ `Weight Loss Walking by Slimkit — RevoluteTech`: 13,436,244 bid requests → 9,202,361 qua targeting → 908,500 thắng auction → 854,518 impressions (6.36%).
+
+### Màu
+
+Bar dùng đúng biến theme của live: `--trafficFunnel-primary-color` `#00326A`, track `rgba(0,91,192,0.12)`, số bị loại `--trafficFunnel-error-color` `#93000A` (thêm vào `globals.css` là `epom-funnel*`).
+
+### Toast
+
+`Your Balance is too low to bid!` giờ chỉ hiện khi `BALANCE_TOO_LOW` (balance < $100). Sau khi có sổ cái billing, balance là `$664.49` nên toast tắt — đúng logic, không còn là hằng số `true`.
 
 ## Kiểm chứng
 

@@ -7,6 +7,10 @@ extraction has **no campaigns**, so the dashboard renders its **empty state**:
 the Highcharts line chart is present in the DOM but faded out, and a
 "No data yet" panel is layered over it.
 
+> **Clone diverges here on purpose.** The account now has campaigns, so
+> `ChartCard` renders a real impressions chart plus weekly totals instead of the
+> empty state. See `docs/research/DEMO_DATA_REVIEW.md`.
+
 Detected stack: Angular (ViewEncapsulation `_ngcontent-*` attributes),
 Angular Material, Bootstrap 3 grid remnants, Highcharts 9.0.1,
 `ngx-daterangepicker-material`, Material Icons ligature fonts.

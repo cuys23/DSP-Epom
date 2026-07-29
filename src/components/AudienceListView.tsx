@@ -6,28 +6,7 @@ import { AppShell } from "@/components/AppShell";
 import { FilterSelect } from "@/components/CampaignFilters";
 import { MaterialIcon } from "@/components/MaterialIcon";
 import { SortLabel, type Sort } from "@/components/SortLabel";
-
-interface Audience {
-  id: string;
-  name: string;
-  /** Live column renders "-" when a row has no linked campaigns. */
-  linkedCampaigns: string;
-  created: string;
-  edited: string;
-  status: "Active" | "Archived";
-}
-
-/** Real account data — the only audience on this account. */
-const AUDIENCES: Audience[] = [
-  {
-    id: "30e2719a-cf9d-43b3-9a97-d4da63b6f492",
-    name: "Test",
-    linkedCampaigns: "-",
-    created: "17.07.2026",
-    edited: "17.07.2026",
-    status: "Active",
-  },
-];
+import { AUDIENCES, linkedCampaignNames, type Audience } from "@/lib/audiences";
 
 const STATUS_OPTIONS = ["Active", "Archived"];
 const PAGE_SIZES = ["10", "25", "50", "100"];
@@ -84,7 +63,15 @@ export function AudienceListView() {
   const clone = (row: Audience) =>
     setRows((rs) => [
       ...rs,
-      { ...row, id: crypto.randomUUID(), name: `${row.name} (copy)`, created: today(), edited: today() },
+      // A copy starts unattached — campaigns keep pointing at the original.
+      {
+        ...row,
+        id: crypto.randomUUID(),
+        name: `${row.name} (copy)`,
+        campaignIds: [],
+        created: today(),
+        edited: today(),
+      },
     ]);
 
   const create = () =>
@@ -93,7 +80,7 @@ export function AudienceListView() {
       {
         id: crypto.randomUUID(),
         name: `New Audience ${rs.length + 1}`,
-        linkedCampaigns: "-",
+        campaignIds: [],
         created: today(),
         edited: today(),
         status: "Active",
@@ -190,7 +177,7 @@ export function AudienceListView() {
                       {row.name}
                     </a>
                   </Cell>
-                  <Cell>{row.linkedCampaigns}</Cell>
+                  <Cell>{linkedCampaignNames(row)}</Cell>
                   <Cell>{row.created}</Cell>
                   <Cell>{row.edited}</Cell>
                   <Cell>

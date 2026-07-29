@@ -534,9 +534,7 @@ export function CampaignSettingsView() {
                     labels={CAMPAIGN.days}
                     values={series}
                     width={480}
-                    bottom={101}
                     spread="edges"
-                    tiltLabels
                   />
                 </div>
               </div>

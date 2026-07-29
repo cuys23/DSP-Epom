@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { MaterialIcon } from "@/components/MaterialIcon";
+import { ACCOUNT_BALANCE_CENTS, money } from "@/lib/transactions";
 import type { Crumb } from "@/types/nav";
 
 const LANGUAGES = ["EN", "中文", "UA", "DE", "FR", "ES", "PT"];
@@ -66,7 +67,7 @@ export function TopBar({ breadcrumbs }: { breadcrumbs: Crumb[] }) {
             <li>
               <button type="button" className={cn(textButtonClass, "inline-flex gap-[9px]")}>
                 <span>Balance:</span>
-                <span className="text-epom-success">$0</span>
+                <span className="text-epom-success">{money(ACCOUNT_BALANCE_CENTS)}</span>
               </button>
             </li>
             <li>

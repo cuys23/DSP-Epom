@@ -15,6 +15,8 @@ Bản lưu cũ chụp lúc tài khoản còn **0 campaign** (chỉ có empty sta
 ## Dữ liệu thật lấy từ DOM
 
 - Campaign `weigh loss`, id `dadb539e-a65a-45bf-8764-ffc55d87506d`, **On**, Video (`smart_display`), CPM, eCPM/Win rate = `-`, tạo `28/07/26`
+
+> **Sai khác so với bản lưu (cố ý):** clone giữ nguyên `weigh loss` ở đầu bảng nhưng bổ sung 7 campaign dựng từ performance sheet, folder panel gom theo product, và nút Preview mở creative thật. Xem `docs/research/DEMO_DATA_REVIEW.md`.
 - **Budget delivery** (bản 2:03 — bản 1:48 còn `-`): `$100 per day` / `10,000 Impressions per day` / `Scheduled (4 days left)`
 - Creative `home fitness 2.mp4`, **On**, `1920x1440`, `$0.03`, trạng thái `status-pending_approval` (chấm tròn 16px màu `--palette-warning-50` = `#987100`)
 - Folder `Unsorted (1)`, `All campaigns (1)`

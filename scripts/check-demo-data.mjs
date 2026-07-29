@@ -1,9 +1,10 @@
 /**
  * Invariant check for the campaign analytics data.
  *   node scripts/check-demo-data.mjs
- * Compiles src/lib/demo-data.ts with the project's tsc, then asserts that the
+ * Compiles the derived-data modules with the project's tsc, then asserts that the
  * spreadsheet's real counters survive intact, that the funnel derived above them
- * is internally consistent, and that Total re-derives ratios instead of summing them.
+ * is internally consistent, that Total re-derives ratios instead of summing them,
+ * and that the billing ledger and traffic funnel stay tied to the same numbers.
  */
 import { execFileSync } from "node:child_process";
 import { mkdtempSync, readFileSync, writeFileSync } from "node:fs";
@@ -17,6 +18,9 @@ execFileSync(
   [
     "tsc",
     "src/lib/demo-data.ts",
+    "src/lib/transactions.ts",
+    "src/lib/funnel.ts",
+    "src/lib/audiences.ts",
     "--outDir",
     out,
     "--module",
@@ -33,11 +37,22 @@ execFileSync(
 
 // Bundler resolution emits an extensionless specifier, which Node's ESM loader
 // will not resolve. The bundler adds the extension in the app; here we do it.
-const emitted = join(out, "demo-data.js");
-writeFileSync(emitted, readFileSync(emitted, "utf8").replace('"./campaigns"', '"./campaigns.js"'));
+for (const f of ["demo-data", "transactions", "funnel", "audiences"]) {
+  const p = join(out, `${f}.js`);
+  writeFileSync(
+    p,
+    readFileSync(p, "utf8").replace(
+      /"\.\/(campaigns|demo-data|funnel|audiences|transactions)"/g,
+      '"./$1.js"',
+    ),
+  );
+}
 
-const { dayMetrics, sumMetrics, CELL, SERIES } = await import(emitted);
+const { dayMetrics, sumMetrics, CELL, SERIES } = await import(join(out, "demo-data.js"));
 const { CAMPAIGNS, LATEST_DAY } = await import(join(out, "campaigns.js"));
+const ledger = await import(join(out, "transactions.js"));
+const { campaignFunnel, campaignTotals, survivors } = await import(join(out, "funnel.js"));
+const { AUDIENCES, audienceOfCampaign } = await import(join(out, "audiences.js"));
 
 assert.ok(CAMPAIGNS.length > 0, "campaigns.ts has campaigns — did build-campaigns.mjs run?");
 
@@ -139,7 +154,110 @@ assert.equal(CELL.ROAS(zero), "-");
 assert.equal(CELL["CPA Action 0"](zero), "-");
 assert.equal(CELL["Imp-to-Bid"](zero), "0");
 
-console.log(`campaign data OK — ${CAMPAIGNS.length} campaigns, ${checkedDays} days\n`);
+// ---------------------------------------------------------------- audiences
+// Every campaign runs against exactly one audience, and the "Linked Campaigns"
+// column is that mapping read the other way round.
+for (const c of CAMPAIGNS) {
+  const a = audienceOfCampaign(c.id);
+  assert.ok(a, `${c.name}: has an audience`);
+  assert.equal(
+    AUDIENCES.filter((x) => x.campaignIds.includes(c.id)).length,
+    1,
+    `${c.name}: linked to exactly one audience`,
+  );
+}
+assert.ok(
+  AUDIENCES.some((a) => a.campaignIds.length === 0),
+  "the untouched `Test` audience is still there",
+);
+
+// ------------------------------------------------------------ traffic funnel
+for (const c of CAMPAIGNS) {
+  const stages = campaignFunnel(c.id);
+  const t = campaignTotals(c.id);
+  assert.ok(stages.length > 0, `${c.name}: funnel has stages`);
+
+  // The funnel is a partition of real counters — it may not invent or lose one.
+  assert.equal(stages[0].entered, t.bidRequests, `${c.name}: funnel starts at bid requests`);
+  assert.equal(survivors(stages), t.impressions, `${c.name}: funnel ends at impressions`);
+
+  const targeting = stages.filter((s) => s.phase === "targeting");
+  assert.equal(
+    targeting.reduce((a, s) => a + s.rejected, 0),
+    t.bidRequests - t.bidResponses,
+    `${c.name}: targeting rejections account for the whole pre-bid drop`,
+  );
+  assert.equal(
+    targeting[targeting.length - 1].entered - targeting[targeting.length - 1].rejected,
+    t.bidResponses,
+    `${c.name}: last targeting stage hands over exactly the bid responses`,
+  );
+
+  for (const [i, s] of stages.entries()) {
+    assert.ok(s.rejected >= 0, `${c.name}/${s.label}: cannot reject a negative count`);
+    assert.ok(s.rejected <= s.entered, `${c.name}/${s.label}: cannot reject more than entered`);
+    if (i > 0) {
+      const prev = stages[i - 1];
+      assert.equal(
+        s.entered,
+        prev.entered - prev.rejected,
+        `${c.name}/${s.label}: stage picks up where the previous one left off`,
+      );
+    }
+  }
+}
+
+// -------------------------------------------------------------- billing ledger
+const { TRANSACTIONS, ACCOUNT_BALANCE_CENTS, USED_PAYMENT_METHODS, REPORT_RANGE } = ledger;
+const oldestFirst = [...TRANSACTIONS].reverse();
+
+assert.ok(TRANSACTIONS.length > 0, "the account has a transaction history");
+assert.equal(TRANSACTIONS[0].balance, ACCOUNT_BALANCE_CENTS, "closing balance is the newest row");
+
+let running = 0;
+let previousAt = "";
+for (const t of oldestFirst) {
+  running += t.amount;
+  assert.equal(t.balance, running, `#${t.id}: Balance column is the running total`);
+  assert.ok(t.balance >= 0, `#${t.id}: the account never goes overdrawn`);
+  assert.ok(t.at >= previousAt, `#${t.id}: ledger is in chronological order`);
+  previousAt = t.at;
+
+  if (t.type === "Credit") {
+    assert.ok(t.amount > 0 && t.method && t.invoice, `#${t.id}: a deposit has a method and invoice`);
+  } else {
+    assert.ok(t.amount < 0 && t.method === null && t.invoice === null, `#${t.id}: spend has neither`);
+  }
+}
+
+// Debits are the campaigns' own spend — not a separately invented series.
+const debited = -oldestFirst.filter((t) => t.type === "Debit").reduce((a, t) => a + t.amount, 0);
+const spendDays = [...new Set(CAMPAIGNS.flatMap((c) => c.days.map(([d]) => d)))];
+const accountSpend = spendDays.reduce((a, d) => a + Math.round(dayMetrics(d).spend * 100), 0);
+assert.equal(debited, accountSpend, "billing debits == the account's campaign spend");
+assert.equal(
+  ACCOUNT_BALANCE_CENTS,
+  oldestFirst.filter((t) => t.type === "Credit").reduce((a, t) => a + t.amount, 0) - debited,
+  "balance == deposits - spend",
+);
+
+// The payment-method filter only offers methods that appear in the history.
+assert.deepEqual(
+  [...USED_PAYMENT_METHODS].sort(),
+  [...new Set(TRANSACTIONS.map((t) => t.method).filter(Boolean))].sort(),
+  "payment method filter is built from the ledger",
+);
+assert.ok(
+  TRANSACTIONS.some((t) => t.at.slice(0, 10) >= REPORT_RANGE[0] && t.at.slice(0, 10) <= REPORT_RANGE[1]),
+  "the default date range actually contains transactions",
+);
+
+console.log(`campaign data OK — ${CAMPAIGNS.length} campaigns, ${checkedDays} days`);
+console.log(
+  `ledger OK — ${TRANSACTIONS.length} rows, spend $${(debited / 100).toFixed(2)}, ` +
+    `balance $${(ACCOUNT_BALANCE_CENTS / 100).toFixed(2)}, via ${USED_PAYMENT_METHODS.join(" / ")}`,
+);
+console.log(`audiences OK — ${AUDIENCES.length} audiences\n`);
 console.table(
   CAMPAIGNS.map((c) => {
     const t = sumMetrics(c.days.map(([d]) => dayMetrics(d, c.id)));

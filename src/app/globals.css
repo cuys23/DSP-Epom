@@ -47,6 +47,11 @@
   --color-epom-success: #006d3e;
   --color-epom-error: #ba1a1a;
 
+  /* Traffic Funnel — the live theme's --trafficFunnel-* variables */
+  --color-epom-funnel: #00326a;
+  --color-epom-funnel-track: rgba(0, 91, 192, 0.12);
+  --color-epom-funnel-drop: #93000a;
+
   --color-epom-toast: #2f3033;
   --color-epom-toast-fg: #f1f0f4;
   --color-epom-toast-warn: #ffb74d;
