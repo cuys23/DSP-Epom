@@ -1817,6 +1817,7 @@ export const CAMPAIGNS: Campaign[] = [
     "paused": true,
     "from": "2026-07-06",
     "to": "2026-07-22",
+    "spendCap": 30,
     "creatives": [
       {
         "id": "cc228822-c389-4591-a225-9ada3cc024e9",
