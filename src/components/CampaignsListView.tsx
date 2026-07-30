@@ -55,10 +55,14 @@ interface Campaign {
 
 const int = (n: number) => n.toLocaleString("en-US");
 
-/** The campaigns that have run, newest first. */
+/** The campaigns that have run, newest first — BritBox pinned to the top, synthetic demo entries pushed to the bottom. */
 const CAMPAIGNS: Campaign[] = [
   ...[...SOURCE_CAMPAIGNS]
-    .sort((a, b) => b.from.localeCompare(a.from))
+    .sort((a, b) => {
+      if (a.product === "britbox" !== (b.product === "britbox")) return a.product === "britbox" ? -1 : 1;
+      if (!!a.synthetic !== !!b.synthetic) return a.synthetic ? 1 : -1;
+      return b.from.localeCompare(a.from);
+    })
     .map((c): Campaign => {
       const s = STATS.get(c.id)!;
       return {

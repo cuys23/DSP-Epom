@@ -47,6 +47,8 @@ export interface Campaign {
   paused: boolean;
   /** Buyer-set daily spend cap, overriding the peak-spend-derived default. */
   spendCap?: number;
+  /** Fake roster entry added for demo purposes — sorts below the real campaigns. */
+  synthetic?: boolean;
   from: string;
   to: string;
   creatives: CampaignCreative[];
@@ -2110,6 +2112,7 @@ export const CAMPAIGNS: Campaign[] = [
     "from": "2026-07-10",
     "to": "2026-07-28",
     "spendCap": 30,
+    "synthetic": true,
     "creatives": [
       {
         "id": "066ab09d-6d4b-422d-b9b6-729ec2c9adee",
@@ -2247,6 +2250,7 @@ export const CAMPAIGNS: Campaign[] = [
     "from": "2026-07-08",
     "to": "2026-07-26",
     "spendCap": 30,
+    "synthetic": true,
     "creatives": [
       {
         "id": "63a2c992-b574-46cd-9d5a-eaa45bd65a42",
@@ -2384,6 +2388,7 @@ export const CAMPAIGNS: Campaign[] = [
     "from": "2026-07-05",
     "to": "2026-07-24",
     "spendCap": 30,
+    "synthetic": true,
     "creatives": [
       {
         "id": "1a0a4bd3-0790-401c-8e07-4d4ecfdb84cf",
@@ -2526,6 +2531,7 @@ export const CAMPAIGNS: Campaign[] = [
     "from": "2026-07-12",
     "to": "2026-07-27",
     "spendCap": 30,
+    "synthetic": true,
     "creatives": [
       {
         "id": "8ac30697-b1a8-4d0b-b83a-594570119606",
@@ -2648,6 +2654,7 @@ export const CAMPAIGNS: Campaign[] = [
     "from": "2026-07-09",
     "to": "2026-07-29",
     "spendCap": 30,
+    "synthetic": true,
     "creatives": [
       {
         "id": "c9675e16-f48e-4074-b795-c10485d09a68",
@@ -2795,6 +2802,7 @@ export const CAMPAIGNS: Campaign[] = [
     "from": "2026-07-09",
     "to": "2026-07-29",
     "spendCap": 30,
+    "synthetic": true,
     "creatives": [
       {
         "id": "1550ed17-cfb1-4946-93bd-deff14cd7034",
@@ -2942,6 +2950,7 @@ export const CAMPAIGNS: Campaign[] = [
     "from": "2026-07-14",
     "to": "2026-07-28",
     "spendCap": 30,
+    "synthetic": true,
     "creatives": [
       {
         "id": "5babcf55-bc81-4a95-a21e-a64ec3620ff0",
