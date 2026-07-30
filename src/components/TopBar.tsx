@@ -117,7 +117,7 @@ export function TopBar({ breadcrumbs }: { breadcrumbs: Crumb[] }) {
               >
                 <MaterialIcon name="person" className="block text-[20px] leading-5" />
                 <span className="hidden max-w-[150px] overflow-hidden whitespace-nowrap text-[14px] font-semibold leading-5 text-epom-primary min-[960px]:block">
-                  Minh Do
+                  Adstargets
                 </span>
                 <MaterialIcon name="arrow_drop_down" className="block text-[20px] leading-5" />
               </button>
@@ -126,7 +126,7 @@ export function TopBar({ breadcrumbs }: { breadcrumbs: Crumb[] }) {
                 <div className={cn(menuClass, "w-[324px]")}>
                   <div className="px-4 py-2">
                     <div className="text-[14px] font-semibold leading-[21px] text-epom-text">
-                      Minh Do
+                      Adstargets
                     </div>
                     <div className="text-[12px] leading-[18px] text-epom-muted">
                       admin@vinmedia.net
