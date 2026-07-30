@@ -129,7 +129,7 @@ export function campaignStats(campaign: Campaign): CampaignStats {
     // The live table prints a dash rather than a zero when the window has no traffic.
     ecpm: hasRecentTraffic ? `${CELL.eCPM(lastWeek)} / $${CELL.eCPC(lastWeek)}` : "-",
     winRate: hasRecentTraffic ? CELL["Win Rate"](lastWeek) : "-",
-    spendLimit: ceilTo(peakSpend, 50),
+    spendLimit: campaign.spendCap ?? ceilTo(peakSpend, 50),
     impressionLimit: ceilTo(peakImpressions, 5_000),
     state: campaign.paused ? "paused" : "stopped",
     status: campaign.paused

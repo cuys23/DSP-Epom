@@ -16,6 +16,26 @@ export const DEFAULT_FOLDERS: Folder[] = [
   {
     "id": "britbox",
     "name": "BritBox"
+  },
+  {
+    "id": "kyash",
+    "name": "Kyash"
+  },
+  {
+    "id": "katch-pro",
+    "name": "Katch Pro"
+  },
+  {
+    "id": "zoombo",
+    "name": "Zoombo"
+  },
+  {
+    "id": "purevpn",
+    "name": "PureVPN"
+  },
+  {
+    "id": "playful-rewards",
+    "name": "Playful Rewards"
   }
 ];
 
@@ -299,5 +319,145 @@ export const INITIAL_ASSETS: CreativeAsset[] = [
     "fileSizeKb": 5489,
     "type": "MP4",
     "createdAt": "2026-07-05"
+  },
+  {
+    "id": "asset-30",
+    "name": "kyash 1.mp4",
+    "folderId": "kyash",
+    "previewUrl": "/creatives/britbox/1_1-1ClSyx.mp4",
+    "dimensions": "1920x1080",
+    "fileSizeKb": 4720,
+    "type": "MP4",
+    "createdAt": "2026-07-29"
+  },
+  {
+    "id": "asset-31",
+    "name": "kyash 2.png",
+    "folderId": "kyash",
+    "previewUrl": "/creatives/britbox/1_1-1Y6ATb.png",
+    "dimensions": "1200x896",
+    "fileSizeKb": 1101,
+    "type": "PNG",
+    "createdAt": "2026-07-29"
+  },
+  {
+    "id": "asset-32",
+    "name": "katch pro 1.mp4",
+    "folderId": "katch-pro",
+    "previewUrl": "/creatives/slimkit-walking/1_1-1HuThs.mp4",
+    "dimensions": "1440x1440",
+    "fileSizeKb": 4881,
+    "type": "MP4",
+    "createdAt": "2026-07-29"
+  },
+  {
+    "id": "asset-33",
+    "name": "katch pro 2.jpg",
+    "folderId": "katch-pro",
+    "previewUrl": "/creatives/slimkit-walking/1_1-1XdNRO.jpg",
+    "dimensions": "1024x1024",
+    "fileSizeKb": 548,
+    "type": "JPG",
+    "createdAt": "2026-07-29"
+  },
+  {
+    "id": "asset-34",
+    "name": "zoombo 1.mp4",
+    "folderId": "zoombo",
+    "previewUrl": "/creatives/home-fitness/9_16-1Ulv9o.mp4",
+    "dimensions": "1080x1920",
+    "fileSizeKb": 5604,
+    "type": "MP4",
+    "createdAt": "2026-07-29"
+  },
+  {
+    "id": "asset-35",
+    "name": "zoombo 2.jpg",
+    "folderId": "zoombo",
+    "previewUrl": "/creatives/home-fitness/9_16-1jwLis.jpg",
+    "dimensions": "768x1376",
+    "fileSizeKb": 503,
+    "type": "JPG",
+    "createdAt": "2026-07-29"
+  },
+  {
+    "id": "asset-36",
+    "name": "purevpn 1.mp4",
+    "folderId": "purevpn",
+    "previewUrl": "/creatives/britbox/1_1-1FVl0Z.mp4",
+    "dimensions": "1920x1080",
+    "fileSizeKb": 3594,
+    "type": "MP4",
+    "createdAt": "2026-07-29"
+  },
+  {
+    "id": "asset-37",
+    "name": "purevpn 2.png",
+    "folderId": "purevpn",
+    "previewUrl": "/creatives/britbox/1_1-1YS4QL.png",
+    "dimensions": "1200x896",
+    "fileSizeKb": 1791,
+    "type": "PNG",
+    "createdAt": "2026-07-29"
+  },
+  {
+    "id": "asset-38",
+    "name": "purevpn 3.jpg",
+    "folderId": "purevpn",
+    "previewUrl": "/creatives/slimkit-walking/1_1-1_t2oR.jpg",
+    "dimensions": "1024x1024",
+    "fileSizeKb": 720,
+    "type": "JPG",
+    "createdAt": "2026-07-29"
+  },
+  {
+    "id": "asset-39",
+    "name": "purevpn 4.mp4",
+    "folderId": "purevpn",
+    "previewUrl": "/creatives/slimkit-walking/4_3-1Sm0v-.mp4",
+    "dimensions": "1920x1440",
+    "fileSizeKb": 9746,
+    "type": "MP4",
+    "createdAt": "2026-07-29"
+  },
+  {
+    "id": "asset-40",
+    "name": "playful rewards 1.mp4",
+    "folderId": "playful-rewards",
+    "previewUrl": "/creatives/home-fitness/4_3-16NPI3.mp4",
+    "dimensions": "1200x900",
+    "fileSizeKb": 8203,
+    "type": "MP4",
+    "createdAt": "2026-07-29"
+  },
+  {
+    "id": "asset-41",
+    "name": "playful rewards 2.jpg",
+    "folderId": "playful-rewards",
+    "previewUrl": "/creatives/home-fitness/4_3-1SaVgY.jpg",
+    "dimensions": "1200x896",
+    "fileSizeKb": 780,
+    "type": "JPG",
+    "createdAt": "2026-07-29"
+  },
+  {
+    "id": "asset-42",
+    "name": "playful rewards 3.jpg",
+    "folderId": "playful-rewards",
+    "previewUrl": "/creatives/home-fitness/1_1-18tg03.jpg",
+    "dimensions": "1080x1080",
+    "fileSizeKb": 493,
+    "type": "JPG",
+    "createdAt": "2026-07-29"
+  },
+  {
+    "id": "asset-43",
+    "name": "playful rewards 4.mp4",
+    "folderId": "playful-rewards",
+    "previewUrl": "/creatives/home-fitness/1_1-1q20hf.mp4",
+    "dimensions": "1080x1080",
+    "fileSizeKb": 9530,
+    "type": "MP4",
+    "createdAt": "2026-07-29"
   }
 ];

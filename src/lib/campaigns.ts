@@ -45,6 +45,8 @@ export interface Campaign {
   ecpm: number;
   /** Paused by the buyer rather than run to the end of its flight. */
   paused: boolean;
+  /** Buyer-set daily spend cap, overriding the peak-spend-derived default. */
+  spendCap?: number;
   from: string;
   to: string;
   creatives: CampaignCreative[];
@@ -2084,6 +2086,955 @@ export const CAMPAIGNS: Campaign[] = [
         "2026-04-20",
         66,
         0
+      ]
+    ]
+  },
+  {
+    "id": "8f47385a-d055-441c-8bb3-06b70176996f",
+    "slug": "kyash-ios-jp-97001",
+    "name": "Kyash — Adeo_Affise",
+    "offer": {
+      "id": "97001",
+      "networkId": "97001",
+      "network": "Adeo_Affise",
+      "app": "jp.kyash.wallet",
+      "site": "vinmedia.net",
+      "raw": "JP_[IOS][F_CR_5] Kyash - iOS - JP (CPA)"
+    },
+    "product": "kyash",
+    "productLabel": "Kyash",
+    "payout": 18.5,
+    "defaultPrice": 0.035,
+    "ecpm": 2.1,
+    "paused": false,
+    "from": "2026-07-10",
+    "to": "2026-07-28",
+    "spendCap": 30,
+    "creatives": [
+      {
+        "id": "066ab09d-6d4b-422d-b9b6-729ec2c9adee",
+        "name": "kyash 1.mp4",
+        "src": "/creatives/britbox/1_1-1ClSyx.mp4",
+        "video": true,
+        "size": "1920x1080",
+        "price": "$0.035"
+      },
+      {
+        "id": "c62f1e67-9caf-43f6-b0e5-f84310592b49",
+        "name": "kyash 2.png",
+        "src": "/creatives/britbox/1_1-1Y6ATb.png",
+        "video": false,
+        "size": "1200x896",
+        "price": "$0.035"
+      }
+    ],
+    "days": [
+      [
+        "2026-07-10",
+        27,
+        2
+      ],
+      [
+        "2026-07-11",
+        24,
+        2
+      ],
+      [
+        "2026-07-12",
+        13,
+        1
+      ],
+      [
+        "2026-07-13",
+        12,
+        1
+      ],
+      [
+        "2026-07-14",
+        24,
+        2
+      ],
+      [
+        "2026-07-15",
+        24,
+        2
+      ],
+      [
+        "2026-07-16",
+        22,
+        2
+      ],
+      [
+        "2026-07-17",
+        12,
+        1
+      ],
+      [
+        "2026-07-18",
+        13,
+        1
+      ],
+      [
+        "2026-07-19",
+        21,
+        2
+      ],
+      [
+        "2026-07-20",
+        16,
+        1
+      ],
+      [
+        "2026-07-21",
+        17,
+        2
+      ],
+      [
+        "2026-07-22",
+        24,
+        2
+      ],
+      [
+        "2026-07-23",
+        22,
+        1
+      ],
+      [
+        "2026-07-24",
+        24,
+        2
+      ],
+      [
+        "2026-07-25",
+        12,
+        1
+      ],
+      [
+        "2026-07-26",
+        12,
+        1
+      ],
+      [
+        "2026-07-27",
+        26,
+        1
+      ],
+      [
+        "2026-07-28",
+        16,
+        1
+      ]
+    ]
+  },
+  {
+    "id": "33959c51-cb4b-436e-ba08-37976db93476",
+    "slug": "katch-pro-ios-us-97002",
+    "name": "Katch Pro — Adeo_Affise",
+    "offer": {
+      "id": "97002",
+      "networkId": "97002",
+      "network": "Adeo_Affise",
+      "app": "com.katchpro.app",
+      "site": "vinmedia.net",
+      "raw": "US_[IOS][F_CR_5] Katch Pro - iOS - US (CPA) (APPNAME) (AFD)"
+    },
+    "product": "katch-pro",
+    "productLabel": "Katch Pro",
+    "payout": 14.2,
+    "defaultPrice": 0.03,
+    "ecpm": 1.95,
+    "paused": false,
+    "from": "2026-07-08",
+    "to": "2026-07-26",
+    "spendCap": 30,
+    "creatives": [
+      {
+        "id": "63a2c992-b574-46cd-9d5a-eaa45bd65a42",
+        "name": "katch pro 1.mp4",
+        "src": "/creatives/slimkit-walking/1_1-1HuThs.mp4",
+        "video": true,
+        "size": "1440x1440",
+        "price": "$0.03"
+      },
+      {
+        "id": "8148d8b5-0f64-4b0d-ae99-21c7afe0b72a",
+        "name": "katch pro 2.jpg",
+        "src": "/creatives/slimkit-walking/1_1-1XdNRO.jpg",
+        "video": false,
+        "size": "1024x1024",
+        "price": "$0.03"
+      }
+    ],
+    "days": [
+      [
+        "2026-07-08",
+        26,
+        2
+      ],
+      [
+        "2026-07-09",
+        12,
+        1
+      ],
+      [
+        "2026-07-10",
+        17,
+        1
+      ],
+      [
+        "2026-07-11",
+        30,
+        1
+      ],
+      [
+        "2026-07-12",
+        27,
+        1
+      ],
+      [
+        "2026-07-13",
+        24,
+        2
+      ],
+      [
+        "2026-07-14",
+        33,
+        3
+      ],
+      [
+        "2026-07-15",
+        21,
+        1
+      ],
+      [
+        "2026-07-16",
+        14,
+        1
+      ],
+      [
+        "2026-07-17",
+        26,
+        1
+      ],
+      [
+        "2026-07-18",
+        19,
+        2
+      ],
+      [
+        "2026-07-19",
+        16,
+        1
+      ],
+      [
+        "2026-07-20",
+        35,
+        3
+      ],
+      [
+        "2026-07-21",
+        26,
+        1
+      ],
+      [
+        "2026-07-22",
+        14,
+        1
+      ],
+      [
+        "2026-07-23",
+        31,
+        2
+      ],
+      [
+        "2026-07-24",
+        34,
+        3
+      ],
+      [
+        "2026-07-25",
+        15,
+        1
+      ],
+      [
+        "2026-07-26",
+        23,
+        1
+      ]
+    ]
+  },
+  {
+    "id": "785ae73b-35d1-40c2-9e3a-b1245be37055",
+    "slug": "zoombo-ios-multi-97003",
+    "name": "Zoombo — OmegAds",
+    "offer": {
+      "id": "97003",
+      "networkId": "97003",
+      "network": "OmegAds",
+      "app": "com.zoombo.app",
+      "site": "vinmedia.net",
+      "raw": "UK/US/FR/DE_[IOS][F_CR_5] Zoombo - iOS - UK/US/FR/DE (CPA)"
+    },
+    "product": "zoombo",
+    "productLabel": "Zoombo",
+    "payout": 9.75,
+    "defaultPrice": 0.026,
+    "ecpm": 1.6,
+    "paused": false,
+    "from": "2026-07-05",
+    "to": "2026-07-24",
+    "spendCap": 30,
+    "creatives": [
+      {
+        "id": "1a0a4bd3-0790-401c-8e07-4d4ecfdb84cf",
+        "name": "zoombo 1.mp4",
+        "src": "/creatives/home-fitness/9_16-1Ulv9o.mp4",
+        "video": true,
+        "size": "1080x1920",
+        "price": "$0.026"
+      },
+      {
+        "id": "0fe4a44f-45d6-4575-a635-680aa0f36025",
+        "name": "zoombo 2.jpg",
+        "src": "/creatives/home-fitness/9_16-1jwLis.jpg",
+        "video": false,
+        "size": "768x1376",
+        "price": "$0.026"
+      }
+    ],
+    "days": [
+      [
+        "2026-07-05",
+        35,
+        2
+      ],
+      [
+        "2026-07-06",
+        31,
+        2
+      ],
+      [
+        "2026-07-07",
+        41,
+        3
+      ],
+      [
+        "2026-07-08",
+        15,
+        1
+      ],
+      [
+        "2026-07-09",
+        17,
+        1
+      ],
+      [
+        "2026-07-10",
+        26,
+        1
+      ],
+      [
+        "2026-07-11",
+        23,
+        1
+      ],
+      [
+        "2026-07-12",
+        28,
+        2
+      ],
+      [
+        "2026-07-13",
+        33,
+        3
+      ],
+      [
+        "2026-07-14",
+        37,
+        1
+      ],
+      [
+        "2026-07-15",
+        35,
+        1
+      ],
+      [
+        "2026-07-16",
+        22,
+        1
+      ],
+      [
+        "2026-07-17",
+        21,
+        1
+      ],
+      [
+        "2026-07-18",
+        16,
+        1
+      ],
+      [
+        "2026-07-19",
+        26,
+        2
+      ],
+      [
+        "2026-07-20",
+        40,
+        3
+      ],
+      [
+        "2026-07-21",
+        17,
+        1
+      ],
+      [
+        "2026-07-22",
+        22,
+        1
+      ],
+      [
+        "2026-07-23",
+        30,
+        2
+      ],
+      [
+        "2026-07-24",
+        41,
+        1
+      ]
+    ]
+  },
+  {
+    "id": "df185eed-ee02-45fc-887d-dcb3932b78a5",
+    "slug": "purevpn-ios-uk-monthlysub-97004",
+    "name": "PureVPN (MonthlySub) — RevoluteTech",
+    "offer": {
+      "id": "97004",
+      "networkId": "97004",
+      "network": "RevoluteTech",
+      "app": "com.purevpn.purevpnapp",
+      "site": "vinmedia.net",
+      "raw": "UK_[IOS][F_CR_5] PUREVPN - iOS - UK (MonthlySub) (CPA)"
+    },
+    "product": "purevpn",
+    "productLabel": "PureVPN",
+    "payout": 28.4,
+    "defaultPrice": 0.048,
+    "ecpm": 2.85,
+    "paused": false,
+    "from": "2026-07-12",
+    "to": "2026-07-27",
+    "spendCap": 30,
+    "creatives": [
+      {
+        "id": "8ac30697-b1a8-4d0b-b83a-594570119606",
+        "name": "purevpn 1.mp4",
+        "src": "/creatives/britbox/1_1-1FVl0Z.mp4",
+        "video": true,
+        "size": "1920x1080",
+        "price": "$0.048"
+      },
+      {
+        "id": "595854f5-4c88-4486-a12c-527503373a3f",
+        "name": "purevpn 2.png",
+        "src": "/creatives/britbox/1_1-1YS4QL.png",
+        "video": false,
+        "size": "1200x896",
+        "price": "$0.048"
+      }
+    ],
+    "days": [
+      [
+        "2026-07-12",
+        19,
+        2
+      ],
+      [
+        "2026-07-13",
+        21,
+        1
+      ],
+      [
+        "2026-07-14",
+        9,
+        1
+      ],
+      [
+        "2026-07-15",
+        14,
+        1
+      ],
+      [
+        "2026-07-16",
+        15,
+        2
+      ],
+      [
+        "2026-07-17",
+        13,
+        2
+      ],
+      [
+        "2026-07-18",
+        21,
+        3
+      ],
+      [
+        "2026-07-19",
+        15,
+        2
+      ],
+      [
+        "2026-07-20",
+        15,
+        1
+      ],
+      [
+        "2026-07-21",
+        18,
+        2
+      ],
+      [
+        "2026-07-22",
+        19,
+        2
+      ],
+      [
+        "2026-07-23",
+        15,
+        1
+      ],
+      [
+        "2026-07-24",
+        10,
+        1
+      ],
+      [
+        "2026-07-25",
+        13,
+        1
+      ],
+      [
+        "2026-07-26",
+        18,
+        2
+      ],
+      [
+        "2026-07-27",
+        21,
+        2
+      ]
+    ]
+  },
+  {
+    "id": "bbff96c3-7d2e-4da9-9323-ff202f4b264d",
+    "slug": "playful-rewards-ios-us-97005",
+    "name": "Playful Rewards — Direct",
+    "offer": {
+      "id": "97005",
+      "networkId": "97005",
+      "network": "Direct",
+      "app": "com.playfulrewards.ios",
+      "site": "vinmedia.net",
+      "raw": "US_[IOS] Playful Rewards - iOS - US (Private)"
+    },
+    "product": "playful-rewards",
+    "productLabel": "Playful Rewards",
+    "payout": 4.5,
+    "defaultPrice": 0.018,
+    "ecpm": 1.2,
+    "paused": false,
+    "from": "2026-07-09",
+    "to": "2026-07-29",
+    "spendCap": 30,
+    "creatives": [
+      {
+        "id": "c9675e16-f48e-4074-b795-c10485d09a68",
+        "name": "playful rewards 1.mp4",
+        "src": "/creatives/home-fitness/4_3-16NPI3.mp4",
+        "video": true,
+        "size": "1200x900",
+        "price": "$0.018"
+      },
+      {
+        "id": "5c573ab7-769e-4336-bd60-cbcfa7132cae",
+        "name": "playful rewards 2.jpg",
+        "src": "/creatives/home-fitness/4_3-1SaVgY.jpg",
+        "video": false,
+        "size": "1200x896",
+        "price": "$0.018"
+      }
+    ],
+    "days": [
+      [
+        "2026-07-09",
+        58,
+        3
+      ],
+      [
+        "2026-07-10",
+        46,
+        1
+      ],
+      [
+        "2026-07-11",
+        39,
+        2
+      ],
+      [
+        "2026-07-12",
+        20,
+        1
+      ],
+      [
+        "2026-07-13",
+        43,
+        2
+      ],
+      [
+        "2026-07-14",
+        43,
+        2
+      ],
+      [
+        "2026-07-15",
+        29,
+        1
+      ],
+      [
+        "2026-07-16",
+        52,
+        3
+      ],
+      [
+        "2026-07-17",
+        56,
+        2
+      ],
+      [
+        "2026-07-18",
+        52,
+        3
+      ],
+      [
+        "2026-07-19",
+        56,
+        3
+      ],
+      [
+        "2026-07-20",
+        38,
+        2
+      ],
+      [
+        "2026-07-21",
+        20,
+        1
+      ],
+      [
+        "2026-07-22",
+        34,
+        1
+      ],
+      [
+        "2026-07-23",
+        35,
+        2
+      ],
+      [
+        "2026-07-24",
+        44,
+        3
+      ],
+      [
+        "2026-07-25",
+        40,
+        2
+      ],
+      [
+        "2026-07-26",
+        49,
+        2
+      ],
+      [
+        "2026-07-27",
+        50,
+        3
+      ],
+      [
+        "2026-07-28",
+        26,
+        2
+      ],
+      [
+        "2026-07-29",
+        35,
+        2
+      ]
+    ]
+  },
+  {
+    "id": "4ce90df5-35c4-465d-9b2a-877fae3216ac",
+    "slug": "playful-rewards-android-us-97006",
+    "name": "Playful Rewards (Android) — Direct",
+    "offer": {
+      "id": "97006",
+      "networkId": "97006",
+      "network": "Direct",
+      "app": "com.playfulrewards.android",
+      "site": "vinmedia.net",
+      "raw": "US_[ANDROID] Playful Rewards - Android - US (Private)"
+    },
+    "product": "playful-rewards",
+    "productLabel": "Playful Rewards",
+    "payout": 3.8,
+    "defaultPrice": 0.016,
+    "ecpm": 1.05,
+    "paused": false,
+    "from": "2026-07-09",
+    "to": "2026-07-29",
+    "spendCap": 30,
+    "creatives": [
+      {
+        "id": "1550ed17-cfb1-4946-93bd-deff14cd7034",
+        "name": "playful rewards 3.jpg",
+        "src": "/creatives/home-fitness/1_1-18tg03.jpg",
+        "video": false,
+        "size": "1080x1080",
+        "price": "$0.016"
+      },
+      {
+        "id": "dfbb1a53-42bb-4a40-9744-430b02761b69",
+        "name": "playful rewards 4.mp4",
+        "src": "/creatives/home-fitness/1_1-1q20hf.mp4",
+        "video": true,
+        "size": "1080x1080",
+        "price": "$0.016"
+      }
+    ],
+    "days": [
+      [
+        "2026-07-09",
+        44,
+        2
+      ],
+      [
+        "2026-07-10",
+        35,
+        1
+      ],
+      [
+        "2026-07-11",
+        24,
+        1
+      ],
+      [
+        "2026-07-12",
+        39,
+        2
+      ],
+      [
+        "2026-07-13",
+        29,
+        1
+      ],
+      [
+        "2026-07-14",
+        24,
+        1
+      ],
+      [
+        "2026-07-15",
+        38,
+        2
+      ],
+      [
+        "2026-07-16",
+        42,
+        2
+      ],
+      [
+        "2026-07-17",
+        49,
+        2
+      ],
+      [
+        "2026-07-18",
+        34,
+        1
+      ],
+      [
+        "2026-07-19",
+        48,
+        2
+      ],
+      [
+        "2026-07-20",
+        41,
+        2
+      ],
+      [
+        "2026-07-21",
+        47,
+        2
+      ],
+      [
+        "2026-07-22",
+        39,
+        2
+      ],
+      [
+        "2026-07-23",
+        32,
+        1
+      ],
+      [
+        "2026-07-24",
+        42,
+        2
+      ],
+      [
+        "2026-07-25",
+        49,
+        1
+      ],
+      [
+        "2026-07-26",
+        26,
+        1
+      ],
+      [
+        "2026-07-27",
+        28,
+        1
+      ],
+      [
+        "2026-07-28",
+        34,
+        1
+      ],
+      [
+        "2026-07-29",
+        38,
+        1
+      ]
+    ]
+  },
+  {
+    "id": "dcbbb6ec-519a-4209-9466-9d27504cd56f",
+    "slug": "purevpn-ios-us-adj-97007",
+    "name": "PureVPN (ADJ) — Adeo_Affise",
+    "offer": {
+      "id": "97007",
+      "networkId": "97007",
+      "network": "Adeo_Affise",
+      "app": "com.purevpn.purevpnapp",
+      "site": "vinmedia.net",
+      "raw": "US_[IOS][F_CR_5] PureVPN - iOS - US (CPA) (ADJ)"
+    },
+    "product": "purevpn",
+    "productLabel": "PureVPN",
+    "payout": 24.9,
+    "defaultPrice": 0.045,
+    "ecpm": 2.7,
+    "paused": false,
+    "from": "2026-07-14",
+    "to": "2026-07-28",
+    "spendCap": 30,
+    "creatives": [
+      {
+        "id": "5babcf55-bc81-4a95-a21e-a64ec3620ff0",
+        "name": "purevpn 3.jpg",
+        "src": "/creatives/slimkit-walking/1_1-1_t2oR.jpg",
+        "video": false,
+        "size": "1024x1024",
+        "price": "$0.045"
+      },
+      {
+        "id": "0d6b0d22-26b0-4c1d-911d-25dbad02ff14",
+        "name": "purevpn 4.mp4",
+        "src": "/creatives/slimkit-walking/4_3-1Sm0v-.mp4",
+        "video": true,
+        "size": "1920x1440",
+        "price": "$0.045"
+      }
+    ],
+    "days": [
+      [
+        "2026-07-14",
+        6,
+        0
+      ],
+      [
+        "2026-07-15",
+        13,
+        1
+      ],
+      [
+        "2026-07-16",
+        12,
+        1
+      ],
+      [
+        "2026-07-17",
+        14,
+        2
+      ],
+      [
+        "2026-07-18",
+        11,
+        1
+      ],
+      [
+        "2026-07-19",
+        12,
+        2
+      ],
+      [
+        "2026-07-20",
+        15,
+        2
+      ],
+      [
+        "2026-07-21",
+        18,
+        2
+      ],
+      [
+        "2026-07-22",
+        11,
+        1
+      ],
+      [
+        "2026-07-23",
+        14,
+        2
+      ],
+      [
+        "2026-07-24",
+        9,
+        1
+      ],
+      [
+        "2026-07-25",
+        17,
+        1
+      ],
+      [
+        "2026-07-26",
+        14,
+        1
+      ],
+      [
+        "2026-07-27",
+        16,
+        2
+      ],
+      [
+        "2026-07-28",
+        15,
+        2
       ]
     ]
   }
