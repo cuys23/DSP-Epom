@@ -53,8 +53,6 @@ export interface Campaign {
   ecpm: number;
   /** Paused by the buyer rather than run to the end of its flight. */
   paused: boolean;
-  /** Buyer-set daily spend cap, overriding the peak-spend-derived default. */
-  spendCap?: number;
   /** Fake roster entry added for demo purposes — sorts below the real campaigns. */
   synthetic?: boolean;
   from: string;
@@ -1825,7 +1823,6 @@ export const CAMPAIGNS: Campaign[] = [
     "paused": true,
     "from": "2026-07-06",
     "to": "2026-07-22",
-    "spendCap": 30,
     "creatives": [
       {
         "id": "cc228822-c389-4591-a225-9ada3cc024e9",
@@ -2120,7 +2117,6 @@ export const CAMPAIGNS: Campaign[] = [
     "paused": false,
     "from": "2026-07-10",
     "to": "2026-07-28",
-    "spendCap": 30,
     "synthetic": true,
     "creatives": [
       {
@@ -2258,7 +2254,6 @@ export const CAMPAIGNS: Campaign[] = [
     "paused": false,
     "from": "2026-07-08",
     "to": "2026-07-26",
-    "spendCap": 30,
     "synthetic": true,
     "creatives": [
       {
@@ -2396,7 +2391,6 @@ export const CAMPAIGNS: Campaign[] = [
     "paused": false,
     "from": "2026-07-05",
     "to": "2026-07-24",
-    "spendCap": 30,
     "synthetic": true,
     "creatives": [
       {
@@ -2539,7 +2533,6 @@ export const CAMPAIGNS: Campaign[] = [
     "paused": false,
     "from": "2026-07-12",
     "to": "2026-07-27",
-    "spendCap": 30,
     "synthetic": true,
     "creatives": [
       {
@@ -2662,7 +2655,6 @@ export const CAMPAIGNS: Campaign[] = [
     "paused": false,
     "from": "2026-07-09",
     "to": "2026-07-29",
-    "spendCap": 30,
     "synthetic": true,
     "creatives": [
       {
@@ -2810,7 +2802,6 @@ export const CAMPAIGNS: Campaign[] = [
     "paused": false,
     "from": "2026-07-09",
     "to": "2026-07-29",
-    "spendCap": 30,
     "synthetic": true,
     "creatives": [
       {
@@ -2958,7 +2949,6 @@ export const CAMPAIGNS: Campaign[] = [
     "paused": false,
     "from": "2026-07-14",
     "to": "2026-07-28",
-    "spendCap": 30,
     "synthetic": true,
     "creatives": [
       {
@@ -3074,7 +3064,6 @@ export const CAMPAIGNS: Campaign[] = [
     "defaultPrice": 0.03,
     "ecpm": 1.95,
     "paused": false,
-    "spendCap": 30,
     "from": "2026-04-16",
     "to": "2026-04-23",
     "creatives": [

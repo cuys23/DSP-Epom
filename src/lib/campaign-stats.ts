@@ -96,11 +96,13 @@ const longDate = (iso: string) => {
 const ceilTo = (n: number, step: number) => Math.ceil(n / step) * step;
 
 /**
- * Daily spend cap for a campaign the buyer never set one on. Every campaign in
- * the account that does carry a cap is on $30/day, so a derived one matches them
- * rather than being sized off the campaign's own peak day.
+ * Daily spend caps a buyer would actually type, in the band this account runs at.
+ * Which one a campaign got is not in either source, so it is drawn from its id —
+ * deterministic, so a campaign keeps the same cap across renders and rebuilds.
  */
-const DEFAULT_SPEND_CAP = 30;
+const SPEND_CAPS = [10, 15, 20, 25, 30, 35, 40, 50, 60, 75];
+const spendCap = (id: string) =>
+  SPEND_CAPS[Math.abs([...id].reduce((h, c) => (h * 31 + c.charCodeAt(0)) | 0, 7)) % SPEND_CAPS.length];
 
 export interface CampaignStats {
   campaign: Campaign;
@@ -140,7 +142,7 @@ export function campaignStats(campaign: Campaign): CampaignStats {
     // The live table prints a dash rather than a zero when the window has no traffic.
     ecpm: hasRecentTraffic ? `${CELL.eCPM(lastWeek)} / $${CELL.eCPC(lastWeek)}` : "-",
     winRate: hasRecentTraffic ? CELL["Win Rate"](lastWeek) : "-",
-    spendLimit: campaign.spendCap ?? DEFAULT_SPEND_CAP,
+    spendLimit: spendCap(campaign.id),
     impressionLimit: ceilTo(peakImpressions, 5_000),
     state: campaign.paused ? "paused" : "stopped",
     status: campaign.paused
