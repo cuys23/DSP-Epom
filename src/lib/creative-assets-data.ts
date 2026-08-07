@@ -36,6 +36,10 @@ export const DEFAULT_FOLDERS: Folder[] = [
   {
     "id": "playful-rewards",
     "name": "Playful Rewards"
+  },
+  {
+    "id": "clearvpn",
+    "name": "ClearVPN"
   }
 ];
 
@@ -459,5 +463,115 @@ export const INITIAL_ASSETS: CreativeAsset[] = [
     "fileSizeKb": 9530,
     "type": "MP4",
     "createdAt": "2026-07-29"
+  },
+  {
+    "id": "asset-44",
+    "name": "clearvpn 1.mp4",
+    "folderId": "clearvpn",
+    "previewUrl": "/creatives/clearvpn/1_1-13tH0e.mp4",
+    "dimensions": "410x892",
+    "fileSizeKb": 431,
+    "type": "MP4",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "asset-45",
+    "name": "clearvpn 2.png",
+    "folderId": "clearvpn",
+    "previewUrl": "/creatives/clearvpn/1_1-17RDSf.png",
+    "dimensions": "1376x768",
+    "fileSizeKb": 838,
+    "type": "PNG",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "asset-46",
+    "name": "clearvpn 3.png",
+    "folderId": "clearvpn",
+    "previewUrl": "/creatives/clearvpn/1_1-1Bwf33.png",
+    "dimensions": "1376x768",
+    "fileSizeKb": 824,
+    "type": "PNG",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "asset-47",
+    "name": "clearvpn 4.png",
+    "folderId": "clearvpn",
+    "previewUrl": "/creatives/clearvpn/1_1-1O0dfk.png",
+    "dimensions": "1376x768",
+    "fileSizeKb": 783,
+    "type": "PNG",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "asset-48",
+    "name": "clearvpn 5.mp4",
+    "folderId": "clearvpn",
+    "previewUrl": "/creatives/clearvpn/1_1-1QEy2O.mp4",
+    "dimensions": "1920x1080",
+    "fileSizeKb": 6267,
+    "type": "MP4",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "asset-49",
+    "name": "clearvpn 6.png",
+    "folderId": "clearvpn",
+    "previewUrl": "/creatives/clearvpn/1_1-1XiG2Y.png",
+    "dimensions": "1376x768",
+    "fileSizeKb": 716,
+    "type": "PNG",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "asset-50",
+    "name": "clearvpn 7.mp4",
+    "folderId": "clearvpn",
+    "previewUrl": "/creatives/clearvpn/1_1-1XvBe8.mp4",
+    "dimensions": "1920x1080",
+    "fileSizeKb": 8896,
+    "type": "MP4",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "asset-51",
+    "name": "clearvpn 8.png",
+    "folderId": "clearvpn",
+    "previewUrl": "/creatives/clearvpn/1_1-1b03Vs.png",
+    "dimensions": "1376x768",
+    "fileSizeKb": 995,
+    "type": "PNG",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "asset-52",
+    "name": "clearvpn 9.png",
+    "folderId": "clearvpn",
+    "previewUrl": "/creatives/clearvpn/1_1-1rQfP1.png",
+    "dimensions": "1376x768",
+    "fileSizeKb": 1235,
+    "type": "PNG",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "asset-53",
+    "name": "clearvpn 10.png",
+    "folderId": "clearvpn",
+    "previewUrl": "/creatives/clearvpn/1_1-1uwflK.png",
+    "dimensions": "1376x768",
+    "fileSizeKb": 1053,
+    "type": "PNG",
+    "createdAt": "2026-04-15"
+  },
+  {
+    "id": "asset-54",
+    "name": "clearvpn 11.png",
+    "folderId": "clearvpn",
+    "previewUrl": "/creatives/clearvpn/1_1-1zPlmw.png",
+    "dimensions": "1376x768",
+    "fileSizeKb": 1093,
+    "type": "PNG",
+    "createdAt": "2026-04-15"
   }
 ];

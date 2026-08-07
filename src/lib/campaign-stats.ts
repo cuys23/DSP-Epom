@@ -45,11 +45,16 @@ const span = (from: string, to: string) => {
 export const DEFAULT_RANGE = "Today";
 
 /**
- * The days a date-range preset covers, measured back from `TODAY`. `Custom range`
- * needs a calendar to say anything, so it falls through to the default week rather
- * than guessing a span.
+ * The days a date-range preset covers, measured back from `TODAY`. A custom range
+ * arrives as the `from|to` ISO pair the picker's calendar applied; anything else
+ * falls through to the default week.
  */
 export function rangeDays(preset: string): string[] {
+  if (preset.includes("|")) {
+    const [from, to] = preset.split("|");
+    return span(from, to);
+  }
+
   const [year, month] = TODAY.split("-").map(Number);
   const firstOf = (y: number, m: number) => `${y}-${String(m).padStart(2, "0")}-01`;
 

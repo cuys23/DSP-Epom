@@ -7,6 +7,14 @@
  * are the affiliate sheet's `Total Lead` and `Event` columns; the DSP export also
  * measures impressions, so those days carry a fourth value. Everything else in the
  * funnel is derived in `demo-data.ts`, the one place a number is invented.
+ *
+ * ponytail: offer 59986 (Clear VPN) was added by hand from a `LeadRrs` CSV export,
+ * which measures only `Total Lead` per day (its conversions) and a single 34,442
+ * click total for the flight. Its daily clicks are that total split across the
+ * days, and its impressions are sized from the 12–20% CTR the DSP's own export
+ * reports for this account — those clicks are DSP-side, so the offer-side CTR
+ * `demo-data.ts` derives from would put the campaign at ~1.8M impressions a day.
+ * Fold the export into `build-campaigns.mjs` if a second offer arrives in that shape.
  */
 
 export interface CampaignCreative {
@@ -2648,9 +2656,9 @@ export const CAMPAIGNS: Campaign[] = [
     },
     "product": "playful-rewards",
     "productLabel": "Playful Rewards",
-    "payout": 4.5,
+    "payout": 6.8,
     "defaultPrice": 0.018,
-    "ecpm": 1.2,
+    "ecpm": 0.72,
     "paused": false,
     "from": "2026-07-09",
     "to": "2026-07-29",
@@ -2796,9 +2804,9 @@ export const CAMPAIGNS: Campaign[] = [
     },
     "product": "playful-rewards",
     "productLabel": "Playful Rewards",
-    "payout": 3.8,
+    "payout": 6.5,
     "defaultPrice": 0.016,
-    "ecpm": 1.05,
+    "ecpm": 0.55,
     "paused": false,
     "from": "2026-07-09",
     "to": "2026-07-29",
@@ -3045,6 +3053,168 @@ export const CAMPAIGNS: Campaign[] = [
         "2026-07-28",
         15,
         2
+      ]
+    ]
+  },
+  {
+    "id": "72b948bd-c9df-4907-a10e-f40f37f77714",
+    "slug": "clear-vpn-59986",
+    "name": "Clear VPN — Adflurry",
+    "offer": {
+      "id": "790410",
+      "networkId": "59986",
+      "network": "Adflurry",
+      "app": "com.macpaw.clearvpn.ios",
+      "site": "vinmedia.net",
+      "raw": "US_[IOS](10 sale/day) Clear VPN_NCPA_IOS_US_Direct (1)"
+    },
+    "product": "clearvpn",
+    "productLabel": "ClearVPN",
+    "payout": 9.5,
+    "defaultPrice": 0.03,
+    "ecpm": 1.95,
+    "paused": false,
+    "spendCap": 30,
+    "from": "2026-04-16",
+    "to": "2026-04-23",
+    "creatives": [
+      {
+        "id": "23621528-b920-438d-ac38-c0add2163e0e",
+        "name": "clearvpn 1.mp4",
+        "src": "/creatives/clearvpn/1_1-13tH0e.mp4",
+        "video": true,
+        "size": "410x892",
+        "price": "$0.030"
+      },
+      {
+        "id": "f1e3409d-8d09-4689-ad89-cc7dde284d85",
+        "name": "clearvpn 2.png",
+        "src": "/creatives/clearvpn/1_1-17RDSf.png",
+        "video": false,
+        "size": "1376x768",
+        "price": "$0.030"
+      },
+      {
+        "id": "44cc62a9-99ce-4938-a634-086cb52d0354",
+        "name": "clearvpn 3.png",
+        "src": "/creatives/clearvpn/1_1-1Bwf33.png",
+        "video": false,
+        "size": "1376x768",
+        "price": "$0.030"
+      },
+      {
+        "id": "4762afba-f7b1-40bc-ae10-bb19dee1e020",
+        "name": "clearvpn 4.png",
+        "src": "/creatives/clearvpn/1_1-1O0dfk.png",
+        "video": false,
+        "size": "1376x768",
+        "price": "$0.030"
+      },
+      {
+        "id": "c6fe08d7-3aae-4bac-a2b4-9ff720425deb",
+        "name": "clearvpn 5.mp4",
+        "src": "/creatives/clearvpn/1_1-1QEy2O.mp4",
+        "video": true,
+        "size": "1920x1080",
+        "price": "$0.030"
+      },
+      {
+        "id": "f1cef4d4-ce9e-4736-aa00-9687e08ce005",
+        "name": "clearvpn 6.png",
+        "src": "/creatives/clearvpn/1_1-1XiG2Y.png",
+        "video": false,
+        "size": "1376x768",
+        "price": "$0.030"
+      },
+      {
+        "id": "bf638745-9c42-4b71-a3a9-f353c63aaac0",
+        "name": "clearvpn 7.mp4",
+        "src": "/creatives/clearvpn/1_1-1XvBe8.mp4",
+        "video": true,
+        "size": "1920x1080",
+        "price": "$0.030"
+      },
+      {
+        "id": "de8f25e7-bf45-4a22-a0c4-d9bfd9172e30",
+        "name": "clearvpn 8.png",
+        "src": "/creatives/clearvpn/1_1-1b03Vs.png",
+        "video": false,
+        "size": "1376x768",
+        "price": "$0.030"
+      },
+      {
+        "id": "37ad9814-64a3-4009-a785-980932df461a",
+        "name": "clearvpn 9.png",
+        "src": "/creatives/clearvpn/1_1-1rQfP1.png",
+        "video": false,
+        "size": "1376x768",
+        "price": "$0.030"
+      },
+      {
+        "id": "54a7b53b-388c-4b1d-a6c4-146d6602b242",
+        "name": "clearvpn 10.png",
+        "src": "/creatives/clearvpn/1_1-1uwflK.png",
+        "video": false,
+        "size": "1376x768",
+        "price": "$0.030"
+      },
+      {
+        "id": "bee934b2-ce26-4d9f-a268-9e1b786e3388",
+        "name": "clearvpn 11.png",
+        "src": "/creatives/clearvpn/1_1-1zPlmw.png",
+        "video": false,
+        "size": "1376x768",
+        "price": "$0.030"
+      }
+    ],
+    "days": [
+      [
+        "2026-04-16",
+        4450,
+        59,
+        27418
+      ],
+      [
+        "2026-04-17",
+        4224,
+        53,
+        23709
+      ],
+      [
+        "2026-04-18",
+        4893,
+        61,
+        38482
+      ],
+      [
+        "2026-04-19",
+        5604,
+        59,
+        38402
+      ],
+      [
+        "2026-04-20",
+        3642,
+        48,
+        29531
+      ],
+      [
+        "2026-04-21",
+        2657,
+        31,
+        17482
+      ],
+      [
+        "2026-04-22",
+        4310,
+        55,
+        32416
+      ],
+      [
+        "2026-04-23",
+        4662,
+        52,
+        33565
       ]
     ]
   }

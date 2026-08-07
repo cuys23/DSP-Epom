@@ -72,6 +72,13 @@ const TARGETING: Record<string, Partial<AudienceTargeting>> = {
     connectionTypes: ["Any"],
     storeCategories: ["Entertainment"],
   },
+  clearvpn: {
+    // A VPN sells against untrusted networks, so it buys both connection types the
+    // handset sees, and the store shelves it under Business rather than the default
+    // Health & Fitness. Values match the pickers in `AudienceEditView`.
+    connectionTypes: ["WIFI", "Carrier"],
+    storeCategories: ["Business"],
+  },
 };
 
 export const AUDIENCES: Audience[] = PRODUCTS.map((product) => {
