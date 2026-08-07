@@ -55,11 +55,18 @@ interface Campaign {
 
 const int = (n: number) => n.toLocaleString("en-US");
 
-/** The campaigns that have run, newest first — BritBox pinned to the top, synthetic demo entries pushed to the bottom. */
+/** Pinned to the head of the list, in this order; everything else sorts below them. */
+const PINNED = ["clearvpn", "britbox"];
+const pinRank = (product: string) => {
+  const i = PINNED.indexOf(product);
+  return i === -1 ? PINNED.length : i;
+};
+
+/** The campaigns that have run, newest first — pinned products first, synthetic demo entries pushed to the bottom. */
 const CAMPAIGNS: Campaign[] = [
   ...[...SOURCE_CAMPAIGNS]
     .sort((a, b) => {
-      if (a.product === "britbox" !== (b.product === "britbox")) return a.product === "britbox" ? -1 : 1;
+      if (pinRank(a.product) !== pinRank(b.product)) return pinRank(a.product) - pinRank(b.product);
       if (!!a.synthetic !== !!b.synthetic) return a.synthetic ? 1 : -1;
       return b.from.localeCompare(a.from);
     })
@@ -117,7 +124,8 @@ export function CampaignsListView() {
   const [foldersCollapsed, setFoldersCollapsed] = useState(false);
   const [rows, setRows] = useState(CAMPAIGNS);
   const [filters, setFilters] = useState<CampaignFilterValue>(CAMPAIGN_FILTER_DEFAULTS);
-  const [expanded, setExpanded] = useState<string[]>([CAMPAIGNS[0].id]);
+  // Every row starts collapsed — the creatives table is opened per campaign.
+  const [expanded, setExpanded] = useState<string[]>([]);
   const [sort, setSort] = useState<Sort | null>(null);
   const [pageSize, setPageSize] = useState(10);
   const [page, setPage] = useState(1);
