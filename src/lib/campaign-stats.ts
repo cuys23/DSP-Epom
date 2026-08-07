@@ -92,8 +92,15 @@ const longDate = (iso: string) => {
   return `${d}.${m}.${y}`;
 };
 
-/** Caps are round numbers a buyer would type, set above the campaign's busiest day. */
+/** Impression caps are round numbers a buyer would type, set above the busiest day. */
 const ceilTo = (n: number, step: number) => Math.ceil(n / step) * step;
+
+/**
+ * Daily spend cap for a campaign the buyer never set one on. Every campaign in
+ * the account that does carry a cap is on $30/day, so a derived one matches them
+ * rather than being sized off the campaign's own peak day.
+ */
+const DEFAULT_SPEND_CAP = 30;
 
 export interface CampaignStats {
   campaign: Campaign;
@@ -123,7 +130,6 @@ export function campaignStats(campaign: Campaign): CampaignStats {
   const lastWeek = sumMetrics(week);
   const hasRecentTraffic = lastWeek.impressions > 0;
 
-  const peakSpend = Math.max(...daily.map((m) => m.spend));
   const peakImpressions = Math.max(...daily.map((m) => m.impressions));
 
   return {
@@ -134,7 +140,7 @@ export function campaignStats(campaign: Campaign): CampaignStats {
     // The live table prints a dash rather than a zero when the window has no traffic.
     ecpm: hasRecentTraffic ? `${CELL.eCPM(lastWeek)} / $${CELL.eCPC(lastWeek)}` : "-",
     winRate: hasRecentTraffic ? CELL["Win Rate"](lastWeek) : "-",
-    spendLimit: campaign.spendCap ?? ceilTo(peakSpend, 50),
+    spendLimit: campaign.spendCap ?? DEFAULT_SPEND_CAP,
     impressionLimit: ceilTo(peakImpressions, 5_000),
     state: campaign.paused ? "paused" : "stopped",
     status: campaign.paused
