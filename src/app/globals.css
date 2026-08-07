@@ -23,16 +23,21 @@
 @theme inline {
   --font-sans: var(--font-open-sans), "Open Sans", sans-serif;
 
-  /* Epom palette — resolved values from the live theme-violet / light-mode theme */
-  --color-epom-primary: #7e239f;
-  --color-epom-primary-hover: #8d3dab;
-  --color-epom-primary-8: rgba(126, 35, 159, 0.08);
-  --color-epom-primary-12: rgba(126, 35, 159, 0.12);
-  --color-epom-primary-16: rgba(126, 35, 159, 0.16);
+  /*
+   * Epom palette — resolved values from the live light-mode theme. The brand
+   * colours below are the account's white-label set, injected on `<body>` as
+   * `--themePrimButtonsBg-*` / `--themeNavActiveBg-*` / `--themeSidebarBg-*`;
+   * everything under them is the fixed neutral/status palette.
+   */
+  --color-epom-primary: #38ce9f;
+  --color-epom-primary-hover: #50d4ab;
+  --color-epom-primary-8: rgba(56, 206, 159, 0.08);
+  --color-epom-primary-12: rgba(56, 206, 159, 0.12);
+  --color-epom-primary-16: rgba(56, 206, 159, 0.16);
 
-  --color-epom-sidebar: #060028;
-  --color-epom-nav-active: #447ff9;
-  --color-epom-nav-hover: rgba(68, 127, 249, 0.08);
+  --color-epom-sidebar: #23323f;
+  --color-epom-nav-active: #df8d35;
+  --color-epom-nav-hover: rgba(223, 141, 53, 0.08);
   --color-epom-nav-idle: #8e969c;
   --color-epom-nav-toggle: #a9abb4;
   --color-epom-version: #d3d1d5;
