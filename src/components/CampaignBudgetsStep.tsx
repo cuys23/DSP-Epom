@@ -8,12 +8,6 @@ import { formatFlight, type CampaignBudget } from "@/lib/records";
 const STATUSES = ["Delivering", "Scheduled", "Paused", "Ended"] as const;
 type Status = (typeof STATUSES)[number];
 
-interface Budget {
-  status: Status;
-}
-
-const BUDGETS: Budget[] = [{ status: "Ended" }];
-
 /** `epom-status-dot` — the live app tints Ended black and the live states green. */
 const DOT_TONE: Record<Status, string> = {
   Delivering: "text-epom-primary",
@@ -23,9 +17,12 @@ const DOT_TONE: Record<Status, string> = {
 };
 
 export function CampaignBudgetsStep({
+  status,
   budget: pending,
   onChange,
 }: {
+  /** The campaign's own budget state, so the card matches the overview page. */
+  status: string;
   /** Pending values — the wizard's footer Save is what commits them. */
   budget: CampaignBudget;
   onChange: (budget: CampaignBudget) => void;
@@ -51,7 +48,8 @@ export function CampaignBudgetsStep({
   // The trigger label and the empty-state copy both read off the checked set, so
   // they stay in the order the panel lists them rather than click order.
   const checked = STATUSES.filter((s) => selected.includes(s));
-  const visible = BUDGETS.filter((b) => selected.includes(b.status));
+  // This account has exactly one budget per campaign.
+  const visible = selected.includes(status as Status) ? [status as Status] : [];
 
   return (
     <>
@@ -123,8 +121,8 @@ export function CampaignBudgetsStep({
       </div>
 
       {visible.length > 0 ? (
-        visible.map((budget) => (
-          <BudgetCard key={budget.status} budget={budget} pending={pending} onChange={onChange} />
+        visible.map((s) => (
+          <BudgetCard key={s} status={s} pending={pending} onChange={onChange} />
         ))
       ) : (
         <div className="mt-4 flex min-h-[160px] flex-col items-center justify-center gap-1 rounded bg-epom-surface p-6">
@@ -149,11 +147,11 @@ export function CampaignBudgetsStep({
 }
 
 function BudgetCard({
-  budget,
+  status,
   pending,
   onChange,
 }: {
-  budget: Budget;
+  status: Status;
   pending: CampaignBudget;
   onChange: (budget: CampaignBudget) => void;
 }) {
@@ -169,9 +167,9 @@ function BudgetCard({
               <MaterialIcon
                 name="circle"
                 filled
-                className={cn("mr-1 block text-[10px] leading-[10px]", DOT_TONE[budget.status])}
+                className={cn("mr-1 block text-[10px] leading-[10px]", DOT_TONE[status])}
               />
-              {budget.status}
+              {status}
             </span>
           </div>
           {/* 24.5px, not 20: on the live site this is an inline box, so its line

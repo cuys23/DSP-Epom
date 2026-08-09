@@ -10,7 +10,13 @@ import type { CampaignBudget } from "@/lib/records";
  * `/campaigns/edit/<id>` serves two different pages on the live site: the
  * read-only overview, and — once `?step=` is present — the edit wizard.
  */
-export function CampaignEditRoute({ budget }: { budget: CampaignBudget }) {
+export function CampaignEditRoute({
+  budget,
+  budgetStatus,
+}: {
+  budget: CampaignBudget;
+  budgetStatus: string;
+}) {
   const id = String(useParams().id ?? "");
   const step = useSearchParams().get("step");
 
@@ -24,6 +30,7 @@ export function CampaignEditRoute({ budget }: { budget: CampaignBudget }) {
       name={campaign.name}
       step={step}
       budget={budget}
+      budgetStatus={budgetStatus}
     />
   );
 }

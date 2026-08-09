@@ -31,11 +31,13 @@ export function CampaignEditWizard({
   name,
   step,
   budget,
+  budgetStatus,
 }: {
   id: string;
   name: string;
   step: string;
   budget: CampaignBudget;
+  budgetStatus: string;
 }) {
   const router = useRouter();
   // The live stepper swaps ?step= through the router; the tabs carry no href.
@@ -106,6 +108,7 @@ export function CampaignEditWizard({
 
           {active === "budgets" ? (
             <CampaignBudgetsStep
+              status={budgetStatus}
               budget={draft}
               onChange={(next) => {
                 setDraft(next);

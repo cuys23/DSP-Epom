@@ -142,8 +142,15 @@ async function readOr<T>(
 
 // ------------------------------------------------------------------ budget
 
-export async function readBudget(campaignId: string): Promise<CampaignBudget> {
-  return readOr(DEFAULT_BUDGET, async () => {
+/**
+ * `fallback` is the campaign's own derived flight and caps, so a campaign with
+ * no stored row still shows its real numbers rather than another campaign's.
+ */
+export async function readBudget(
+  campaignId: string,
+  fallback: CampaignBudget = DEFAULT_BUDGET,
+): Promise<CampaignBudget> {
+  return readOr(fallback, async () => {
     const row = await selectOne<BudgetRow>(
       `campaign_budgets?campaign_id=eq.${campaignId}&select=${BUDGET_COLUMNS}`,
     );

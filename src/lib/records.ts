@@ -23,7 +23,7 @@ export interface UserProfile {
   phone: string;
 }
 
-/** What the live budget card shows for this campaign before any edit. */
+/** What the live budget card shows for the cloned campaign before any edit. */
 export const DEFAULT_BUDGET: CampaignBudget = {
   startsAt: "2026-07-28T07:03",
   endsAt: "2026-07-31T23:59",
@@ -70,3 +70,21 @@ export const DEFAULT_ANALYTICS_SETTINGS: AnalyticsSettings = {
     { title: "Action 2", multi: false },
   ],
 };
+
+/**
+ * The budget a campaign has before anything is stored for it: the same flight and
+ * daily caps the read-only overview derives, so the two pages never disagree.
+ */
+export function budgetFromStats(
+  stats: { spendLimit: number; impressionLimit: number },
+  from: string,
+  to: string,
+): CampaignBudget {
+  return {
+    startsAt: `${from}T00:00`,
+    endsAt: `${to}T23:59`,
+    spendLimit: stats.spendLimit,
+    impressionLimit: stats.impressionLimit,
+    evenPacing: false,
+  };
+}
