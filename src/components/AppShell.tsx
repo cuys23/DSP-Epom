@@ -12,10 +12,21 @@ interface AppShellProps {
   activeHref: string;
   /** Fixed 270px panel pinned to the right edge, below the topbar. */
   rightRail?: React.ReactNode;
+  /**
+   * Classes for the scrolling content column. The wizard replaces the default
+   * padding with its own flex column so its footer can sit full-bleed.
+   */
+  contentClassName?: string;
   children: React.ReactNode;
 }
 
-export function AppShell({ breadcrumbs, activeHref, rightRail, children }: AppShellProps) {
+export function AppShell({
+  breadcrumbs,
+  activeHref,
+  rightRail,
+  contentClassName = "overflow-auto p-8",
+  children,
+}: AppShellProps) {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
@@ -34,7 +45,7 @@ export function AppShell({ breadcrumbs, activeHref, rightRail, children }: AppSh
       >
         <TopBar breadcrumbs={breadcrumbs} />
         {/* The content column scrolls internally — the document body never does. */}
-        <div className="h-[calc(100vh-57px)] overflow-auto p-8">{children}</div>
+        <div className={cn("h-[calc(100vh-57px)]", contentClassName)}>{children}</div>
       </div>
 
       {rightRail}

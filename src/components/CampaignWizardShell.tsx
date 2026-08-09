@@ -1,3 +1,7 @@
+"use client";
+
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { AppShell } from "@/components/AppShell";
 import { MaterialIcon } from "@/components/MaterialIcon";
@@ -22,6 +26,29 @@ interface CampaignWizardShellProps {
 }
 
 export function CampaignWizardShell({ activeTab, footer, children }: CampaignWizardShellProps) {
+  const router = useRouter();
+  const [saved, setSaved] = useState(false);
+
+  const currentIndex = TABS.findIndex((t) => t.href === activeTab);
+
+  const handleClick = (button: FooterButton) => {
+    switch (button) {
+      case "Cancel":
+        router.push("/campaigns");
+        break;
+      case "Previous":
+        if (currentIndex > 0) router.push(TABS[currentIndex - 1].href);
+        break;
+      case "Next":
+        if (currentIndex < TABS.length - 1) router.push(TABS[currentIndex + 1].href);
+        break;
+      case "Save":
+        setSaved(true);
+        setTimeout(() => router.push("/campaigns"), 1200);
+        break;
+    }
+  };
+
   return (
     <AppShell
       activeHref="/campaigns"
@@ -73,9 +100,21 @@ export function CampaignWizardShell({ activeTab, footer, children }: CampaignWiz
 
         <div className="mt-4 flex flex-1 flex-col gap-4">{children}</div>
 
-        <div className="mt-4 flex h-9 justify-end gap-4">
+        <div className="mt-4 flex h-9 items-center justify-end gap-4">
+          {saved && (
+            <span className="text-[12px] font-semibold leading-[18px] text-epom-success">
+              <MaterialIcon name="check_circle" className="mr-1 inline text-[14px] leading-[14px]" />
+              Campaign saved
+            </span>
+          )}
           {footer.map((b) => (
-            <button key={b} type="button" className={footerButtonClass(b)}>
+            <button
+              key={b}
+              type="button"
+              onClick={() => handleClick(b)}
+              disabled={saved && b === "Save"}
+              className={footerButtonClass(b)}
+            >
               {b}
             </button>
           ))}
