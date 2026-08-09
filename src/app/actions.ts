@@ -1,6 +1,5 @@
 "use server";
 
-import { cookies } from "next/headers";
 import { revalidatePath } from "next/cache";
 import { selectOne, upsert } from "@/lib/db";
 import {
@@ -11,30 +10,6 @@ import {
   type CampaignBudget,
   type UserProfile,
 } from "@/lib/records";
-
-// ------------------------------------------------------------------ auth gate
-
-/**
- * In development, writes are always allowed so the demo works out of the box.
- * In production, an `ADMIN_SECRET` env var must be set and the caller must
- * have stored a matching `admin_token` cookie (set once via a login prompt
- * that is outside the scope of this clone).
- *
- * The service role key already bypasses RLS at the Postgres level; this gate
- * prevents *unauthenticated callers* from hitting the server actions via a
- * direct POST — which Next.js allows by design.
- */
-async function requireAuth() {
-  if (process.env.NODE_ENV !== "production") return;
-  const secret = process.env.ADMIN_SECRET;
-  if (!secret)
-    throw new Error(
-      "Saving is disabled: ADMIN_SECRET is not set on the server.",
-    );
-  const token = (await cookies()).get("admin_token")?.value;
-  if (token !== secret)
-    throw new Error("Not authorised to save. Sign in again.");
-}
 
 // --------------------------------------------------------------- row shapes
 
@@ -163,8 +138,6 @@ export async function saveBudget(
   budget: CampaignBudget,
 ): Promise<ActionResult<CampaignBudget>> {
   return attempt(async () => {
-    await requireAuth();
-
     // Reject anything that would render as a nonsense budget rather than storing it.
     const spendLimit = Number(budget.spendLimit);
     const impressionLimit = Math.trunc(Number(budget.impressionLimit));
@@ -211,8 +184,6 @@ export async function saveProfile(
   profile: UserProfile,
 ): Promise<ActionResult<UserProfile>> {
   return attempt(async () => {
-    await requireAuth();
-
     const trimmed = {
       timezone: profile.timezone.trim(),
       first_name: profile.firstName.trim(),
@@ -252,8 +223,6 @@ export async function saveAnalyticsSettings(
   settings: AnalyticsSettings,
 ): Promise<ActionResult<AnalyticsSettings>> {
   return attempt(async () => {
-    await requireAuth();
-
     const [a0, a1, a2] = settings.actions;
     const row = await upsert<AnalyticsRow>("user_analytics_settings", {
       id: "me",
