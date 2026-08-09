@@ -34,18 +34,35 @@ export function FieldLabel({ children, required }: { children: React.ReactNode; 
 /** 36px text input matching `.custom-input__field` / `.form-control`. */
 export function TextField({
   placeholder,
+  defaultValue,
+  value,
+  onChange,
+  type = "text",
+  readOnly,
   className,
 }: {
   placeholder?: string;
+  defaultValue?: string;
+  /** Pass with `onChange` for a controlled field; omit for an uncontrolled one. */
+  value?: string;
+  onChange?: (value: string) => void;
+  type?: "text" | "password";
+  readOnly?: boolean;
   className?: string;
 }) {
   return (
     <input
-      type="text"
+      type={type}
       placeholder={placeholder}
+      defaultValue={value === undefined ? defaultValue : undefined}
+      value={value}
+      onChange={onChange && ((e) => onChange(e.target.value))}
+      readOnly={readOnly}
       className={cn(
         "h-9 w-full rounded border border-epom-border bg-epom-surface px-3 text-[14px] leading-5 text-epom-text",
         "transition-[border-color,box-shadow] duration-150 ease-in-out focus:border-epom-primary focus:outline-none",
+        // Read-only fields drop the outline into the fill colour.
+        readOnly && "border-[#e1e2ec] bg-[#e1e2ec] focus:border-[#e1e2ec]",
         className,
       )}
     />
@@ -59,15 +76,27 @@ export function TextField({
 export function SelectField({
   value,
   placeholder,
+  disabled,
+  leading,
   className,
 }: {
   value?: string;
   placeholder?: string;
+  /** Renders the filled, borderless variant the live app uses for locked selects. */
+  disabled?: boolean;
+  /** Slot ahead of the value — the country select puts a flag here. */
+  leading?: React.ReactNode;
   className?: string;
 }) {
   return (
     <div className={cn("relative h-9 w-full", className)}>
-      <div className="flex h-9 w-full items-center rounded border border-epom-border py-[6px] pl-[11px] pr-9 text-[14px] leading-[21px]">
+      <div
+        className={cn(
+          "flex h-9 w-full items-center rounded py-[6px] pl-[11px] pr-9 text-[14px] leading-[21px]",
+          disabled ? "bg-[#e1e2ec]" : "border border-epom-border",
+        )}
+      >
+        {leading}
         <span className={value ? "text-epom-text" : "text-epom-muted"}>{value ?? placeholder}</span>
       </div>
       <MaterialIcon

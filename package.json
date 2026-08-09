@@ -32,8 +32,11 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "check": "npm run lint && npm run typecheck && npm run check:demo && npm run build",
+    "check": "npm run lint && npm run typecheck && npm run check:demo && npm run check:db && npm run build",
     "check:demo": "node scripts/check-demo-data.mjs",
+    "check:db": "node scripts/supabase.mjs selftest",
+    "db:push": "node scripts/supabase.mjs push",
+    "db:pull": "node scripts/supabase.mjs pull",
     "fetch:creatives": "node scripts/fetch-creatives.mjs",
     "build:campaigns": "node scripts/build-campaigns.mjs"
   },

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { MaterialIcon } from "@/components/MaterialIcon";
 import { ACCOUNT_BALANCE_CENTS, money } from "@/lib/transactions";
@@ -9,7 +10,12 @@ import type { Crumb } from "@/types/nav";
 const LANGUAGES = ["EN", "中文", "UA", "DE", "FR", "ES", "PT"];
 const ACTIVE_LANGUAGE = "EN";
 
-const USER_ACTIONS = ["Edit profile", "Review Us on G2", "Help center", "Sign out"];
+const USER_ACTIONS = [
+  { label: "Edit profile", href: "/user-profile" },
+  { label: "Review Us on G2" },
+  { label: "Help center" },
+  { label: "Sign out" },
+];
 
 export function TopBar({ breadcrumbs }: { breadcrumbs: Crumb[] }) {
   const [open, setOpen] = useState<"language" | "user" | null>(null);
@@ -133,15 +139,25 @@ export function TopBar({ breadcrumbs }: { breadcrumbs: Crumb[] }) {
                     </div>
                   </div>
                   <div className="mt-1">
-                    {USER_ACTIONS.map((action) => (
-                      <button
-                        key={action}
-                        type="button"
-                        className={cn(menuItemClass, "w-[calc(100%-8px)] justify-start")}
-                      >
-                        {action}
-                      </button>
-                    ))}
+                    {USER_ACTIONS.map(({ label, href }) =>
+                      href ? (
+                        <Link
+                          key={label}
+                          href={href}
+                          className={cn(menuItemClass, "w-[calc(100%-8px)] justify-start")}
+                        >
+                          {label}
+                        </Link>
+                      ) : (
+                        <button
+                          key={label}
+                          type="button"
+                          className={cn(menuItemClass, "w-[calc(100%-8px)] justify-start")}
+                        >
+                          {label}
+                        </button>
+                      ),
+                    )}
                   </div>
                 </div>
               )}

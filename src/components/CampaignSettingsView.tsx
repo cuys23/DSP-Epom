@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { useParams } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { AppShell } from "@/components/AppShell";
@@ -196,7 +197,7 @@ export function CampaignSettingsView() {
         <div className="mt-4 flex flex-col justify-between gap-4 min-[1400px]:flex-row">
           <div className="flex flex-1 flex-col">
             <Box>
-              <BoxHeading>Basic info</BoxHeading>
+              <BoxHeading step="basic" campaignId={CAMPAIGN.id}>Basic info</BoxHeading>
               <h4 className="mb-4 text-[14px] font-bold leading-[21px] text-epom-text">
                 Basic settings
               </h4>
@@ -212,7 +213,7 @@ export function CampaignSettingsView() {
             </Box>
 
             <Box className="mt-4">
-              <BoxHeading spaced={false}>Audience</BoxHeading>
+              <BoxHeading spaced={false} step="audience" campaignId={CAMPAIGN.id}>Audience</BoxHeading>
               <div className="mt-4">
                 <a
                   href={`/audience/edit/${CAMPAIGN.audience.id}`}
@@ -264,7 +265,7 @@ export function CampaignSettingsView() {
             </Box>
 
             <Box className="mt-4">
-              <BoxHeading spaced={false}>Budgets</BoxHeading>
+              <BoxHeading spaced={false} step="budgets" campaignId={CAMPAIGN.id}>Budgets</BoxHeading>
               <div className="mt-4">
                 <StatusDot label={CAMPAIGN.budget.status} tone={CAMPAIGN.budget.tone} />
               </div>
@@ -292,14 +293,14 @@ export function CampaignSettingsView() {
             </Box>
 
             <Box className="mt-4">
-              <BoxHeading spaced={false}>Bidding Strategy</BoxHeading>
+              <BoxHeading spaced={false} step="pricingOptimization" campaignId={CAMPAIGN.id}>Bidding Strategy</BoxHeading>
               <div className="text-[12px] leading-[18px] text-epom-muted">
                 Bidding strategy is not configured.
               </div>
             </Box>
 
             <Box className="mt-4">
-              <BoxHeading spaced={false}>Traffic source</BoxHeading>
+              <BoxHeading spaced={false} step="trafficSources" campaignId={CAMPAIGN.id}>Traffic source</BoxHeading>
               <div className="mt-2">
                 <StatusDot label="Included" tone="success" />
                 <div className="mt-2 text-[14px] leading-[21px] text-epom-text">
@@ -309,7 +310,7 @@ export function CampaignSettingsView() {
             </Box>
 
             <Box className="mt-4">
-              <BoxHeading spaced={false}>Optimizations</BoxHeading>
+              <BoxHeading spaced={false} step="pricingOptimization" campaignId={CAMPAIGN.id}>Optimizations</BoxHeading>
               <div className="mt-4 flex flex-col gap-8">
                 <div>
                   <h4 className="mb-3 text-[14px] font-bold leading-[21px] text-epom-text">
@@ -505,8 +506,22 @@ function Box({ className, children }: { className?: string; children: React.Reac
   );
 }
 
-/** `.headline-3.headline-with-edit` — title on the left, the Edit link on the right. */
-function BoxHeading({ children, spaced = true }: { children: React.ReactNode; spaced?: boolean }) {
+/**
+ * `.headline-3.headline-with-edit` — title on the left, the Edit link on the
+ * right. Each Edit opens the wizard on the step that owns that section.
+ */
+function BoxHeading({
+  children,
+  step,
+  campaignId,
+  spaced = true,
+}: {
+  children: React.ReactNode;
+  /** `?step=` value the Edit link jumps to. */
+  step: string;
+  campaignId: string;
+  spaced?: boolean;
+}) {
   return (
     <h3
       className={cn(
@@ -515,13 +530,13 @@ function BoxHeading({ children, spaced = true }: { children: React.ReactNode; sp
       )}
     >
       {children}
-      <button
-        type="button"
+      <Link
+        href={`/campaigns/edit/${campaignId}?step=${step}`}
         className="ml-1.5 flex items-center gap-1 text-[12px] font-semibold leading-[18px] text-epom-primary hover:text-epom-primary-hover"
       >
         <MaterialIcon name="edit" className="block text-[16px] leading-4" />
         Edit
-      </button>
+      </Link>
     </h3>
   );
 }
@@ -573,7 +588,7 @@ function StatusDot({
 }
 
 /** `mat-slide-toggle` with the On/Off caption. */
-function Toggle({ on, onToggle }: { on: boolean; onToggle: () => void }) {
+export function Toggle({ on, onToggle }: { on: boolean; onToggle: () => void }) {
   return (
     <label className="flex cursor-pointer items-center">
       <input type="checkbox" role="switch" checked={on} onChange={onToggle} className="sr-only" />
