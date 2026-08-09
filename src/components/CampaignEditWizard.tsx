@@ -52,14 +52,11 @@ export function CampaignEditWizard({
 
   const onSave = () =>
     startSaving(async () => {
-      try {
-        const row = await saveBudget(id, draft);
-        setSaved(row);
-        setDraft(row);
-        setStatus("Budget saved.");
-      } catch (e) {
-        setStatus(e instanceof Error ? e.message : "Could not save the budget.");
-      }
+      const result = await saveBudget(id, draft);
+      if (!result.ok) return setStatus(result.error);
+      setSaved(result.data);
+      setDraft(result.data);
+      setStatus("Budget saved.");
     });
 
   return (

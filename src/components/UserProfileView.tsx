@@ -289,18 +289,16 @@ export function UserProfileView({
 
   const onSave = () =>
     startSaving(async () => {
-      try {
-        if (activeTab === "") {
-          const saved = await saveProfile(form);
-          setForm(saved);
-          setStatus("Profile saved.");
-        } else if (activeTab === "analytics") {
-          const saved = await saveAnalyticsSettings(analyticsForm);
-          setAnalyticsForm(saved);
-          setStatus("Analytics settings saved.");
-        }
-      } catch (e) {
-        setStatus(e instanceof Error ? e.message : "Could not save.");
+      if (activeTab === "") {
+        const result = await saveProfile(form);
+        if (!result.ok) return setStatus(result.error);
+        setForm(result.data);
+        setStatus("Profile saved.");
+      } else if (activeTab === "analytics") {
+        const result = await saveAnalyticsSettings(analyticsForm);
+        if (!result.ok) return setStatus(result.error);
+        setAnalyticsForm(result.data);
+        setStatus("Analytics settings saved.");
       }
     });
 

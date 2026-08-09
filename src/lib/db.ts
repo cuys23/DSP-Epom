@@ -13,7 +13,7 @@ function credentials() {
   const url = process.env.SUPABASE_URL;
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!url || !key) {
-    throw new Error("set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in .env.local");
+    throw new Error("Database is not configured: set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY on the server.");
   }
   return { rest: `${url.replace(/\/$/, "")}/rest/v1`, key };
 }

@@ -27,9 +27,13 @@ import {
 async function requireAuth() {
   if (process.env.NODE_ENV !== "production") return;
   const secret = process.env.ADMIN_SECRET;
-  if (!secret) throw new Error("ADMIN_SECRET must be set in production");
+  if (!secret)
+    throw new Error(
+      "Saving is disabled: ADMIN_SECRET is not set on the server.",
+    );
   const token = (await cookies()).get("admin_token")?.value;
-  if (token !== secret) throw new Error("unauthorized");
+  if (token !== secret)
+    throw new Error("Not authorised to save. Sign in again.");
 }
 
 // --------------------------------------------------------------- row shapes
@@ -42,7 +46,8 @@ interface BudgetRow {
   even_pacing: boolean;
 }
 
-const BUDGET_COLUMNS = "starts_at,ends_at,spend_limit,impression_limit,even_pacing";
+const BUDGET_COLUMNS =
+  "starts_at,ends_at,spend_limit,impression_limit,even_pacing";
 
 /** Postgres hands back a full ISO timestamp; the form works in minutes. */
 const toMinutes = (iso: string) => new Date(iso).toISOString().slice(0, 16);
@@ -93,6 +98,29 @@ const toAnalytics = (r: AnalyticsRow): AnalyticsSettings => ({
   ],
 });
 
+// ----------------------------------------------------------- action results
+
+/**
+ * Writes report failure instead of throwing. An uncaught throw in a server
+ * action reaches the browser as Next's generic "An error occurred in the Server
+ * Components render" in production, which tells the user nothing — a missing
+ * env var, a rejected value and a database outage all look identical.
+ */
+export type ActionResult<T> =
+  { ok: true; data: T } | { ok: false; error: string };
+
+async function attempt<T>(write: () => Promise<T>): Promise<ActionResult<T>> {
+  try {
+    return { ok: true, data: await write() };
+  } catch (e) {
+    console.error("supabase write failed:", e);
+    return {
+      ok: false,
+      error: e instanceof Error ? e.message : "Could not save.",
+    };
+  }
+}
+
 // ------------------------------------------------------------ safe fallback
 
 /**
@@ -100,7 +128,10 @@ const toAnalytics = (r: AnalyticsRow): AnalyticsSettings => ({
  * only exist after the migrations have been run, and an unreachable database
  * should still render the clone.
  */
-async function readOr<T>(fallback: T, read: () => Promise<T | null>): Promise<T> {
+async function readOr<T>(
+  fallback: T,
+  read: () => Promise<T | null>,
+): Promise<T> {
   try {
     return (await read()) ?? fallback;
   } catch (e) {
@@ -123,35 +154,39 @@ export async function readBudget(campaignId: string): Promise<CampaignBudget> {
 export async function saveBudget(
   campaignId: string,
   budget: CampaignBudget,
-): Promise<CampaignBudget> {
-  await requireAuth();
+): Promise<ActionResult<CampaignBudget>> {
+  return attempt(async () => {
+    await requireAuth();
 
-  // Reject anything that would render as a nonsense budget rather than storing it.
-  const spendLimit = Number(budget.spendLimit);
-  const impressionLimit = Math.trunc(Number(budget.impressionLimit));
-  if (!Number.isFinite(spendLimit) || spendLimit < 0) throw new Error("invalid spend limit");
-  if (!Number.isFinite(impressionLimit) || impressionLimit < 0) {
-    throw new Error("invalid impression limit");
-  }
+    // Reject anything that would render as a nonsense budget rather than storing it.
+    const spendLimit = Number(budget.spendLimit);
+    const impressionLimit = Math.trunc(Number(budget.impressionLimit));
+    if (!Number.isFinite(spendLimit) || spendLimit < 0)
+      throw new Error("invalid spend limit");
+    if (!Number.isFinite(impressionLimit) || impressionLimit < 0) {
+      throw new Error("invalid impression limit");
+    }
 
-  const startsAt = new Date(`${budget.startsAt}:00Z`);
-  const endsAt = new Date(`${budget.endsAt}:00Z`);
-  if (Number.isNaN(startsAt.valueOf()) || Number.isNaN(endsAt.valueOf())) {
-    throw new Error("Enter a valid start and end date.");
-  }
-  if (endsAt <= startsAt) throw new Error("The end date must be after the start date.");
+    const startsAt = new Date(`${budget.startsAt}:00Z`);
+    const endsAt = new Date(`${budget.endsAt}:00Z`);
+    if (Number.isNaN(startsAt.valueOf()) || Number.isNaN(endsAt.valueOf())) {
+      throw new Error("Enter a valid start and end date.");
+    }
+    if (endsAt <= startsAt)
+      throw new Error("The end date must be after the start date.");
 
-  const row = await upsert<BudgetRow>("campaign_budgets", {
-    campaign_id: campaignId,
-    starts_at: startsAt.toISOString(),
-    ends_at: endsAt.toISOString(),
-    spend_limit: spendLimit,
-    impression_limit: impressionLimit,
-    even_pacing: budget.evenPacing,
-    updated_at: new Date().toISOString(),
+    const row = await upsert<BudgetRow>("campaign_budgets", {
+      campaign_id: campaignId,
+      starts_at: startsAt.toISOString(),
+      ends_at: endsAt.toISOString(),
+      spend_limit: spendLimit,
+      impression_limit: impressionLimit,
+      even_pacing: budget.evenPacing,
+      updated_at: new Date().toISOString(),
+    });
+    revalidatePath(`/campaigns/edit/${campaignId}`);
+    return toBudget(row);
   });
-  revalidatePath(`/campaigns/edit/${campaignId}`);
-  return toBudget(row);
 }
 
 // ----------------------------------------------------------------- profile
@@ -165,30 +200,34 @@ export async function readProfile(): Promise<UserProfile> {
   });
 }
 
-export async function saveProfile(profile: UserProfile): Promise<UserProfile> {
-  await requireAuth();
+export async function saveProfile(
+  profile: UserProfile,
+): Promise<ActionResult<UserProfile>> {
+  return attempt(async () => {
+    await requireAuth();
 
-  const trimmed = {
-    timezone: profile.timezone.trim(),
-    first_name: profile.firstName.trim(),
-    last_name: profile.lastName.trim(),
-    // Email is read-only in the UI; keep the stored value authoritative.
-    email: DEFAULT_PROFILE.email,
-    company: profile.company.trim(),
-    country: profile.country.trim(),
-    phone: profile.phone.trim(),
-  };
-  if (!trimmed.first_name || !trimmed.last_name || !trimmed.company) {
-    throw new Error("First name, last name and company are required");
-  }
+    const trimmed = {
+      timezone: profile.timezone.trim(),
+      first_name: profile.firstName.trim(),
+      last_name: profile.lastName.trim(),
+      // Email is read-only in the UI; keep the stored value authoritative.
+      email: DEFAULT_PROFILE.email,
+      company: profile.company.trim(),
+      country: profile.country.trim(),
+      phone: profile.phone.trim(),
+    };
+    if (!trimmed.first_name || !trimmed.last_name || !trimmed.company) {
+      throw new Error("First name, last name and company are required");
+    }
 
-  const row = await upsert<ProfileRow>("user_profile", {
-    id: "me",
-    ...trimmed,
-    updated_at: new Date().toISOString(),
+    const row = await upsert<ProfileRow>("user_profile", {
+      id: "me",
+      ...trimmed,
+      updated_at: new Date().toISOString(),
+    });
+    revalidatePath("/user-profile");
+    return toProfile(row);
   });
-  revalidatePath("/user-profile");
-  return toProfile(row);
 }
 
 // ------------------------------------------------------ analytics settings
@@ -204,20 +243,22 @@ export async function readAnalyticsSettings(): Promise<AnalyticsSettings> {
 
 export async function saveAnalyticsSettings(
   settings: AnalyticsSettings,
-): Promise<AnalyticsSettings> {
-  await requireAuth();
+): Promise<ActionResult<AnalyticsSettings>> {
+  return attempt(async () => {
+    await requireAuth();
 
-  const [a0, a1, a2] = settings.actions;
-  const row = await upsert<AnalyticsRow>("user_analytics_settings", {
-    id: "me",
-    action_0_title: a0.title.trim() || "Action 0",
-    action_0_multi: a0.multi,
-    action_1_title: a1.title.trim() || "Action 1",
-    action_1_multi: a1.multi,
-    action_2_title: a2.title.trim() || "Action 2",
-    action_2_multi: a2.multi,
-    updated_at: new Date().toISOString(),
+    const [a0, a1, a2] = settings.actions;
+    const row = await upsert<AnalyticsRow>("user_analytics_settings", {
+      id: "me",
+      action_0_title: a0.title.trim() || "Action 0",
+      action_0_multi: a0.multi,
+      action_1_title: a1.title.trim() || "Action 1",
+      action_1_multi: a1.multi,
+      action_2_title: a2.title.trim() || "Action 2",
+      action_2_multi: a2.multi,
+      updated_at: new Date().toISOString(),
+    });
+    revalidatePath("/user-profile");
+    return toAnalytics(row);
   });
-  revalidatePath("/user-profile");
-  return toAnalytics(row);
 }
