@@ -40,6 +40,10 @@ export const DEFAULT_FOLDERS: Folder[] = [
   {
     "id": "clearvpn",
     "name": "ClearVPN"
+  },
+  {
+    "id": "veepn",
+    "name": "VeePN"
   }
 ];
 
@@ -573,5 +577,585 @@ export const INITIAL_ASSETS: CreativeAsset[] = [
     "fileSizeKb": 1093,
     "type": "PNG",
     "createdAt": "2026-04-15"
+  },
+  {
+    "id": "asset-55",
+    "name": "veepn 1.mp4",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/16_9-8e3209.mp4",
+    "dimensions": "1280x720",
+    "fileSizeKb": 3021,
+    "type": "MP4",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-56",
+    "name": "veepn 2.mp4",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/1_1-453f3d.mp4",
+    "dimensions": "1080x1080",
+    "fileSizeKb": 9047,
+    "type": "MP4",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-57",
+    "name": "veepn 3.mp4",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/1_1-454a59.mp4",
+    "dimensions": "1080x1080",
+    "fileSizeKb": 8066,
+    "type": "MP4",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-58",
+    "name": "veepn 4.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/3_4-089a90.jpeg",
+    "dimensions": "896x1200",
+    "fileSizeKb": 522,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-59",
+    "name": "veepn 5.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/3_4-0ea137.jpeg",
+    "dimensions": "896x1200",
+    "fileSizeKb": 519,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-60",
+    "name": "veepn 6.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/3_4-1efacc.jpeg",
+    "dimensions": "896x1200",
+    "fileSizeKb": 606,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-61",
+    "name": "veepn 7.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/3_4-22f3a2.jpeg",
+    "dimensions": "896x1200",
+    "fileSizeKb": 641,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-62",
+    "name": "veepn 8.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/3_4-2c0d6d.jpeg",
+    "dimensions": "896x1200",
+    "fileSizeKb": 614,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-63",
+    "name": "veepn 9.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/3_4-2d6477.jpeg",
+    "dimensions": "896x1200",
+    "fileSizeKb": 644,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-64",
+    "name": "veepn 10.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/3_4-408e8e.jpeg",
+    "dimensions": "896x1200",
+    "fileSizeKb": 543,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-65",
+    "name": "veepn 11.png",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/3_4-4cd5e7.png",
+    "dimensions": "831x1123",
+    "fileSizeKb": 538,
+    "type": "PNG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-66",
+    "name": "veepn 12.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/3_4-4f19a2.jpeg",
+    "dimensions": "896x1200",
+    "fileSizeKb": 634,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-67",
+    "name": "veepn 13.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/3_4-52c0f8.jpeg",
+    "dimensions": "896x1200",
+    "fileSizeKb": 622,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-68",
+    "name": "veepn 14.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/3_4-536289.jpeg",
+    "dimensions": "896x1200",
+    "fileSizeKb": 672,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-69",
+    "name": "veepn 15.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/3_4-55f856.jpeg",
+    "dimensions": "896x1200",
+    "fileSizeKb": 539,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-70",
+    "name": "veepn 16.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/3_4-6f2039.jpeg",
+    "dimensions": "896x1200",
+    "fileSizeKb": 556,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-71",
+    "name": "veepn 17.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/3_4-6ff5e0.jpeg",
+    "dimensions": "896x1200",
+    "fileSizeKb": 597,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-72",
+    "name": "veepn 18.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/3_4-a47a98.jpeg",
+    "dimensions": "896x1200",
+    "fileSizeKb": 530,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-73",
+    "name": "veepn 19.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/3_4-a6cd71.jpeg",
+    "dimensions": "896x1200",
+    "fileSizeKb": 539,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-74",
+    "name": "veepn 20.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/3_4-b4d8da.jpeg",
+    "dimensions": "896x1200",
+    "fileSizeKb": 477,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-75",
+    "name": "veepn 21.png",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/3_4-b76d61.png",
+    "dimensions": "813x1117",
+    "fileSizeKb": 482,
+    "type": "PNG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-76",
+    "name": "veepn 22.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/3_4-ba30f8.jpeg",
+    "dimensions": "896x1200",
+    "fileSizeKb": 560,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-77",
+    "name": "veepn 23.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/3_4-ba478c.jpeg",
+    "dimensions": "896x1200",
+    "fileSizeKb": 492,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-78",
+    "name": "veepn 24.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/3_4-cf3127.jpeg",
+    "dimensions": "896x1200",
+    "fileSizeKb": 496,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-79",
+    "name": "veepn 25.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/3_4-e7c3d5.jpeg",
+    "dimensions": "896x1200",
+    "fileSizeKb": 570,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-80",
+    "name": "veepn 26.png",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/3_4-fb0990.png",
+    "dimensions": "837x1117",
+    "fileSizeKb": 285,
+    "type": "PNG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-81",
+    "name": "veepn 27.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/3_4-fd211f.jpeg",
+    "dimensions": "896x1200",
+    "fileSizeKb": 678,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-82",
+    "name": "veepn 28.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/3_4-ff37e5.jpeg",
+    "dimensions": "896x1200",
+    "fileSizeKb": 576,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-83",
+    "name": "veepn 29.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/4_3-0be563.jpeg",
+    "dimensions": "1376x768",
+    "fileSizeKb": 592,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-84",
+    "name": "veepn 30.mp4",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/4_3-455f51.mp4",
+    "dimensions": "1440x1080",
+    "fileSizeKb": 9996,
+    "type": "MP4",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-85",
+    "name": "veepn 31.mp4",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/4_3-46e58c.mp4",
+    "dimensions": "1440x1080",
+    "fileSizeKb": 13074,
+    "type": "MP4",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-86",
+    "name": "veepn 32.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/4_3-67b2b1.jpeg",
+    "dimensions": "1376x768",
+    "fileSizeKb": 444,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-87",
+    "name": "veepn 33.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/4_3-688f1b.jpeg",
+    "dimensions": "1376x768",
+    "fileSizeKb": 666,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-88",
+    "name": "veepn 34.mp4",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/4_3-6bb460.mp4",
+    "dimensions": "1440x1080",
+    "fileSizeKb": 9541,
+    "type": "MP4",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-89",
+    "name": "veepn 35.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/4_3-6c4fba.jpeg",
+    "dimensions": "1376x768",
+    "fileSizeKb": 508,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-90",
+    "name": "veepn 36.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/4_3-7026aa.jpeg",
+    "dimensions": "1376x768",
+    "fileSizeKb": 506,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-91",
+    "name": "veepn 37.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/4_3-7052f0.jpeg",
+    "dimensions": "1376x768",
+    "fileSizeKb": 594,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-92",
+    "name": "veepn 38.mp4",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/4_3-8242db.mp4",
+    "dimensions": "1440x1080",
+    "fileSizeKb": 9035,
+    "type": "MP4",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-93",
+    "name": "veepn 39.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/4_3-85d634.jpeg",
+    "dimensions": "1376x768",
+    "fileSizeKb": 679,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-94",
+    "name": "veepn 40.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/4_3-8983b9.jpeg",
+    "dimensions": "1376x768",
+    "fileSizeKb": 541,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-95",
+    "name": "veepn 41.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/4_3-951f84.jpeg",
+    "dimensions": "1376x768",
+    "fileSizeKb": 611,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-96",
+    "name": "veepn 42.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/4_3-aee79a.jpeg",
+    "dimensions": "1376x768",
+    "fileSizeKb": 694,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-97",
+    "name": "veepn 43.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/4_3-bb2c2b.jpeg",
+    "dimensions": "1376x768",
+    "fileSizeKb": 422,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-98",
+    "name": "veepn 44.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/4_3-cdda3b.jpeg",
+    "dimensions": "1376x768",
+    "fileSizeKb": 515,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-99",
+    "name": "veepn 45.mp4",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/4_3-dd702d.mp4",
+    "dimensions": "1440x1080",
+    "fileSizeKb": 7875,
+    "type": "MP4",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-100",
+    "name": "veepn 46.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/4_3-f02555.jpeg",
+    "dimensions": "1376x768",
+    "fileSizeKb": 732,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-101",
+    "name": "veepn 47.jpeg",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/4_3-f86ee0.jpeg",
+    "dimensions": "1376x768",
+    "fileSizeKb": 564,
+    "type": "JPG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-102",
+    "name": "veepn 48.mp4",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/4_3-f8a00b.mp4",
+    "dimensions": "1440x1080",
+    "fileSizeKb": 8058,
+    "type": "MP4",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-103",
+    "name": "veepn 49.mp4",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/9_16-0eccf8.mp4",
+    "dimensions": "1080x1920",
+    "fileSizeKb": 2924,
+    "type": "MP4",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-104",
+    "name": "veepn 50.png",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/9_16-169550.png",
+    "dimensions": "505x1123",
+    "fileSizeKb": 207,
+    "type": "PNG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-105",
+    "name": "veepn 51.mp4",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/9_16-18b9b2.mp4",
+    "dimensions": "1080x1920",
+    "fileSizeKb": 6752,
+    "type": "MP4",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-106",
+    "name": "veepn 52.mp4",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/9_16-47d2db.mp4",
+    "dimensions": "1080x1920",
+    "fileSizeKb": 5801,
+    "type": "MP4",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-107",
+    "name": "veepn 53.png",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/9_16-4ccd67.png",
+    "dimensions": "502x1128",
+    "fileSizeKb": 191,
+    "type": "PNG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-108",
+    "name": "veepn 54.png",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/9_16-6ac1e5.png",
+    "dimensions": "501x1122",
+    "fileSizeKb": 211,
+    "type": "PNG",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-109",
+    "name": "veepn 55.mp4",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/9_16-72d497.mp4",
+    "dimensions": "1080x1920",
+    "fileSizeKb": 4581,
+    "type": "MP4",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-110",
+    "name": "veepn 56.mp4",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/9_16-8b43f5.mp4",
+    "dimensions": "1080x1920",
+    "fileSizeKb": 8335,
+    "type": "MP4",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-111",
+    "name": "veepn 57.mp4",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/9_16-a78ff2.mp4",
+    "dimensions": "1080x1920",
+    "fileSizeKb": 3851,
+    "type": "MP4",
+    "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-112",
+    "name": "veepn 58.png",
+    "folderId": "veepn",
+    "previewUrl": "/creatives/veepn/9_16-de77e4.png",
+    "dimensions": "508x1119",
+    "fileSizeKb": 142,
+    "type": "PNG",
+    "createdAt": "2026-07-15"
   }
 ];

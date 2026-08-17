@@ -15,6 +15,16 @@
  * reports for this account — those clicks are DSP-side, so the offer-side CTR
  * `demo-data.ts` derives from would put the campaign at ~1.8M impressions a day.
  * Fold the export into `build-campaigns.mjs` if a second offer arrives in that shape.
+ *
+ * ponytail: offer 1246703610 (VeePN) was added by hand the same way, from the
+ * `VeePN Creative` tab of the shared sheet, which reports `click`, `install` and
+ * `trial` per day. `install` is the campaign's conversion — it is the capped,
+ * payable action (70/day, the ceiling the column keeps hitting); `trial` is the
+ * downstream quality signal and has no home in the DSP's single Action 0 column.
+ * Impressions are sized from the same 12–20% CTR band as Clear VPN. The offer is
+ * bought direct, and the tab carries no network, offer-name or payout columns, so
+ * `offer` is keyed on the App Store id of the app it promotes (com.veepn.open) and
+ * the payout is the $3.20 US iOS CPI band this account buys at.
  */
 
 export interface CampaignCreative {
@@ -3206,8 +3216,297 @@ export const CAMPAIGNS: Campaign[] = [
         33565
       ]
     ]
+  },
+  {
+    "id": "00b9ea1f-c948-4784-a517-26219b4b1c46",
+    "slug": "veepn-1246703610",
+    "name": "VeePN — Direct",
+    "offer": {
+      "id": "1246703610",
+      "networkId": "1246703610",
+      "network": "Direct",
+      "app": "com.veepn.open",
+      "site": "vinmedia.net",
+      "raw": "US_[IOS](70 install/day) VPN Proxy Master - VeePN_CPI_IOS_US_Direct"
+    },
+    "product": "veepn",
+    "productLabel": "VeePN",
+    "payout": 3.2,
+    "defaultPrice": 0.032,
+    "ecpm": 2.05,
+    "paused": false,
+    "from": "2026-07-16",
+    "to": "2026-08-12",
+    "creatives": [
+      {
+        "id": "dac84401-c10c-4c8d-a62a-7aff2e216119",
+        "name": "veepn 49.mp4",
+        "src": "/creatives/veepn/9_16-0eccf8.mp4",
+        "video": true,
+        "size": "1080x1920",
+        "price": "$0.032"
+      },
+      {
+        "id": "c6dd9b05-7c3e-4825-ad76-66dd8012110f",
+        "name": "veepn 51.mp4",
+        "src": "/creatives/veepn/9_16-18b9b2.mp4",
+        "video": true,
+        "size": "1080x1920",
+        "price": "$0.032"
+      },
+      {
+        "id": "ee335456-4f2e-40e8-a501-9d23ea4f325f",
+        "name": "veepn 52.mp4",
+        "src": "/creatives/veepn/9_16-47d2db.mp4",
+        "video": true,
+        "size": "1080x1920",
+        "price": "$0.032"
+      },
+      {
+        "id": "8991aaf9-6524-4c1c-a883-1188fe6029ff",
+        "name": "veepn 55.mp4",
+        "src": "/creatives/veepn/9_16-72d497.mp4",
+        "video": true,
+        "size": "1080x1920",
+        "price": "$0.032"
+      },
+      {
+        "id": "7e553fc0-6902-4cbb-a898-95f9640f3b07",
+        "name": "veepn 4.jpeg",
+        "src": "/creatives/veepn/3_4-089a90.jpeg",
+        "video": false,
+        "size": "896x1200",
+        "price": "$0.032"
+      },
+      {
+        "id": "9667b5c7-44c8-48d4-aab4-6fd79fb13c3d",
+        "name": "veepn 5.jpeg",
+        "src": "/creatives/veepn/3_4-0ea137.jpeg",
+        "video": false,
+        "size": "896x1200",
+        "price": "$0.032"
+      },
+      {
+        "id": "8db28f2f-b38b-45d1-a146-d36edb5afb31",
+        "name": "veepn 6.jpeg",
+        "src": "/creatives/veepn/3_4-1efacc.jpeg",
+        "video": false,
+        "size": "896x1200",
+        "price": "$0.032"
+      },
+      {
+        "id": "c35813b6-7497-44f3-ae51-432c832d9c9e",
+        "name": "veepn 7.jpeg",
+        "src": "/creatives/veepn/3_4-22f3a2.jpeg",
+        "video": false,
+        "size": "896x1200",
+        "price": "$0.032"
+      },
+      {
+        "id": "bd83a408-5f35-4f58-a4fe-611469575d95",
+        "name": "veepn 29.jpeg",
+        "src": "/creatives/veepn/4_3-0be563.jpeg",
+        "video": false,
+        "size": "1376x768",
+        "price": "$0.032"
+      },
+      {
+        "id": "6c3b6dfb-bc1f-443b-a93b-c943fe2e55f3",
+        "name": "veepn 32.jpeg",
+        "src": "/creatives/veepn/4_3-67b2b1.jpeg",
+        "video": false,
+        "size": "1376x768",
+        "price": "$0.032"
+      },
+      {
+        "id": "37838325-fb1e-43a9-aecb-5147c95d4998",
+        "name": "veepn 33.jpeg",
+        "src": "/creatives/veepn/4_3-688f1b.jpeg",
+        "video": false,
+        "size": "1376x768",
+        "price": "$0.032"
+      },
+      {
+        "id": "0276fd4f-a8a5-46b4-a349-1f20dc0957aa",
+        "name": "veepn 35.jpeg",
+        "src": "/creatives/veepn/4_3-6c4fba.jpeg",
+        "video": false,
+        "size": "1376x768",
+        "price": "$0.032"
+      }
+    ],
+    "days": [
+      [
+        "2026-07-16",
+        5302,
+        50,
+        29464
+      ],
+      [
+        "2026-07-17",
+        6216,
+        70,
+        39383
+      ],
+      [
+        "2026-07-18",
+        7050,
+        70,
+        53897
+      ],
+      [
+        "2026-07-19",
+        5379,
+        70,
+        32929
+      ],
+      [
+        "2026-07-20",
+        6403,
+        70,
+        44345
+      ],
+      [
+        "2026-07-21",
+        6134,
+        70,
+        31843
+      ],
+      [
+        "2026-07-22",
+        6237,
+        70,
+        42038
+      ],
+      [
+        "2026-07-23",
+        7098,
+        70,
+        36563
+      ],
+      [
+        "2026-07-24",
+        6306,
+        70,
+        47751
+      ],
+      [
+        "2026-07-25",
+        8240,
+        70,
+        56847
+      ],
+      [
+        "2026-07-26",
+        5505,
+        70,
+        35142
+      ],
+      [
+        "2026-07-27",
+        6286,
+        70,
+        35405
+      ],
+      [
+        "2026-07-28",
+        5982,
+        62,
+        33448
+      ],
+      [
+        "2026-07-29",
+        6177,
+        70,
+        45856
+      ],
+      [
+        "2026-07-30",
+        6700,
+        70,
+        55658
+      ],
+      [
+        "2026-07-31",
+        5836,
+        70,
+        44611
+      ],
+      [
+        "2026-08-01",
+        4617,
+        58,
+        24864
+      ],
+      [
+        "2026-08-02",
+        5826,
+        70,
+        42908
+      ],
+      [
+        "2026-08-03",
+        6697,
+        70,
+        48826
+      ],
+      [
+        "2026-08-04",
+        6240,
+        70,
+        42563
+      ],
+      [
+        "2026-08-05",
+        6412,
+        70,
+        32878
+      ],
+      [
+        "2026-08-06",
+        5551,
+        70,
+        30250
+      ],
+      [
+        "2026-08-07",
+        6116,
+        70,
+        45446
+      ],
+      [
+        "2026-08-08",
+        6011,
+        70,
+        44292
+      ],
+      [
+        "2026-08-09",
+        7924,
+        70,
+        43660
+      ],
+      [
+        "2026-08-10",
+        7036,
+        66,
+        51837
+      ],
+      [
+        "2026-08-11",
+        5385,
+        66,
+        32029
+      ],
+      [
+        "2026-08-12",
+        6501,
+        70,
+        50295
+      ]
+    ]
   }
 ];
 
 /** Latest day with traffic — the account's "today" for reports and flight status. */
-export const LATEST_DAY = "2026-07-22";
+export const LATEST_DAY = "2026-08-12";
