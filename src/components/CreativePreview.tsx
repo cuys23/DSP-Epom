@@ -4,7 +4,10 @@ import { Dialog } from "@/components/form/Dialog";
 
 export interface PreviewCreative {
   name: string;
-  /** Path under `public/creatives`, or empty when the asset was never uploaded. */
+  /**
+   * Path under `public/creatives`, a Supabase Storage URL for the products kept
+   * there, or empty when the asset was never uploaded.
+   */
   src: string;
   video: boolean;
   size: string;

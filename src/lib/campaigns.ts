@@ -3241,7 +3241,7 @@ export const CAMPAIGNS: Campaign[] = [
       {
         "id": "dac84401-c10c-4c8d-a62a-7aff2e216119",
         "name": "veepn 49.mp4",
-        "src": "/creatives/veepn/9_16-0eccf8.mp4",
+        "src": "https://lgfiuybibrrtrzaktcso.supabase.co/storage/v1/object/public/creatives/veepn/9_16-0eccf8.mp4",
         "video": true,
         "size": "1080x1920",
         "price": "$0.032"
@@ -3249,7 +3249,7 @@ export const CAMPAIGNS: Campaign[] = [
       {
         "id": "c6dd9b05-7c3e-4825-ad76-66dd8012110f",
         "name": "veepn 51.mp4",
-        "src": "/creatives/veepn/9_16-18b9b2.mp4",
+        "src": "https://lgfiuybibrrtrzaktcso.supabase.co/storage/v1/object/public/creatives/veepn/9_16-18b9b2.mp4",
         "video": true,
         "size": "1080x1920",
         "price": "$0.032"
@@ -3257,7 +3257,7 @@ export const CAMPAIGNS: Campaign[] = [
       {
         "id": "ee335456-4f2e-40e8-a501-9d23ea4f325f",
         "name": "veepn 52.mp4",
-        "src": "/creatives/veepn/9_16-47d2db.mp4",
+        "src": "https://lgfiuybibrrtrzaktcso.supabase.co/storage/v1/object/public/creatives/veepn/9_16-47d2db.mp4",
         "video": true,
         "size": "1080x1920",
         "price": "$0.032"
@@ -3265,7 +3265,7 @@ export const CAMPAIGNS: Campaign[] = [
       {
         "id": "8991aaf9-6524-4c1c-a883-1188fe6029ff",
         "name": "veepn 55.mp4",
-        "src": "/creatives/veepn/9_16-72d497.mp4",
+        "src": "https://lgfiuybibrrtrzaktcso.supabase.co/storage/v1/object/public/creatives/veepn/9_16-72d497.mp4",
         "video": true,
         "size": "1080x1920",
         "price": "$0.032"
@@ -3273,7 +3273,7 @@ export const CAMPAIGNS: Campaign[] = [
       {
         "id": "7e553fc0-6902-4cbb-a898-95f9640f3b07",
         "name": "veepn 4.jpeg",
-        "src": "/creatives/veepn/3_4-089a90.jpeg",
+        "src": "https://lgfiuybibrrtrzaktcso.supabase.co/storage/v1/object/public/creatives/veepn/3_4-089a90.jpeg",
         "video": false,
         "size": "896x1200",
         "price": "$0.032"
@@ -3281,7 +3281,7 @@ export const CAMPAIGNS: Campaign[] = [
       {
         "id": "9667b5c7-44c8-48d4-aab4-6fd79fb13c3d",
         "name": "veepn 5.jpeg",
-        "src": "/creatives/veepn/3_4-0ea137.jpeg",
+        "src": "https://lgfiuybibrrtrzaktcso.supabase.co/storage/v1/object/public/creatives/veepn/3_4-0ea137.jpeg",
         "video": false,
         "size": "896x1200",
         "price": "$0.032"
@@ -3289,7 +3289,7 @@ export const CAMPAIGNS: Campaign[] = [
       {
         "id": "8db28f2f-b38b-45d1-a146-d36edb5afb31",
         "name": "veepn 6.jpeg",
-        "src": "/creatives/veepn/3_4-1efacc.jpeg",
+        "src": "https://lgfiuybibrrtrzaktcso.supabase.co/storage/v1/object/public/creatives/veepn/3_4-1efacc.jpeg",
         "video": false,
         "size": "896x1200",
         "price": "$0.032"
@@ -3297,7 +3297,7 @@ export const CAMPAIGNS: Campaign[] = [
       {
         "id": "c35813b6-7497-44f3-ae51-432c832d9c9e",
         "name": "veepn 7.jpeg",
-        "src": "/creatives/veepn/3_4-22f3a2.jpeg",
+        "src": "https://lgfiuybibrrtrzaktcso.supabase.co/storage/v1/object/public/creatives/veepn/3_4-22f3a2.jpeg",
         "video": false,
         "size": "896x1200",
         "price": "$0.032"
@@ -3305,7 +3305,7 @@ export const CAMPAIGNS: Campaign[] = [
       {
         "id": "bd83a408-5f35-4f58-a4fe-611469575d95",
         "name": "veepn 29.jpeg",
-        "src": "/creatives/veepn/4_3-0be563.jpeg",
+        "src": "https://lgfiuybibrrtrzaktcso.supabase.co/storage/v1/object/public/creatives/veepn/4_3-0be563.jpeg",
         "video": false,
         "size": "1376x768",
         "price": "$0.032"
@@ -3313,7 +3313,7 @@ export const CAMPAIGNS: Campaign[] = [
       {
         "id": "6c3b6dfb-bc1f-443b-a93b-c943fe2e55f3",
         "name": "veepn 32.jpeg",
-        "src": "/creatives/veepn/4_3-67b2b1.jpeg",
+        "src": "https://lgfiuybibrrtrzaktcso.supabase.co/storage/v1/object/public/creatives/veepn/4_3-67b2b1.jpeg",
         "video": false,
         "size": "1376x768",
         "price": "$0.032"
@@ -3321,7 +3321,7 @@ export const CAMPAIGNS: Campaign[] = [
       {
         "id": "37838325-fb1e-43a9-aecb-5147c95d4998",
         "name": "veepn 33.jpeg",
-        "src": "/creatives/veepn/4_3-688f1b.jpeg",
+        "src": "https://lgfiuybibrrtrzaktcso.supabase.co/storage/v1/object/public/creatives/veepn/4_3-688f1b.jpeg",
         "video": false,
         "size": "1376x768",
         "price": "$0.032"
@@ -3329,7 +3329,7 @@ export const CAMPAIGNS: Campaign[] = [
       {
         "id": "0276fd4f-a8a5-46b4-a349-1f20dc0957aa",
         "name": "veepn 35.jpeg",
-        "src": "/creatives/veepn/4_3-6c4fba.jpeg",
+        "src": "https://lgfiuybibrrtrzaktcso.supabase.co/storage/v1/object/public/creatives/veepn/4_3-6c4fba.jpeg",
         "video": false,
         "size": "1376x768",
         "price": "$0.032"
