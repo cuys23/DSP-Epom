@@ -3589,6 +3589,14 @@ export const CAMPAIGNS: Campaign[] = [
         "video": false,
         "size": "670x893",
         "price": "$0.029"
+      },
+      {
+        "id": "b456e5e5-bfaa-4f98-a05b-66e9466395c2",
+        "name": "widilo how-it-works v1.mp4",
+        "src": "/creatives/widilo/1_1-41e2c8.mp4",
+        "video": true,
+        "size": "608x496",
+        "price": "$0.029"
       }
     ],
     "days": [

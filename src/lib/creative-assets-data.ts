@@ -1231,5 +1231,15 @@ export const INITIAL_ASSETS: CreativeAsset[] = [
     "fileSizeKb": 135,
     "type": "JPG",
     "createdAt": "2026-07-24"
+  },
+  {
+    "id": "asset-120",
+    "name": "widilo how-it-works v1.mp4",
+    "folderId": "widilo",
+    "previewUrl": "/creatives/widilo/1_1-41e2c8.mp4",
+    "dimensions": "608x496",
+    "fileSizeKb": 1098,
+    "type": "MP4",
+    "createdAt": "2026-09-04"
   }
 ];
