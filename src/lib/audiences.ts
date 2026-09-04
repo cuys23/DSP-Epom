@@ -75,13 +75,32 @@ function id(seed: string): string {
 
 const PRODUCTS = [...new Set(CAMPAIGNS.map((c) => c.product))];
 
+/**
+ * The interest each audience is built around. An audience is this account's ad
+ * set, and the interest belongs in its name rather than in the campaign's or the
+ * creative's — the creative carries its angle, so the two can be read apart when
+ * one of them is what moved the numbers.
+ */
+const INTERESTS: Record<string, string> = {
+  "slimkit-walking": "Walking & Weight Loss",
+  "home-fitness": "Home Workouts",
+  britbox: "British TV & Drama",
+  kyash: "Cashless Payments",
+  "katch-pro": "Photo & Video Editing",
+  zoombo: "Casual Gaming",
+  purevpn: "Online Privacy",
+  "playful-rewards": "Play-to-Earn Rewards",
+  clearvpn: "Streaming & Privacy",
+  veepn: "Online Privacy",
+  widilo: "Cashback & Coupons",
+};
+
 /** What a product line targets unless it says otherwise. */
 const DEFAULT_TARGETING: AudienceTargeting = {
   // The weight-loss offers are in-app iOS buys and never leave the handset.
   deviceTypes: ["Mobile", "Tablet"],
-  // Every audience on the account buys the same two platforms and their default
-  // browsers off the App Store; only the lists below differ per product line.
-  os: ["macOS", "iOS"],
+  // `os` is filled in per audience from the offers it serves — see `osOf`.
+  os: [],
   browsers: ["Chrome", "Safari"],
   connectionTypes: [],
   stores: ["App Store"],
@@ -111,16 +130,26 @@ const TARGETING: Record<string, Partial<AudienceTargeting>> = {
   veepn: VPN_TARGETING,
 };
 
+/**
+ * The platforms an audience targets, read off the offers that use it rather than
+ * fixed: every offer on the account is an iOS app install bar one Android sibling,
+ * so no audience ever targets a desktop OS.
+ */
+const osOf = (used: typeof CAMPAIGNS) => [
+  ...new Set(used.map((c) => (/\[ANDROID\]|android/i.test(c.offer.raw) ? "Android" : "iOS"))),
+];
+
 export const AUDIENCES: Audience[] = PRODUCTS.map((product) => {
   const used = CAMPAIGNS.filter((c) => c.product === product);
   const first = used.reduce((a, b) => (a.from < b.from ? a : b));
   const last = used.reduce((a, b) => (a.from > b.from ? a : b));
   return {
     id: id(`audience:${product}`),
-    name: first.productLabel,
+    name: `${first.productLabel} · ${INTERESTS[product]}`,
     campaignIds: used.map((c) => c.id),
     ...DEFAULT_TARGETING,
     ...TARGETING[product],
+    os: osOf(used),
     created: before(first.from, 2),
     edited: before(last.from, 1),
     // The account is dormant — every campaign has ended, so nothing is live.

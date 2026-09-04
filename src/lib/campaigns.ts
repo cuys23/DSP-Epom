@@ -103,7 +103,7 @@ export const CAMPAIGNS: Campaign[] = [
     "creatives": [
       {
         "id": "1aeb7c55-ae21-48ef-a1dc-f9ea33cb016a",
-        "name": "slimkit walking 1.mp4",
+        "name": "slimkit walking daily-steps v1.mp4",
         "src": "/creatives/slimkit-walking/1_1-1HuThs.mp4",
         "video": true,
         "size": "1440x1440",
@@ -111,7 +111,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "d9c368da-7aa2-4a8c-acfc-49615c1f386b",
-        "name": "slimkit walking 2.jpg",
+        "name": "slimkit walking walk-to-lose v1.jpg",
         "src": "/creatives/slimkit-walking/1_1-1XdNRO.jpg",
         "video": false,
         "size": "1024x1024",
@@ -119,7 +119,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "59861624-dc9f-4e53-ae4e-f9fa1d290660",
-        "name": "slimkit walking 3.jpg",
+        "name": "slimkit walking beginner-plan v1.jpg",
         "src": "/creatives/slimkit-walking/1_1-1_t2oR.jpg",
         "video": false,
         "size": "1024x1024",
@@ -382,7 +382,7 @@ export const CAMPAIGNS: Campaign[] = [
     "creatives": [
       {
         "id": "620cc9c3-a948-4501-a23a-d2108824db71",
-        "name": "home fitness 8.mp4",
+        "name": "home fitness quick-hiit v1.mp4",
         "src": "/creatives/home-fitness/9_16-1Ulv9o.mp4",
         "video": true,
         "size": "1080x1920",
@@ -390,7 +390,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "706b5916-7e95-46e3-ac47-02dc6fc82e57",
-        "name": "home fitness 9.jpg",
+        "name": "home fitness form-guide v1.jpg",
         "src": "/creatives/home-fitness/9_16-1jwLis.jpg",
         "video": false,
         "size": "768x1376",
@@ -398,7 +398,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "8a5f3e17-baf5-48c8-a564-2209cacaa939",
-        "name": "home fitness 10.mp4",
+        "name": "home fitness stay-consistent v1.mp4",
         "src": "/creatives/home-fitness/9_16-1lTqx9.mp4",
         "video": true,
         "size": "1080x1920",
@@ -696,7 +696,7 @@ export const CAMPAIGNS: Campaign[] = [
     "creatives": [
       {
         "id": "d7f87915-2608-40a5-a329-df6b30c8db51",
-        "name": "home fitness 7.jpg",
+        "name": "home fitness morning-routine v1.jpg",
         "src": "/creatives/home-fitness/4_3-1SaVgY.jpg",
         "video": false,
         "size": "1200x896",
@@ -704,7 +704,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "3704b427-0ff3-4c6f-a868-a601d7d902af",
-        "name": "home fitness 8.mp4",
+        "name": "home fitness quick-hiit v1.mp4",
         "src": "/creatives/home-fitness/9_16-1Ulv9o.mp4",
         "video": true,
         "size": "1080x1920",
@@ -712,7 +712,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "1a0ece69-6f24-426e-a9af-80776bfc3bdb",
-        "name": "home fitness 9.jpg",
+        "name": "home fitness form-guide v1.jpg",
         "src": "/creatives/home-fitness/9_16-1jwLis.jpg",
         "video": false,
         "size": "768x1376",
@@ -720,7 +720,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "d4cf5a3e-71a8-47b2-a725-4cfc688e9c66",
-        "name": "home fitness 10.mp4",
+        "name": "home fitness stay-consistent v1.mp4",
         "src": "/creatives/home-fitness/9_16-1lTqx9.mp4",
         "video": true,
         "size": "1080x1920",
@@ -883,7 +883,7 @@ export const CAMPAIGNS: Campaign[] = [
     "creatives": [
       {
         "id": "d0d55d21-b98d-4c9f-a670-2147588d2727",
-        "name": "slimkit walking 2.jpg",
+        "name": "slimkit walking walk-to-lose v1.jpg",
         "src": "/creatives/slimkit-walking/1_1-1XdNRO.jpg",
         "video": false,
         "size": "1024x1024",
@@ -891,7 +891,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "600d0f3a-6402-48da-accc-359e60991ea3",
-        "name": "slimkit walking 3.jpg",
+        "name": "slimkit walking beginner-plan v1.jpg",
         "src": "/creatives/slimkit-walking/1_1-1_t2oR.jpg",
         "video": false,
         "size": "1024x1024",
@@ -899,7 +899,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "4a7f54f6-ff08-44d6-a2c7-7e55a3a9615c",
-        "name": "slimkit walking 4.jpg",
+        "name": "slimkit walking before-after v1.jpg",
         "src": "/creatives/slimkit-walking/1_1-1i1FK-.jpg",
         "video": false,
         "size": "1024x1024",
@@ -907,7 +907,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "808d5e8a-9fbb-4044-a4ee-c93e2839d2af",
-        "name": "slimkit walking 5.jpg",
+        "name": "slimkit walking low-impact v1.jpg",
         "src": "/creatives/slimkit-walking/3_4-1OyTAo.jpg",
         "video": false,
         "size": "896x1200",
@@ -1275,7 +1275,7 @@ export const CAMPAIGNS: Campaign[] = [
     "creatives": [
       {
         "id": "5ed5f14c-bbc9-429c-ab07-0d0862ab66c7",
-        "name": "slimkit walking 6.jpg",
+        "name": "slimkit walking step-tracker v1.jpg",
         "src": "/creatives/slimkit-walking/4_3-1AssHz.jpg",
         "video": false,
         "size": "1200x896",
@@ -1283,7 +1283,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "6f2eef3b-5ca3-4d25-a150-136d7ad2f1a9",
-        "name": "slimkit walking 7.mp4",
+        "name": "slimkit walking morning-walk v1.mp4",
         "src": "/creatives/slimkit-walking/4_3-1Sm0v-.mp4",
         "video": true,
         "size": "1920x1440",
@@ -1291,7 +1291,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "5a330b5f-d80e-4dfd-a71e-50011cc92e60",
-        "name": "slimkit walking 8.jpg",
+        "name": "slimkit walking calorie-burn v1.jpg",
         "src": "/creatives/slimkit-walking/9_16-1983FF.jpg",
         "video": false,
         "size": "768x1376",
@@ -1659,7 +1659,7 @@ export const CAMPAIGNS: Campaign[] = [
     "creatives": [
       {
         "id": "f19401ad-b054-4fd8-a2f6-8534b10a91a0",
-        "name": "slimkit walking 1.mp4",
+        "name": "slimkit walking daily-steps v1.mp4",
         "src": "/creatives/slimkit-walking/1_1-1HuThs.mp4",
         "video": true,
         "size": "1440x1440",
@@ -1667,7 +1667,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "8d6942eb-5437-40ee-a1a2-5a7c84fb7d51",
-        "name": "slimkit walking 2.jpg",
+        "name": "slimkit walking walk-to-lose v1.jpg",
         "src": "/creatives/slimkit-walking/1_1-1XdNRO.jpg",
         "video": false,
         "size": "1024x1024",
@@ -1675,7 +1675,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "6d90e30d-ef1e-40f3-af1c-1c0f0e7aa4b4",
-        "name": "slimkit walking 3.jpg",
+        "name": "slimkit walking beginner-plan v1.jpg",
         "src": "/creatives/slimkit-walking/1_1-1_t2oR.jpg",
         "video": false,
         "size": "1024x1024",
@@ -1843,7 +1843,7 @@ export const CAMPAIGNS: Campaign[] = [
     "creatives": [
       {
         "id": "cc228822-c389-4591-a225-9ada3cc024e9",
-        "name": "britbox 1.mp4",
+        "name": "britbox british-drama v1.mp4",
         "src": "/creatives/britbox/1_1-1ClSyx.mp4",
         "video": true,
         "size": "1920x1080",
@@ -1851,7 +1851,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "5e7e84ca-86c7-406e-a059-f80c964a76a0",
-        "name": "britbox 2.mp4",
+        "name": "britbox classic-tv v1.mp4",
         "src": "/creatives/britbox/1_1-1FVl0Z.mp4",
         "video": true,
         "size": "1920x1080",
@@ -1859,7 +1859,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "e7495a4c-fcd5-4a21-adb1-d3034fda1f2c",
-        "name": "britbox 3.png",
+        "name": "britbox box-set v1.png",
         "src": "/creatives/britbox/1_1-1Y6ATb.png",
         "video": false,
         "size": "1200x896",
@@ -1867,7 +1867,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "f21f24f9-fc7c-4f01-a4c5-d5ff81367f37",
-        "name": "britbox 4.png",
+        "name": "britbox free-trial v1.png",
         "src": "/creatives/britbox/1_1-1YS4QL.png",
         "video": false,
         "size": "1200x896",
@@ -1875,7 +1875,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "5d55a241-48b4-416d-a97f-41b34a21bba3",
-        "name": "britbox 5.png",
+        "name": "britbox new-season v1.png",
         "src": "/creatives/britbox/1_1-1foe7T.png",
         "video": false,
         "size": "1200x896",
@@ -1883,7 +1883,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "fd4e1f8a-77ef-4673-ac98-8a5c0b5123b6",
-        "name": "britbox 6.png",
+        "name": "britbox detective v1.png",
         "src": "/creatives/britbox/1_1-1hTtI8.png",
         "video": false,
         "size": "1200x896",
@@ -1891,7 +1891,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "42b78de2-3021-4e8f-a365-e645e0043aa4",
-        "name": "britbox 7.png",
+        "name": "britbox period-drama v1.png",
         "src": "/creatives/britbox/1_1-1jP5KX.png",
         "video": false,
         "size": "1200x896",
@@ -1899,7 +1899,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "c1f8937e-70f4-4a73-a3f3-407e1ac94f71",
-        "name": "britbox 8.png",
+        "name": "britbox comedy-night v1.png",
         "src": "/creatives/britbox/1_1-1pUPZd.png",
         "video": false,
         "size": "1200x896",
@@ -1907,7 +1907,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "cf699a13-9197-4402-ab89-8f6383cf1a44",
-        "name": "britbox 9.png",
+        "name": "britbox cast-tease v1.png",
         "src": "/creatives/britbox/1_1-1r6V2J.png",
         "video": false,
         "size": "1200x896",
@@ -1915,7 +1915,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "e0abcc5c-d18a-46ed-a11c-b9d393d06aa8",
-        "name": "britbox 10.mp4",
+        "name": "britbox watch-anywhere v1.mp4",
         "src": "/creatives/britbox/1_1-1uY0IL.mp4",
         "video": true,
         "size": "1920x1080",
@@ -1996,7 +1996,7 @@ export const CAMPAIGNS: Campaign[] = [
     "creatives": [
       {
         "id": "52bd3c6b-9a46-42a3-a58f-8453b0932f2d",
-        "name": "slimkit walking 7.mp4",
+        "name": "slimkit walking morning-walk v1.mp4",
         "src": "/creatives/slimkit-walking/4_3-1Sm0v-.mp4",
         "video": true,
         "size": "1920x1440",
@@ -2004,7 +2004,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "93dcb1f5-b38f-4cf1-a188-46a5e9fee6d9",
-        "name": "slimkit walking 8.jpg",
+        "name": "slimkit walking calorie-burn v1.jpg",
         "src": "/creatives/slimkit-walking/9_16-1983FF.jpg",
         "video": false,
         "size": "768x1376",
@@ -2138,7 +2138,7 @@ export const CAMPAIGNS: Campaign[] = [
     "creatives": [
       {
         "id": "066ab09d-6d4b-422d-b9b6-729ec2c9adee",
-        "name": "kyash 1.mp4",
+        "name": "britbox british-drama v1.mp4",
         "src": "/creatives/britbox/1_1-1ClSyx.mp4",
         "video": true,
         "size": "1920x1080",
@@ -2146,7 +2146,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "c62f1e67-9caf-43f6-b0e5-f84310592b49",
-        "name": "kyash 2.png",
+        "name": "britbox box-set v1.png",
         "src": "/creatives/britbox/1_1-1Y6ATb.png",
         "video": false,
         "size": "1200x896",
@@ -2275,7 +2275,7 @@ export const CAMPAIGNS: Campaign[] = [
     "creatives": [
       {
         "id": "63a2c992-b574-46cd-9d5a-eaa45bd65a42",
-        "name": "katch pro 1.mp4",
+        "name": "slimkit walking daily-steps v1.mp4",
         "src": "/creatives/slimkit-walking/1_1-1HuThs.mp4",
         "video": true,
         "size": "1440x1440",
@@ -2283,7 +2283,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "8148d8b5-0f64-4b0d-ae99-21c7afe0b72a",
-        "name": "katch pro 2.jpg",
+        "name": "slimkit walking walk-to-lose v1.jpg",
         "src": "/creatives/slimkit-walking/1_1-1XdNRO.jpg",
         "video": false,
         "size": "1024x1024",
@@ -2412,7 +2412,7 @@ export const CAMPAIGNS: Campaign[] = [
     "creatives": [
       {
         "id": "1a0a4bd3-0790-401c-8e07-4d4ecfdb84cf",
-        "name": "zoombo 1.mp4",
+        "name": "home fitness quick-hiit v1.mp4",
         "src": "/creatives/home-fitness/9_16-1Ulv9o.mp4",
         "video": true,
         "size": "1080x1920",
@@ -2420,7 +2420,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "0fe4a44f-45d6-4575-a635-680aa0f36025",
-        "name": "zoombo 2.jpg",
+        "name": "home fitness form-guide v1.jpg",
         "src": "/creatives/home-fitness/9_16-1jwLis.jpg",
         "video": false,
         "size": "768x1376",
@@ -2554,7 +2554,7 @@ export const CAMPAIGNS: Campaign[] = [
     "creatives": [
       {
         "id": "8ac30697-b1a8-4d0b-b83a-594570119606",
-        "name": "purevpn 1.mp4",
+        "name": "britbox classic-tv v1.mp4",
         "src": "/creatives/britbox/1_1-1FVl0Z.mp4",
         "video": true,
         "size": "1920x1080",
@@ -2562,7 +2562,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "595854f5-4c88-4486-a12c-527503373a3f",
-        "name": "purevpn 2.png",
+        "name": "britbox free-trial v1.png",
         "src": "/creatives/britbox/1_1-1YS4QL.png",
         "video": false,
         "size": "1200x896",
@@ -2676,7 +2676,7 @@ export const CAMPAIGNS: Campaign[] = [
     "creatives": [
       {
         "id": "c9675e16-f48e-4074-b795-c10485d09a68",
-        "name": "playful rewards 1.mp4",
+        "name": "home fitness full-body v1.mp4",
         "src": "/creatives/home-fitness/4_3-16NPI3.mp4",
         "video": true,
         "size": "1200x900",
@@ -2684,7 +2684,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "5c573ab7-769e-4336-bd60-cbcfa7132cae",
-        "name": "playful rewards 2.jpg",
+        "name": "home fitness morning-routine v1.jpg",
         "src": "/creatives/home-fitness/4_3-1SaVgY.jpg",
         "video": false,
         "size": "1200x896",
@@ -2823,7 +2823,7 @@ export const CAMPAIGNS: Campaign[] = [
     "creatives": [
       {
         "id": "1550ed17-cfb1-4946-93bd-deff14cd7034",
-        "name": "playful rewards 3.jpg",
+        "name": "home fitness no-equipment v1.jpg",
         "src": "/creatives/home-fitness/1_1-18tg03.jpg",
         "video": false,
         "size": "1080x1080",
@@ -2831,7 +2831,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "dfbb1a53-42bb-4a40-9744-430b02761b69",
-        "name": "playful rewards 4.mp4",
+        "name": "home fitness 7-day-plan v1.mp4",
         "src": "/creatives/home-fitness/1_1-1q20hf.mp4",
         "video": true,
         "size": "1080x1080",
@@ -2970,7 +2970,7 @@ export const CAMPAIGNS: Campaign[] = [
     "creatives": [
       {
         "id": "5babcf55-bc81-4a95-a21e-a64ec3620ff0",
-        "name": "purevpn 3.jpg",
+        "name": "slimkit walking beginner-plan v1.jpg",
         "src": "/creatives/slimkit-walking/1_1-1_t2oR.jpg",
         "video": false,
         "size": "1024x1024",
@@ -2978,7 +2978,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "0d6b0d22-26b0-4c1d-911d-25dbad02ff14",
-        "name": "purevpn 4.mp4",
+        "name": "slimkit walking morning-walk v1.mp4",
         "src": "/creatives/slimkit-walking/4_3-1Sm0v-.mp4",
         "video": true,
         "size": "1920x1440",
@@ -3086,7 +3086,7 @@ export const CAMPAIGNS: Campaign[] = [
     "creatives": [
       {
         "id": "23621528-b920-438d-ac38-c0add2163e0e",
-        "name": "clearvpn 1.mp4",
+        "name": "clearvpn privacy-first v1.mp4",
         "src": "/creatives/clearvpn/1_1-13tH0e.mp4",
         "video": true,
         "size": "410x892",
@@ -3094,7 +3094,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "f1e3409d-8d09-4689-ad89-cc7dde284d85",
-        "name": "clearvpn 2.png",
+        "name": "clearvpn streaming-unblock v1.png",
         "src": "/creatives/clearvpn/1_1-17RDSf.png",
         "video": false,
         "size": "1376x768",
@@ -3102,7 +3102,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "44cc62a9-99ce-4938-a634-086cb52d0354",
-        "name": "clearvpn 3.png",
+        "name": "clearvpn public-wifi v1.png",
         "src": "/creatives/clearvpn/1_1-1Bwf33.png",
         "video": false,
         "size": "1376x768",
@@ -3110,7 +3110,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "4762afba-f7b1-40bc-ae10-bb19dee1e020",
-        "name": "clearvpn 4.png",
+        "name": "clearvpn one-tap v1.png",
         "src": "/creatives/clearvpn/1_1-1O0dfk.png",
         "video": false,
         "size": "1376x768",
@@ -3118,7 +3118,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "c6fe08d7-3aae-4bac-a2b4-9ff720425deb",
-        "name": "clearvpn 5.mp4",
+        "name": "clearvpn speed-proof v1.mp4",
         "src": "/creatives/clearvpn/1_1-1QEy2O.mp4",
         "video": true,
         "size": "1920x1080",
@@ -3126,7 +3126,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "f1cef4d4-ce9e-4736-aa00-9687e08ce005",
-        "name": "clearvpn 6.png",
+        "name": "clearvpn no-logs v1.png",
         "src": "/creatives/clearvpn/1_1-1XiG2Y.png",
         "video": false,
         "size": "1376x768",
@@ -3134,7 +3134,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "bf638745-9c42-4b71-a3a9-f353c63aaac0",
-        "name": "clearvpn 7.mp4",
+        "name": "clearvpn geo-switch v1.mp4",
         "src": "/creatives/clearvpn/1_1-1XvBe8.mp4",
         "video": true,
         "size": "1920x1080",
@@ -3142,7 +3142,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "de8f25e7-bf45-4a22-a0c4-d9bfd9172e30",
-        "name": "clearvpn 8.png",
+        "name": "clearvpn ad-block v1.png",
         "src": "/creatives/clearvpn/1_1-1b03Vs.png",
         "video": false,
         "size": "1376x768",
@@ -3150,7 +3150,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "37ad9814-64a3-4009-a785-980932df461a",
-        "name": "clearvpn 9.png",
+        "name": "clearvpn secure-banking v1.png",
         "src": "/creatives/clearvpn/1_1-1rQfP1.png",
         "video": false,
         "size": "1376x768",
@@ -3158,7 +3158,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "54a7b53b-388c-4b1d-a6c4-146d6602b242",
-        "name": "clearvpn 10.png",
+        "name": "clearvpn travel-safe v1.png",
         "src": "/creatives/clearvpn/1_1-1uwflK.png",
         "video": false,
         "size": "1376x768",
@@ -3166,7 +3166,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "bee934b2-ce26-4d9f-a268-9e1b786e3388",
-        "name": "clearvpn 11.png",
+        "name": "clearvpn trust-badge v1.png",
         "src": "/creatives/clearvpn/1_1-1zPlmw.png",
         "video": false,
         "size": "1376x768",
@@ -3247,7 +3247,7 @@ export const CAMPAIGNS: Campaign[] = [
     "creatives": [
       {
         "id": "dac84401-c10c-4c8d-a62a-7aff2e216119",
-        "name": "veepn 49.mp4",
+        "name": "veepn travel-safe v5.mp4",
         "src": "https://lgfiuybibrrtrzaktcso.supabase.co/storage/v1/object/public/creatives/veepn/9_16-0eccf8.mp4",
         "video": true,
         "size": "1080x1920",
@@ -3255,7 +3255,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "c6dd9b05-7c3e-4825-ad76-66dd8012110f",
-        "name": "veepn 51.mp4",
+        "name": "veepn privacy-first v6.mp4",
         "src": "https://lgfiuybibrrtrzaktcso.supabase.co/storage/v1/object/public/creatives/veepn/9_16-18b9b2.mp4",
         "video": true,
         "size": "1080x1920",
@@ -3263,7 +3263,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "ee335456-4f2e-40e8-a501-9d23ea4f325f",
-        "name": "veepn 52.mp4",
+        "name": "veepn streaming-unblock v6.mp4",
         "src": "https://lgfiuybibrrtrzaktcso.supabase.co/storage/v1/object/public/creatives/veepn/9_16-47d2db.mp4",
         "video": true,
         "size": "1080x1920",
@@ -3271,7 +3271,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "8991aaf9-6524-4c1c-a883-1188fe6029ff",
-        "name": "veepn 55.mp4",
+        "name": "veepn speed-proof v6.mp4",
         "src": "https://lgfiuybibrrtrzaktcso.supabase.co/storage/v1/object/public/creatives/veepn/9_16-72d497.mp4",
         "video": true,
         "size": "1080x1920",
@@ -3279,7 +3279,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "7e553fc0-6902-4cbb-a898-95f9640f3b07",
-        "name": "veepn 4.jpeg",
+        "name": "veepn no-logs v1.jpeg",
         "src": "https://lgfiuybibrrtrzaktcso.supabase.co/storage/v1/object/public/creatives/veepn/3_4-089a90.jpeg",
         "video": false,
         "size": "896x1200",
@@ -3287,7 +3287,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "9667b5c7-44c8-48d4-aab4-6fd79fb13c3d",
-        "name": "veepn 5.jpeg",
+        "name": "veepn speed-proof v1.jpeg",
         "src": "https://lgfiuybibrrtrzaktcso.supabase.co/storage/v1/object/public/creatives/veepn/3_4-0ea137.jpeg",
         "video": false,
         "size": "896x1200",
@@ -3295,7 +3295,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "8db28f2f-b38b-45d1-a146-d36edb5afb31",
-        "name": "veepn 6.jpeg",
+        "name": "veepn geo-switch v1.jpeg",
         "src": "https://lgfiuybibrrtrzaktcso.supabase.co/storage/v1/object/public/creatives/veepn/3_4-1efacc.jpeg",
         "video": false,
         "size": "896x1200",
@@ -3303,7 +3303,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "c35813b6-7497-44f3-ae51-432c832d9c9e",
-        "name": "veepn 7.jpeg",
+        "name": "veepn deal-offer v1.jpeg",
         "src": "https://lgfiuybibrrtrzaktcso.supabase.co/storage/v1/object/public/creatives/veepn/3_4-22f3a2.jpeg",
         "video": false,
         "size": "896x1200",
@@ -3311,7 +3311,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "bd83a408-5f35-4f58-a4fe-611469575d95",
-        "name": "veepn 29.jpeg",
+        "name": "veepn travel-safe v3.jpeg",
         "src": "https://lgfiuybibrrtrzaktcso.supabase.co/storage/v1/object/public/creatives/veepn/4_3-0be563.jpeg",
         "video": false,
         "size": "1376x768",
@@ -3319,7 +3319,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "6c3b6dfb-bc1f-443b-a93b-c943fe2e55f3",
-        "name": "veepn 32.jpeg",
+        "name": "veepn streaming-unblock v4.jpeg",
         "src": "https://lgfiuybibrrtrzaktcso.supabase.co/storage/v1/object/public/creatives/veepn/4_3-67b2b1.jpeg",
         "video": false,
         "size": "1376x768",
@@ -3327,7 +3327,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "37838325-fb1e-43a9-aecb-5147c95d4998",
-        "name": "veepn 33.jpeg",
+        "name": "veepn public-wifi v4.jpeg",
         "src": "https://lgfiuybibrrtrzaktcso.supabase.co/storage/v1/object/public/creatives/veepn/4_3-688f1b.jpeg",
         "video": false,
         "size": "1376x768",
@@ -3335,7 +3335,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "0276fd4f-a8a5-46b4-a349-1f20dc0957aa",
-        "name": "veepn 35.jpeg",
+        "name": "veepn speed-proof v4.jpeg",
         "src": "https://lgfiuybibrrtrzaktcso.supabase.co/storage/v1/object/public/creatives/veepn/4_3-6c4fba.jpeg",
         "video": false,
         "size": "1376x768",
@@ -3536,7 +3536,7 @@ export const CAMPAIGNS: Campaign[] = [
     "creatives": [
       {
         "id": "df21895e-4016-4a74-a295-e3e5fb7ff30e",
-        "name": "widilo 1.jpeg",
+        "name": "widilo cashback-hero v1.jpeg",
         "src": "/creatives/widilo/1_1-1EVt3b.jpeg",
         "video": false,
         "size": "1200x896",
@@ -3544,7 +3544,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "fa6cf549-a251-475c-a170-1a50acaa7b6e",
-        "name": "widilo 2.jpeg",
+        "name": "widilo coupon-stack v1.jpeg",
         "src": "/creatives/widilo/1_1-1EoOVS.jpeg",
         "video": false,
         "size": "1080x895",
@@ -3552,7 +3552,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "bbcb90fa-24bb-402d-a935-c0fc863b64b3",
-        "name": "widilo 3.jpeg",
+        "name": "widilo grocery-savings v1.jpeg",
         "src": "/creatives/widilo/1_1-1KGKw2.jpeg",
         "video": false,
         "size": "1020x895",
@@ -3560,7 +3560,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "bd5138c4-dd81-4a8f-acc8-207f21ead0a0",
-        "name": "widilo 4.jpeg",
+        "name": "widilo student-budget v1.jpeg",
         "src": "/creatives/widilo/1_1-1QZwe1.jpeg",
         "video": false,
         "size": "898x895",
@@ -3568,7 +3568,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "2dd10d65-d508-46b5-a811-8a44709b6f9d",
-        "name": "widilo 5.jpeg",
+        "name": "widilo refund-proof v1.jpeg",
         "src": "/creatives/widilo/1_1-1WFJcz.jpeg",
         "video": false,
         "size": "896x895",
@@ -3576,7 +3576,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "69863a6c-8b5b-420a-a360-d7acbb360d94",
-        "name": "widilo 6.jpeg",
+        "name": "widilo price-drop v1.jpeg",
         "src": "/creatives/widilo/1_1-1jV8ZU.jpeg",
         "video": false,
         "size": "1200x896",
@@ -3584,7 +3584,7 @@ export const CAMPAIGNS: Campaign[] = [
       },
       {
         "id": "88000dd7-3a1a-44c7-a731-6cc853798080",
-        "name": "widilo 7.jpeg",
+        "name": "widilo black-friday v1.jpeg",
         "src": "/creatives/widilo/1_1-1rHK0l.jpeg",
         "video": false,
         "size": "670x893",

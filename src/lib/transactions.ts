@@ -39,6 +39,9 @@ const DEPOSIT_STEPS = [1000_00, 2000_00, 5000_00];
 /** How far ahead a top-up is sized to cover. */
 const RUNWAY_DAYS = 14;
 
+/** What the account keeps on hand once the flights have ended. */
+const WORKING_BALANCE = 2000_00;
+
 /** Every date the account booked spend on, oldest first. */
 const SPEND_DAYS: [date: string, cents: number][] = [
   ...new Set(CAMPAIGNS.flatMap((c) => c.days.map(([d]) => d))),
@@ -96,6 +99,32 @@ function build(): Transaction[] {
       invoice: null,
     });
   });
+
+  /**
+   * The flights are over but the account is still funded — the buyer topped up
+   * again the morning after the last one ended, so the top bar reads a working
+   * balance rather than the few hundred the last campaign happened to leave.
+   */
+  const last = SPEND_DAYS[SPEND_DAYS.length - 1][0];
+  const next = new Date(`${last}T00:00:00Z`);
+  next.setUTCDate(next.getUTCDate() + 1);
+  const amount = DEPOSIT_STEPS.find((step) => balance + step >= WORKING_BALANCE);
+  if (amount) {
+    const method = methodFor(amount, deposits);
+    balance += amount;
+    deposits++;
+    rows.push({
+      id: id++,
+      at: `${next.toISOString().slice(0, 10)}T09:12:00Z`,
+      description: `Funds deposit via ${method}`,
+      type: "Credit",
+      amount,
+      balance,
+      method,
+      status: "Completed",
+      invoice: `INV-${next.getUTCFullYear()}-${String(deposits).padStart(4, "0")}`,
+    });
+  }
 
   // Newest first, the way the live table loads.
   return rows.reverse();

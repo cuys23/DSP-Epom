@@ -156,6 +156,19 @@ function offerLabel(name) {
 }
 
 /**
+ * The angle each creative in a folder was shot for, cycled in pool order. Creatives
+ * are named after the concept they run rather than numbered, so a report row says
+ * which idea moved and not just which file — industry convention keeps the concept
+ * on the creative and the interest on the ad set, which here is the audience.
+ * A folder longer than its list rolls over into v2, v3: same concept, new cut.
+ */
+const ANGLES = {
+  "slimkit-walking": ["daily-steps", "walk-to-lose", "beginner-plan", "before-after", "low-impact", "step-tracker", "morning-walk", "calorie-burn"],
+  "home-fitness": ["no-equipment", "small-space", "7-day-plan", "beginner-flow", "before-after", "full-body", "morning-routine", "quick-hiit", "form-guide", "stay-consistent"],
+  britbox: ["british-drama", "classic-tv", "box-set", "free-trial", "new-season", "detective", "period-drama", "comedy-night", "cast-tease", "watch-anywhere"],
+};
+
+/**
  * The Drive folders whose creatives we are cleared to use, and the short folder
  * name each maps to in the UI (the panel only fits ~20 characters).
  */
@@ -381,9 +394,10 @@ for (const offer of offers.sort((a, b) => a.offIdNet.localeCompare(b.offIdNet)))
     const { ext, ...asset } = pool[product][index];
     return {
       id: stableId(`${offer.offIdNet}:${asset.src}`),
-      // Named the way the account's real creative is ("home fitness 2.mp4"), and
-      // keyed on the asset's pool position so one file has one name everywhere.
-      name: `${product.replace(/-/g, " ")} ${index + 1}.${ext}`,
+      // Keyed on the asset's pool position, so one file has one name everywhere.
+      name: `${product.replace(/-/g, " ")} ${ANGLES[product][index % ANGLES[product].length]} v${
+        Math.floor(index / ANGLES[product].length) + 1
+      }.${ext}`,
       ...asset,
       price: `$${defaultPrice.toFixed(3)}`,
     };
