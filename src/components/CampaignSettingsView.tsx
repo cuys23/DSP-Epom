@@ -32,16 +32,30 @@ const TIME_ZONES = "UTC+00:00 London, GBR; Reykjavik, ISL; Dakar, SEN";
  * The SSP endpoint a campaign buys through, with the volume/format/pricing labels
  * the live card prints beside it.
  *
- * ponytail: which endpoint a campaign runs on is the one field of this card the
- * affiliate sheet does not carry — it reports the publisher site, not the DSP
- * endpoint — so it is drawn from the scraped roster, fixed per campaign by its
- * network offer id. Swap in the real mapping if the account ever exports one.
+ * The roster names each endpoint after the format it serves, so a Banner campaign
+ * only ever draws from the Display ones and a Video campaign from the Video ones.
+ * `… Web` endpoints are out either way: every campaign on this account is an in-app
+ * buy, which is what its audience targets — App Store, macOS and iOS.
+ *
+ * ponytail: which endpoint of that pool a campaign ran on is the one field of this
+ * card the affiliate sheet does not carry — it reports the publisher site, not the
+ * DSP endpoint — so it is fixed per campaign by its network offer id. Swap in the
+ * real mapping if the account ever exports one.
  */
-function endpointOf(key: string): SspEndpoint {
+function endpointOf(networkId: string, media: string): SspEndpoint {
+  const format = media === "Banner" ? /display|banner/i : /video/i;
+  const pool = SSP_ENDPOINTS.filter(
+    (e) =>
+      format.test(e.name) &&
+      !/\bweb\b/i.test(e.name) &&
+      // The roster carries one endpoint the account tags as a test rig.
+      !e.labels.some((l) => l.text === "test"),
+  );
   let h = 7;
-  for (const c of key) h = (h * 31 + c.charCodeAt(0)) | 0;
-  return SSP_ENDPOINTS[Math.abs(h) % SSP_ENDPOINTS.length];
+  for (const c of networkId) h = (h * 31 + c.charCodeAt(0)) | 0;
+  return pool[Math.abs(h) % pool.length];
 }
+
 
 interface Info {
   label: string;
@@ -144,7 +158,7 @@ const VIEWS = new Map<string, CampaignView>(
           evenPacing: "Off",
           impToBidAuto: "On",
         },
-        trafficSource: endpointOf(c.offer.networkId),
+        trafficSource: endpointOf(c.offer.networkId, media),
         riskTolerance: "High",
         creatives: c.creatives.map((k) => ({
           id: k.id,
