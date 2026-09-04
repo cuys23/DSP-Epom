@@ -45,10 +45,10 @@ export function Sidebar({ collapsed, onToggle, activeHref }: SidebarProps) {
             <Image
               src="/images/logo.png"
               alt="Epom Market"
-              width={500}
-              height={180}
+              width={1312}
+              height={512}
               priority
-              className="h-11 w-[122px] cursor-pointer object-contain"
+              className="h-11 w-[113px] cursor-pointer object-contain"
             />
           </Link>
         )}
@@ -97,16 +97,23 @@ export function Sidebar({ collapsed, onToggle, activeHref }: SidebarProps) {
         <div className="p-1 text-center text-[10px] leading-[14.2857px] text-epom-version">
           Version 8.2 Epom Ltd. © 2026
         </div>
-        <div className="flex whitespace-nowrap text-[14px] font-semibold leading-5">
+        {/*
+          The live site colours these with the brand's primary — the same navy the
+          sidebar is painted with — and lays them out overlapping below the fold,
+          so they are invisible there. They read as the sidebar's own text instead,
+          stacked — side by side the pair is 252px wide and the sidebar is 240 —
+          rather than reproducing a footer nobody can see.
+        */}
+        <div className="flex flex-col items-center gap-1 whitespace-nowrap p-1 text-[14px] font-semibold leading-5">
           <a
             href="/privacy-policy"
-            className="text-epom-primary underline transition-colors duration-[120ms] ease-linear"
+            className="text-epom-nav-idle underline transition-colors duration-[120ms] ease-linear hover:text-white"
           >
             Privacy Policy
           </a>
           <a
             href="/terms-and-conditions"
-            className="text-epom-primary underline transition-colors duration-[120ms] ease-linear"
+            className="text-epom-nav-idle underline transition-colors duration-[120ms] ease-linear hover:text-white"
           >
             Terms and Conditions
           </a>
