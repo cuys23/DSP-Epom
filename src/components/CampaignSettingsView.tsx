@@ -11,7 +11,7 @@ import { MaterialIcon } from "@/components/MaterialIcon";
 import { BTN_OUTLINED } from "@/components/form/Dialog";
 import { CreativePreview } from "@/components/CreativePreview";
 import { DateRangePicker } from "@/components/DateRangePicker";
-import { CELL, SERIES, dayMetrics } from "@/lib/demo-data";
+import { CELL, CHART_METRICS, SERIES, dayMetrics } from "@/lib/demo-data";
 import { CAMPAIGNS } from "@/lib/campaigns";
 import { audienceOfCampaign } from "@/lib/audiences";
 import { campaignMediaType, creativeTypeIcon } from "@/lib/creative-type";
@@ -115,8 +115,6 @@ const VIEWS = new Map<string, CampaignView>(
     ];
   }),
 );
-
-const METRICS = ["Impressions", "Clicks", "Spend", "CTR", "eCPM", "eCPC", "Wins", "Win Rate"];
 
 export function CampaignSettingsView() {
   const id = String(useParams().id ?? "");
@@ -465,7 +463,7 @@ export function CampaignSettingsView() {
                   <FilterSelect
                     label="Metric:"
                     value={metric}
-                    options={METRICS}
+                    options={CHART_METRICS}
                     className="w-[240px]"
                     open={open === "metric"}
                     onToggle={() => setOpen(open === "metric" ? null : "metric")}
