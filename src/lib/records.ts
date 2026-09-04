@@ -49,7 +49,7 @@ export const DEFAULT_PROFILE: UserProfile = {
   firstName: "Minh",
   lastName: "Do",
   email: "admin@vinmedia.net",
-  company: "Adstarget",
+  company: "Vinmedia",
   country: "Viet Nam",
   phone: "0999999",
 };
