@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import { AppShell } from "@/components/AppShell";
 import { MaterialIcon } from "@/components/MaterialIcon";
 import { BTN_OUTLINED, BTN_PRIMARY, Dialog } from "@/components/form/Dialog";
-import type { AudienceTargeting } from "@/lib/audiences";
+import { VALUE_ICONS, type AudienceTargeting } from "@/lib/audiences";
 
 type Mode = "Include" | "Exclude";
 
@@ -117,17 +117,6 @@ const DEVICE_TYPES = ["Desktop", "Mobile", "Tablet", "Connected TV", "Connected 
 const CONNECTION_TYPES = ["Any", "Ethernet", "WIFI", "Carrier"];
 const TRAFFIC_TYPES = ["Any", "Websites", "Mobile Apps"];
 
-/** Icons shown next to OS / browser values, in the picker and the summary rail. */
-const VALUE_ICONS: Record<string, string> = {
-  Windows: "/images/windows.svg",
-  Linux: "/images/linux.svg",
-  macOS: "/images/macos.png",
-  Android: "/images/android.svg",
-  iOS: "/images/ios.png",
-  Chrome: "/images/chrome.svg",
-  Safari: "/images/safari.png",
-};
-
 /**
  * OS and browser use the three-column picker — each target carries an optional
  * version constraint. Every other field uses the plain checklist.
@@ -192,7 +181,13 @@ export function AudienceEditView({
   const router = useRouter();
   const [name, setName] = useState(initialName);
   const [renaming, setRenaming] = useState(false);
-  const [sel, setSel] = useState({ ...INITIAL, storeCategories: targeting.storeCategories });
+  const [sel, setSel] = useState({
+    ...INITIAL,
+    os: targeting.os,
+    browser: targeting.browsers,
+    stores: targeting.stores,
+    storeCategories: targeting.storeCategories,
+  });
   const [modes, setModes] = useState<Record<ModeField, Mode>>({
     os: "Include",
     browser: "Include",

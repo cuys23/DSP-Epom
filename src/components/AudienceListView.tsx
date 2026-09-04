@@ -85,7 +85,10 @@ export function AudienceListView() {
         campaignIds: [],
         // A fresh audience targets nothing until the buyer ticks something.
         deviceTypes: [],
+        os: [],
+        browsers: [],
         connectionTypes: [],
+        stores: [],
         storeCategories: [],
         created: today(),
         edited: today(),

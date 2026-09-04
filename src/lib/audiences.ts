@@ -13,11 +13,31 @@ import { CAMPAIGNS } from "./campaigns";
 export interface AudienceTargeting {
   /** Ticked under Targeting → Device. */
   deviceTypes: string[];
+  /** Picked under Targeting → Device → Operation System. */
+  os: string[];
+  /** Picked under Targeting → Device → Browser. */
+  browsers: string[];
   /** Ticked under Targeting → Connection. */
   connectionTypes: string[];
   /** Picked under Advanced settings → Stores. */
+  stores: string[];
+  /** Picked under Advanced settings → App Store Categories. */
   storeCategories: string[];
 }
+
+/**
+ * Logos the OS and browser pickers show beside a value, and the campaign preview
+ * repeats in its Audience card.
+ */
+export const VALUE_ICONS: Record<string, string> = {
+  Windows: "/images/windows.svg",
+  Linux: "/images/linux.svg",
+  macOS: "/images/macos.png",
+  Android: "/images/android.svg",
+  iOS: "/images/ios.png",
+  Chrome: "/images/chrome.svg",
+  Safari: "/images/safari.png",
+};
 
 export interface Audience extends AudienceTargeting {
   id: string;
@@ -59,7 +79,12 @@ const PRODUCTS = [...new Set(CAMPAIGNS.map((c) => c.product))];
 const DEFAULT_TARGETING: AudienceTargeting = {
   // The weight-loss offers are in-app iOS buys and never leave the handset.
   deviceTypes: ["Mobile", "Tablet"],
+  // Every audience on the account buys the same two platforms and their default
+  // browsers off the App Store; only the lists below differ per product line.
+  os: ["macOS", "iOS"],
+  browsers: ["Chrome", "Safari"],
   connectionTypes: [],
+  stores: ["App Store"],
   storeCategories: ["Health & Fitness"],
 };
 

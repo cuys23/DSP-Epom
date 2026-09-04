@@ -13,7 +13,9 @@ import { CreativePreview } from "@/components/CreativePreview";
 import { DateRangePicker } from "@/components/DateRangePicker";
 import { CELL, CHART_METRICS, SERIES, dayMetrics } from "@/lib/demo-data";
 import { CAMPAIGNS } from "@/lib/campaigns";
-import { audienceOfCampaign } from "@/lib/audiences";
+import { VALUE_ICONS, audienceOfCampaign } from "@/lib/audiences";
+import { SSP_ENDPOINTS } from "@/lib/campaign-data";
+import type { SspEndpoint } from "@/types/campaign";
 import { campaignMediaType, creativeTypeIcon } from "@/lib/creative-type";
 import {
   CREATIVE_DOT,
@@ -25,6 +27,21 @@ import {
 } from "@/lib/campaign-stats";
 
 const TIME_ZONES = "UTC+00:00 London, GBR; Reykjavik, ISL; Dakar, SEN";
+
+/**
+ * The SSP endpoint a campaign buys through, with the volume/format/pricing labels
+ * the live card prints beside it.
+ *
+ * ponytail: which endpoint a campaign runs on is the one field of this card the
+ * affiliate sheet does not carry — it reports the publisher site, not the DSP
+ * endpoint — so it is drawn from the scraped roster, fixed per campaign by its
+ * network offer id. Swap in the real mapping if the account ever exports one.
+ */
+function endpointOf(key: string): SspEndpoint {
+  let h = 7;
+  for (const c of key) h = (h * 31 + c.charCodeAt(0)) | 0;
+  return SSP_ENDPOINTS[Math.abs(h) % SSP_ENDPOINTS.length];
+}
 
 interface Info {
   label: string;
@@ -52,7 +69,7 @@ interface CampaignView {
     evenPacing: string;
     impToBidAuto: string;
   };
-  trafficSource: string;
+  trafficSource: SspEndpoint;
   riskTolerance: string;
   creatives: {
     id: string;
@@ -100,15 +117,15 @@ const VIEWS = new Map<string, CampaignView>(
             {
               heading: "Device",
               rows: [
-                { label: "Device Type:", values: a.deviceTypes, included: true },
-                { label: "Connection Type:", values: a.connectionTypes, included: true },
+                { label: "Operation System:", values: a.os, included: true },
+                { label: "Browser:", values: a.browsers, included: true },
               ].filter((r) => r.values.length),
             },
             {
               heading: "Stores",
               // The live card leaves the store row without the Included dot the
               // device rows carry.
-              rows: [{ label: "Stores:", values: a.storeCategories }],
+              rows: [{ label: "Stores:", values: a.stores }],
             },
           ].filter((g) => g.rows.length),
         },
@@ -127,7 +144,7 @@ const VIEWS = new Map<string, CampaignView>(
           evenPacing: "Off",
           impToBidAuto: "On",
         },
-        trafficSource: c.offer.site,
+        trafficSource: endpointOf(c.offer.networkId),
         riskTolerance: "High",
         creatives: c.creatives.map((k) => ({
           id: k.id,
@@ -245,11 +262,21 @@ export function CampaignSettingsView() {
                   {group.rows.map((row) => (
                     <div key={row.label} className="mt-2">
                       <div className="text-[12px] leading-[18px] text-epom-muted">{row.label}</div>
-                      <div className="mt-2 flex flex-wrap items-center gap-2">
+                      <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1">
                         {row.included && <StatusDot label="Included" tone="success" />}
-                        <span className="text-[12px] leading-[18px] text-epom-text">
-                          {row.values.join("; ")}
-                        </span>
+                        {row.values.map((v, i) => (
+                          <span
+                            key={v}
+                            className="flex items-center gap-1 text-[12px] leading-[18px] text-epom-text"
+                          >
+                            {VALUE_ICONS[v] && (
+                              // eslint-disable-next-line @next/next/no-img-element
+                              <img src={VALUE_ICONS[v]} alt="" className="h-4 w-4 object-contain" />
+                            )}
+                            {v}
+                            {i < row.values.length - 1 && ";"}
+                          </span>
+                        ))}
                       </div>
                     </div>
                   ))}
@@ -312,8 +339,19 @@ export function CampaignSettingsView() {
               <BoxHeading spaced={false} step="trafficSources" campaignId={CAMPAIGN.id}>Traffic source</BoxHeading>
               <div className="mt-2">
                 <StatusDot label="Included" tone="success" />
-                <div className="mt-2 text-[14px] leading-[21px] text-epom-text">
-                  {CAMPAIGN.trafficSource}
+                <div className="mt-2 flex flex-wrap items-center gap-2">
+                  <span className="text-[14px] leading-[21px] text-epom-text">
+                    {CAMPAIGN.trafficSource.name}
+                  </span>
+                  {CAMPAIGN.trafficSource.labels.map((l) => (
+                    <span
+                      key={l.text}
+                      className="rounded-full px-2 py-0.5 text-[12px] font-semibold leading-[18px] text-white"
+                      style={{ backgroundColor: l.color }}
+                    >
+                      {l.text}
+                    </span>
+                  ))}
                 </div>
               </div>
             </Box>
