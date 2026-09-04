@@ -9,27 +9,28 @@ import { MaterialIcon } from "@/components/MaterialIcon";
 import { BTN_OUTLINED, BTN_PRIMARY, Dialog } from "@/components/form/Dialog";
 import { SortLabel, type Sort } from "@/components/SortLabel";
 import { LineChart } from "@/components/LineChart";
-import { CELL, SERIES, dayMetrics, sumMetrics } from "@/lib/demo-data";
+import { CELL, CHART_METRICS, SERIES, dayMetrics, sumMetrics } from "@/lib/demo-data";
 import { DEFAULT_RANGE, rangeDays } from "@/lib/campaign-stats";
 
 /**
- * Every metric column of the report, with the value the live account returns.
- * The account has no traffic yet, so each row and the total repeat these.
+ * Every metric column of the report, in the order the live table lays them out,
+ * with the value the live account returns. The account has no traffic yet, so
+ * each row and the total repeat these.
+ *
+ * This is the whole set its Table configuration dialog offers — the report has no
+ * bid-request counter, so no Bid Requests, Bid Rate, Wins or Imp-to-Bid column.
  */
 const COLUMNS: { label: string; title?: string; value: string }[] = [
-  { label: "Bid Requests", value: "0" },
   { label: "Bid Responses", value: "0" },
-  { label: "Bid Rate", value: "0.00%" },
-  { label: "Wins", value: "0" },
-  { label: "Win Rate", value: "0.00%" },
+  { label: "Bid Price", value: "n/a" },
   { label: "Impressions", value: "0" },
+  { label: "Win Rate", value: "0.00%" },
   { label: "eCPM", title: "cost per mille", value: "$0.00" },
-  { label: "Imp-to-Bid", title: "imp-to-bid", value: "0" },
   { label: "Clicks", value: "0" },
+  { label: "eCPC", title: "cost per click", value: "0.00" },
+  { label: "Click-to-Bid", title: "click-to-bid", value: "0" },
   { label: "CTR", title: "click-through rate", value: "0.00%" },
   { label: "CCR", title: "click-through rate", value: "0.00%" },
-  { label: "Click-to-Bid", title: "click-to-bid", value: "0" },
-  { label: "eCPC", title: "cost per click", value: "0.00" },
   { label: "Spend", value: "$0.00" },
   { label: "Segments Markup", title: "Segments Markup", value: "$0.00" },
   { label: "Pixalate Postbid Markup", title: "Pixalate Postbid Markup", value: "0" },
@@ -44,7 +45,6 @@ const COLUMNS: { label: string; title?: string; value: string }[] = [
   { label: "Third Quartile", value: "0" },
   { label: "Video 100%", value: "0" },
 ];
-
 const DIMENSIONS = [
   "Date",
   "Hour",
@@ -336,7 +336,7 @@ export function AnalyticsView() {
             <FilterSelect
               label="Metric:"
               value={metric}
-              options={COLUMNS.map((c) => c.label)}
+              options={CHART_METRICS}
               className="w-[240px]"
               open={open === "metric"}
               onToggle={() => setOpen(open === "metric" ? null : "metric")}

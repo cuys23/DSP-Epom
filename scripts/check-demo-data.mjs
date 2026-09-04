@@ -148,7 +148,7 @@ assert.equal(
 );
 
 const labels = Object.keys(CELL);
-assert.equal(labels.length, 26, "26 metric columns");
+assert.equal(labels.length, 28, "28 metric columns");
 assert.deepEqual(Object.keys(SERIES), labels, "CELL and SERIES cover the same columns");
 for (const l of labels) {
   assert.equal(typeof CELL[l](total), "string", `${l} formats to text`);
@@ -161,6 +161,10 @@ assert.equal(CELL["Bid Rate"](zero), "0.00%");
 assert.equal(CELL.ROAS(zero), "-");
 assert.equal(CELL["CPA Action 0"](zero), "-");
 assert.equal(CELL["Imp-to-Bid"](zero), "0");
+// A day with no traffic prints zero costs, and "-" only where the ratio is undefined.
+assert.equal(CELL.eCPM(zero), "$0.00");
+assert.equal(CELL.eCPC(zero), "0.00");
+assert.equal(CELL["Bid Price"](zero), "n/a");
 
 // ---------------------------------------------------------------- audiences
 // Every campaign runs against exactly one audience, and the "Linked Campaigns"

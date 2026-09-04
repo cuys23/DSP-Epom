@@ -162,21 +162,29 @@ const div = (n: number, d: number, f: (v: number) => string) => (d ? f(n / d) : 
 export const CELL: Record<string, (m: DayMetrics) => string> = {
   "Bid Requests": (m) => int(m.bidRequests),
   "Bid Responses": (m) => int(m.bidResponses),
+  // The report has no per-bid price to average when the rows are days rather than
+  // one campaign, so the live column prints this literal on every row.
+  "Bid Price": () => "n/a",
   "Bid Rate": (m) => pct(m.bidResponses, m.bidRequests),
   Wins: (m) => int(m.wins),
   "Win Rate": (m) => pct(m.wins, m.bidResponses),
   Impressions: (m) => int(m.impressions),
-  eCPM: (m) => div(m.spend * 1000, m.impressions, money),
+  // A day with no impressions still prints a zero cost, not the "-" the cost-per-
+  // action columns use — that is how the live report separates "nothing was spent"
+  // from "the denominator makes this undefined".
+  eCPM: (m) => money(m.impressions ? (m.spend * 1000) / m.impressions : 0),
   "Imp-to-Bid": (m) => ratio(m.impressions, m.bidRequests),
   Clicks: (m) => int(m.clicks),
   CTR: (m) => pct(m.clicks, m.impressions),
   CCR: (m) => pct(m.actions, m.clicks),
   "Click-to-Bid": (m) => ratio(m.clicks, m.bidRequests),
-  eCPC: (m) => div(m.spend, m.clicks, (v) => v.toFixed(2)),
+  eCPC: (m) => (m.clicks ? m.spend / m.clicks : 0).toFixed(2),
   Spend: (m) => money(m.spend),
   "Segments Markup": (m) => money(m.segmentsMarkup),
   "Pixalate Postbid Markup": (m) => int(m.pixalate),
   "Action 0": (m) => int(m.actions),
+  /** What the chart's `Metric:` dropdown calls the `Action 0` column. */
+  Conversions: (m) => int(m.actions),
   "CPA Action 0": (m) => div(m.spend, m.actions, money),
   "ICR Action 0": (m) => pct(m.actions, m.impressions),
   ROAS: (m) => div(m.revenue, m.spend, (v) => v.toFixed(2)),
@@ -192,6 +200,9 @@ export const CELL: Record<string, (m: DayMetrics) => string> = {
 export const SERIES: Record<string, (m: DayMetrics) => number> = {
   "Bid Requests": (m) => m.bidRequests,
   "Bid Responses": (m) => m.bidResponses,
+  // Never charted — the live dropdown does not offer it — but every column carries
+  // a series so the two maps stay the same shape.
+  "Bid Price": () => 0,
   "Bid Rate": (m) => (m.bidRequests ? (m.bidResponses / m.bidRequests) * 100 : 0),
   Wins: (m) => m.wins,
   "Win Rate": (m) => (m.bidResponses ? (m.wins / m.bidResponses) * 100 : 0),
@@ -207,6 +218,7 @@ export const SERIES: Record<string, (m: DayMetrics) => number> = {
   "Segments Markup": (m) => m.segmentsMarkup,
   "Pixalate Postbid Markup": (m) => m.pixalate,
   "Action 0": (m) => m.actions,
+  Conversions: (m) => m.actions,
   "CPA Action 0": (m) => (m.actions ? m.spend / m.actions : 0),
   "ICR Action 0": (m) => (m.impressions ? (m.actions / m.impressions) * 100 : 0),
   ROAS: (m) => (m.spend ? m.revenue / m.spend : 0),
@@ -217,3 +229,10 @@ export const SERIES: Record<string, (m: DayMetrics) => number> = {
   "Third Quartile": (m) => m.q3,
   "Video 100%": (m) => m.complete,
 };
+
+/**
+ * The six metrics the live `Metric:` dropdown offers above a chart, in its order.
+ * It is a fixed shortlist, not the report's column set — the table carries far
+ * more columns than the chart will plot.
+ */
+export const CHART_METRICS = ["Impressions", "Clicks", "Conversions", "Spend", "eCPM", "eCPC"];

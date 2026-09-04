@@ -4,18 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { LineChart } from "@/components/LineChart";
 import { FilterSelect } from "@/components/CampaignFilters";
 import { rangeLabel } from "@/lib/campaign-stats";
-import { CELL, SERIES, dayMetrics, sumMetrics } from "@/lib/demo-data";
-
-/**
- * Metrics the live dashboard's `Metric:` dropdown offers. `eCPC` is documented as
- * CPC-only and every campaign on this account is bought on CPM, so it is left out
- * rather than offered as a column that could never differ from a divide-by-zero.
- */
-const METRICS = ["Impressions", "Clicks", "Conversions", "eCPM", "Spend"];
-
-/** Dropdown label → the `CELL` / `SERIES` key behind it. */
-const COLUMN: Record<string, string> = { Conversions: "Action 0" };
-const columnOf = (metric: string) => COLUMN[metric] ?? metric;
+import { CELL, CHART_METRICS, SERIES, dayMetrics, sumMetrics } from "@/lib/demo-data";
 
 /**
  * The dashboard chart card: one account-wide series over the selected date range,
@@ -23,7 +12,7 @@ const columnOf = (metric: string) => COLUMN[metric] ?? metric;
  * metrics the Analytics report uses, so the two always agree.
  */
 export function ChartCard({ days }: { days: string[] }) {
-  const [metric, setMetric] = useState(METRICS[0]);
+  const [metric, setMetric] = useState(CHART_METRICS[0]);
   const [open, setOpen] = useState(false);
   const selectRef = useRef<HTMLDivElement>(null);
 
@@ -38,7 +27,6 @@ export function ChartCard({ days }: { days: string[] }) {
 
   const metrics = days.map((d) => dayMetrics(d));
   const total = sumMetrics(metrics);
-  const column = columnOf(metric);
 
   const summary = [
     { label: "Impressions", value: CELL.Impressions(total) },
@@ -46,7 +34,7 @@ export function ChartCard({ days }: { days: string[] }) {
     { label: "CTR", value: CELL.CTR(total) },
     { label: "Spend", value: CELL.Spend(total) },
     { label: "eCPM", value: CELL.eCPM(total) },
-    { label: "Conversions", value: CELL["Action 0"](total) },
+    { label: "Conversions", value: CELL.Conversions(total) },
   ];
 
   return (
@@ -61,7 +49,7 @@ export function ChartCard({ days }: { days: string[] }) {
         <FilterSelect
           label="Metric:"
           value={metric}
-          options={METRICS}
+          options={CHART_METRICS}
           className="w-[240px]"
           open={open}
           onToggle={() => setOpen((v) => !v)}
@@ -75,8 +63,8 @@ export function ChartCard({ days }: { days: string[] }) {
       <div className="mt-4 overflow-x-auto">
         <LineChart
           labels={days}
-          values={metrics.map((m) => SERIES[column](m))}
-          formatted={metrics.map((m) => CELL[column](m))}
+          values={metrics.map((m) => SERIES[metric](m))}
+          formatted={metrics.map((m) => CELL[metric](m))}
           seriesName={metric}
           height={350}
         />
