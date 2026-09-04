@@ -25,3 +25,11 @@ const ICONS: Record<string, string> = {
 export function creativeTypeIcon(label: string): string {
   return ICONS[label] ?? "smart_display";
 }
+
+/**
+ * A campaign's ad format, read off the creatives it actually runs: one video in
+ * the set makes it a Video campaign, an all-image set is a Banner one.
+ */
+export function campaignMediaType(creatives: { video: boolean }[]): string {
+  return creatives.some((c) => c.video) ? "Video" : "Banner";
+}

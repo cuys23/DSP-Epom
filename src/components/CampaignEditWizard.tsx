@@ -29,12 +29,14 @@ const HELP_DOC: Record<string, string> = { budgets: "budget" };
 export function CampaignEditWizard({
   id,
   name,
+  media,
   step,
   budget,
   budgetStatus,
 }: {
   id: string;
   name: string;
+  media: string;
   step: string;
   budget: CampaignBudget;
   budgetStatus: string;
@@ -65,7 +67,7 @@ export function CampaignEditWizard({
     <AppShell
       activeHref="/campaigns"
       breadcrumbs={[{ label: "Campaigns", href: "/campaigns" }, { label: name }]}
-      rightRail={<CampaignEditSummaryRail name={name} />}
+      rightRail={<CampaignEditSummaryRail name={name} media={media} />}
       contentClassName="flex flex-col"
     >
       {/* The padded column scrolls; the footer below it never moves. */}

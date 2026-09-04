@@ -25,6 +25,13 @@
  * bought direct, and the tab carries no network, offer-name or payout columns, so
  * `offer` is keyed on the App Store id of the app it promotes (com.veepn.open) and
  * the payout is the $3.20 US iOS CPI band this account buys at.
+ *
+ * ponytail: offer 2087 (Widilo) came from a `LeadRrs` CSV export the same way. That
+ * export carries only `Total Lead` — the campaign's conversions, its daily cap the
+ * column keeps hitting (20 → 50 → 30 as the cap was renegotiated) — and no click
+ * column at all, so its daily clicks are drawn 5,000–7,000 with no value repeating
+ * and its impressions come off the same 12–20% CTR band. The two source ids in the
+ * export are one flight, not two campaigns. Payout is the $3.00 FR iOS CPI band.
  */
 
 export interface CampaignCreative {
@@ -3505,8 +3512,317 @@ export const CAMPAIGNS: Campaign[] = [
         50295
       ]
     ]
+  },
+  {
+    "id": "038e638b-b9ba-4503-ae22-02bad9eafed8",
+    "slug": "widilo-2087",
+    "name": "Widilo — AdsAndMore",
+    "offer": {
+      "id": "96396",
+      "networkId": "2087",
+      "network": "AdsAndMore",
+      "app": "fr.widilo.widilo",
+      "site": "vinmedia.net",
+      "raw": "FR_[IOS]Wildilo [Creative Names Mandatory] - IOS - FR (CPI) (KM)"
+    },
+    "product": "widilo",
+    "productLabel": "Widilo",
+    "payout": 3,
+    "defaultPrice": 0.029,
+    "ecpm": 1.85,
+    "paused": false,
+    "from": "2026-07-25",
+    "to": "2026-09-02",
+    "creatives": [
+      {
+        "id": "df21895e-4016-4a74-a295-e3e5fb7ff30e",
+        "name": "widilo 1.jpeg",
+        "src": "/creatives/widilo/1_1-1EVt3b.jpeg",
+        "video": false,
+        "size": "1200x896",
+        "price": "$0.029"
+      },
+      {
+        "id": "fa6cf549-a251-475c-a170-1a50acaa7b6e",
+        "name": "widilo 2.jpeg",
+        "src": "/creatives/widilo/1_1-1EoOVS.jpeg",
+        "video": false,
+        "size": "1080x895",
+        "price": "$0.029"
+      },
+      {
+        "id": "bbcb90fa-24bb-402d-a935-c0fc863b64b3",
+        "name": "widilo 3.jpeg",
+        "src": "/creatives/widilo/1_1-1KGKw2.jpeg",
+        "video": false,
+        "size": "1020x895",
+        "price": "$0.029"
+      },
+      {
+        "id": "bd5138c4-dd81-4a8f-acc8-207f21ead0a0",
+        "name": "widilo 4.jpeg",
+        "src": "/creatives/widilo/1_1-1QZwe1.jpeg",
+        "video": false,
+        "size": "898x895",
+        "price": "$0.029"
+      },
+      {
+        "id": "2dd10d65-d508-46b5-a811-8a44709b6f9d",
+        "name": "widilo 5.jpeg",
+        "src": "/creatives/widilo/1_1-1WFJcz.jpeg",
+        "video": false,
+        "size": "896x895",
+        "price": "$0.029"
+      },
+      {
+        "id": "69863a6c-8b5b-420a-a360-d7acbb360d94",
+        "name": "widilo 6.jpeg",
+        "src": "/creatives/widilo/1_1-1jV8ZU.jpeg",
+        "video": false,
+        "size": "1200x896",
+        "price": "$0.029"
+      },
+      {
+        "id": "88000dd7-3a1a-44c7-a731-6cc853798080",
+        "name": "widilo 7.jpeg",
+        "src": "/creatives/widilo/1_1-1rHK0l.jpeg",
+        "video": false,
+        "size": "670x893",
+        "price": "$0.029"
+      }
+    ],
+    "days": [
+      [
+        "2026-07-25",
+        5119,
+        20,
+        37268
+      ],
+      [
+        "2026-07-26",
+        6024,
+        20,
+        31178
+      ],
+      [
+        "2026-07-27",
+        5781,
+        20,
+        42610
+      ],
+      [
+        "2026-07-28",
+        6082,
+        20,
+        34288
+      ],
+      [
+        "2026-07-29",
+        6403,
+        20,
+        38674
+      ],
+      [
+        "2026-07-30",
+        6469,
+        20,
+        37305
+      ],
+      [
+        "2026-07-31",
+        5692,
+        20,
+        47257
+      ],
+      [
+        "2026-08-02",
+        5410,
+        20,
+        27781
+      ],
+      [
+        "2026-08-03",
+        5329,
+        20,
+        40677
+      ],
+      [
+        "2026-08-04",
+        5008,
+        20,
+        37113
+      ],
+      [
+        "2026-08-05",
+        6408,
+        20,
+        37219
+      ],
+      [
+        "2026-08-06",
+        6707,
+        20,
+        40407
+      ],
+      [
+        "2026-08-07",
+        6777,
+        20,
+        38873
+      ],
+      [
+        "2026-08-08",
+        6968,
+        20,
+        36163
+      ],
+      [
+        "2026-08-09",
+        6628,
+        20,
+        40714
+      ],
+      [
+        "2026-08-10",
+        6886,
+        20,
+        52136
+      ],
+      [
+        "2026-08-11",
+        5280,
+        20,
+        33155
+      ],
+      [
+        "2026-08-12",
+        5935,
+        20,
+        31298
+      ],
+      [
+        "2026-08-13",
+        5520,
+        20,
+        32499
+      ],
+      [
+        "2026-08-14",
+        5348,
+        40,
+        31260
+      ],
+      [
+        "2026-08-15",
+        5795,
+        40,
+        43759
+      ],
+      [
+        "2026-08-16",
+        5187,
+        40,
+        26856
+      ],
+      [
+        "2026-08-17",
+        6091,
+        40,
+        31268
+      ],
+      [
+        "2026-08-18",
+        6313,
+        40,
+        48495
+      ],
+      [
+        "2026-08-19",
+        6766,
+        50,
+        52697
+      ],
+      [
+        "2026-08-20",
+        6280,
+        50,
+        50159
+      ],
+      [
+        "2026-08-21",
+        6855,
+        49,
+        54574
+      ],
+      [
+        "2026-08-22",
+        5914,
+        50,
+        31038
+      ],
+      [
+        "2026-08-24",
+        6825,
+        48,
+        40600
+      ],
+      [
+        "2026-08-25",
+        5655,
+        50,
+        33558
+      ],
+      [
+        "2026-08-26",
+        5221,
+        28,
+        32159
+      ],
+      [
+        "2026-08-27",
+        5990,
+        30,
+        32943
+      ],
+      [
+        "2026-08-28",
+        6621,
+        30,
+        45657
+      ],
+      [
+        "2026-08-29",
+        5810,
+        30,
+        41992
+      ],
+      [
+        "2026-08-30",
+        6941,
+        30,
+        41782
+      ],
+      [
+        "2026-08-31",
+        6195,
+        30,
+        31141
+      ],
+      [
+        "2026-09-01",
+        5411,
+        30,
+        29696
+      ],
+      [
+        "2026-09-02",
+        5961,
+        30,
+        46778
+      ]
+    ]
   }
 ];
 
 /** Latest day with traffic — the account's "today" for reports and flight status. */
-export const LATEST_DAY = "2026-08-12";
+export const LATEST_DAY = "2026-09-02";

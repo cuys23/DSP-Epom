@@ -14,6 +14,7 @@ import { DateRangePicker } from "@/components/DateRangePicker";
 import { CELL, SERIES, dayMetrics } from "@/lib/demo-data";
 import { CAMPAIGNS } from "@/lib/campaigns";
 import { audienceOfCampaign } from "@/lib/audiences";
+import { campaignMediaType, creativeTypeIcon } from "@/lib/creative-type";
 import {
   CREATIVE_DOT,
   DEFAULT_RANGE,
@@ -66,13 +67,14 @@ const VIEWS = new Map<string, CampaignView>(
   CAMPAIGNS.map((c) => {
     const s = STATS.get(c.id)!;
     const a = audienceOfCampaign(c.id)!;
+    const media = campaignMediaType(c.creatives);
     return [
       c.id,
       {
         id: c.id,
         name: c.name,
-        type: "Video",
-        typeIcon: "smart_display",
+        type: media,
+        typeIcon: creativeTypeIcon(media),
         basic: [
           { label: "Name:", value: c.name },
           { label: "Folder:", value: c.productLabel },

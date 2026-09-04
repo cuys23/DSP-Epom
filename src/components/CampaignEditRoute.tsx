@@ -4,6 +4,7 @@ import { useParams, useSearchParams } from "next/navigation";
 import { CampaignEditWizard } from "@/components/CampaignEditWizard";
 import { CampaignSettingsView } from "@/components/CampaignSettingsView";
 import { CAMPAIGNS } from "@/lib/campaigns";
+import { campaignMediaType } from "@/lib/creative-type";
 import type { CampaignBudget } from "@/lib/records";
 
 /**
@@ -28,6 +29,7 @@ export function CampaignEditRoute({
     <CampaignEditWizard
       id={campaign.id}
       name={campaign.name}
+      media={campaignMediaType(campaign.creatives)}
       step={step}
       budget={budget}
       budgetStatus={budgetStatus}
