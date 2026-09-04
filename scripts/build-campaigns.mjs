@@ -178,6 +178,38 @@ const PRODUCTS = {
   britbox: "BritBox",
 };
 
+/**
+ * The interest each product line buys, and the geo/OS the offer name carries.
+ * A campaign name is `<offer> · <geo> <os> · <interest> — <network>`: the account
+ * is segmented by geo and OS, so both belong in the name, and the interest says
+ * which audience the campaign is testing without opening it.
+ */
+const INTEREST = {
+  "slimkit-walking": "Walking",
+  "home-fitness": "Home Workouts",
+  britbox: "British TV",
+};
+
+/** `US_[IOS]…`, `UK/US/FR/DE_[IOS]…`, or a loose code as in "BritBox iOS AU CPE". */
+const geoOf = (raw) =>
+  raw.match(/^([A-Z]{2}(?:\/[A-Z]{2})*)_/)?.[1] ?? raw.match(/\b(AU|US|UK|JP|FR|DE|CA|GB)\b/)?.[1] ?? "US";
+
+const osOf = (raw) => (/\[ANDROID\]|\bandroid\b/i.test(raw) ? "Android" : "iOS");
+
+/**
+ * The offer name repeats what the name now has fields for: the network's offer id
+ * leads a couple of them ("240 Weight Loss"), platform/geo/pricing tags trail
+ * others ("BritBox iOS AU CPE"). Variant tags that tell two campaigns apart —
+ * (FRT), (PKL), (MonthlySub) — stay.
+ */
+const cleanLabel = (label, networkId) =>
+  label
+    .replace(new RegExp(`^${networkId}\\s+`), "")
+    .replace(/^\d+\s+/, "")
+    .replace(/\s*\((iOS|Android)\)$/i, "")
+    .replace(/\s+(iOS|Android)\s+[A-Z]{2}\s+(CPE|CPA|CPI|CPM|NCPA)$/i, "")
+    .trim();
+
 /** Each offer maps onto one of the approved creative sets. */
 const productOf = (label) =>
   /britbox/i.test(label) ? "britbox" : /home fitness/i.test(label) ? "home-fitness" : "slimkit-walking";
@@ -406,9 +438,11 @@ for (const offer of offers.sort((a, b) => a.offIdNet.localeCompare(b.offIdNet)))
   campaigns.push({
     id: stableId(offer.offIdNet),
     slug: slug(`${label}-${offer.offIdNet}`),
-    // Two networks run the same offer, so the network qualifies the campaign name
-    // the same way a buyer would label them in the UI.
-    name: `${label} — ${offer.network}`,
+    // Two networks run the same offer, so the network still qualifies the name the
+    // way a buyer would label them in the UI.
+    name: `${cleanLabel(label, offer.offIdNet)} · ${geoOf(rawName)} ${osOf(rawName)} · ${
+      INTEREST[product]
+    } — ${offer.network}`,
     offer: {
       id: offer.offId,
       networkId: offer.offIdNet,

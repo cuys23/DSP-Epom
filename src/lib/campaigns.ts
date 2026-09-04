@@ -83,7 +83,7 @@ export const CAMPAIGNS: Campaign[] = [
   {
     "id": "36090fe0-58ff-4e2e-affb-49395a6795a8",
     "slug": "weight-loss-walking-by-slimkit-112890",
-    "name": "Weight Loss Walking by Slimkit — RevoluteTech",
+    "name": "Weight Loss Walking by Slimkit · US iOS · Walking — RevoluteTech",
     "offer": {
       "id": "96220",
       "networkId": "112890",
@@ -362,7 +362,7 @@ export const CAMPAIGNS: Campaign[] = [
   {
     "id": "d2f8cb5e-f5cc-4723-a867-765202c544eb",
     "slug": "home-fitness-for-weight-loss-113067",
-    "name": "Home Fitness for Weight Loss — RevoluteTech",
+    "name": "Home Fitness for Weight Loss · US iOS · Home Workouts — RevoluteTech",
     "offer": {
       "id": "96235",
       "networkId": "113067",
@@ -676,7 +676,7 @@ export const CAMPAIGNS: Campaign[] = [
   {
     "id": "27deacc8-689f-472e-a257-e08a1c557822",
     "slug": "home-fitness-for-weight-loss-129",
-    "name": "Home Fitness for Weight Loss — Adeo_Affise",
+    "name": "Home Fitness for Weight Loss · US iOS · Home Workouts — Adeo_Affise",
     "offer": {
       "id": "95977",
       "networkId": "129",
@@ -863,7 +863,7 @@ export const CAMPAIGNS: Campaign[] = [
   {
     "id": "620f2292-04d8-4ac4-a6c7-37a55ed0d424",
     "slug": "240-weight-loss-frt-240",
-    "name": "240 Weight Loss (FRT) — Adeo_Affise",
+    "name": "Weight Loss (FRT) · US iOS · Walking — Adeo_Affise",
     "offer": {
       "id": "96092",
       "networkId": "240",
@@ -1255,7 +1255,7 @@ export const CAMPAIGNS: Campaign[] = [
   {
     "id": "0f89a783-67a1-484c-a801-cf161bcba1d3",
     "slug": "241-weight-loss-pkl-241",
-    "name": "241 Weight Loss (PKL) — Adeo_Affise",
+    "name": "Weight Loss (PKL) · US iOS · Walking — Adeo_Affise",
     "offer": {
       "id": "96093",
       "networkId": "241",
@@ -1639,7 +1639,7 @@ export const CAMPAIGNS: Campaign[] = [
   {
     "id": "8c58100b-90b4-4c34-a579-f0f728a188f0",
     "slug": "slimkit-weight-loss-28255",
-    "name": "Slimkit Weight Loss — OmegAds",
+    "name": "Slimkit Weight Loss · US iOS · Walking — OmegAds",
     "offer": {
       "id": "96219",
       "networkId": "28255",
@@ -1823,7 +1823,7 @@ export const CAMPAIGNS: Campaign[] = [
   {
     "id": "edb31f78-55da-49b0-a99f-397f51ce8c9d",
     "slug": "britbox-ios-au-cpe-36672461",
-    "name": "BritBox iOS AU CPE — Direct",
+    "name": "BritBox · AU iOS · British TV — Direct",
     "offer": {
       "id": "36672461",
       "networkId": "36672461",
@@ -1976,7 +1976,7 @@ export const CAMPAIGNS: Campaign[] = [
   {
     "id": "9580d195-8715-4e93-a6dd-9e8e62709ed2",
     "slug": "weightloss-8",
-    "name": "WeightLoss — Adeo_Affise",
+    "name": "WeightLoss · US iOS · Walking — Adeo_Affise",
     "offer": {
       "id": "95908",
       "networkId": "8",
@@ -2117,7 +2117,7 @@ export const CAMPAIGNS: Campaign[] = [
   {
     "id": "8f47385a-d055-441c-8bb3-06b70176996f",
     "slug": "kyash-ios-jp-97001",
-    "name": "Kyash — Adeo_Affise",
+    "name": "Kyash · JP iOS · Cashless Pay — Adeo_Affise",
     "offer": {
       "id": "97001",
       "networkId": "97001",
@@ -2254,7 +2254,7 @@ export const CAMPAIGNS: Campaign[] = [
   {
     "id": "33959c51-cb4b-436e-ba08-37976db93476",
     "slug": "katch-pro-ios-us-97002",
-    "name": "Katch Pro — Adeo_Affise",
+    "name": "Katch Pro · US iOS · Photo Editing — Adeo_Affise",
     "offer": {
       "id": "97002",
       "networkId": "97002",
@@ -2391,7 +2391,7 @@ export const CAMPAIGNS: Campaign[] = [
   {
     "id": "785ae73b-35d1-40c2-9e3a-b1245be37055",
     "slug": "zoombo-ios-multi-97003",
-    "name": "Zoombo — OmegAds",
+    "name": "Zoombo · UK/US/FR/DE iOS · Casual Gaming — OmegAds",
     "offer": {
       "id": "97003",
       "networkId": "97003",
@@ -2533,7 +2533,7 @@ export const CAMPAIGNS: Campaign[] = [
   {
     "id": "df185eed-ee02-45fc-887d-dcb3932b78a5",
     "slug": "purevpn-ios-uk-monthlysub-97004",
-    "name": "PureVPN (MonthlySub) — RevoluteTech",
+    "name": "PureVPN (MonthlySub) · UK iOS · Privacy — RevoluteTech",
     "offer": {
       "id": "97004",
       "networkId": "97004",
@@ -2655,7 +2655,7 @@ export const CAMPAIGNS: Campaign[] = [
   {
     "id": "bbff96c3-7d2e-4da9-9323-ff202f4b264d",
     "slug": "playful-rewards-ios-us-97005",
-    "name": "Playful Rewards — Direct",
+    "name": "Playful Rewards · US iOS · Rewards — Direct",
     "offer": {
       "id": "97005",
       "networkId": "97005",
@@ -2802,7 +2802,7 @@ export const CAMPAIGNS: Campaign[] = [
   {
     "id": "4ce90df5-35c4-465d-9b2a-877fae3216ac",
     "slug": "playful-rewards-android-us-97006",
-    "name": "Playful Rewards (Android) — Direct",
+    "name": "Playful Rewards · US Android · Rewards — Direct",
     "offer": {
       "id": "97006",
       "networkId": "97006",
@@ -2949,7 +2949,7 @@ export const CAMPAIGNS: Campaign[] = [
   {
     "id": "dcbbb6ec-519a-4209-9466-9d27504cd56f",
     "slug": "purevpn-ios-us-adj-97007",
-    "name": "PureVPN (ADJ) — Adeo_Affise",
+    "name": "PureVPN (ADJ) · US iOS · Privacy — Adeo_Affise",
     "offer": {
       "id": "97007",
       "networkId": "97007",
@@ -3066,7 +3066,7 @@ export const CAMPAIGNS: Campaign[] = [
   {
     "id": "72b948bd-c9df-4907-a10e-f40f37f77714",
     "slug": "clear-vpn-59986",
-    "name": "Clear VPN — Adflurry",
+    "name": "Clear VPN · US iOS · Streaming — Adflurry",
     "offer": {
       "id": "790410",
       "networkId": "59986",
@@ -3227,7 +3227,7 @@ export const CAMPAIGNS: Campaign[] = [
   {
     "id": "00b9ea1f-c948-4784-a517-26219b4b1c46",
     "slug": "veepn-1246703610",
-    "name": "VeePN — Direct",
+    "name": "VeePN · US iOS · Privacy — Direct",
     "offer": {
       "id": "1246703610",
       "networkId": "1246703610",
@@ -3516,7 +3516,7 @@ export const CAMPAIGNS: Campaign[] = [
   {
     "id": "038e638b-b9ba-4503-ae22-02bad9eafed8",
     "slug": "widilo-2087",
-    "name": "Widilo — AdsAndMore",
+    "name": "Widilo · FR iOS · Cashback — AdsAndMore",
     "offer": {
       "id": "96396",
       "networkId": "2087",
