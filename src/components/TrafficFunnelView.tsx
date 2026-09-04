@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { AppShell } from "@/components/AppShell";
 import { MaterialIcon } from "@/components/MaterialIcon";
@@ -38,12 +39,27 @@ const COUNTRIES = ["United States"];
 const DEVICE_TYPES = ["Mobile"];
 
 export function TrafficFunnelView() {
+  /**
+   * A campaign's Audience card links straight here, so arriving with its id means
+   * the buyer has already made both required choices — the page opens on that
+   * campaign's funnel rather than on an empty form asking for them again.
+   */
+  const linkedId = useSearchParams().get("campaign_id");
+  const linked = CAMPAIGNS.find((c) => c.id === linkedId);
+  const linkedAudience = linked && audienceOfCampaign(linked.id)?.name;
+
   // Campaign and Audience are on screen from the start; the rest are added.
   const [shown, setShown] = useState(REQUIRED);
-  const [values, setValues] = useState<Record<string, string>>({ Campaign: CAMPAIGNS[0].name });
-  const [gathering, setGathering] = useState(false);
+  const [values, setValues] = useState<Record<string, string>>(
+    linked && linkedAudience
+      ? { Campaign: linked.name, Audience: linkedAudience }
+      : { Campaign: CAMPAIGNS[0].name },
+  );
+  const [gathering, setGathering] = useState(Boolean(linked && linkedAudience));
   /** Campaign the funnel on screen was gathered for, or null before Apply. */
-  const [report, setReport] = useState<string | null>(null);
+  const [report, setReport] = useState<string | null>(
+    linked && linkedAudience ? linked.id : null,
+  );
   const [open, setOpen] = useState<string | null>(null);
   // The app-level warning only fires while the account cannot fund a bid.
   const [notice, setNotice] = useState(BALANCE_TOO_LOW);
