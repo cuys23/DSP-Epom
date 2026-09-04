@@ -87,37 +87,17 @@ export function Sidebar({ collapsed, onToggle, activeHref }: SidebarProps) {
         </ul>
       </nav>
 
-      {/* Footer — version + legal links */}
+      {/* Footer — the version line. The live sidebar also carries Privacy Policy
+          and Terms links, painted the brand navy on the navy sidebar and laid out
+          overlapping below the fold, so nobody ever sees them; they are left out
+          rather than reproduced as a footer the live account cannot read either. */}
       <div
         className={cn(
-          "shrink-0 transition-opacity duration-[120ms] ease-linear",
+          "shrink-0 p-1 text-center text-[10px] leading-[14.2857px] text-epom-version transition-opacity duration-[120ms] ease-linear",
           collapsed && "pointer-events-none opacity-0",
         )}
       >
-        <div className="p-1 text-center text-[10px] leading-[14.2857px] text-epom-version">
-          Version 8.2 Epom Ltd. © 2026
-        </div>
-        {/*
-          The live site colours these with the brand's primary — the same navy the
-          sidebar is painted with — and lays them out overlapping below the fold,
-          so they are invisible there. They read as the sidebar's own text instead,
-          stacked — side by side the pair is 252px wide and the sidebar is 240 —
-          rather than reproducing a footer nobody can see.
-        */}
-        <div className="flex flex-col items-center gap-1 whitespace-nowrap p-1 text-[14px] font-semibold leading-5">
-          <a
-            href="/privacy-policy"
-            className="text-epom-nav-idle underline transition-colors duration-[120ms] ease-linear hover:text-white"
-          >
-            Privacy Policy
-          </a>
-          <a
-            href="/terms-and-conditions"
-            className="text-epom-nav-idle underline transition-colors duration-[120ms] ease-linear hover:text-white"
-          >
-            Terms and Conditions
-          </a>
-        </div>
+        Version 8.2 Epom Ltd. © 2026
       </div>
     </aside>
   );
