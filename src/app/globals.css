@@ -29,16 +29,17 @@
    * `--themePrimButtonsBg-*` / `--themeNavActiveBg-*` / `--themeSidebarBg-*`;
    * everything under them is the fixed neutral/status palette.
    */
-  --color-epom-primary: #38ce9f;
-  --color-epom-primary-hover: #50d4ab;
-  --color-epom-primary-8: rgba(56, 206, 159, 0.08);
-  --color-epom-primary-12: rgba(56, 206, 159, 0.12);
-  --color-epom-primary-16: rgba(56, 206, 159, 0.16);
+  --color-epom-primary: #060028;
+  --color-epom-primary-hover: #241f42;
+  --color-epom-primary-8: rgba(6, 0, 40, 0.08);
+  --color-epom-primary-12: rgba(6, 0, 40, 0.12);
+  --color-epom-primary-16: rgba(6, 0, 40, 0.16);
 
-  --color-epom-sidebar: #23323f;
-  --color-epom-nav-active: #df8d35;
-  --color-epom-nav-hover: rgba(223, 141, 53, 0.08);
-  --color-epom-nav-idle: #8e969c;
+  --color-epom-sidebar: #060028;
+  --color-epom-nav-active: #56be87;
+  /* Idle rows lift on a white wash, not a tint of the active colour. */
+  --color-epom-nav-hover: rgba(255, 255, 255, 0.05);
+  --color-epom-nav-idle: #d8dded;
   --color-epom-nav-toggle: #a9abb4;
   --color-epom-version: #d3d1d5;
 
