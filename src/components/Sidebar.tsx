@@ -94,13 +94,13 @@ export function Sidebar({ collapsed, onToggle, activeHref }: SidebarProps) {
         </ul>
       </nav>
 
-      {/* Footer — the version line. The live sidebar also carries Privacy Policy
-          and Terms links, painted the brand navy on the navy sidebar and laid out
-          overlapping below the fold, so nobody ever sees them; they are left out
-          rather than reproduced as a footer the live account cannot read either. */}
+      {/* Footer — the version line, sitting 20px off the bottom the way the live one
+          does. The live sidebar fills that 20px with Privacy Policy and Terms links
+          painted the brand navy on the navy it is painted with, laid out overlapping,
+          so nobody ever sees them; the space is kept, the unreadable footer is not. */}
       <div
         className={cn(
-          "shrink-0 p-1 text-center text-[10px] leading-[14.2857px] text-epom-version transition-opacity duration-[120ms] ease-linear",
+          "mb-5 shrink-0 p-1 text-center text-[10px] leading-[14.2857px] text-epom-version transition-opacity duration-[120ms] ease-linear",
           collapsed && "pointer-events-none opacity-0",
         )}
       >
