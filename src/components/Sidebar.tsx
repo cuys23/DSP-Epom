@@ -1,12 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { MaterialIcon } from "@/components/MaterialIcon";
 import { NAV_ITEMS } from "@/lib/nav-data";
 import type { NavItem } from "@/types/nav";
+
+/**
+ * The live nav rules its admin group — the `/manager/` pages — off from the rest
+ * with a full-width hairline, 8px of air either side of it.
+ */
+const ADMIN_FROM = NAV_ITEMS.findIndex((i) => i.href.startsWith("/manager/"));
 
 interface SidebarProps {
   collapsed: boolean;
@@ -72,17 +78,18 @@ export function Sidebar({ collapsed, onToggle, activeHref }: SidebarProps) {
           collapsed ? "epom-scrollbar-hidden" : "epom-scrollbar",
         )}
       >
-        {/* The nav list stops 14px short of the sidebar edge, as on the live site. */}
-        <ul className={cn(!collapsed && "w-[226px]")}>
-          {NAV_ITEMS.map((item) => (
-            <SidebarItem
-              key={item.label}
-              item={item}
-              collapsed={collapsed}
-              activeHref={activeHref}
-              expanded={expanded.includes(item.label)}
-              onToggleSubmenu={() => toggleSubmenu(item.label)}
-            />
+        <ul>
+          {NAV_ITEMS.map((item, i) => (
+            <Fragment key={item.label}>
+              {i === ADMIN_FROM && <li className="my-2 h-px bg-epom-nav-idle" />}
+              <SidebarItem
+                item={item}
+                collapsed={collapsed}
+                activeHref={activeHref}
+                expanded={expanded.includes(item.label)}
+                onToggleSubmenu={() => toggleSubmenu(item.label)}
+              />
+            </Fragment>
           ))}
         </ul>
       </nav>
