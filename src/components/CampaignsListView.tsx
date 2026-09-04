@@ -15,6 +15,7 @@ import { SortLabel, type Sort } from "@/components/SortLabel";
 import { CAMPAIGNS as SOURCE_CAMPAIGNS } from "@/lib/campaigns";
 import { CREATIVE_DOT, STATS, type CreativeStatus } from "@/lib/campaign-stats";
 import { CreativePreview } from "@/components/CreativePreview";
+import { campaignMediaType, creativeTypeIcon } from "@/lib/creative-type";
 
 interface Creative {
   name: string;
@@ -72,14 +73,15 @@ const CAMPAIGNS: Campaign[] = [
     })
     .map((c): Campaign => {
       const s = STATS.get(c.id)!;
+      const media = campaignMediaType(c.creatives);
       return {
         id: c.id,
         name: c.name,
         folder: c.productLabel,
         // Every campaign is past the end of its flight, so all are switched off.
         on: false,
-        mediaType: "Video",
-        mediaIcon: "smart_display",
+        mediaType: media,
+        mediaIcon: creativeTypeIcon(media),
         pricing: "CPM",
         budget: {
           lines: [`$${s.spendLimit} per day`, `${int(s.impressionLimit)} Impressions per day`],

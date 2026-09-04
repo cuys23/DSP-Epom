@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { MaterialIcon } from "@/components/MaterialIcon";
 import { Toggle } from "@/components/CampaignSettingsView";
+import { creativeTypeIcon } from "@/lib/creative-type";
 
 /** `.text-md.text-semi-bold` — a top-level section heading. */
 function SectionHeading({ children }: { children: React.ReactNode }) {
@@ -62,7 +63,7 @@ function Divider() {
  * `CampaignSummaryRail` (270px) and it carries the campaign's real configuration
  * rather than "not configured" placeholders.
  */
-export function CampaignEditSummaryRail({ name }: { name: string }) {
+export function CampaignEditSummaryRail({ name, media }: { name: string; media: string }) {
   const [live, setLive] = useState(false);
 
   return (
@@ -91,10 +92,10 @@ export function CampaignEditSummaryRail({ name }: { name: string }) {
           <SubHeading>Ad Format</SubHeading>
           <div className="mt-3 flex items-center">
             <MaterialIcon
-              name="smart_display"
+              name={creativeTypeIcon(media)}
               className="mr-2 block text-[16px] leading-4 text-epom-text"
             />
-            <Value>Video</Value>
+            <Value>{media}</Value>
           </div>
         </section>
 
