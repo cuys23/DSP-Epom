@@ -38,7 +38,12 @@ interface CampaignView {
   typeIcon: string;
   basic: Info[];
   bidPrice: Info[];
-  audience: { name: string; id: string };
+  audience: {
+    name: string;
+    id: string;
+    /** Sub-heading → the rows under it, each an "Included" list. */
+    targeting: { heading: string; rows: { label: string; values: string[]; included?: boolean }[] }[];
+  };
   budget: {
     status: string;
     tone: "success" | "cancelled";
@@ -81,10 +86,32 @@ const VIEWS = new Map<string, CampaignView>(
         ],
         bidPrice: [
           { label: "Pricing Model:", value: "CPM" },
-          { label: "Default Price:", value: `${c.defaultPrice}$` },
+          // The live card prints the bare number here; the "0.025$" spelling is the
+          // campaigns list's, not this one's.
+          { label: "Default Price:", value: String(c.defaultPrice) },
         ],
         // The real audience from the roster, so the link lands on the page it names.
-        audience: { name: a.name, id: a.id },
+        audience: {
+          name: a.name,
+          id: a.id,
+          // The live card prints the audience's own dimensions rather than its
+          // name, and drops a row the audience left empty.
+          targeting: [
+            {
+              heading: "Device",
+              rows: [
+                { label: "Device Type:", values: a.deviceTypes, included: true },
+                { label: "Connection Type:", values: a.connectionTypes, included: true },
+              ].filter((r) => r.values.length),
+            },
+            {
+              heading: "Stores",
+              // The live card leaves the store row without the Included dot the
+              // device rows carry.
+              rows: [{ label: "Stores:", values: a.storeCategories }],
+            },
+          ].filter((g) => g.rows.length),
+        },
         budget: {
           status: s.status,
           tone: "cancelled",
@@ -126,7 +153,6 @@ export function CampaignSettingsView() {
   /** Creative ids the user has switched off / archived on this page. */
   const [creativesOff, setCreativesOff] = useState<string[]>([]);
   const [archived, setArchived] = useState<string[]>([]);
-  const [audience, setAudience] = useState<string | undefined>(undefined);
   const [metric, setMetric] = useState("Impressions");
   const [range, setRange] = useState(DEFAULT_RANGE);
   const [open, setOpen] = useState<string | null>(null);
@@ -180,13 +206,6 @@ export function CampaignSettingsView() {
         </div>
 
         <div className="mt-4 flex items-center gap-11 rounded bg-epom-surface px-6 py-4">
-          <div className="flex gap-2 text-[12px] leading-[18px] text-epom-muted">
-            Type:
-            <span className="flex font-semibold capitalize text-epom-text">
-              <MaterialIcon name={CAMPAIGN.typeIcon} className="mr-1 block text-[18px] leading-[18px]" />
-              {CAMPAIGN.type}
-            </span>
-          </div>
           <div className="flex items-center gap-2">
             <span className="text-[12px] font-normal leading-[18px] text-epom-muted">Status:</span>
             <Toggle on={on} onToggle={() => setOn((v) => !v)} />
@@ -197,71 +216,68 @@ export function CampaignSettingsView() {
         <div className="mt-4 flex flex-col justify-between gap-4 min-[1400px]:flex-row">
           <div className="flex flex-1 flex-col">
             <Box>
-              <BoxHeading step="basic" campaignId={CAMPAIGN.id}>Basic info</BoxHeading>
+              <BoxHeading step="basic" campaignId={CAMPAIGN.id}>General</BoxHeading>
               <h4 className="mb-4 text-[14px] font-bold leading-[21px] text-epom-text">
-                Basic settings
+                Basic Info
               </h4>
               {CAMPAIGN.basic.map((o) => (
                 <Info key={o.label} {...o} />
               ))}
               <h4 className="mb-4 mt-8 text-[14px] font-bold leading-[21px] text-epom-text">
-                Bid Price
+                Ad Format
               </h4>
-              {CAMPAIGN.bidPrice.map((o) => (
-                <Info key={o.label} {...o} />
-              ))}
+              <div className="flex items-center text-[14px] leading-[21px] text-epom-text">
+                <MaterialIcon
+                  name={CAMPAIGN.typeIcon}
+                  className="mr-2 block text-[16px] leading-4"
+                />
+                {CAMPAIGN.type}
+              </div>
             </Box>
 
             <Box className="mt-4">
               <BoxHeading spaced={false} step="audience" campaignId={CAMPAIGN.id}>Audience</BoxHeading>
-              <div className="mt-4">
-                <a
-                  href={`/audience/edit/${CAMPAIGN.audience.id}`}
-                  className="mb-1 inline-block text-[14px] font-semibold leading-[21px] text-epom-primary underline hover:text-epom-primary-hover"
-                >
-                  {CAMPAIGN.audience.name}
-                </a>
-              </div>
-
-              <div className="mt-6">
-                <h3 className="mb-6 text-[16px] font-bold leading-6 text-epom-text">
-                  Check audience traffic funnel
-                </h3>
-                <div className="flex items-end gap-2">
-                  <div className="min-w-[200px] flex-1">
-                    <label className="mb-1 block text-[12px] font-semibold leading-[18px] text-epom-muted">
-                      Audience
-                    </label>
-                    <FilterSelect
-                      label=""
-                      value={audience ?? "Select Audience"}
-                      options={[CAMPAIGN.audience.name]}
-                      className="w-full"
-                      open={open === "audience"}
-                      onToggle={() => setOpen(open === "audience" ? null : "audience")}
-                      onPick={(o) => {
-                        setAudience(o);
-                        setOpen(null);
-                      }}
-                    />
-                  </div>
-                  <a
-                    href={`/traffic-funnel?campaign_id=${CAMPAIGN.id}`}
-                    className={cn("shrink-0", !audience && "pointer-events-none")}
-                  >
-                    <button
-                      type="button"
-                      disabled={!audience}
-                      className={cn(
-                        BTN_OUTLINED,
-                        "disabled:cursor-not-allowed disabled:border-epom-border disabled:text-epom-border",
-                      )}
-                    >
-                      Open Traffic Funnel
-                    </button>
-                  </a>
+              {CAMPAIGN.audience.targeting.map((group) => (
+                <div key={group.heading} className="mt-6">
+                  <h4 className="text-[12px] font-semibold leading-[18px] text-epom-text">
+                    {group.heading}
+                  </h4>
+                  {group.rows.map((row) => (
+                    <div key={row.label} className="mt-2">
+                      <div className="text-[12px] leading-[18px] text-epom-muted">{row.label}</div>
+                      <div className="mt-2 flex flex-wrap items-center gap-2">
+                        {row.included && <StatusDot label="Included" tone="success" />}
+                        <span className="text-[12px] leading-[18px] text-epom-text">
+                          {row.values.join("; ")}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              </div>
+              ))}
+
+              <a href={`/traffic-funnel?campaign_id=${CAMPAIGN.id}`} className="mt-6 inline-block">
+                <button type="button" className={cn(BTN_OUTLINED, "flex items-center gap-2")}>
+                  Open Traffic Funnel
+                  <MaterialIcon name="open_in_new" className="block text-[16px] leading-4" />
+                </button>
+              </a>
+            </Box>
+
+            <Box className="mt-4">
+              <BoxHeading spaced={false} step="pricingOptimization" campaignId={CAMPAIGN.id}>
+                Price &amp; Optimization
+              </BoxHeading>
+              <h4 className="mb-4 mt-4 text-[14px] font-bold leading-[21px] text-epom-text">
+                Pricing
+              </h4>
+              {CAMPAIGN.bidPrice.map((o) => (
+                <Info key={o.label} {...o} />
+              ))}
+              <h4 className="mb-3 mt-8 text-[14px] font-bold leading-[21px] text-epom-text">
+                Risk tolerance level
+              </h4>
+              <Info label="Risk tolerance level:" value={CAMPAIGN.riskTolerance} />
             </Box>
 
             <Box className="mt-4">
@@ -293,32 +309,11 @@ export function CampaignSettingsView() {
             </Box>
 
             <Box className="mt-4">
-              <BoxHeading spaced={false} step="pricingOptimization" campaignId={CAMPAIGN.id}>Bidding Strategy</BoxHeading>
-              <div className="text-[12px] leading-[18px] text-epom-muted">
-                Bidding strategy is not configured.
-              </div>
-            </Box>
-
-            <Box className="mt-4">
               <BoxHeading spaced={false} step="trafficSources" campaignId={CAMPAIGN.id}>Traffic source</BoxHeading>
               <div className="mt-2">
                 <StatusDot label="Included" tone="success" />
                 <div className="mt-2 text-[14px] leading-[21px] text-epom-text">
                   {CAMPAIGN.trafficSource}
-                </div>
-              </div>
-            </Box>
-
-            <Box className="mt-4">
-              <BoxHeading spaced={false} step="pricingOptimization" campaignId={CAMPAIGN.id}>Optimizations</BoxHeading>
-              <div className="mt-4 flex flex-col gap-8">
-                <div>
-                  <h4 className="mb-3 text-[14px] font-bold leading-[21px] text-epom-text">
-                    Risk tolerance level
-                  </h4>
-                  <div className="flex flex-col gap-3">
-                    <Info label="Risk tolerance level:" value={CAMPAIGN.riskTolerance} />
-                  </div>
                 </div>
               </div>
             </Box>
