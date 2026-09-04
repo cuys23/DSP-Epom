@@ -44,6 +44,10 @@ export const DEFAULT_FOLDERS: Folder[] = [
   {
     "id": "veepn",
     "name": "VeePN"
+  },
+  {
+    "id": "widilo",
+    "name": "Widilo"
   }
 ];
 
@@ -1157,5 +1161,75 @@ export const INITIAL_ASSETS: CreativeAsset[] = [
     "fileSizeKb": 142,
     "type": "PNG",
     "createdAt": "2026-07-15"
+  },
+  {
+    "id": "asset-113",
+    "name": "widilo 1.jpeg",
+    "folderId": "widilo",
+    "previewUrl": "/creatives/widilo/1_1-1EVt3b.jpeg",
+    "dimensions": "1200x896",
+    "fileSizeKb": 158,
+    "type": "JPG",
+    "createdAt": "2026-07-24"
+  },
+  {
+    "id": "asset-114",
+    "name": "widilo 2.jpeg",
+    "folderId": "widilo",
+    "previewUrl": "/creatives/widilo/1_1-1EoOVS.jpeg",
+    "dimensions": "1080x895",
+    "fileSizeKb": 199,
+    "type": "JPG",
+    "createdAt": "2026-07-24"
+  },
+  {
+    "id": "asset-115",
+    "name": "widilo 3.jpeg",
+    "folderId": "widilo",
+    "previewUrl": "/creatives/widilo/1_1-1KGKw2.jpeg",
+    "dimensions": "1020x895",
+    "fileSizeKb": 239,
+    "type": "JPG",
+    "createdAt": "2026-07-24"
+  },
+  {
+    "id": "asset-116",
+    "name": "widilo 4.jpeg",
+    "folderId": "widilo",
+    "previewUrl": "/creatives/widilo/1_1-1QZwe1.jpeg",
+    "dimensions": "898x895",
+    "fileSizeKb": 225,
+    "type": "JPG",
+    "createdAt": "2026-07-24"
+  },
+  {
+    "id": "asset-117",
+    "name": "widilo 5.jpeg",
+    "folderId": "widilo",
+    "previewUrl": "/creatives/widilo/1_1-1WFJcz.jpeg",
+    "dimensions": "896x895",
+    "fileSizeKb": 172,
+    "type": "JPG",
+    "createdAt": "2026-07-24"
+  },
+  {
+    "id": "asset-118",
+    "name": "widilo 6.jpeg",
+    "folderId": "widilo",
+    "previewUrl": "/creatives/widilo/1_1-1jV8ZU.jpeg",
+    "dimensions": "1200x896",
+    "fileSizeKb": 174,
+    "type": "JPG",
+    "createdAt": "2026-07-24"
+  },
+  {
+    "id": "asset-119",
+    "name": "widilo 7.jpeg",
+    "folderId": "widilo",
+    "previewUrl": "/creatives/widilo/1_1-1rHK0l.jpeg",
+    "dimensions": "670x893",
+    "fileSizeKb": 135,
+    "type": "JPG",
+    "createdAt": "2026-07-24"
   }
 ];
