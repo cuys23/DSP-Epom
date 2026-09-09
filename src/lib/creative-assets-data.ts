@@ -1164,82 +1164,132 @@ export const INITIAL_ASSETS: CreativeAsset[] = [
   },
   {
     "id": "asset-113",
-    "name": "widilo cashback-hero v1.jpeg",
+    "name": "widilo banner 1200x627 v1.jpg",
     "folderId": "widilo",
-    "previewUrl": "/creatives/widilo/1_1-1EVt3b.jpeg",
-    "dimensions": "1200x896",
-    "fileSizeKb": 158,
+    "previewUrl": "/creatives/widilo/1200x627_v1.jpg",
+    "dimensions": "1200x627",
+    "fileSizeKb": 238,
     "type": "JPG",
-    "createdAt": "2026-07-24"
+    "createdAt": "2026-09-09"
   },
   {
     "id": "asset-114",
-    "name": "widilo coupon-stack v1.jpeg",
+    "name": "widilo banner 960x640 v1.jpg",
     "folderId": "widilo",
-    "previewUrl": "/creatives/widilo/1_1-1EoOVS.jpeg",
-    "dimensions": "1080x895",
-    "fileSizeKb": 199,
+    "previewUrl": "/creatives/widilo/960x640_v1.jpg",
+    "dimensions": "960x640",
+    "fileSizeKb": 206,
     "type": "JPG",
-    "createdAt": "2026-07-24"
+    "createdAt": "2026-09-09"
   },
   {
     "id": "asset-115",
-    "name": "widilo grocery-savings v1.jpeg",
+    "name": "widilo banner 640x960 v1.jpg",
     "folderId": "widilo",
-    "previewUrl": "/creatives/widilo/1_1-1KGKw2.jpeg",
-    "dimensions": "1020x895",
-    "fileSizeKb": 239,
+    "previewUrl": "/creatives/widilo/640x960_v1.jpg",
+    "dimensions": "640x960",
+    "fileSizeKb": 203,
     "type": "JPG",
-    "createdAt": "2026-07-24"
+    "createdAt": "2026-09-09"
   },
   {
     "id": "asset-116",
-    "name": "widilo student-budget v1.jpeg",
+    "name": "widilo banner 600x500 v1.jpg",
     "folderId": "widilo",
-    "previewUrl": "/creatives/widilo/1_1-1QZwe1.jpeg",
-    "dimensions": "898x895",
-    "fileSizeKb": 225,
+    "previewUrl": "/creatives/widilo/600x500_v1.jpg",
+    "dimensions": "600x500",
+    "fileSizeKb": 134,
     "type": "JPG",
-    "createdAt": "2026-07-24"
+    "createdAt": "2026-09-09"
   },
   {
     "id": "asset-117",
-    "name": "widilo refund-proof v1.jpeg",
+    "name": "widilo banner 640x100 v1.jpg",
     "folderId": "widilo",
-    "previewUrl": "/creatives/widilo/1_1-1WFJcz.jpeg",
-    "dimensions": "896x895",
-    "fileSizeKb": 172,
+    "previewUrl": "/creatives/widilo/640x100_v1.jpg",
+    "dimensions": "640x100",
+    "fileSizeKb": 42,
     "type": "JPG",
-    "createdAt": "2026-07-24"
+    "createdAt": "2026-09-09"
   },
   {
     "id": "asset-118",
-    "name": "widilo price-drop v1.jpeg",
+    "name": "widilo banner 1200x627 v2.jpg",
     "folderId": "widilo",
-    "previewUrl": "/creatives/widilo/1_1-1jV8ZU.jpeg",
-    "dimensions": "1200x896",
-    "fileSizeKb": 174,
+    "previewUrl": "/creatives/widilo/1200x627_v2.jpg",
+    "dimensions": "1200x627",
+    "fileSizeKb": 249,
     "type": "JPG",
-    "createdAt": "2026-07-24"
+    "createdAt": "2026-09-09"
   },
   {
     "id": "asset-119",
-    "name": "widilo black-friday v1.jpeg",
+    "name": "widilo banner 960x640 v2.jpg",
     "folderId": "widilo",
-    "previewUrl": "/creatives/widilo/1_1-1rHK0l.jpeg",
-    "dimensions": "670x893",
-    "fileSizeKb": 135,
+    "previewUrl": "/creatives/widilo/960x640_v2.jpg",
+    "dimensions": "960x640",
+    "fileSizeKb": 216,
     "type": "JPG",
-    "createdAt": "2026-07-24"
+    "createdAt": "2026-09-09"
   },
   {
     "id": "asset-120",
-    "name": "widilo how-it-works v1.mp4",
+    "name": "widilo banner 640x960 v2.jpg",
     "folderId": "widilo",
-    "previewUrl": "/creatives/widilo/1_1-41e2c8.mp4",
-    "dimensions": "608x496",
-    "fileSizeKb": 1098,
+    "previewUrl": "/creatives/widilo/640x960_v2.jpg",
+    "dimensions": "640x960",
+    "fileSizeKb": 216,
+    "type": "JPG",
+    "createdAt": "2026-09-09"
+  },
+  {
+    "id": "asset-121",
+    "name": "widilo banner 600x500 v2.jpg",
+    "folderId": "widilo",
+    "previewUrl": "/creatives/widilo/600x500_v2.jpg",
+    "dimensions": "600x500",
+    "fileSizeKb": 151,
+    "type": "JPG",
+    "createdAt": "2026-09-09"
+  },
+  {
+    "id": "asset-122",
+    "name": "widilo banner 640x100 v2.jpg",
+    "folderId": "widilo",
+    "previewUrl": "/creatives/widilo/640x100_v2.jpg",
+    "dimensions": "640x100",
+    "fileSizeKb": 43,
+    "type": "JPG",
+    "createdAt": "2026-09-09"
+  },
+  {
+    "id": "asset-123",
+    "name": "widilo reflexe-quotidien v1.mp4",
+    "folderId": "widilo",
+    "previewUrl": "/creatives/widilo/reflexe-quotidien.mp4",
+    "dimensions": "720x1280",
+    "fileSizeKb": 2954,
     "type": "MP4",
-    "createdAt": "2026-09-04"
+    "createdAt": "2026-09-09"
+  },
+  {
+    "id": "asset-124",
+    "name": "widilo petit-plaisir v1.mp4",
+    "folderId": "widilo",
+    "previewUrl": "/creatives/widilo/petit-plaisir.mp4",
+    "dimensions": "720x1280",
+    "fileSizeKb": 3972,
+    "type": "MP4",
+    "createdAt": "2026-09-09"
+  },
+  {
+    "id": "asset-125",
+    "name": "widilo pouvoir-dachat v1.mp4",
+    "folderId": "widilo",
+    "previewUrl": "/creatives/widilo/pouvoir-dachat.mp4",
+    "dimensions": "720x1280",
+    "fileSizeKb": 2887,
+    "type": "MP4",
+    "createdAt": "2026-09-09"
   }
 ];

@@ -3535,67 +3535,107 @@ export const CAMPAIGNS: Campaign[] = [
     "to": "2026-09-02",
     "creatives": [
       {
-        "id": "df21895e-4016-4a74-a295-e3e5fb7ff30e",
-        "name": "widilo cashback-hero v1.jpeg",
-        "src": "/creatives/widilo/1_1-1EVt3b.jpeg",
+        "id": "036b5540-6f77-4a66-bdea-e41d3b9b6f46",
+        "name": "widilo banner 1200x627 v1.jpg",
+        "src": "/creatives/widilo/1200x627_v1.jpg",
         "video": false,
-        "size": "1200x896",
+        "size": "1200x627",
         "price": "$0.029"
       },
       {
-        "id": "fa6cf549-a251-475c-a170-1a50acaa7b6e",
-        "name": "widilo coupon-stack v1.jpeg",
-        "src": "/creatives/widilo/1_1-1EoOVS.jpeg",
+        "id": "0ada29ea-e453-4b7a-a980-c947b30c8c87",
+        "name": "widilo banner 960x640 v1.jpg",
+        "src": "/creatives/widilo/960x640_v1.jpg",
         "video": false,
-        "size": "1080x895",
+        "size": "960x640",
         "price": "$0.029"
       },
       {
-        "id": "bbcb90fa-24bb-402d-a935-c0fc863b64b3",
-        "name": "widilo grocery-savings v1.jpeg",
-        "src": "/creatives/widilo/1_1-1KGKw2.jpeg",
+        "id": "2fd824f7-0f51-459a-a0ce-2c5bb4c3b666",
+        "name": "widilo banner 640x960 v1.jpg",
+        "src": "/creatives/widilo/640x960_v1.jpg",
         "video": false,
-        "size": "1020x895",
+        "size": "640x960",
         "price": "$0.029"
       },
       {
-        "id": "bd5138c4-dd81-4a8f-acc8-207f21ead0a0",
-        "name": "widilo student-budget v1.jpeg",
-        "src": "/creatives/widilo/1_1-1QZwe1.jpeg",
+        "id": "e4c23a56-089a-4623-88d3-6245ce568665",
+        "name": "widilo banner 600x500 v1.jpg",
+        "src": "/creatives/widilo/600x500_v1.jpg",
         "video": false,
-        "size": "898x895",
+        "size": "600x500",
         "price": "$0.029"
       },
       {
-        "id": "2dd10d65-d508-46b5-a811-8a44709b6f9d",
-        "name": "widilo refund-proof v1.jpeg",
-        "src": "/creatives/widilo/1_1-1WFJcz.jpeg",
+        "id": "ac9dcffa-f3de-49d3-acb6-e743335c7fb0",
+        "name": "widilo banner 640x100 v1.jpg",
+        "src": "/creatives/widilo/640x100_v1.jpg",
         "video": false,
-        "size": "896x895",
+        "size": "640x100",
         "price": "$0.029"
       },
       {
-        "id": "69863a6c-8b5b-420a-a360-d7acbb360d94",
-        "name": "widilo price-drop v1.jpeg",
-        "src": "/creatives/widilo/1_1-1jV8ZU.jpeg",
+        "id": "de8a9542-1692-48f5-8c82-4ffc386f399a",
+        "name": "widilo banner 1200x627 v2.jpg",
+        "src": "/creatives/widilo/1200x627_v2.jpg",
         "video": false,
-        "size": "1200x896",
+        "size": "1200x627",
         "price": "$0.029"
       },
       {
-        "id": "88000dd7-3a1a-44c7-a731-6cc853798080",
-        "name": "widilo black-friday v1.jpeg",
-        "src": "/creatives/widilo/1_1-1rHK0l.jpeg",
+        "id": "c522dfb9-53fb-4755-8f09-a8392b9827c2",
+        "name": "widilo banner 960x640 v2.jpg",
+        "src": "/creatives/widilo/960x640_v2.jpg",
         "video": false,
-        "size": "670x893",
+        "size": "960x640",
         "price": "$0.029"
       },
       {
-        "id": "b456e5e5-bfaa-4f98-a05b-66e9466395c2",
-        "name": "widilo how-it-works v1.mp4",
-        "src": "/creatives/widilo/1_1-41e2c8.mp4",
+        "id": "54ac2e1d-9a0a-43ad-a3a6-e05e3fe896aa",
+        "name": "widilo banner 640x960 v2.jpg",
+        "src": "/creatives/widilo/640x960_v2.jpg",
+        "video": false,
+        "size": "640x960",
+        "price": "$0.029"
+      },
+      {
+        "id": "57f096b6-787b-4d48-8ca1-bfa23a28180c",
+        "name": "widilo banner 600x500 v2.jpg",
+        "src": "/creatives/widilo/600x500_v2.jpg",
+        "video": false,
+        "size": "600x500",
+        "price": "$0.029"
+      },
+      {
+        "id": "76151f1c-4414-4d44-9970-642de96658e4",
+        "name": "widilo banner 640x100 v2.jpg",
+        "src": "/creatives/widilo/640x100_v2.jpg",
+        "video": false,
+        "size": "640x100",
+        "price": "$0.029"
+      },
+      {
+        "id": "9fd1596e-e80e-456e-9852-38c933e2ca7b",
+        "name": "widilo reflexe-quotidien v1.mp4",
+        "src": "/creatives/widilo/reflexe-quotidien.mp4",
         "video": true,
-        "size": "608x496",
+        "size": "720x1280",
+        "price": "$0.029"
+      },
+      {
+        "id": "1a14633e-67a5-4a0f-b150-cb2797308686",
+        "name": "widilo petit-plaisir v1.mp4",
+        "src": "/creatives/widilo/petit-plaisir.mp4",
+        "video": true,
+        "size": "720x1280",
+        "price": "$0.029"
+      },
+      {
+        "id": "77f24a24-eab8-4c53-b99c-3d4822cc3a11",
+        "name": "widilo pouvoir-dachat v1.mp4",
+        "src": "/creatives/widilo/pouvoir-dachat.mp4",
+        "video": true,
+        "size": "720x1280",
         "price": "$0.029"
       }
     ],
